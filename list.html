@@ -22,16 +22,16 @@ $(function(){
         if (children.parent('ul').css("display") == "none")
         {
         	children.parent('ul').css("display", "block");
-        	$(this).find(' > i').addClass('icon-plus-sign').removeClass('icon-plus-sign');
+        	$(this).find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
         }
         else
         {
 	        if (children.is(":visible")) {
 	        	  children.hide('fast');            
-	            $(this).find(' > i').addClass('icon-plus-sign').removeClass('icon-plus-sign');
+	            $(this).find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
 	        } else {
 	            children.show('fast');
-	            $(this).find(' > i').addClass('icon-plus-sign').removeClass('icon-plus-sign');
+	            $(this).find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
 	        }
 	        e.stopPropagation();
 	      }
