@@ -1,0 +1,44 @@
+.tree {
+		position:absolute;
+		left: 1%;
+		top: 15%;
+    min-height:20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);  
+}
+.tree li {
+    list-style-type:none;
+    margin:0;
+    padding:10px 5px 0 5px;
+    position:relative
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.tree li span {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
+}
+.tree li.parent_li>span {	
+    cursor:pointer    
+}
+
+.tree li>ul {
+		display:none;
+}
+
+.button1{
+	background-color:#B2DEFF
+}
+
+.button2{	
+	background-color:#E5F8FF
+}
+
+.leaf{	
+	background-color:#FFEEF9
+}
+

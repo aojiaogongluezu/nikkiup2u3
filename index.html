@@ -1,47 +1,38 @@
+
 <!DOCTYPE html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>奇迹暖暖攻略大全-傲娇攻略组</title>
+<title>test</title>
 <style type="text/css">
 #Container {
 	background-color: #FFEEF9;
-	overflow: hidden;/*溢出？*/
+	overflow: hidden;
 }
 #Header {
-	border-radius: 25px;/*圆角方框*/
+	border-radius: 25px;
 	text-align: center;
 	background-color: #B2DEFF;
-	margin: 2%;/*内边框*/
-	padding: 2%;/*外边框*/
+	margin: 2%;
+	padding: 2%;
 }
-#logo {/*这里设置了padding属性介绍一下padding的用法,padding将设置文本与边框的距离。*/
+#logo {
 	padding-left: 1%;
 	padding-top: 1%;
 	padding-bottom: 1%;
 }
 #Content {
-	overflow: auto
+	overflow: auto;
 }
-#Content-Left {
-	border-radius: 25px;
-	width: 22%;
-	height: 40em;
-	margin: 2%;
-	background-color: #FFFFFF;
-	float: left;
-	padding: 2%;
-}
+
 #Content-Main {
 	border-radius: 25px;
-	width: 62%;
 	height: 40em;
-	margin: 2%;
 	background-color: #FFFFFF;
-	float: left;
+	margin: 2%;
 	padding: 2%;
 }
-/*注：Content-Left和Content-Main元素是Content元素的子元素，两个元素使用了float:left;设置成两列，这个两个元素的宽度和这个两个元素设置的padding、margin的和一定不能大于父层Content元素的宽度，否则设置列将失败*/
+
 #guestbook {
 	border-radius: 25px;
 	height: 15em;
@@ -60,23 +51,395 @@
 	clear: both;
 }
 </style>
+
+<!--图标样式-->
+<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+
+<!--主要样式-->
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+
+$(function(){		
+		
+    $('.tree li:has(ul)').addClass('parent_li');
+    
+    $('.tree li.parent_li > span').on('click', function (e) {
+        var children = $(this).parent('li.parent_li').find(' > ul > li');
+        
+        if (children.parent('ul').css("display") == "none")
+        {
+        	children.parent('ul').css("display", "block");
+        	$(this).find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+        }
+        else
+        {
+	        if (children.is(":visible")) {
+	        	  children.hide('fast');            
+	            $(this).find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+	        } else {
+	            children.show('fast');
+	            $(this).find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+	        }
+	        e.stopPropagation();
+	      }
+    });
+});
+
+</script>
+
 </head>
 
 <body>
 <div id="Container" >
   <div id="Header" >
-    <div id="logo">
-    <font size="6em">奇迹暖暖攻略大全</font> <br>
-    <font size="4.5em"> by:@傲娇攻略组</font> 
-     </div>
+    <div id="logo">奇迹暖暖攻略</div>
   </div>
-  <div id="Content">
-    <div id="Content-Left">
-      <iframe src="list.html" width="100%" height="100%"></iframe>
-    </div>
-    <div id="Content-Main">Content-Main</div>
-  </div>
-  <div class="Clear"><!--如何你上面用到float,下面布局开始前最好清除一下。--></div>
+  <div class="tree well">
+		<ul>
+			<li> <span class="button2"><i class="icon-plus-sign"></i> 菜单 </a></span>	
+	    <ul>
+	      <li> <span class="button1"><i class="icon-plus-sign"></i> 活动列表 </a></span>
+	        <ul>
+	          <li> <span class="leaf"><a href="http://www.baidu.com" target="framemain">灯火元宵</a></span> </li>
+	          <li> <span class="leaf"><a href="">暖心情人节</a></span> </li>
+	        </ul>
+	      </li>
+	      <li> <span class="button1"><i class="icon-plus-sign"></i>图纸制作</a></span>
+	        <ul>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>公主级材料</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">总纲</a></span></li>
+	              <li><span class="leaf"><a href="">提线格莱斯</a></span></li>
+	              <li><span class="leaf"><a href="">韶颜倾城</a></span></li>
+	              <li><span class="leaf"><a href="">星之海</a></span></li>
+	              <li><span class="leaf"><a href="">其他套装</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>各种资料</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">设计图</a></span></li>
+	              <li><span class="leaf"><a href="">进化</a></span></li>
+	              <li><span class="leaf"><a href="">定制</a></span></li>
+	              <li><span class="leaf"><a href="">染回</a></span></li>
+	            </ul>
+	          </li>
+	        </ul>
+	      </li>
+	      <li> <span class="button1"><i class="icon-plus-sign"></i>顶配分析 </a></span>
+	        <ul>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>最新活动</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">柔情蜜意</a></span> </li>
+	              <li> <span class="leaf"><a href="">活动名2</a></span> </li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>兑换部件</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">仙履屋</a></span> </li>
+	              <li> <span class="leaf"><a href="">联盟小铺</a></span> </li>
+	              <li> <span class="leaf" class="button3"><a href="">梦幻工坊</a></span> </li>
+	              <li> <span class="leaf"><a href="">水晶花园</a></span> </li>
+	              <li> <span class="leaf"><a href="">商店</a></span> </li>
+	              <li> <span class="leaf"><a href="">卧云居</a></span> </li>
+	              <li> <span class="leaf"><a href="">时光阁</a></span> </li>
+	              <li> <span class="leaf"><a href="">翡翠阁</a></span> </li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>分解重构</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">重构部件</a></span> </li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>图纸制作</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">格莱斯</a></span> </li>
+	              <li> <span class="leaf"><a href="">提线格莱斯</a></span> </li>
+	              <li> <span class="leaf"><a href="">最新图纸</a></span> </li>
+	              <li> <span class="leaf"><a href="">往期图纸</a></span> </li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>掉落套装</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">最新部件</a></span> </li>
+	              <li> <span class="leaf"><a href="">往期部件</a></span> </li>
+	            </ul>
+	          </li>
+	        </ul>
+	      </li>
+	      <li> <span class="button1"><i class="icon-plus-sign"></i>双倍推荐 </a></span>
+	        <ul>
+	          <li> <span class="leaf"><a href="">第一章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第二章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第三章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第四章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第五章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第六章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第七章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第八章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第九章</a></span> </li>
+	          <li> <span class="leaf"><a href="">第十章</a></span> </li>
+	          <li> <span class="leaf"><a href="">十一章</a></span> </li>
+	        </ul>
+	      </li>
+	      <li> <span class="button1"><i class="icon-plus-sign"></i>竞技场攻略 </a></span>
+	        <ul>
+	          <li><span class="leaf"><a href="">总纲</a></span></li>
+	          <li><span class="leaf"><a href="">办公室明星</a></span></li>
+	          <li><span class="leaf"><a href="">春天在哪里</a></span></li>
+	          <li><span class="leaf"><a href="">大侦探福尔摩斯</a></span></li>
+	          <li><span class="leaf"><a href="">冬天里的一把火</a></span></li>
+	          <li><span class="leaf"><a href="">宫廷歌舞会</a></span></li>
+	          <li><span class="leaf"><a href="">海边派对的搭配</a></span></li>
+	          <li><span class="leaf"><a href="">金色音乐厅</a></span></li>
+	          <li><span class="leaf"><a href="">绝色无双</a></span></li>
+	          <li><span class="leaf"><a href="">年轻的春游</a></span></li>
+	          <li><span class="leaf"><a href="">女王大人</a></span></li>
+	          <li><span class="leaf"><a href="">奇幻童话园</a></span></li>
+	          <li><span class="leaf"><a href="">清秀佳人</a></span></li>
+	          <li><span class="leaf"><a href="">圣诞家庭聚会</a></span></li>
+	          <li><span class="leaf"><a href="">夏季游园会</a></span></li>
+	          <li><span class="leaf"><a href="">夏日物语</a></span></li>
+	          <li><span class="leaf"><a href="">有女初长成</a></span></li>
+	          <li><span class="leaf"><a href="">运动进行时</a></span></li>
+	        </ul>
+	      </li>
+	      <li> <span class="button1"><i class="icon-plus-sign"></i>联盟攻略 </a></span>
+	        <ul>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第一章</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">1-1</a></span> </li>
+	              <li> <span class="leaf"><a href="">1-2</a></span> </li>
+	              <li> <span class="leaf"><a href="">1-3</a></span> </li>
+	              <li> <span class="leaf"><a href="">1-4</a></span> </li>
+	              <li> <span class="leaf"><a href="">1-5</a></span> </li>
+	              <li> <span class="leaf"><a href="">1-6</a></span> </li>
+	              <li> <span class="leaf"><a href="">1-7</a></span> </li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第二章</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">2-1</a></span> </li>
+	              <li> <span class="leaf"><a href="">2-2</a></span> </li>
+	              <li> <span class="leaf"><a href="">2-3</a></span> </li>
+	              <li> <span class="leaf"><a href="">2-4</a></span> </li>
+	              <li> <span class="leaf"><a href="">2-5</a></span> </li>
+	              <li> <span class="leaf"><a href="">2-6</a></span> </li>
+	              <li> <span class="leaf"><a href="">2-7</a></span> </li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第三章</a></span>
+	            <ul>
+	              <li> <span class="leaf"><a href="">3-1</a></span> </li>
+	              <li> <span class="leaf"><a href="">3-2</a></span> </li>
+	              <li> <span class="leaf"><a href="">3-3</a></span> </li>
+	              <li> <span class="leaf"><a href="">3-4</a></span> </li>
+	              <li> <span class="leaf"><a href="">3-5</a></span> </li>
+	              <li> <span class="leaf"><a href="">3-6</a></span> </li>
+	              <li> <span class="leaf"><a href="">3-7</a></span> </li>
+	            </ul>
+	          </li>
+	        </ul>
+	      </li>
+	      <li> <span class="button1"><i class="icon-plus-sign"></i>关卡攻略 </a></span>
+	        <ul>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第一章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">1-1</a></span></li>
+	              <li><span class="leaf"><a href="">1-2</a></span></li>
+	              <li><span class="leaf"><a href="">1-3</a></span></li>
+	              <li><span class="leaf"><a href="">1-4</a></span></li>
+	              <li><span class="leaf"><a href="">1-5</a></span></li>
+	              <li><span class="leaf"><a href="">1-6</a></span></li>
+	              <li><span class="leaf"><a href="">1-7</a></span></li>
+	              <li><span class="leaf"><a href="">1-8</a></span></li>
+	              <li><span class="leaf"><a href="">1-9</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第二章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">2-1</a></span></li>
+	              <li><span class="leaf"><a href="">2-2</a></span></li>
+	              <li><span class="leaf"><a href="">2-3</a></span></li>
+	              <li><span class="leaf"><a href="">2-4</a></span></li>
+	              <li><span class="leaf"><a href="">2-5</a></span></li>
+	              <li><span class="leaf"><a href="">2-6</a></span></li>
+	              <li><span class="leaf"><a href="">2-7</a></span></li>
+	              <li><span class="leaf"><a href="">2-8</a></span></li>
+	              <li><span class="leaf"><a href="">2-9</a></span></li>
+	              <li><span class="leaf"><a href="">2-支1</a></span></li>
+	              <li><span class="leaf"><a href="">2-支2</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第三章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">3-1</a></span></li>
+	              <li><span class="leaf"><a href="">3-2</a></span></li>
+	              <li><span class="leaf"><a href="">3-3</a></span></li>
+	              <li><span class="leaf"><a href="">3-4</a></span></li>
+	              <li><span class="leaf"><a href="">3-5</a></span></li>
+	              <li><span class="leaf"><a href="">3-6</a></span></li>
+	              <li><span class="leaf"><a href="">3-7</a></span></li>
+	              <li><span class="leaf"><a href="">3-8</a></span></li>
+	              <li><span class="leaf"><a href="">3-9</a></span></li>
+	              <li><span class="leaf"><a href="">3-10</a></span></li>
+	              <li><span class="leaf"><a href="">3-11</a></span></li>
+	              <li><span class="leaf"><a href="">3-12</a></span></li>
+	              <li><span class="leaf"><a href="">3-支1</a></span></li>
+	              <li><span class="leaf"><a href="">3-支2</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第四章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">4-1</a></span></li>
+	              <li><span class="leaf"><a href="">4-2</a></span></li>
+	              <li><span class="leaf"><a href="">4-3</a></span></li>
+	              <li><span class="leaf"><a href="">4-4</a></span></li>
+	              <li><span class="leaf"><a href="">4-5</a></span></li>
+	              <li><span class="leaf"><a href="">4-6</a></span></li>
+	              <li><span class="leaf"><a href="">4-7</a></span></li>
+	              <li><span class="leaf"><a href="">4-8</a></span></li>
+	              <li><span class="leaf"><a href="">4-9</a></span></li>
+	              <li><span class="leaf"><a href="">4-10</a></span></li>
+	              <li><span class="leaf"><a href="">4-11</a></span></li>
+	              <li><span class="leaf"><a href="">4-12</a></span></li>
+	              <li><span class="leaf"><a href="">4-支1</a></span></li>
+	              <li><span class="leaf"><a href="">4-支2</a></span></li>
+	              <li><span class="leaf"><a href="">4-支3</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第五章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">5-1</a></span></li>
+	              <li><span class="leaf"><a href="">5-2</a></span></li>
+	              <li><span class="leaf"><a href="">5-3</a></span></li>
+	              <li><span class="leaf"><a href="">5-4</a></span></li>
+	              <li><span class="leaf"><a href="">5-5</a></span></li>
+	              <li><span class="leaf"><a href="">5-6</a></span></li>
+	              <li><span class="leaf"><a href="">5-7</a></span></li>
+	              <li><span class="leaf"><a href="">5-8</a></span></li>
+	              <li><span class="leaf"><a href="">5-9</a></span></li>
+	              <li><span class="leaf"><a href="">5-10</a></span></li>
+	              <li><span class="leaf"><a href="">5-11</a></span></li>
+	              <li><span class="leaf"><a href="">5-12</a></span></li>
+	              <li><span class="leaf"><a href="">5-支1</a></span></li>
+	              <li><span class="leaf"><a href="">5-支2</a></span></li>
+	              <li><span class="leaf"><a href="">5-支3</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第六章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">6-1</a></span></li>
+	              <li><span class="leaf"><a href="">6-2</a></span></li>
+	              <li><span class="leaf"><a href="">6-3</a></span></li>
+	              <li><span class="leaf"><a href="">6-4</a></span></li>
+	              <li><span class="leaf"><a href="">6-5</a></span></li>
+	              <li><span class="leaf"><a href="">6-6</a></span></li>
+	              <li><span class="leaf"><a href="">6-7</a></span></li>
+	              <li><span class="leaf"><a href="">6-8</a></span></li>
+	              <li><span class="leaf"><a href="">6-9</a></span></li>
+	              <li><span class="leaf"><a href="">6-10</a></span></li>
+	              <li><span class="leaf"><a href="">6-11</a></span></li>
+	              <li><span class="leaf"><a href="">6-支1</a></span></li>
+	              <li><span class="leaf"><a href="">6-支2</a></span></li>
+	              <li><span class="leaf"><a href="">6-支3</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第七章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">7-1</a></span></li>
+	              <li><span class="leaf"><a href="">7-2</a></span></li>
+	              <li><span class="leaf"><a href="">7-3</a></span></li>
+	              <li><span class="leaf"><a href="">7-4</a></span></li>
+	              <li><span class="leaf"><a href="">7-5</a></span></li>
+	              <li><span class="leaf"><a href="">7-6</a></span></li>
+	              <li><span class="leaf"><a href="">7-7</a></span></li>
+	              <li><span class="leaf"><a href="">7-8</a></span></li>
+	              <li><span class="leaf"><a href="">7-9</a></span></li>
+	              <li><span class="leaf"><a href="">7-支1</a></span></li>
+	              <li><span class="leaf"><a href="">7-支2</a></span></li>
+	              <li><span class="leaf"><a href="">7-支3</a></span></li>
+	              <li><span class="leaf"><a href="">7-支4</a></span></li>
+	              <li><span class="leaf"><a href="">7-支5</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第八章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">8-1</a></span></li>
+	              <li><span class="leaf"><a href="">8-2</a></span></li>
+	              <li><span class="leaf"><a href="">8-3</a></span></li>
+	              <li><span class="leaf"><a href="">8-4</a></span></li>
+	              <li><span class="leaf"><a href="">8-5</a></span></li>
+	              <li><span class="leaf"><a href="">8-6</a></span></li>
+	              <li><span class="leaf"><a href="">8-7</a></span></li>
+	              <li><span class="leaf"><a href="">8-8</a></span></li>
+	              <li><span class="leaf"><a href="">8-9</a></span></li>
+	              <li><span class="leaf"><a href="">8-支1</a></span></li>
+	              <li><span class="leaf"><a href="">8-支2</a></span></li>
+	              <li><span class="leaf"><a href="">8-支3</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第九章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">9-1</a></span></li>
+	              <li><span class="leaf"><a href="">9-2</a></span></li>
+	              <li><span class="leaf"><a href="">9-3</a></span></li>
+	              <li><span class="leaf"><a href="">9-4</a></span></li>
+	              <li><span class="leaf"><a href="">9-5</a></span></li>
+	              <li><span class="leaf"><a href="">9-6-1</a></span></li>
+	              <li><span class="leaf"><a href="">9-6-2</a></span></li>
+	              <li><span class="leaf"><a href="">9-7</a></span></li>
+	              <li><span class="leaf"><a href="">9-8</a></span></li>
+	              <li><span class="leaf"><a href="">9-9-1</a></span></li>
+	              <li><span class="leaf"><a href="">9-9-2</a></span></li>
+	              <li><span class="leaf"><a href="">9-9-3</a></span></li>
+	              <li><span class="leaf"><a href="">9-支1</a></span></li>
+	              <li><span class="leaf"><a href="">9-支2</a></span></li>
+	              <li><span class="leaf"><a href="">9-支3</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>第十章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">10-1</a></span></li>
+	              <li><span class="leaf"><a href="">10-2</a></span></li>
+	              <li><span class="leaf"><a href="">10-3</a></span></li>
+	              <li><span class="leaf"><a href="">10-4</a></span></li>
+	              <li><span class="leaf"><a href="">10-5</a></span></li>
+	              <li><span class="leaf"><a href="">10-6</a></span></li>
+	              <li><span class="leaf"><a href="">10-7</a></span></li>
+	              <li><span class="leaf"><a href="">10-8</a></span></li>
+	              <li><span class="leaf"><a href="">10-9-1</a></span></li>
+	              <li><span class="leaf"><a href="">10-9-2</a></span></li>
+	              <li><span class="leaf"><a href="">10-支1</a></span></li>
+	              <li><span class="leaf"><a href="">10-支2</a></span></li>
+	              <li><span class="leaf"><a href="">10-支3</a></span></li>
+	            </ul>
+	          </li>
+	          <li> <span class="button2"><i class="icon-plus-sign"></i>十一章</a></span>
+	            <ul>
+	              <li><span class="leaf"><a href="">11-1</a></span></li>
+	              <li><span class="leaf"><a href="">11-2</a></span></li>
+	              <li><span class="leaf"><a href="">11-3</a></span></li>
+	              <li><span class="leaf"><a href="">11-4</a></span></li>
+	              <li><span class="leaf"><a href="">11-5</a></span></li>
+	              <li><span class="leaf"><a href="">11-6</a></span></li>
+	              <li><span class="leaf"><a href="">11-7</a></span></li>
+	              <li><span class="leaf"><a href="">11-8</a></span></li>
+	              <li><span class="leaf"><a href="">11-9</a></span></li>
+	              <li><span class="leaf"><a href="">11-支1</a></span></li>
+	              <li><span class="leaf"><a href="">11-支2</a></span></li>
+	              <li><span class="leaf"><a href="">11-支3</a></span></li>
+	            </ul>
+	          </li>
+	        </ul>
+	      </li>
+	    </ul>
+		</li>
+		</ul>
+	</div>
+	<div id = "Content-Main">
+  	<iframe name="framemain" src="" frameborder="0"  width="100%" height="100%"></iframe>
+	</div>
   <div id="guestbook">guestbook</div>
   <div id="Footer">footer</div>
 </div>
