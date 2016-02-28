@@ -40,7 +40,31 @@ $(function(){
 	      }
     });
 });
+</script>
 
+<!--评论框-->
+<script src="http://static.duoshuo.com/embed.js"></script>
+<script>
+var duoshuoQuery = {short_name:"aojiaogongluezu"};
+function toggleDuoshuoComments(ind){
+    container='#comment-box';
+    if(ind){
+        $('.ds-comments').html('');
+        $('#guestbook_href').html('<a href="javascript:void(0);" onclick="toggleDuoshuoComments();">展开评论</a>');
+    }else{
+        $(container).html('');
+        $('#guestbook_href').html('<a href="javascript:void(0);" onclick="toggleDuoshuoComments(1);">收起评论</a>');
+        var el = document.createElement('div');
+        el.setAttribute('data-thread-key', 'aojiaogongluezu_qjnn');
+        el.setAttribute('data-url', 'http://aojiaogongluezu.github.io/nikkiup2u3/');
+        el.setAttribute('data-title', "奇迹暖暖傲娇攻略组");
+        DUOSHUO.EmbedThread(el);
+        jQuery(container).append(el);
+    }
+}
+window.onload = function(){ 
+	toggleDuoshuoComments();
+};
 </script>
 </head>
 
@@ -396,7 +420,7 @@ $(function(){
 <div id = "Content-Main">
   <iframe name="framemain" src="" frameborder="0"  width="100%" height="100%"></iframe>
 </div>
-<div id="guestbook">guestbook</div>
+<div id="guestbook"><div id="guestbook_href" style="display:none"></div><div id="comment-box" ></div></div>
 <div id="Footer">footer</div>
 </div>
 </body>
