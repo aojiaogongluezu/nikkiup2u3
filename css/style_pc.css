@@ -2,8 +2,10 @@
 #Container {
 	background-color: #FFEEF9;
 	overflow: hidden;
+	background-image: url(../images/background.png);
+	background-repeat: no-repeat;
 }
-#Header {
+/*#Header {
 	border-radius: 25px;
 	text-align: center;
 	background-color: #B2DEFF;
@@ -22,7 +24,7 @@
 	padding-left: 1%;
 	padding-top: 1%;
 	padding-bottom: 1%;
-}
+}*/
 #Content {
 	overflow: auto;
 }
@@ -33,7 +35,7 @@
 	background-color: rgba(255, 255, 255, 0.6); 
 	padding: 2%;
 	box-shadow: 5px 5px 5px #888888;
-	margin-top: 2%;
+	margin-top: 20%;
 	margin-bottom: 2%;
 	margin-right: 15%;
 	margin-left: 15%;
