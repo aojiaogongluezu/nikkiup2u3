@@ -1,0 +1,189 @@
+/*************index.htmlç›¸å…³***************/
+#Container {
+	background-color: #FFEEF9;
+	overflow: hidden;
+}
+#Header {
+	border-radius: 25px;
+	text-align: center;
+	background-color: #B2DEFF;
+	padding: 2%;
+	letter-spacing: 0.3em;
+	font-size: 200%;
+	font-weight : 700;
+	font-family: "SimSun", Sans-Serif;
+	box-shadow: 5px 5px 5px #888888;
+	margin-top: 2%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-left: 2%;
+}
+#logo {
+	padding-left: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+#Content {
+	overflow: auto;
+}
+
+#Content-Main {
+	border-radius: 25px;
+	height:120em;
+	background-color: rgba(255, 255, 255, 0.6); 
+	padding: 2%;
+	box-shadow: 5px 5px 5px #888888;
+	margin-top: 2%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-left: 2%;
+	
+}
+
+#guestbook {
+	border-radius: 25px;
+	background-color: #E5F8FF;
+	margin-top: 2%;
+	margin-right: 10%;
+	margin-bottom: 2%;
+	margin-left: 10%;
+	padding: 2%;
+	box-shadow: 5px 5px 5px #888888;
+}
+#Footer {
+	border-radius: 25px;
+	height: 1.5em;
+	background-color: #D8F9E9;
+	margin-top: 2%;
+	margin-right: 10%;
+	margin-bottom: 2%;
+	margin-left: 10%;
+	padding: 2%;
+	box-shadow: 5px 5px 5px #888888;
+}
+/*************index.htmlç›¸å…³***************/
+
+
+/*************èœå•æŒ‰é’®ç”?**************/
+.tree {
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	min-height: 20px;
+	border: 0;
+	padding: 0;
+	background-color: rgba(0, 0, 0, 0);
+	margin-top: 8%;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 1%;
+}
+.tree li {
+    list-style-type:none;
+    margin-left:-0.5em;
+    padding:0.5em 3px 0 0px;
+    background-color: rgba(0, 0, 0, 0);
+    position:relative;  
+}
+.tree li span {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
+}
+.tree li.parent_li>span {	
+    cursor:pointer    
+}
+
+.tree li>ul {
+		display:none;
+}
+
+.tree li span:hover{
+    background:#DDFEC8;
+    border:1px solid #94a0b4;
+    color:#000
+}
+
+.button1{
+	background-color:#D2EEFF
+}
+
+.button2{	
+	background-color:#FBFDAC
+}
+
+.leaf{	
+	background-color:#FFEEF9
+}
+/*************èœå•æŒ‰é’®ç”?**************/
+
+
+/*************å•é¡µåˆ†å‰²çº?**************/
+hr.mhr {
+	border:1px dashed #B051FF;
+}
+
+/*************å•é¡µæ™®é€šå­—ä½?****************
+				"SimSun"-------------å®‹ä½“
+        "Microsoft YaHei"----å¾®è½¯é›…é»‘   
+******************************************/ 
+p.normal {
+	font-size: 95%;
+  font-family: "Microsoft YaHei", Sans-Serif;
+  color:#333333;
+  line-height: 1.8em;
+}
+
+/*************å…³å¡åå­—å­—ä½“***************/ 
+p.title1 {
+	font-size: 130%;
+	font-weight : 700;
+	font-family: "Microsoft YaHei", Sans-Serif;
+  color:#5151FF;
+  text-align: center;
+}
+
+/*************åˆ†å‰²æ ‡é¢˜å­—ä½“***************/ 
+p.title2 {
+	font-size: 100%;
+	font-weight : 700;
+	font-family: "Microsoft YaHei", Sans-Serif;
+  color:#333333;
+  text-align: center;
+}
+
+/*************è¡Œé¦–æ ‡é¢˜å­—ä½“***************/ 
+span.title3 {
+	font-weight : 700;
+}
+
+/*************å…³å¡è¯´æ˜Žå­—ä½“***************/ 
+span.comment {
+  color:#5151FF;
+}
+
+/*************é¡¶é…å­—ä½“***************/ 
+span.top {
+  color:#E32000;
+}
+
+/*************é¡¶é…ä»£æ›¿å­—ä½“***************/ 
+span.instead {
+  color:#5DB246;
+}
+
+/*************æ ‡é…å­—ä½“***************/ 
+span.general {
+  color:#333333;
+}
+
+/*************æ–°æ‰‹å­—ä½“***************/ 
+span.newguy {
+  color:#1E61C8;
+}
+
+
