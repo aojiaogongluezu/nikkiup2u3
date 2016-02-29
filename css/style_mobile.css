@@ -1,4 +1,4 @@
-/*************index.htmlç›¸å…³***************/
+/*************index.html相关***************/
 #Container {
 	background-color: #FFEEF9;
 	overflow: hidden;
@@ -61,10 +61,10 @@
 	padding: 2%;
 	box-shadow: 5px 5px 5px #888888;
 }
-/*************index.htmlç›¸å…³***************/
+/*************index.html相关***************/
 
 
-/*************èœå•æŒ‰é’®ç”?**************/
+/*************菜单按钮相关**************/
 .tree {
 	position: absolute;
 	left: 1px;
@@ -119,71 +119,3 @@
 .leaf{	
 	background-color:#FFEEF9
 }
-/*************èœå•æŒ‰é’®ç”?**************/
-
-
-/*************å•é¡µåˆ†å‰²çº?**************/
-hr.mhr {
-	border:1px dashed #B051FF;
-}
-
-/*************å•é¡µæ™®é€šå­—ä½?****************
-				"SimSun"-------------å®‹ä½“
-        "Microsoft YaHei"----å¾®è½¯é›…é»‘   
-******************************************/ 
-p.normal {
-	font-size: 95%;
-  font-family: "Microsoft YaHei", Sans-Serif;
-  color:#333333;
-  line-height: 1.8em;
-}
-
-/*************å…³å¡åå­—å­—ä½“***************/ 
-p.title1 {
-	font-size: 130%;
-	font-weight : 700;
-	font-family: "Microsoft YaHei", Sans-Serif;
-  color:#5151FF;
-  text-align: center;
-}
-
-/*************åˆ†å‰²æ ‡é¢˜å­—ä½“***************/ 
-p.title2 {
-	font-size: 100%;
-	font-weight : 700;
-	font-family: "Microsoft YaHei", Sans-Serif;
-  color:#333333;
-  text-align: center;
-}
-
-/*************è¡Œé¦–æ ‡é¢˜å­—ä½“***************/ 
-span.title3 {
-	font-weight : 700;
-}
-
-/*************å…³å¡è¯´æ˜Žå­—ä½“***************/ 
-span.comment {
-  color:#5151FF;
-}
-
-/*************é¡¶é…å­—ä½“***************/ 
-span.top {
-  color:#E32000;
-}
-
-/*************é¡¶é…ä»£æ›¿å­—ä½“***************/ 
-span.instead {
-  color:#5DB246;
-}
-
-/*************æ ‡é…å­—ä½“***************/ 
-span.general {
-  color:#333333;
-}
-
-/*************æ–°æ‰‹å­—ä½“***************/ 
-span.newguy {
-  color:#1E61C8;
-}
-
-
