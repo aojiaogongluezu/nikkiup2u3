@@ -1,9 +1,13 @@
 /*************index.html相关***************/
 #Container {
-	background-color: #FFEEF9;
+	background-color: #D7CAF2;
 	overflow: hidden;
+	background-image: url(../images/background_mobile.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
 }
-#Header {
+/*#Header {
 	border-radius: 25px;
 	text-align: center;
 	background-color: #B2DEFF;
@@ -14,15 +18,15 @@
 	font-family: "SimSun", Sans-Serif;
 	box-shadow: 5px 5px 5px #888888;
 	margin-top: 2%;
-	margin-right: 2%;
 	margin-bottom: 2%;
-	margin-left: 2%;
+	margin-right: 15%;
+	margin-left: 15%;
 }
 #logo {
 	padding-left: 1%;
 	padding-top: 1%;
 	padding-bottom: 1%;
-}
+}*/
 #Content {
 	overflow: auto;
 }

@@ -1,10 +1,11 @@
 ﻿/*************index.html相关***************/
 #Container {
-	background-color: #FFEEF9;
+	background-color: #D7CAF2;
 	overflow: hidden;
-	background-image: url(../images/background.png);
+	background-image: url(../images/background_pc.png);
 	background-repeat: no-repeat;
-	background-size:100% ;
+	background-size: 100%;
+	background-position: top;
 }
 /*#Header {
 	border-radius: 25px;
@@ -76,9 +77,7 @@
 	border: 0;
 	padding: 0;
 	background-color: rgba(0, 0, 0, 0);
-	margin-top: 8%;
-	margin-right: 0;
-	margin-bottom: 0;
+	margin-top: 20%;
 	margin-left: 1%;
 }
 .tree li {
