@@ -18,13 +18,12 @@ $(function(){
 		try{
 	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 	        $("#logo").attr("src", "./images/mobile.png");
-	        document.getElementById("mycss").setAttribute("href","css/style_mobile.css");
+	        $("#mycss").attr("href","./css/style_mobile.css");
 	    }else{	    		
 	        $("#logo").attr("src", "./images/pc.png");
-	        document.getElementById("mycss").setAttribute("href","css/style_pc.css");
+	        $("#mycss").attr("href","./css/style_pc.css");
 	    }
 		}catch(e){}
-	
 
     $('.tree li:has(ul)').addClass('parent_li');
     
