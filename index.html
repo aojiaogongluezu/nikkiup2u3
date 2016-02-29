@@ -16,7 +16,16 @@
 <script type="text/javascript">
 
 $(function(){		
-		
+		try{
+	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+	        $("#logo").attr("src", "./images/mobile.png");
+	        $("#Content-Main").attr("padding-left","2%");
+	        $("#Content-Main").attr("padding-right","2%");
+	    }else{	    		
+	        $("#logo").attr("src", "./images/pc.png");
+	    }
+		}catch(e){}
+			
     $('.tree li:has(ul)').addClass('parent_li');
     
     $('.tree li.parent_li > span').on('click', function (e) {
@@ -71,7 +80,7 @@ window.onload = function(){
 <body>
 <div id="Container" >
 <div id="Header" >
-  <div id="logo">奇迹暖暖攻略</div>
+ <img id="logo" src="./images/mobile.png" />
 </div>
 <div class="tree">
 <ul>
