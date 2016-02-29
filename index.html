@@ -13,16 +13,16 @@
 <!--主要样式-->
 <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
-$(function(){		
-		try{
+
+$(function(){	
+	
+    try{
 	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-	        /*$("#logo").attr("src", "./images/mobile.png");*/
-	        document.write('<link href="css/style_mobile.css" rel="stylesheet" type="text/css"  />');
-	    }else{	    		
-	        /*$("#logo").attr("src", "./images/pc.png");*/
-	        document.write('<link href="css/style_pc.css" rel="stylesheet" type="text/css" />');
+	        $("#logo").attr("src", "./images/mobile.png");
+	    }else{	 
+	        $("#logo").attr("src", "./images/pc.PNG");
 	    }
-		}catch(e){}
+    }catch(e){}
 	
 
     $('.tree li:has(ul)').addClass('parent_li');
