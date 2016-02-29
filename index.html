@@ -9,20 +9,21 @@
 
 <!--图标样式-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style_mobile.css" id="mycss"/>
 
 <!--主要样式-->
 <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
-
-$(function(){	
-	
-    try{
+$(function(){		
+		try{
 	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 	        $("#logo").attr("src", "./images/mobile.png");
-	    }else{	 
-	        $("#logo").attr("src", "./images/pc.PNG");
+	        document.getElementById("mycss").setAttribute("href","css/style_mobile.css");
+	    }else{	    		
+	        $("#logo").attr("src", "./images/pc.png");
+	        document.getElementById("mycss").setAttribute("href","css/style_pc.css");
 	    }
-    }catch(e){}
+		}catch(e){}
 	
 
     $('.tree li:has(ul)').addClass('parent_li');
