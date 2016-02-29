@@ -4,6 +4,7 @@
 	overflow: hidden;
 	background-image: url(../images/background.png);
 	background-repeat: no-repeat;
+	background-size:100% ;
 }
 /*#Header {
 	border-radius: 25px;
