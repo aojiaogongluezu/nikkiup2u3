@@ -1,65 +1,66 @@
 /*************单页分割�?**************/
 hr.mhr {
-	border:1px dashed #B051FF;
+	border: 1px dashed #B051FF;
 }
-
 /*************单页普通字�?****************
 				"SimSun"-------------宋体
         "Microsoft YaHei"----微软雅黑   
 ******************************************/ 
 p.normal {
 	font-size: 95%;
-  font-family: "Microsoft YaHei", Sans-Serif;
-  color:#333333;
-  line-height: 1.8em;
+	font-family: "Microsoft YaHei", Sans-Serif;
+	color: #333333;
+	line-height: 1.8em;
 }
-
 /*************关卡名字字体***************/ 
 p.title1 {
 	font-size: 130%;
 	font-weight : 700;
 	font-family: "Microsoft YaHei", Sans-Serif;
-  color:#5151FF;
-  text-align: center;
+	color: #5151FF;
+	text-align: center;
 }
-
 /*************分割标题字体***************/ 
 p.title2 {
 	font-size: 100%;
 	font-weight : 700;
 	font-family: "Microsoft YaHei", Sans-Serif;
-  color:#333333;
-  text-align: center;
+	color: #333333;
+	text-align: center;
 }
-
 /*************行首标题字体***************/ 
 span.title3 {
 	font-weight : 700;
 }
-
 /*************关卡说明字体***************/ 
 span.comment {
-  color:#5151FF;
+	color: #5151FF;
 }
-
 /*************顶配字体***************/ 
 span.top {
-  color:#E32000;
+	color: #E32000;
 }
-
 /*************顶配代替字体***************/ 
 span.instead {
-  color:#5DB246;
+	color: #5DB246;
 }
-
 /*************标配字体***************/ 
 span.general {
-  color:#333333;
+	color: #333333;
 }
-
 /*************新手字体***************/ 
 span.newguy {
-  color:#1E61C8;
+	color: #1E61C8;
+}
+/*************table***************/ 
+table {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
 }
 
-
+th {
+	background-color: #FC9;
+}
