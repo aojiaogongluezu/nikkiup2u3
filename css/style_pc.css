@@ -46,7 +46,7 @@
 
 #guestbook {
 	border-radius: 25px;
-	background-color: #E5F8FF;
+	background-color: rgba(229,248,255,0.6);
 	margin-top: 2%;
 	margin-bottom: 2%;
 	margin-right: 15%;
@@ -57,7 +57,7 @@
 #Footer {
 	border-radius: 25px;
 	height: 1.5em;
-	background-color: #D8F9E9;
+	background-color: rgba(216,249,233,0.6);
 	margin-top: 2%;
 	margin-bottom: 2%;
 	margin-right: 15%;
@@ -111,14 +111,14 @@
 }
 
 .button1{
-	background-color:#D2EEFF
+	background-color:rgba(210,238,255,0.6)
 }
 
 .button2{	
-	background-color:#FBFDAC
+	background-color:rgba(251,253,172,0.6)
 }
 
 .leaf{	
-	background-color:#FFEEF9
+	background-color:rgba(255,238,249,0.6)
 }
 /*************菜单按钮相关**************/
