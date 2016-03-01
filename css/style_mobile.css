@@ -1,6 +1,6 @@
 /*************index.html相关***************/
 #Container {
-	background-color: #D7CAF2;
+	background-color: #fff3f9;
 	overflow: hidden;
 	background-image: url(../images/background_mobile.png);
 	background-repeat: no-repeat;
@@ -45,7 +45,7 @@
 
 #guestbook {
 	border-radius: 25px;
-	background-color: #E5F8FF;
+	background-color: rgba(229,248,255,0.6);
 	margin-top: 2%;
 	margin-right: 2%;
 	margin-bottom: 2%;
@@ -56,7 +56,7 @@
 #Footer {
 	border-radius: 25px;
 	height: 1.5em;
-	background-color: #D8F9E9;
+	background-color: rgba(216,249,233,0.6);
 	margin-top: 2%;
 	margin-right: 2%;
 	margin-bottom: 2%;
@@ -112,13 +112,13 @@
 }
 
 .button1{
-	background-color:#D2EEFF
+	background-color:rgba(210,238,255,0.8)
 }
 
 .button2{	
-	background-color:#FBFDAC
+	background-color:rgba(251,253,172,0.8)
 }
 
 .leaf{	
-	background-color:#FFEEF9
+	background-color:rgba(255,238,249,0.8)
 }
