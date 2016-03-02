@@ -126,14 +126,18 @@
 
 .FloatMenu {
     position:fixed;
-    right:8px;
+    right:0;
     bottom:0;
     min-height:20px;
     border:0; 
     padding:0;
     margin:0;
-    background-color: rgba(34, 34, 89, 0.9);  
+    background-color: rgba(0, 0, 0, 0);  
     z-index:999;
+}
+
+.FloatMenu li {
+  list-style-type:none;
 }
 
 .FloatMenu span {
@@ -141,6 +145,7 @@
   border-radius:5px;
   display:inline-block;
   padding:3px 8px;
+  margin:8px;
   text-decoration:none;
   background-color:#FBFDAC;
   position:relative; 
@@ -156,3 +161,4 @@
     border:1px solid #94a0b4;
     color:#000
 }
+
