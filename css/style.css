@@ -16,22 +16,22 @@ p.normal {
 p.title1 {
 	font-size: 180%;
 	font-weight : 700;
-	font-family: "SimSun", Sans-Serif;
+	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #1F4499;
 	text-align: center;
 }
 /*************分割标题字体***************/ 
 p.title2 {
-	font-size: 100%;
-	font-weight : 700;
-	font-family: "SimSun", Sans-Serif;
+	font-size: 120%;
+	font-weight : 400;
+	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 	text-align: center;
 }
 /*************行首标题字体***************/ 
 span.title3 {
-	font-weight : 700;
-	font-family: "SimSun", Sans-Serif;
+	font-weight : 400;
+	font-family: "Microsoft YaHei", Sans-Serif;
 }
 /*************关卡说明字体***************/ 
 span.comment {
