@@ -127,7 +127,7 @@
 .FloatMenu {
     position:fixed;
     right:8px;
-    bottom:8px;
+    bottom:0;
     min-height:20px;
     border:0; 
     padding:0;
