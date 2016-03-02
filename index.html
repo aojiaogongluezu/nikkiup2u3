@@ -17,12 +17,10 @@
 $(function(){		
 		try{
 	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-	        $("#logo").attr("src", "./images/mobile.png");
-			$("#Container").attr("url", "./images/background_mobile.png");
+		$("#Container").attr("url", "./images/background_mobile.png");
 	        $("#mycss").attr("href","./css/style_mobile.css");
 	    }else{	    		
-	        $("#logo").attr("src", "./images/pc.png");
-			$("#Container").attr("url", "./images/background_pc.png");
+		$("#Container").attr("url", "./images/background_pc.png");
 	        $("#mycss").attr("href","./css/style_pc.css");
 	    }
 		}catch(e){}
