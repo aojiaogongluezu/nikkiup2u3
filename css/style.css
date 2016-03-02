@@ -7,7 +7,7 @@ hr.mhr {
         "Microsoft YaHei"----微软雅黑   
 ******************************************/ 
 p.normal {
-	font-size: 100%;
+	font-size: 90%;
 	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 	line-height: 1.8em;
@@ -59,10 +59,24 @@ table {
 	border-width:1px 0px 0px 1px;
 	border-spacing:0;
 }
+
 td {
 	border:solid #999;
 	border-width:0px 1px 1px 0px;
 	border-spacing:0;
+}
+
+tr:nth-child(2n+1) {
+	background: #EAF2FA;
+	font-size: 90%;
+	text-align : left;
+	text-align : center;
+}
+tr:nth-child(2n) {
+	background: #DBE5F1;
+	font-size: 90%;
+	text-align : left;
+	text-align : center;
 }
 
 tr.head {
@@ -73,16 +87,3 @@ tr.head {
 	color:232425;
 }
 
-tr.tr1 {
-	font-size: 90%;
-	text-align : center;
-	background-color: #EAF2FA;
-	color:232425;
-}
-
-tr.tr2 {
-	font-size: 90%;
-	text-align : center;
-	background-color: #DBE5F1;
-	color:832425;
-}
