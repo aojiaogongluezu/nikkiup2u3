@@ -79,7 +79,7 @@ tr:nth-child(2n) {
 	text-align : center;
 }
 
-tr.head {
+tr:nth-child(1) {
 	font-size: 100%;
 	font-weight : 700;
 	text-align : center;
