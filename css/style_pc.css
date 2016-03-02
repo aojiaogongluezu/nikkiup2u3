@@ -1,4 +1,4 @@
-﻿/*************index.html相关***************/
+/*************index.html相关***************/
 #Container {
 	background-color: #fff3f9;
 	overflow: hidden;
@@ -52,6 +52,7 @@
 	margin-left: 15%;
 	padding: 2%;
 	box-shadow: 5px 5px 5px #888888;
+	z-index:2;
 }
 #Footer {
 	border-radius: 25px;
@@ -78,6 +79,7 @@
 	background-color: rgba(0, 0, 0, 0);
 	margin-top: 20%;
 	margin-left: 1%;
+	z-index:5;
 }
 .tree li {
     list-style-type:none;
@@ -93,10 +95,10 @@
     border-radius:5px;
     display:inline-block;
     padding:3px 8px;
-    text-decoration:none
+    text-decoration:none;
 }
 .tree li.parent_li>span {	
-    cursor:pointer    
+    cursor:pointer    ;
 }
 
 .tree li>ul {
@@ -106,18 +108,57 @@
 .tree li span:hover{
     background:#DDFEC8;
     border:1px solid #94a0b4;
-    color:#000
+    color:#000;
 }
 
 .button1{
-	background-color:rgba(210,238,255,0.8)
+	background-color:rgba(210,238,255,0.8);
 }
 
 .button2{	
-	background-color:rgba(251,253,172,0.8)
+	background-color:rgba(251,253,172,0.8);
 }
 
 .leaf{	
-	background-color:rgba(255,238,249,0.8)
+	background-color:rgba(255,238,249,0.8);
 }
 /*************菜单按钮相关**************/
+
+.FloatMenu {
+    position:fixed;
+    right:5%;
+    top:50%;
+    min-height:20px;
+    border:0; 
+    padding:0;
+    margin:0;
+    background-color: rgba(0, 0, 0, 0);  
+    z-index:5;
+}
+
+.FloatMenu li {
+  list-style-type:none;
+}
+
+.FloatMenu span {
+  border:1px solid #999;
+  border-radius:5px;
+  display:inline-block;
+  padding:3px 8px;
+  margin:8px;
+  text-decoration:none;
+  background-color:#FBFDAC;
+  position:relative; 
+}
+
+.FloatMenu span a {
+	text-decoration:none;
+	color:#333333;
+}
+
+.FloatMenu span:hover{
+    background:#DDFEC8;
+    border:1px solid #94a0b4;
+    color:#000
+}
+
