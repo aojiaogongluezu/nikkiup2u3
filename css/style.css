@@ -31,37 +31,25 @@ p.title2 {
 /*************行首标题字体***************/ 
 span.title3 {
 	font-weight : 700;
-	font-size: 95%;
-	font-family: "Microsoft YaHei", Sans-Serif;
 }
 /*************关卡说明字体***************/ 
 span.comment {
-	font-size: 95%;
-	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #5151FF;
 }
 /*************顶配字体***************/ 
 span.top {
-	font-size: 95%;
-	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #D52918;
 }
 /*************顶配代替字体***************/ 
 span.instead {
-	font-size: 95%;
-	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #306DE5;
 }
 /*************标配字体***************/ 
 span.general {
-	font-size: 95%;
-	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 }
 /*************新手字体***************/ 
 span.newguy {
-	font-size: 95%;
-	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #47A86E;
 }
 /*************table***************/ 
