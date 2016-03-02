@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -17,12 +17,10 @@
 $(function(){		
 		try{
 	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-	        $("#logo").attr("src", "./images/mobile.png");
-			$("#Container").attr("url", "./images/background_mobile.png");
+		$("#Container").attr("url", "./images/background_mobile.png");
 	        $("#mycss").attr("href","./css/style_mobile.css");
 	    }else{	    		
-	        $("#logo").attr("src", "./images/pc.png");
-			$("#Container").attr("url", "./images/background_pc.png");
+		$("#Container").attr("url", "./images/background_pc.png");
 	        $("#mycss").attr("href","./css/style_pc.css");
 	    }
 		}catch(e){}
@@ -78,6 +76,10 @@ window.onload = function(){
 </head>
 
 <body>
+<div class="FloatMenu">
+  <span><a href="#top">回到顶部</a></span><br>
+  <span><a href="welcome.html" target="framemain">回到首页</a></span>
+</div>
 <div id="Container" >
   <div class="tree">
     <ul>
