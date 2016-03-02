@@ -124,28 +124,34 @@
 	background-color:rgba(255,238,249,0.8)
 }
 
-#GoTop {
-	position:fixed;
-	right : 8px;
-	bottom : 8px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border:1px solid #999;
-	border-radius:5px;
-	display:inline-block;
-	padding:3px 8px;
-	text-decoration:none;
-	background-color:#FBFDAC;
-	z-index:5;
+.FloatMenu {
+    position:fixed;
+    right:8px;
+    bottom:8px;
+    min-height:20px;
+    border:0; 
+    padding:0;
+    margin:0;
+    background-color: rgba(0, 0, 0, 0);  
 }
 
-#GotopA {
+.FloatMenu span {
+  border:1px solid #999;
+  border-radius:5px;
+  display:inline-block;
+  padding:3px 8px;
+  text-decoration:none;
+  background-color:#FBFDAC;
+  position:relative; 
+}
+
+.FloatMenu span a {
 	text-decoration:none;
 	color:#333333;
 }
 
-#GoTop:hover{
-	background:#DDFEC8;
-	border:1px solid #94a0b4;
-	color:#000
+.FloatMenu span:hover{
+    background:#DDFEC8;
+    border:1px solid #94a0b4;
+    color:#000
 }
