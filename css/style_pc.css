@@ -39,7 +39,7 @@
 	margin-top: 20%;
 	margin-bottom: 2%;
 	margin-right: 15%;
-	margin-left: 35%;
+	margin-left: 15%;
 	
 }
 
@@ -126,9 +126,8 @@
 
 #GoTop {
 	position:fixed;
-	right:8%;
-	top:0;
-	bottom:0;
+	right:5%;
+	top:50%;
 	border:1px solid #999;
 	border-radius:5px;
 	display:inline-block;
