@@ -51,6 +51,7 @@
 	margin-left: 2%;
 	padding: 2%;
 	box-shadow: 5px 5px 5px #888888;
+	z-index:2;
 }
 #Footer {
 	border-radius: 25px;
@@ -79,6 +80,7 @@
 	margin-right: 0;
 	margin-bottom: 0;
 	margin-left: 0;
+	z-index:5;
 }
 .tree li {
     list-style-type:none;
@@ -121,3 +123,35 @@
 .leaf{	
 	background-color:rgba(255,238,249,0.8)
 }
+
+.FloatMenu {
+    position:fixed;
+    right:0px;
+    top:85%;
+    border:0px; 
+    padding:0px;
+    margin: 0px;
+    min-height:20px;
+    background-color: rgba(0, 0, 0, 0);  
+    z-index:999;
+}
+
+.FloatMenu span {
+  border:1px solid #999;
+  border-radius:5px;
+  padding:3px 8px;
+  margin-top: 5px;
+  background-color:rgba(251,253,172,0.8);
+}
+
+.FloatMenu span a {
+	text-decoration:none;
+	color:#333333;
+}
+
+.FloatMenu span:hover{
+    background:#DDFEC8;
+    border:1px solid #94a0b4;
+    color:#000
+}
+
