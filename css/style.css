@@ -24,13 +24,14 @@ p.title1 {
 p.title2 {
 	font-size: 100%;
 	font-weight : 700;
-	font-family: "Microsoft YaHei", Sans-Serif;
+	font-family: "SimSun", Sans-Serif;
 	color: #111111;
 	text-align: center;
 }
 /*************行首标题字体***************/ 
 span.title3 {
 	font-weight : 700;
+	font-family: "SimSun", Sans-Serif;
 }
 /*************关卡说明字体***************/ 
 span.comment {
