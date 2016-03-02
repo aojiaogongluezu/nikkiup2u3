@@ -39,7 +39,7 @@
 	margin-top: 20%;
 	margin-bottom: 2%;
 	margin-right: 15%;
-	margin-left: 15%;
+	margin-left: 35%;
 	
 }
 
@@ -95,10 +95,10 @@
     border-radius:5px;
     display:inline-block;
     padding:3px 8px;
-    text-decoration:none
+    text-decoration:none;
 }
 .tree li.parent_li>span {	
-    cursor:pointer    
+    cursor:pointer    ;
 }
 
 .tree li>ul {
@@ -108,19 +108,19 @@
 .tree li span:hover{
     background:#DDFEC8;
     border:1px solid #94a0b4;
-    color:#000
+    color:#000;
 }
 
 .button1{
-	background-color:rgba(210,238,255,0.8)
+	background-color:rgba(210,238,255,0.8);
 }
 
 .button2{	
-	background-color:rgba(251,253,172,0.8)
+	background-color:rgba(251,253,172,0.8);
 }
 
 .leaf{	
-	background-color:rgba(255,238,249,0.8)
+	background-color:rgba(255,238,249,0.8);
 }
 /*************菜单按钮相关**************/
 
@@ -128,15 +128,13 @@
 	position:fixed;
 	left:85%;
 	top:5%;
-	-moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  border:1px solid #999;
-  border-radius:5px;
-  display:inline-block;
-  padding:3px 8px;
-  text-decoration:none;
-  background-color:#FBFDAC;
-  z-index:5;
+	border:1px solid #999;
+	border-radius:5px;
+	display:inline-block;
+	padding:3px 8px;
+	text-decoration:none;
+	background-color:#FBFDAC;
+	z-index:5;
 }
 
 #GotopA {
@@ -144,8 +142,8 @@
 	color:#333333;
 }
 
-#GoTop:hover{
-    background:#DDFEC8;
-    border:1px solid #94a0b4;
-    color:#000
+#GoTop:hover {
+	background:#DDFEC8;
+	border:1px solid #94a0b4;
+	color:#000
 }
