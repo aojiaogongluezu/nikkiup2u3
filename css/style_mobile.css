@@ -34,12 +34,12 @@
 	border-radius: 25px;
 	background-color: rgba(255, 255, 255, 0.6); 
 	padding: 2%;
-	box-shadow: 5px 5px 5px #888888;
+	//box-shadow: 5px 5px 5px #888888;
 	margin-top: 30%;
 	margin-right: 2%;
 	margin-bottom: 2%;
 	margin-left: 2%;
-	
+	border:1px solid #278FC9;
 }
 
 #guestbook {
@@ -50,7 +50,8 @@
 	margin-bottom: 2%;
 	margin-left: 2%;
 	padding: 2%;
-	box-shadow: 5px 5px 5px #888888;
+	//box-shadow: 5px 5px 5px #888888;
+	border:1px solid #278FC9;
 	z-index:2;
 }
 #Footer {
@@ -65,7 +66,8 @@
 	padding-top: 2%;
 	padding-bottom: 2%;
 	padding-right: 20%;
-	box-shadow: 5px 5px 5px #888888;
+	//box-shadow: 5px 5px 5px #888888;
+	border:1px solid #278FC9;
 }
 /*************index.html相关***************/
 
