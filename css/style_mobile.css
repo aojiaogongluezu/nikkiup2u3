@@ -126,8 +126,8 @@
 
 #GoTop {
 	position:fixed;
-	right : 5px;
-	bottom : 5px;
+	right : 8px;
+	bottom : 8px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border:1px solid #999;
