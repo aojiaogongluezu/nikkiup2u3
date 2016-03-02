@@ -7,7 +7,7 @@ hr.mhr {
         "Microsoft YaHei"----微软雅黑   
 ******************************************/ 
 p.normal {
-	font-size: 90%;
+	font-size: 100%;
 	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 	line-height: 1.8em;
@@ -23,14 +23,14 @@ p.title1 {
 /*************分割标题字体***************/ 
 p.title2 {
 	font-size: 120%;
-	font-weight : 400;
+	font-weight : 600;
 	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 	text-align: center;
 }
 /*************行首标题字体***************/ 
 span.title3 {
-	font-weight : 400;
+	font-weight : 500;
 	font-family: "Microsoft YaHei", Sans-Serif;
 }
 /*************关卡说明字体***************/ 
