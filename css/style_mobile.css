@@ -51,6 +51,7 @@
 	margin-left: 2%;
 	padding: 2%;
 	box-shadow: 5px 5px 5px #888888;
+	z-index:2;
 }
 #Footer {
 	border-radius: 25px;
@@ -79,6 +80,7 @@
 	margin-right: 0;
 	margin-bottom: 0;
 	margin-left: 0;
+	z-index:5;
 }
 .tree li {
     list-style-type:none;
