@@ -135,23 +135,15 @@
     margin-bottom: 10px;
     margin-left: 0px;
     min-height:10px;
-    background-color: rgba(23, 98, 23, 1);  
+    background-color: rgba(89, 98, 23, 1);  
     z-index:999;
-}
-
-.FloatMenu li {
-  list-style-type:none;
 }
 
 .FloatMenu span {
   border:1px solid #999;
   border-radius:5px;
-  display:inline-block;
   padding:3px 8px;
-  margin:8px;
-  text-decoration:none;
   background-color:#FBFDAC;
-  position:relative; 
 }
 
 .FloatMenu span a {
