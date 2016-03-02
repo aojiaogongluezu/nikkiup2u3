@@ -132,7 +132,7 @@
     border:0; 
     padding:0;
     margin:0;
-    background-color: rgba(34, 34, 89, 0);  
+    background-color: rgba(34, 34, 89, 0.9);  
     z-index:999;
 }
 
