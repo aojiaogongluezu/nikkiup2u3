@@ -139,7 +139,8 @@
 .FloatMenu span {
   border:1px solid #999;
   border-radius:5px;
-  padding:0px 8px;
+  padding:3px 8px;
+  margin-top: 5px;
   background-color:rgba(251,253,172,0.8);
 }
 
