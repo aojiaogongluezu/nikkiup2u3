@@ -75,7 +75,7 @@
 	min-height: 20px;
 	border: 0;
 	padding: 0;
-	background-color: rgba(0, 40, 0, 1);
+	background-color: rgba(0, 0, 0, 0);
 	margin-top: 29%;
 	margin-right: 0;
 	margin-bottom: 0;
@@ -127,15 +127,12 @@
 .FloatMenu {
     position:fixed;
     right:0px;
-    top:80%;
+    top:85%;
     border:0px; 
     padding:0px;
-    margin-top: 0px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 0px;
+    margin: 0px;
     min-height:20px;
-    background-color: rgba(139, 98, 23, 1);  
+    background-color: rgba(0, 0, 0, 0);  
     z-index:999;
 }
 
