@@ -47,6 +47,10 @@ $(function(){
 	      }
     });
 });
+
+function gotop(){ 
+        window.scrollTo(0,0); 
+    } 
 </script>
 
 <!--评论框-->
@@ -78,7 +82,7 @@ window.onload = function(){
 <body>
 <div class="FloatMenu">
   <span><a href="#top">回到顶部</a></span><br>
-  <span><a href="welcome.html" target="framemain">回到首页</a></span>
+  <span><a href="welcome.html" target="framemain"  onclick="gotop()">回到首页</a></span>
 </div>
 <div id="Container" >
   <div class="tree">
