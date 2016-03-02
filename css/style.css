@@ -23,14 +23,14 @@ p.title1 {
 /*************分割标题字体***************/ 
 p.title2 {
 	font-size: 110%;
-	font-weight : 600;
+	font-weight : 750;
 	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 	text-align: center;
 }
 /*************行首标题字体***************/ 
 span.title3 {
-	font-weight : 500;
+	font-weight : 750;
 	font-family: "Microsoft YaHei", Sans-Serif;
 }
 /*************关卡说明字体***************/ 
