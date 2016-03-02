@@ -136,11 +136,16 @@
     z-index:5;
 }
 
+.FloatMenu li {
+  list-style-type:none;
+}
+
 .FloatMenu span {
   border:1px solid #999;
   border-radius:5px;
   display:inline-block;
   padding:3px 8px;
+  margin:8px;
   text-decoration:none;
   background-color:#FBFDAC;
   position:relative; 
@@ -156,3 +161,4 @@
     border:1px solid #94a0b4;
     color:#000
 }
+
