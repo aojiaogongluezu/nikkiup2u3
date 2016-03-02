@@ -124,44 +124,34 @@
 }
 /*************菜单按钮相关**************/
 
-#GoTop {
-	position:fixed;
-	right:5%;
-	top:50%;
-	border:1px solid #999;
-	border-radius:5px;
-	display:inline-block;
-	padding:3px 16px 3px 16px;
-	text-decoration:none;
-	background-color:#FBFDAC;
-	z-index:5;
+.FloatMenu {
+    position:fixed;
+		right:5%;
+		top:50%;
+    min-height:20px;
+    border:0; 
+    padding:0;
+    margin:0;
+    background-color: rgba(0, 0, 0, 0);  
 }
 
-#GoHome {
-	position:fixed;
-	right:5%;
-	top:50%;
-	border:1px solid #999;
-	border-radius:5px;
-	display:inline-block;
-	padding:3px 16px 3px 16px;
-	text-decoration:none;
-	background-color:#FBFDAC;
-	z-index:5;
+.FloatMenu span {
+  border:1px solid #999;
+  border-radius:5px;
+  display:inline-block;
+  padding:3px 8px;
+  text-decoration:none;
+  background-color:#FBFDAC;
+  position:relative; 
 }
 
-#GoText {
+.FloatMenu span a {
 	text-decoration:none;
 	color:#333333;
 }
 
-#GoTop:hover {
-	background:#DDFEC8;
-	border:1px solid #94a0b4;
-	color:#000
-}
-#GoHome:hover {
-	background:#DDFEC8;
-	border:1px solid #94a0b4;
-	color:#000
+.FloatMenu span:hover{
+    background:#DDFEC8;
+    border:1px solid #94a0b4;
+    color:#000
 }
