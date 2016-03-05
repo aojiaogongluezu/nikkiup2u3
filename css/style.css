@@ -87,3 +87,8 @@ tr:nth-child(1) {
 	background-color: #BFDBFF;
 	color:232425;
 }
+
+/*************防滚条***************/ 
+body {
+    overflow-y:hidden;
+}
