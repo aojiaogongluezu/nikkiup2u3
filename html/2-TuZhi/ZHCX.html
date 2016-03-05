@@ -25,12 +25,15 @@
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/pattern.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/convert.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/setcategory.js'></script>
-		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/nikki.js'></script>
+		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/material.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='ZHCX.js'></script>
 		<script type='text/javascript' charset="UTF-8">
 			$(document).ready(function () {
 				$('#lastupd').html(wardrobe_lastupd.replace("/","-").replace("/","-"));
 			});
+			function tab(text,attr){
+				return '<td'+(attr? ' '+attr : '')+' style="text-align:left">'+text+'</td>';
+			}
 		</script>
 	</head>
 	<body>
