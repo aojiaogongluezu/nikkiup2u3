@@ -3,7 +3,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
-		<title>材料数量综合查询</title>
+		<title>材料需求综合查询</title>
 		<link rel="stylesheet" href="../../css/style.css">
 		<style>
 			a{color:#337ab7;text-decoration:none}
@@ -27,13 +27,18 @@
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/setcategory.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/nikki.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='ZHCX.js'></script>
+		<script type='text/javascript' charset="UTF-8">
+			$(document).ready(function () {
+				$('#lastupd').html(wardrobe_lastupd.replace("/","-").replace("/","-"));
+			});
+		</script>
 	</head>
 	<body>
 	<div class="myframe" >
 		<p class="title1">材料数量综合查询</p>
 		<hr class="mhr">
 		<p class="normal">
-			<span class="title3">更新时间：</span>2016-03-05<br>
+			<span class="title3">更新时间：</span><span id="lastupd">2016-03-05</span><br>
 			<span class="title3">更新人员：</span>Rean翎
 		</p>
 		<p class='title' style="display:none">
