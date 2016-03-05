@@ -87,3 +87,8 @@ tr:nth-child(1) {
 	background-color: #BFDBFF;
 	color:232425;
 }
+
+/*************frame內留白***************/
+body {
+    padding: 20px;
+}
