@@ -448,11 +448,14 @@ window.onload = function(){
         function reinitIframe(){
             var iframe = document.getElementById("framemain");
             try{
-                var bHeight = 300;//iframe.contentWindow.document.body.scrollHeight;
+                var bHeight = iframe.contentWindow.document.body.scrollHeight;
                 var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
-                var height = Math.max(bHeight, dHeight);
-                iframe.height =  height;
-                console.log(height);
+                var fHeight = iframe.height;
+                if(dHeight&&fHeight){
+                    if(dHeight>fHeight||dHeight<fHeight-500) {iframe.height = Math.max(250, dHeight)+50;}
+                }else{
+                    iframe.height = Math.max(bHeight, dHeight)+50;
+                }
             }catch (ex){}
         }
         window.setInterval("reinitIframe()", 500);  
