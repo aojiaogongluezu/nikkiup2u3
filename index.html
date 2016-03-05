@@ -452,9 +452,9 @@ window.onload = function(){
                 var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
                 var fHeight = iframe.height;
                 if(dHeight&&fHeight){
-                    if(dHeight>fHeight||dHeight<fHeight-500) {iframe.height = Math.max(250, dHeight)+50;}
+                    if(dHeight>fHeight||dHeight<fHeight-300) {iframe.height = Math.max(300, dHeight);}
                 }else{
-                    iframe.height = Math.max(bHeight, dHeight)+50;
+                    iframe.height = Math.max(bHeight, dHeight);
                 }
             }catch (ex){}
         }
