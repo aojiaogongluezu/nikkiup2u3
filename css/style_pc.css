@@ -67,6 +67,9 @@
 	//box-shadow: 5px 5px 5px #888888;
 	border:1px solid #278FC9;
 }
+#lmenu {
+	display: none;
+}
 /*************index.html相关***************/
 
 
