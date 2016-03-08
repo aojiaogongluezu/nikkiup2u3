@@ -12,6 +12,13 @@ p.normal {
 	color: #111111;
 	line-height: 1.8em;
 }
+p.center {
+	font-size: 100%;
+	font-family: "Microsoft YaHei", Sans-Serif;
+	color: #111111;
+	line-height: 1.8em;
+	text-align: center;
+}
 /*************关卡名字字体***************/ 
 p.title1 {
 	font-size: 180%;
