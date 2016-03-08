@@ -19,6 +19,14 @@ $(function(){
 	    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 		$("#Container").attr("url", "./images/background_mobile.png");
 	        $("#mycss").attr("href","./css/style_mobile.css");
+	        $('.linkmenu').on('click', function (e) {    		
+	    		$('#bmenu').css("display", "none");
+	    		$('#lmenu').css("display", "block");    		
+	        });
+	    	$('#lmenu').on('click', function (e) {    		
+	    		$('#bmenu').css("display", "block");
+	    		$('#lmenu').css("display", "none");    		
+	    	});
 	    }else{	    		
 		$("#Container").attr("url", "./images/background_pc.png");
 	        $("#mycss").attr("href","./css/style_pc.css");
@@ -26,14 +34,7 @@ $(function(){
 		}catch(e){}
     $('.tree li:has(ul)').addClass('parent_li');
     
-    $('.linkmenu').on('click', function (e) {    		
-    		$('#bmenu').css("display", "none");
-    		$('#lmenu').css("display", "block");    		
-    });
-    $('#lmenu').on('click', function (e) {    		
-    		$('#bmenu').css("display", "block");
-    		$('#lmenu').css("display", "none");    		
-    });
+    
     
     $('.tree li.parent_li > span').on('click', function (e) {
         var children = $(this).parent('li.parent_li').find(' > ul > li');
