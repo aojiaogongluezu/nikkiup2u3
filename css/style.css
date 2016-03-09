@@ -44,13 +44,12 @@ p.title2 {
 	font-size: 110%;
 	font-weight : 750;
 	font-family: "Microsoft YaHei", Sans-Serif;
-	color: #111111;
+	color: #1F4499;
 	text-align: center;
 }
 /*************行首标题字体***************/ 
 span.title3 {
 	font-weight : 750;
-	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #0CC;
 }
 /*************关卡说明字体***************/ 
