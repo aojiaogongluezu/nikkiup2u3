@@ -6,13 +6,15 @@ hr.mhr {
 	"SimSun"-------------宋体
         "Microsoft YaHei"----微软雅黑   
 ******************************************/ 
-/*************正文左对齐字体***************/ 
-p.normal {
+/*************正文段首缩进字体***************/ 
+p.indenttxt {
 	font-size: 100%;
 	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 	line-height: 1.8em;
+	text-indent:2em;
 }
+
 /*************正文居中字体***************/ 
 p.center {
 	font-size: 100%;
@@ -20,6 +22,14 @@ p.center {
 	color: #111111;
 	line-height: 1.8em;
 	text-align: center;
+}
+
+/*************攻略左对齐字体***************/ 
+p.normal {
+	font-size: 100%;
+	font-family: "Microsoft YaHei", Sans-Serif;
+	color: #111111;
+	line-height: 1.8em;
 }
 /*************关卡名字字体***************/ 
 p.title1 {
