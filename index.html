@@ -475,7 +475,7 @@ window.onload = function(){
     </ul>
   </div>
   <div id = "Content-Main">
-    <iframe name="framemain" src="welcome.html" frameborder="0" width="100%" id="framemain" onload="this.height=300" style="overflow-y:hidden;overflow-x:scroll;"></iframe>
+    <iframe name="framemain" src="welcome.html" frameborder="0" width="100%" id="framemain" onload="this.height=500" style="overflow-y:hidden;overflow-x:scroll;"></iframe>
     <script type="text/javascript">
         function reinitIframe(){
             var iframe = document.getElementById("framemain");
@@ -484,7 +484,7 @@ window.onload = function(){
                 var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
                 var fHeight = iframe.height;
                 if(dHeight&&fHeight){
-                    if(dHeight>fHeight||dHeight<fHeight-300) {iframe.height = Math.max(300, dHeight);}
+                    if(dHeight>fHeight||dHeight<fHeight-500) {iframe.height = Math.max(500, dHeight);}
                 }else{
                     iframe.height = Math.max(bHeight, dHeight);
                 }
