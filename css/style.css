@@ -89,13 +89,13 @@ td {
 }
 
 tr:nth-child(2n+1) {
-	background: #EAF2FA;
+	background: rgba(234, 242, 250, 0.7);
 	font-size: 90%;
 	text-align : left;
 	text-align : center;
 }
 tr:nth-child(2n) {
-	background: #DBE5F1;
+	background: rgba(219, 229, 241, 0.7);
 	font-size: 90%;
 	text-align : left;
 	text-align : center;
@@ -105,7 +105,7 @@ tr:nth-child(1) {
 	font-size: 100%;
 	font-weight : 700;
 	text-align : center;
-	background-color: #BFDBFF;
+	background-color: rgba(191, 219, 255, 0.9);
 	color:232425;
 }
 
