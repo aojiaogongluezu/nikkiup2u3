@@ -89,13 +89,13 @@ td {
 }
 
 tr:nth-child(2n+1) {
-	background: rgba(234, 242, 250, 0.7);
+	background: rgba(234, 242, 250, 0.5);
 	font-size: 90%;
 	text-align : left;
 	text-align : center;
 }
 tr:nth-child(2n) {
-	background: rgba(219, 229, 241, 0.7);
+	background: rgba(219, 229, 241, 0.5);
 	font-size: 90%;
 	text-align : left;
 	text-align : center;
