@@ -58,7 +58,7 @@ function init(){
 	table+=remark('*勾选代表已有/不需要部件');
 	document.getElementById("table").innerHTML = table;
 	
-	var input='<table border="0">';
+	var input='<table border="0">'+tr(td(''));
 	input+=tr(td('已消费档次：'+selectBox('already_consume','calc(calcind)',consume)));
 	input+=tr(td('預計消费档次：'+selectBox('plan_consume','calc(calcind)',consume)));
 	input+=tr(td('剩余天数：'+inputBox('remain_days','calc(calcind)')));
@@ -66,11 +66,11 @@ function init(){
 	input+=tr(td('当前誓言戒指：'+inputBox('current','calc(calcind)')));
 	input+=tr(td('预计胜率(%)：'+inputBox('pct_exp','calc(1)'))/*+td(remark('*请只选择一项填写，会自动计算另一项'),'rowspan="2"')*/);
 	input+=tr(td('预计失败场数：'+inputBox('wrong_exp','calc(2)')+'<br>'+remark('*只需填写一项，会自动计算另一项')));
-	input+=tr(td('<hr>'));
 	input+='</table>';
+	input+='<hr>';
 	document.getElementById("input").innerHTML = input;
 	document.getElementById("plan_consume").value = 1999;
-		
+	
 	var date_now=new Date();
 	var time_end=new Date("3/17/2016 23:59:59 GMT+0800").getTime();
 	var time_now=date_now.getTime();
@@ -146,7 +146,7 @@ function calc(ind){
 	var to_buy=Math.max(0,Math.ceil(diff_times/once));
 	var to_pay=to_buy*price;
 	
-	var calcres='<table>';
+	var calcres='<table>'+tr(td(''));
 	calcres+=tr(td('还需刷'+rem+'个誓言戒指（共需'+aim+'个）'));
 	calcres+=tr(td('还需挑战'+times+'次（免费'+to_get_times+'次）'));
 	calcres+=tr(td('还需购买'+to_buy+'次，花钻'+to_pay+'个'));
