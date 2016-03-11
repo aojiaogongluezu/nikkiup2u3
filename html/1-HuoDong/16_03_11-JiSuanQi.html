@@ -64,8 +64,7 @@ function init(){
 	input+=tr(td('剩余天数：'+inputBox('remain_days','calc(calcind)'),'style="text-align:left"'));
 	input+=tr(td('今天剩余次数：'+inputBox('remain_today','calc(calcind)'),'style="text-align:left"'));
 	input+=tr(td('当前誓言戒指：'+inputBox('current','calc(calcind)'),'style="text-align:left"'));
-	input+=tr(td('预计胜率(%)：'+inputBox('pct_exp','calc(1)'),'style="text-align:left"')/*+td(remark('*请只选择一项填写，会自动计算另一项'),'rowspan="2"')*/);
-	input+=tr(td('预计失败场数：'+inputBox('wrong_exp','calc(2)')+'<br>'+remark('*只需填写一项，会自动计算另一项'),'style="text-align:left"'));
+	input+=tr(td('预计胜率(%)：'+inputBox('pct_exp','calc(1)')+'<br>预计失败场数：'+inputBox('wrong_exp','calc(2)')+'<br>'+remark('*只需填写一项，会自动计算另一项'),'style="text-align:left"'));
 	input+='</table>';
 	input+='<hr>';
 	document.getElementById("input").innerHTML = input;
