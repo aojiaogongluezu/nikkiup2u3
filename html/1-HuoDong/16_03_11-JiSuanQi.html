@@ -155,7 +155,7 @@ function calc(ind){
 	var to_pay_daily=(to_pay/remain_days).toFixed(1);
 	var stamina_daily_tot=(stamina_total/remain_days).toFixed(1);
 	
-	var calcres='<table>';
+	var calcres='<table>'+tr(td('计算结果：'));
 	calcres+=tr(td('还需刷'+rem+'个誓言戒指（共需'+aim+'个）'));
 	calcres+=tr(td('还需挑战'+times+'次（免费'+to_get_times+'次）'));
 	calcres+=tr(td('还需'+diff_stamina+'体+每日'+stamina_daily+'体×'+remain_days+'天+今天'+stamina_today+'体='+stamina_total+'体'));
