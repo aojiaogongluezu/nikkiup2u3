@@ -58,7 +58,7 @@ function init(){
 	table+=remark('*勾选代表已有/不需要部件');
 	document.getElementById("table").innerHTML = table;
 	
-	var input='<table border="0">'+tr(td(''));
+	var input='<table border="0">'+tr(td(''),'style="display:none"');
 	input+=tr(td('已消费档次：'+selectBox('already_consume','calc(calcind)',consume)));
 	input+=tr(td('預計消费档次：'+selectBox('plan_consume','calc(calcind)',consume)));
 	input+=tr(td('剩余天数：'+inputBox('remain_days','calc(calcind)')));
@@ -146,7 +146,7 @@ function calc(ind){
 	var to_buy=Math.max(0,Math.ceil(diff_times/once));
 	var to_pay=to_buy*price;
 	
-	var calcres='<table>'+tr(td(''));
+	var calcres='<table>'+tr(td('计算结果：'));
 	calcres+=tr(td('还需刷'+rem+'个誓言戒指（共需'+aim+'个）'));
 	calcres+=tr(td('还需挑战'+times+'次（免费'+to_get_times+'次）'));
 	calcres+=tr(td('还需购买'+to_buy+'次，花钻'+to_pay+'个'));
