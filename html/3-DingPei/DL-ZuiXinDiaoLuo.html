@@ -1,68 +1,3170 @@
+
 <!DOCTYPE html>
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../../css/style.css" />
-<style>
-table.calcByAll {width:100%; table-layout:fixed; min-width:285px;}
-table.calcByAll tr td:nth-child(-n+3) {width:10%; color:black;}
-tr:nth-child(1) td {color:black;}
-tr td {color:red;}
-.nobr {white-space:nowrap;}
-.inSec {color:black;}
-.limit {display:none;}
-</style>
-<script>
-function showTop(id){
-	document.getElementById('cell'+id+'_f').style.display="block";
-	document.getElementById('cell'+id).style.display="none";
-}
-function hideTop(id){
-	document.getElementById('cell'+id+'_f').style.display="none";
-	document.getElementById('cell'+id).style.display="block";
-}
-function chgMode(mode){
-	var x=[];
-	if (mode=='l'){
-		x = document.getElementsByClassName('norm');
-		for (var i=0;i<x.length;i++) {x[i].style.display="none";}
-		x = document.getElementsByClassName('limit');
-		for (var i=0;i<x.length;i++) {x[i].style.display="inline";}
-	}else{
-		x = document.getElementsByClassName('norm');
-		for (var i=0;i<x.length;i++) {x[i].style.display="inline";}
-		x = document.getElementsByClassName('limit');
-		for (var i=0;i<x.length;i++) {x[i].style.display="none";}
-	}
-}
-</script>
+<link rel="stylesheet" type="text/css" href="dp-style.css" />
+<script type="text/javascript" src="dp.js"></script>
 </head>
 
 <body>
 <div class="myframe" >
   <p class="title1">最新章节</p>
   <hr class="mhr"/>
-  <p class="normal"><span class="title3">更新时间：</span>2016-03-10<br>
+  <p class="normal"><span class="title3">更新时间：</span>2016-03-12<br>
     <span class="title3">更新人员：</span>Rean翎</p>
-  <form action="">
-  <input type="radio" name="limit" id="limitn" value="n" checked onclick="chgMode(this.value)"><label for="limitn">标准权重</label>
-  <input type="radio" name="limit" id="limitl" value="l" onclick="chgMode(this.value)"><label for="limitl">极限权重</label><br>
-  </form>
+  <p id="radio"></p>
+<!--child content start-->
 <p class="title2">水芝之约</p>
 <span class="norm">
-  <table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟</td><td>关卡</td></tr><tr><td rowspan="1">水华十年</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水华十年·夏</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水华十年·雨</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水华十年·雪</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水华</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水芝之约</td><td rowspan="1">连衣裙</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">3-5(第5)</span></td><td class="inSec"><span class="nobr">1-3(第3)</span>, <span class="nobr">9-9-3(第5)</span>, <span class="nobr">12-6(第4)</span></td></tr><tr><td rowspan="1">水芝之约·夏</td><td rowspan="1">连衣裙</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">奇幻(第5)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">1-3(第5)</span>, <span class="nobr">2-8(第5)</span>, <span class="nobr">3-7(第5)</span>, <span class="nobr">5-10(第4)</span>, <span class="nobr">12-6(第5)</span></td></tr><tr><td rowspan="2">水芝</td><td rowspan="2">连衣裙</td><td>顶配</td><td></td><td></td><td><span class="nobr">4-4</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">1-6(第2)</span>, <span class="nobr">4-9(第5)</span>, <span class="nobr">6-2(第5)</span>, <span class="nobr">6-11(第5)</span>, <span class="nobr">8-5(第3)</span></td></tr><tr><td rowspan="1">水芸云伤</td><td rowspan="1">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-1(第3)</span></td><td class="inSec"><span class="nobr">1-3(第2)</span>, <span class="nobr">7-4(第3)</span>, <span class="nobr">12-6(第2)</span>, <span class="nobr">12-支1(第3)</span></td></tr><tr><td rowspan="1">水芸云伤·夏</td><td rowspan="1">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-4(第3)</span>, <span class="nobr">3-5(第4)</span></td><td class="inSec"><span class="nobr">1-3(第5)</span>, <span class="nobr">9-9-3(第4)</span></td></tr><tr><td rowspan="1">水芸</td><td rowspan="1">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span id="cell3715_sn3"><a href="" onclick="showTop('3715_sn3');return false;">共7关</a></span><span id="cell3715_sn3_f" style="display:none"><span class="nobr">4-9(第5)</span>, <span class="nobr">5-6(第5)</span>, <span class="nobr">6-2(第5)</span>, <span class="nobr">6-11(第5)</span>, <span class="nobr">8-3(第3)</span>, <span class="nobr">8-5(第3)</span>, <span class="nobr">10-2(第5)</span><br><span class="nobr"><a href="" onclick="hideTop('3715_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">水旦一酒</td><td rowspan="1">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-1(第3)</span></td><td class="inSec"><span class="nobr">1-3(第2)</span>, <span class="nobr">12-6(第2)</span>, <span class="nobr">12-支1(第3)</span></td></tr><tr><td rowspan="2">水旦</td><td rowspan="2">饰品-头饰</td><td>顶配</td><td><span class="nobr">夏日</span></td><td></td><td><span class="nobr">7-支2</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">1-3(第2)</span></td><td class="inSec"><span id="cell3726_sn3"><a href="" onclick="showTop('3726_sn3');return false;">共8关</a></span><span id="cell3726_sn3_f" style="display:none"><span class="nobr">1-2(第4)</span>, <span class="nobr">1-6(第3)</span>, <span class="nobr">3-4(第3)</span>, <span class="nobr">4-4(第5)</span>, <span class="nobr">5-6(第5)</span>, <span class="nobr">11-3(第4)</span>, <span class="nobr">11-支2(第2)</span>, <span class="nobr">12-9(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3726_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">水链连心</td><td rowspan="1">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">绝色(第4)</span></td><td class="inSec"><span class="nobr">2-4(第3)</span>, <span class="nobr">3-5(第2)</span></td><td class="inSec"><span id="cell3728_sn3"><a href="" onclick="showTop('3728_sn3');return false;">共10关</a></span><span id="cell3728_sn3_f" style="display:none"><span class="nobr">1-3(第4)</span>, <span class="nobr">3-1(第5)</span>, <span class="nobr">4-7(第5)</span>, <span class="nobr">5-3(第5)</span>, <span class="nobr">7-2(第3)</span>, <span class="nobr">7-6(第5)</span>, <span class="nobr">7-支1(第5)</span>, <span class="nobr">9-9-3(第3)</span>, <span class="nobr">10-9-2(第5)</span>, <span class="nobr">12-6(第5)</span><br><span class="nobr"><a href="" onclick="hideTop('3728_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">水链连心·夏</td><td rowspan="1">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">绝色(第5)</span></td><td class="inSec"><span class="nobr">2-4(第2)</span>, <span class="nobr">3-5(第3)</span></td><td class="inSec"><span id="cell3741_sn3"><a href="" onclick="showTop('3741_sn3');return false;">共6关</a></span><span id="cell3741_sn3_f" style="display:none"><span class="nobr">1-3(第5)</span>, <span class="nobr">4-7(第4)</span>, <span class="nobr">5-3(第3)</span>, <span class="nobr">7-2(第5)</span>, <span class="nobr">7-6(第4)</span>, <span class="nobr">9-9-3(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3741_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">水笛由念</td><td rowspan="2">饰品-手持·左</td><td>顶配</td><td></td><td><span class="nobr">2-1</span></td><td><span id="cell3729_tn3"><a href="" onclick="showTop('3729_tn3');return false;">共8关</a></span><span id="cell3729_tn3_f" style="display:none"><span class="nobr">1-3</span>, <span class="nobr">4-9</span>, <span class="nobr">6-11</span>, <span class="nobr">7-4</span>, <span class="nobr">9-4</span>, <span class="nobr">10-2</span>, <span class="nobr">12-6</span>, <span class="nobr">12-支1</span><br><span class="nobr"><a href="" onclick="hideTop('3729_tn3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-4(第5)</span>, <span class="nobr">3-5(第3)</span></td><td class="inSec"><span class="nobr">5-3(第2)</span>, <span class="nobr">8-3(第5)</span>, <span class="nobr">8-5(第2)</span>, <span class="nobr">9-9-3(第4)</span></td></tr><tr><td rowspan="1">水笛由念·夏</td><td rowspan="1">饰品-手持·左</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-4(第5)</span>, <span class="nobr">3-5(第3)</span></td><td class="inSec"><span class="nobr">1-3(第4)</span>, <span class="nobr">4-7(第5)</span>, <span class="nobr">5-3(第4)</span>, <span class="nobr">9-9-3(第3)</span></td></tr><tr><td rowspan="2">水纱少灵</td><td rowspan="2">饰品-特殊·肩部</td><td>顶配</td><td><span class="nobr">奇幻</span></td><td><span class="nobr">2-1</span>, <span class="nobr">2-5</span></td><td><span id="cell3730_tn3"><a href="" onclick="showTop('3730_tn3');return false;">共17关</a></span><span id="cell3730_tn3_f" style="display:none"><span class="nobr">1-3</span>, <span class="nobr">2-8</span>, <span class="nobr">3-7</span>, <span class="nobr">4-9</span>, <span class="nobr">5-5</span>, <span class="nobr">5-10</span>, <span class="nobr">6-2</span>, <span class="nobr">6-11</span>, <span class="nobr">7-4</span>, <span class="nobr">7-8</span>, <span class="nobr">8-5</span>, <span class="nobr">8-9</span>, <span class="nobr">9-4</span>, <span class="nobr">10-2</span>, <span class="nobr">12-3</span>, <span class="nobr">12-6</span>, <span class="nobr">12-支1</span><br><span class="nobr"><a href="" onclick="hideTop('3730_tn3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">女王(第4)</span>, <span class="nobr">绝色(第4)</span></td><td class="inSec"><span id="cell3730_sn2"><a href="" onclick="showTop('3730_sn2');return false;">共6关</a></span><span id="cell3730_sn2_f" style="display:none"><span class="nobr">1-5(第3)</span>, <span class="nobr">1-6(第4)</span>, <span class="nobr">2-2(第4)</span>, <span class="nobr">2-4(第3)</span>, <span class="nobr">3-4(第4)</span>, <span class="nobr">3-5(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3730_sn2');return false;">收起</a></span></span></td><td class="inSec"><span id="cell3730_sn3"><a href="" onclick="showTop('3730_sn3');return false;">共23关</a></span><span id="cell3730_sn3_f" style="display:none"><span class="nobr">2-9(第4)</span>, <span class="nobr">2-支1(第5)</span>, <span class="nobr">3-2(第4)</span>, <span class="nobr">3-11(第4)</span>, <span class="nobr">3-支1(第3)</span>, <span class="nobr">3-支2(第3)</span>, <span class="nobr">4-7(第3)</span>, <span class="nobr">5-3(第2)</span>, <span class="nobr">5-4(第4)</span>, <span class="nobr">5-9(第4)</span>, <span class="nobr">6-9(第4)</span>, <span class="nobr">6-支1(第5)</span>, <span class="nobr">7-2(第4)</span>, <span class="nobr">7-6(第2)</span>, <span class="nobr">7-7(第4)</span>, <span class="nobr">8-2(第5)</span>, <span class="nobr">8-3(第2)</span>, <span class="nobr">8-6(第4)</span>, <span class="nobr">8-8(第4)</span>, <span class="nobr">8-支3(第4)</span>, <span class="nobr">9-2(第3)</span>, <span class="nobr">9-9-3(第3)</span>, <span class="nobr">9-支2(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3730_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">水纱少灵·夏</td><td rowspan="2">饰品-特殊·肩部</td><td>顶配</td><td></td><td><span class="nobr">3-4</span></td><td><span class="nobr">2-8</span>, <span class="nobr">6-3</span>, <span class="nobr">7-支1</span>, <span class="nobr">9-支2</span>, <span class="nobr">10-9-2</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">夏日(第4)</span>, <span class="nobr">女王(第5)</span>, <span class="nobr">奇幻(第4)</span>, <span class="nobr">绝色(第2)</span>, <span class="nobr">清秀(第4)</span></td><td class="inSec"><span id="cell3743_sn2"><a href="" onclick="showTop('3743_sn2');return false;">共8关</a></span><span id="cell3743_sn2_f" style="display:none"><span class="nobr">1-5(第5)</span>, <span class="nobr">1-6(第5)</span>, <span class="nobr">2-1(第3)</span>, <span class="nobr">2-2(第5)</span>, <span class="nobr">2-4(第2)</span>, <span class="nobr">2-5(第5)</span>, <span class="nobr">3-5(第2)</span>, <span class="nobr">3-6(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3743_sn2');return false;">收起</a></span></span></td><td class="inSec"><span id="cell3743_sn3"><a href="" onclick="showTop('3743_sn3');return false;">共34关</a></span><span id="cell3743_sn3_f" style="display:none"><span class="nobr">1-3(第2)</span>, <span class="nobr">1-6(第2)</span>, <span class="nobr">2-6(第4)</span>, <span class="nobr">2-支2(第3)</span>, <span class="nobr">3-1(第5)</span>, <span class="nobr">3-4(第2)</span>, <span class="nobr">3-7(第4)</span>, <span class="nobr">3-支1(第4)</span>, <span class="nobr">3-支2(第5)</span>, <span class="nobr">4-4(第4)</span>, <span class="nobr">4-7(第4)</span>, <span class="nobr">4-9(第3)</span>, <span class="nobr">5-3(第3)</span>, <span class="nobr">5-10(第3)</span>, <span class="nobr">6-2(第3)</span>, <span class="nobr">6-8(第4)</span>, <span class="nobr">6-9(第5)</span>, <span class="nobr">6-11(第3)</span>, <span class="nobr">7-2(第2)</span>, <span class="nobr">7-4(第3)</span>, <span class="nobr">7-6(第3)</span>, <span class="nobr">7-7(第5)</span>, <span class="nobr">8-5(第4)</span>, <span class="nobr">8-6(第5)</span>, <span class="nobr">8-8(第5)</span>, <span class="nobr">8-9(第4)</span>, <span class="nobr">8-支3(第5)</span>, <span class="nobr">9-2(第5)</span>, <span class="nobr">9-6-1(第3)</span>, <span class="nobr">9-9-3(第2)</span>, <span class="nobr">11-支1(第3)</span>, <span class="nobr">12-3(第3)</span>, <span class="nobr">12-6(第2)</span>, <span class="nobr">12-支1(第4)</span><br><span class="nobr"><a href="" onclick="hideTop('3743_sn3');return false;">收起</a></span></span></td></tr></tbody></table>
+<!--normal table-->
+<table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟</td><td>关卡</td></tr><tr><td rowspan="1" class="inName">水华十年</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水华十年·夏</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水华十年·雨</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水华十年·雪</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水华</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水芝之约</td><td rowspan="1" class="inName">连衣裙</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="24729格莱斯·奇迹
+24214金迷纸醉
+23716祥云千花
+23416夕夜迢迢
+22919水芝之约
+22919祥云千花·靛" class="aTooltip"><span class="nobr">3-5(第5)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="45546夕夜迢迢
+44037绿烟林微
+43702水芝之约
+42727海上鹤
+42165一品朱衣
+42165水芝之约·夏" class="aTooltip"><span class="nobr">1-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="46084格莱斯·奇迹
+45274金迷纸醉
+43879夕夜迢迢
+43692祥云千花
+42496水芝之约
+42496祥云千花·靛" class="aTooltip"><span class="nobr">9-9-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="45579夕夜迢迢
+44362绿烟林微
+43944海上鹤
+43920水芝之约
+43314一品朱衣
+43314水芝之约·夏" class="aTooltip"><span class="nobr">12-6(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">水芝之约·夏</td><td rowspan="1" class="inName">连衣裙</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="25638采撷草莓·珍稀
+24841蝶舞翩跹·粉蝶
+24578糖果娃娃·珍稀
+24578桃心骑士
+24043水芝之约·夏" class="aTooltip"><span class="nobr">奇幻(第5)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="45546夕夜迢迢
+44037绿烟林微
+43702水芝之约
+42727海上鹤
+42165水芝之约·夏
+42165一品朱衣" class="aTooltip"><span class="nobr">1-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="40200采撷草莓·珍稀
+39403蝶舞翩跹·粉蝶
+38606桃心骑士
+38605糖果娃娃·珍稀
+37808水芝之约·夏
+37808水中月
+37808采撷草莓·蓝提
+37808采撷草莓·抹茶" class="aTooltip"><span class="nobr">2-8(第5)</span></a>, <a href="" onclick="return false;" tooltip="36819采撷草莓·珍稀
+35224糖果娃娃·珍稀
+35224蝶舞翩跹·粉蝶
+35224桃心骑士
+34427水芝之约·夏" class="aTooltip"><span class="nobr">3-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="59407采撷草莓·珍稀
+58062蝶舞翩跹·粉蝶
+58062桃心骑士
+56866水芝之约·夏
+56218糖果娃娃·珍稀" class="aTooltip"><span class="nobr">5-10(第4)</span></a>, <a href="" onclick="return false;" tooltip="45579夕夜迢迢
+44362绿烟林微
+43944海上鹤
+43920水芝之约
+43314水芝之约·夏
+43314一品朱衣" class="aTooltip"><span class="nobr">12-6(第5)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">水芝</td><td rowspan="2" class="inName haveTop">连衣裙</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="36797水芝
+36271采撷草莓·蓝提
+36271采撷草莓·抹茶
+36271贺礼
+36049绿烟" class="aTooltip"><span class="nobr">4-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[37395露珠+历史的涂鸦]
+36049绿烟
+36035水芝
+35715祥云舞·赤
+35216歌者·青
+34419歌者·白" class="aTooltip"><span class="nobr">1-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="57803泪雨零霖
+55710隔花雨
+55447绿烟
+55447黄鹂
+55183水芝" class="aTooltip"><span class="nobr">4-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="40121泪雨零霖
+38028隔花雨
+37765绿烟
+37765黄鹂
+37501水芝" class="aTooltip"><span class="nobr">6-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="57803泪雨零霖
+55710隔花雨
+55447绿烟
+55447黄鹂
+55183水芝" class="aTooltip"><span class="nobr">6-11(第5)</span></a>, <a href="" onclick="return false;" tooltip="45739桃花歌
+45639绿烟
+44954水芝
+44598山茶春色
+43646云端初见" class="aTooltip"><span class="nobr">8-5(第3)</span></a></td></tr><tr><td rowspan="1" class="inName">水芸云伤</td><td rowspan="1" class="inName">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="5089竹叶舟
+4943翡翠璧
+4770水芸云伤
+4636良缘永结
+4558芙蓉馥" class="aTooltip"><span class="nobr">2-1(第3)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="9428翡翠璧
+8850水芸云伤
+8409绣锦履
+8249吉祥扣
+8090金迷葉茂
+8090水芸云伤·夏" class="aTooltip"><span class="nobr">1-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="10517竹叶舟
+10063翡翠璧
+9602水芸云伤
+9503良缘永结
+9086梅林邀共饮" class="aTooltip"><span class="nobr">7-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="9307翡翠璧
+8971水芸云伤
+8411花月摇
+8221芙蓉馥
+8198白锦履" class="aTooltip"><span class="nobr">12-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="8184翡翠璧
+7911竹叶舟
+7483水芸云伤
+7052良缘永结
+6892芙蓉馥" class="aTooltip"><span class="nobr">12-支1(第3)</span></a></td></tr><tr><td rowspan="1" class="inName">水芸云伤·夏</td><td rowspan="1" class="inName">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="4774绣锦履
+4635翡翠璧
+4566水芸云伤·夏
+4566吉祥扣
+4513金迷葉茂" class="aTooltip"><span class="nobr">2-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="5002绣锦履
+4843翡翠璧
+4786吉祥扣
+4743水芸云伤·夏
+4743金迷葉茂" class="aTooltip"><span class="nobr">3-5(第4)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="9428翡翠璧
+8850水芸云伤
+8409绣锦履
+8249吉祥扣
+8090水芸云伤·夏
+8090金迷葉茂" class="aTooltip"><span class="nobr">1-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="9294绣锦履
+9055翡翠璧
+8898吉祥扣
+8818水芸云伤·夏
+8738金迷葉茂" class="aTooltip"><span class="nobr">9-9-3(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">水芸</td><td rowspan="1" class="inName">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span id="cell3715_sn3"><a href="" onclick="showTop('3715_sn3');return false;">共7关</a></span><span id="cell3715_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="12762白锦履
+11824拂绿·华丽
+11409月兰
+11401拂绿
+11341水芸" class="aTooltip"><span class="nobr">4-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="7576翻折长靴
+7257绵羊小皮靴
+7254嫣红履·珍稀
+7043金属轰鸣
+6836水芸
+6836嫣红履·华丽
+6836暗金扣·华丽" class="aTooltip"><span class="nobr">5-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="9226白锦履
+8288拂绿·华丽
+7873月兰
+7865拂绿
+7805水芸" class="aTooltip"><span class="nobr">6-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="12762白锦履
+11824拂绿·华丽
+11409月兰
+11401拂绿
+11341水芸" class="aTooltip"><span class="nobr">6-11(第5)</span></a>, <a href="" onclick="return false;" tooltip="11738拂绿·华丽
+11596拂绿
+11412水芸
+10578兰猗
+10343白锦履" class="aTooltip"><span class="nobr">8-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="9808拂绿·华丽
+9517拂绿
+9181水芸
+9153白锦履
+8682兰猗" class="aTooltip"><span class="nobr">8-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="7534白锦履
+7304竹叶舟
+6848月兰
+6804拂绿·华丽
+6802水芸" class="aTooltip"><span class="nobr">10-2(第5)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3715_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水旦一酒</td><td rowspan="1" class="inName">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="2509衔钗雀
+2388炽火凤冠
+2388红鸾凤冠
+2313水旦一酒
+2263月水莲" class="aTooltip"><span class="nobr">2-1(第4)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="4793衔钗雀
+4376水旦一酒
+4204葉片发带
+4143紫兰佩·珍稀
+4125紫色头纱·珍稀" class="aTooltip"><span class="nobr">1-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="4707衔钗雀
+4427水旦一酒
+4294紫兰佩·珍稀
+4260兰佩·珍稀
+4206圣宜凤冠
+4206昊天云冠" class="aTooltip"><span class="nobr">12-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="4193衔钗雀
+3889炽火凤冠
+3841红鸾凤冠
+3662水旦一酒
+3662圣宜凤冠
+3662昊天云冠" class="aTooltip"><span class="nobr">12-支1(第4)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">水旦</td><td rowspan="2" class="inName haveTop">饰品-头饰</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2239水旦
+2239枫叶头箍
+2209海滨草帽·白
+2179莺语
+2153海滨草帽·蓝" class="aTooltip"><span class="nobr">夏日</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="4601水旦
+4601枫叶头箍
+4542海滨草帽·白
+4526莺语
+4493韵花枝" class="aTooltip"><span class="nobr">7-支2</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="1724海滨草帽·白
+1715水旦
+1715枫叶头箍
+1693韵花枝
+1679莺语" class="aTooltip"><span class="nobr">1-3(第2)</span></a></td><td class="inSec"><span id="cell3726_sn3"><a href="" onclick="showTop('3726_sn3');return false;">共8关</a></span><span id="cell3726_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4582海滨草帽·白
+4442高级女帽
+4367学士帽
+4343水旦
+4343枫叶头箍" class="aTooltip"><span class="nobr">1-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="3839海滨草帽·白
+3680海滨草帽·蓝
+3651水旦
+3651枫叶头箍
+3473月水莲" class="aTooltip"><span class="nobr">1-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="3839海滨草帽·白
+3680海滨草帽·蓝
+3651水旦
+3651枫叶头箍
+3473月水莲" class="aTooltip"><span class="nobr">3-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="3866韵花枝
+3787花月榣
+3759海滨草帽·白
+3710蔷薇礼帽
+3651水旦
+3651枫叶头箍" class="aTooltip"><span class="nobr">4-4(第5)</span></a>, <a href="" onclick="return false;" tooltip="3473海滨草帽·白
+3412高级女帽
+3362学士帽
+3343惬意
+3233水旦
+3233侦探帽
+3233枫叶头箍" class="aTooltip"><span class="nobr">5-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="4100高级女帽
+4034学士帽
+4023海滨草帽·白
+3863水旦
+3863枫叶头箍" class="aTooltip"><span class="nobr">11-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3587海滨草帽·白
+3561水旦
+3561枫叶头箍
+3504莺语
+3366海滨草帽·蓝" class="aTooltip"><span class="nobr">11-支2(第2)</span></a>, <a href="" onclick="return false;" tooltip="4363荒原头饰
+1826水旦
+1826枫叶头箍
+1814海滨草帽·白
+1794莺语" class="aTooltip"><span class="nobr">12-9(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3726_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水链连心</td><td rowspan="1" class="inName">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="3146思君归
+2504凤鸣鹤唳·华丽
+2364魅惑颈圈·奇迹
+2258水链连心
+2224水链连心·夏" class="aTooltip"><span class="nobr">绝色(第4)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="2379魅惑颈圈·奇迹
+2288水链连心·夏
+2283水链连心
+2226精灵颈饰
+2187葉片项链" class="aTooltip"><span class="nobr">2-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="2473魅惑颈圈·奇迹
+2372水链连心
+2368水链连心·夏
+2345精灵颈饰
+2292葉片项链" class="aTooltip"><span class="nobr">3-5(第2)</span></a></td><td class="inSec"><span id="cell3728_sn3"><a href="" onclick="showTop('3728_sn3');return false;">共10关</a></span><span id="cell3728_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4216花月瑶
+4204魅惑颈圈·奇迹
+4049精灵颈饰
+4045水链连心
+3995水链连心·夏" class="aTooltip"><span class="nobr">1-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3861翡翠环
+3813玫瑰之钥
+3492青花项链
+3442归真
+3369水链连心
+3369魅惑颈圈·奇迹" class="aTooltip"><span class="nobr">3-1(第5)</span></a>, <a href="" onclick="return false;" tooltip="4075凤鸣鹤唳·华丽
+3762魅惑颈圈·奇迹
+3710精灵颈饰
+3552水链连心·夏
+3522水链连心" class="aTooltip"><span class="nobr">4-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="3995魅惑颈圈·奇迹
+3893精灵颈饰
+3890水链连心·夏
+3866魅惑颈圈
+3756水链连心" class="aTooltip"><span class="nobr">5-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="5746凤鸣鹤唳·华丽
+5225魅惑颈圈·奇迹
+4985水链连心
+4913精灵颈饰
+4911水链连心·夏" class="aTooltip"><span class="nobr">7-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="3764娆坠
+3590魅惑颈圈·奇迹
+3486精灵颈饰
+3433水链连心·夏
+3430水链连心" class="aTooltip"><span class="nobr">7-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="5034翡翠环
+4827玫瑰之钥
+4695归真
+4666青花项链
+4543水链连心
+4543魅惑颈圈·奇迹" class="aTooltip"><span class="nobr">7-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="4608魅惑颈圈·奇迹
+4425水链连心·夏
+4409水链连心
+4375精灵颈饰
+4250葉片项链" class="aTooltip"><span class="nobr">9-9-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="3096翡翠环
+2982玫瑰之钥
+2901归真
+2875青花项链
+2820水链连心
+2820魅惑颈圈·奇迹" class="aTooltip"><span class="nobr">10-9-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="4332花月瑶
+3819翡翠环
+3706月光石
+2732魅惑颈圈·奇迹
+2637水链连心" class="aTooltip"><span class="nobr">12-6(第5)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3728_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水链连心·夏</td><td rowspan="1" class="inName">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="3146思君归
+2504凤鸣鹤唳·华丽
+2364魅惑颈圈·奇迹
+2258水链连心
+2224水链连心·夏" class="aTooltip"><span class="nobr">绝色(第5)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="2379魅惑颈圈·奇迹
+2288水链连心·夏
+2283水链连心
+2226精灵颈饰
+2187葉片项链" class="aTooltip"><span class="nobr">2-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="2473魅惑颈圈·奇迹
+2372水链连心
+2368水链连心·夏
+2345精灵颈饰
+2292葉片项链" class="aTooltip"><span class="nobr">3-5(第3)</span></a></td><td class="inSec"><span id="cell3741_sn3"><a href="" onclick="showTop('3741_sn3');return false;">共6关</a></span><span id="cell3741_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4216花月瑶
+4204魅惑颈圈·奇迹
+4049精灵颈饰
+4045水链连心
+3995水链连心·夏" class="aTooltip"><span class="nobr">1-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="4075凤鸣鹤唳·华丽
+3762魅惑颈圈·奇迹
+3710精灵颈饰
+3552水链连心·夏
+3522水链连心" class="aTooltip"><span class="nobr">4-7(第4)</span></a>, <a href="" onclick="return false;" tooltip="3995魅惑颈圈·奇迹
+3893精灵颈饰
+3890水链连心·夏
+3866魅惑颈圈
+3756水链连心" class="aTooltip"><span class="nobr">5-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="5746凤鸣鹤唳·华丽
+5225魅惑颈圈·奇迹
+4985水链连心
+4913精灵颈饰
+4911水链连心·夏" class="aTooltip"><span class="nobr">7-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="3764娆坠
+3590魅惑颈圈·奇迹
+3486精灵颈饰
+3433水链连心·夏
+3430水链连心" class="aTooltip"><span class="nobr">7-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="4608魅惑颈圈·奇迹
+4425水链连心·夏
+4409水链连心
+4375精灵颈饰
+4250葉片项链" class="aTooltip"><span class="nobr">9-9-3(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3741_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">水笛由念</td><td rowspan="2" class="inName haveTop">饰品-手持·左</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="2348水笛由念
+2173桃花伞
+1683如意金箍棒
+1231绣缘情
+1093祥云舞·包" class="aTooltip"><span class="nobr">2-1</span></a></td><td class="inTop"><span id="cell3729_tn3"><a href="" onclick="showTop('3729_tn3');return false;">共8关</a></span><span id="cell3729_tn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4320水笛由念
+4204祥云舞·包
+4125蓝瓷·包
+3915水笛由念·夏
+3847桃花伞" class="aTooltip"><span class="nobr">1-3</span></a>, <a href="" onclick="return false;" tooltip="5044水笛由念
+4940桃花伞
+3889十字架
+3681复古手杖
+3442岚蝶·棕" class="aTooltip"><span class="nobr">4-9</span></a>, <a href="" onclick="return false;" tooltip="5044水笛由念
+4940桃花伞
+3889十字架
+3681复古手杖
+3442岚蝶·棕" class="aTooltip"><span class="nobr">6-11</span></a>, <a href="" onclick="return false;" tooltip="4702水笛由念
+4005桃花伞
+3557绣缘情
+3187祥云舞·包
+3073巧克力提包·棕" class="aTooltip"><span class="nobr">7-4</span></a>, <a href="" onclick="return false;" tooltip="3686水笛由念
+3151桃花伞
+2969如意金箍棒
+2505铁血长鞭
+2490突击步枪" class="aTooltip"><span class="nobr">9-4</span></a>, <a href="" onclick="return false;" tooltip="2989水笛由念
+2732桃花伞
+2238十字架
+2236绣缘情
+2154岚蝶·藏青" class="aTooltip"><span class="nobr">10-2</span></a>, <a href="" onclick="return false;" tooltip="4392水笛由念
+4110桃花伞
+2829如意金箍棒
+2732祥云舞·包
+2679蓝瓷·包" class="aTooltip"><span class="nobr">12-6</span></a>, <a href="" onclick="return false;" tooltip="3792水笛由念
+3211桃花伞
+3110绣缘情
+2981祥云舞·包
+2880蓝瓷·包" class="aTooltip"><span class="nobr">12-支1</span></a><br><span class="nobr"><a href="" onclick="hideTop('3729_tn3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="2379祥云舞·包
+2373黑珍珠·珍稀
+2283蓝瓷·包
+2213黑珍珠·华丽
+2192水笛由念
+2192水笛由念·夏" class="aTooltip"><span class="nobr">2-4(第5)</span></a>, <a href="" onclick="return false;" tooltip="2473祥云舞·包
+2393蓝瓷·包
+2288水笛由念
+2288水笛由念·夏
+2214莉莉斯图典" class="aTooltip"><span class="nobr">3-5(第3)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="3995祥云舞·包
+3836水笛由念
+3836蓝瓷·包
+3731水笛由念·夏
+3627万圣夜灯" class="aTooltip"><span class="nobr">5-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="4664桃花伞
+4328岚蝶·藏青
+3889岚蝶·红
+3693玉如意
+3619水笛由念" class="aTooltip"><span class="nobr">8-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="4247桃花伞
+3615水笛由念
+2726精装笔记
+2679如意金箍棒
+2631年代杖" class="aTooltip"><span class="nobr">8-5(第2)</span></a>, <a href="" onclick="return false;" tooltip="4608祥云舞·包
+4449蓝瓷·包
+4266水笛由念·夏
+4246水笛由念
+4084莉莉斯图典" class="aTooltip"><span class="nobr">9-9-3(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">水笛由念·夏</td><td rowspan="1" class="inName">饰品-手持·左</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="2379祥云舞·包
+2373黑珍珠·珍稀
+2283蓝瓷·包
+2213黑珍珠·华丽
+2192水笛由念·夏
+2192水笛由念" class="aTooltip"><span class="nobr">2-4(第5)</span></a>, <a href="" onclick="return false;" tooltip="2473祥云舞·包
+2393蓝瓷·包
+2288水笛由念·夏
+2288水笛由念
+2214莉莉斯图典" class="aTooltip"><span class="nobr">3-5(第3)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="4320水笛由念
+4204祥云舞·包
+4125蓝瓷·包
+3915水笛由念·夏
+3847桃花伞" class="aTooltip"><span class="nobr">1-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3836绣缘情
+3762祥云舞·包
+3682蓝瓷·包
+3682玉如意
+3473水笛由念·夏" class="aTooltip"><span class="nobr">4-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="3995祥云舞·包
+3836水笛由念
+3836蓝瓷·包
+3731水笛由念·夏
+3627万圣夜灯" class="aTooltip"><span class="nobr">5-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="4608祥云舞·包
+4449蓝瓷·包
+4266水笛由念·夏
+4246水笛由念
+4084莉莉斯图典" class="aTooltip"><span class="nobr">9-9-3(第3)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">水纱少灵</td><td rowspan="2" class="inName haveTop">饰品-特殊·肩部</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="1955水纱少灵
+1955鹤膝竹
+1911清纱曲
+1894水纱少灵·夏
+1789芙蓉仙" class="aTooltip"><span class="nobr">奇幻</span></a></td><td class="inTop"><a href="" onclick="return false;" tooltip="2418水纱少灵
+1140骖鹤驭凤·华丽
+1056水纱少灵·夏
+1019鹤膝竹
+948芙蓉仙" class="aTooltip"><span class="nobr">2-1</span></a>, <a href="" onclick="return false;" tooltip="1174水纱少灵
+1174鹤膝竹
+1155锦缎鼓
+1136清纱曲
+1124水纱少灵·夏" class="aTooltip"><span class="nobr">2-5</span></a></td><td class="inTop"><span id="cell3730_tn3"><a href="" onclick="showTop('3730_tn3');return false;">共17关</a></span><span id="cell3730_tn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4554水纱少灵
+4045鹤膝竹
+4045水纱少灵·夏
+3756芙蓉仙
+3627骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">1-3</span></a>, <a href="" onclick="return false;" tooltip="3105水纱少灵
+3105鹤膝竹
+3105水纱少灵·夏
+3081清纱曲
+2895芙蓉仙" class="aTooltip"><span class="nobr">2-8</span></a>, <a href="" onclick="return false;" tooltip="2766水纱少灵
+2766鹤膝竹
+2663清纱曲
+2582水纱少灵·夏
+2477芙蓉仙" class="aTooltip"><span class="nobr">3-7</span></a>, <a href="" onclick="return false;" tooltip="5278水纱少灵
+3418骖鹤驭凤
+3369水纱少灵·夏
+3286草莓派
+3080芙蓉仙" class="aTooltip"><span class="nobr">4-9</span></a>, <a href="" onclick="return false;" tooltip="3289水纱少灵
+3289鹤膝竹
+2951骖鹤驭凤·华丽
+2951非你莫属·华丽
+2925清纱曲" class="aTooltip"><span class="nobr">5-5</span></a>, <a href="" onclick="return false;" tooltip="4672水纱少灵
+4672鹤膝竹
+4396水纱少灵·夏
+4333清纱曲
+4239芙蓉仙" class="aTooltip"><span class="nobr">5-10</span></a>, <a href="" onclick="return false;" tooltip="3509水纱少灵
+3418骖鹤驭凤
+3369水纱少灵·夏
+3286草莓派
+3080芙蓉仙" class="aTooltip"><span class="nobr">6-2</span></a>, <a href="" onclick="return false;" tooltip="5278水纱少灵
+3418骖鹤驭凤
+3369水纱少灵·夏
+3286草莓派
+3080芙蓉仙" class="aTooltip"><span class="nobr">6-11</span></a>, <a href="" onclick="return false;" tooltip="4912水纱少灵
+3220骖鹤驭凤·华丽
+3087水纱少灵·夏
+3041鹤膝竹
+2771芙蓉仙" class="aTooltip"><span class="nobr">7-4</span></a>, <a href="" onclick="return false;" tooltip="3135水纱少灵
+2104首领徽记
+1810白领单肩包
+1796圆形挎包·深邃
+1735霞色锦囊" class="aTooltip"><span class="nobr">7-8</span></a>, <a href="" onclick="return false;" tooltip="3724水纱少灵
+2526优雅天使
+2203麦穗皮包·粉
+2121水纱少灵·夏
+2009草莓派" class="aTooltip"><span class="nobr">8-5</span></a>, <a href="" onclick="return false;" tooltip="3535水纱少灵
+3535鹤膝竹
+3473清纱曲
+3443水纱少灵·夏
+3335锦缎鼓" class="aTooltip"><span class="nobr">8-9</span></a>, <a href="" onclick="return false;" tooltip="3843水纱少灵
+2231非你莫属·华丽
+2152骖鹤驭凤·华丽
+2127非你莫属
+2116圆形挎包·优雅" class="aTooltip"><span class="nobr">9-4</span></a>, <a href="" onclick="return false;" tooltip="3104水纱少灵
+2540骖鹤驭凤
+2306麦穗皮包·棕
+2223圆形挎包·简约
+2222麦穗皮包·红" class="aTooltip"><span class="nobr">10-2</span></a>, <a href="" onclick="return false;" tooltip="2662水纱少灵
+2662鹤膝竹
+2496水纱少灵·夏
+2391芙蓉仙
+2324骖鹤驭凤·华丽
+2324非你莫属·华丽" class="aTooltip"><span class="nobr">12-3</span></a>, <a href="" onclick="return false;" tooltip="4558水纱少灵
+2637鹤膝竹
+2637水纱少灵·夏
+2458芙蓉仙
+2357骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">12-6</span></a>, <a href="" onclick="return false;" tooltip="3991水纱少灵
+3071骖鹤驭凤·华丽
+2946鹤膝竹
+2830水纱少灵·夏
+2595芙蓉仙" class="aTooltip"><span class="nobr">12-支1</span></a><br><span class="nobr"><a href="" onclick="hideTop('3730_tn3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2450非你莫属·华丽
+2294非你莫属
+2000鹤膝竹
+1894水纱少灵
+1815水纱少灵·夏" class="aTooltip"><span class="nobr">女王(第4)</span></a>, <a href="" onclick="return false;" tooltip="2404骖鹤驭凤·华丽
+2258鹤膝竹
+2258水纱少灵·夏
+2178水纱少灵
+2039芙蓉仙" class="aTooltip"><span class="nobr">绝色(第4)</span></a></td><td class="inSec"><span id="cell3730_sn2"><a href="" onclick="showTop('3730_sn2');return false;">共6关</a></span><span id="cell3730_sn2_f" style="display:none"><a href="" onclick="return false;" tooltip="1388非你莫属·华丽
+1249非你莫属
+1083水纱少灵
+1083鹤膝竹
+935锦缎鼓
+935芙蓉仙
+935水纱少灵·夏" class="aTooltip"><span class="nobr">1-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="2162非你莫属·华丽
+1972非你莫属
+1863鹤膝竹
+1773水纱少灵
+1655水纱少灵·夏" class="aTooltip"><span class="nobr">1-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="2343非你莫属·华丽
+2142非你莫属
+1892鹤膝竹
+1813水纱少灵
+1708水纱少灵·夏" class="aTooltip"><span class="nobr">2-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="2344鹤膝竹
+2283水纱少灵·夏
+2248水纱少灵
+2096芙蓉仙
+1954骖鹤驭凤·华丽
+1954非你莫属·华丽" class="aTooltip"><span class="nobr">2-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="1017水纱少灵·夏
+1005清纱曲
+987锦缎鼓
+980水纱少灵
+980鹤膝竹" class="aTooltip"><span class="nobr">3-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="2421鹤膝竹
+2372水纱少灵·夏
+2342水纱少灵
+2187芙蓉仙
+2004骖鹤驭凤·华丽
+2004非你莫属·华丽" class="aTooltip"><span class="nobr">3-5(第3)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3730_sn2');return false;">收起</a></span></span></td><td class="inSec"><span id="cell3730_sn3"><a href="" onclick="showTop('3730_sn3');return false;">共23关</a></span><span id="cell3730_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4045非你莫属·华丽
+3787鹤膝竹
+3655非你莫属
+3627水纱少灵
+3289骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">2-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="3707非你莫属·华丽
+3627骖鹤驭凤·华丽
+3448鹤膝竹
+3393非你莫属
+3289水纱少灵" class="aTooltip"><span class="nobr">2-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="3602非你莫属·华丽
+3107非你莫属
+2846鹤膝竹
+2766水纱少灵
+2736锦缎鼓" class="aTooltip"><span class="nobr">3-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="4463非你莫属·华丽
+4073非你莫属
+3787鹤膝竹
+3627水纱少灵
+3289骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">3-11(第4)</span></a>, <a href="" onclick="return false;" tooltip="3965骖鹤驭凤·华丽
+3787鹤膝竹
+3627水纱少灵
+3418水纱少灵·夏
+3289非你莫属·华丽" class="aTooltip"><span class="nobr">3-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="4045非你莫属·华丽
+3707鹤膝竹
+3627水纱少灵
+3579非你莫属
+3154水纱少灵·夏" class="aTooltip"><span class="nobr">3-支2(第3)</span></a>, <a href="" onclick="return false;" tooltip="3965骖鹤驭凤·华丽
+3707鹤膝竹
+3627水纱少灵
+3522水纱少灵·夏
+3233芙蓉仙" class="aTooltip"><span class="nobr">4-7(第3)</span></a>, <a href="" onclick="return false;" tooltip="4125鹤膝竹
+3965水纱少灵
+3756水纱少灵·夏
+3627骖鹤驭凤·华丽
+3627非你莫属·华丽" class="aTooltip"><span class="nobr">5-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="2623非你莫属·华丽
+2440非你莫属
+1847鹤膝竹
+1787水纱少灵
+1765圆形挎包·优雅" class="aTooltip"><span class="nobr">5-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="4045非你莫属·华丽
+3787鹤膝竹
+3655非你莫属
+3627水纱少灵
+3289骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">5-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="3940非你莫属·华丽
+3759非你莫属
+3264鹤膝竹
+3105水纱少灵
+3080水纱少灵·夏" class="aTooltip"><span class="nobr">6-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="3836非你莫属·华丽
+3550非你莫属
+2741鹤膝竹
+2716圆形挎包·优雅
+2582水纱少灵" class="aTooltip"><span class="nobr">6-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="5502骖鹤驭凤·华丽
+4985鹤膝竹
+4985水纱少灵·夏
+4826水纱少灵
+4512芙蓉仙" class="aTooltip"><span class="nobr">7-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="3522鹤膝竹
+3443水纱少灵
+3430水纱少灵·夏
+3193芙蓉仙
+2935骖鹤驭凤·华丽
+2935非你莫属·华丽" class="aTooltip"><span class="nobr">7-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="2881非你莫属·华丽
+2646非你莫属
+2523鹤膝竹
+2379水纱少灵
+2191水纱少灵·夏" class="aTooltip"><span class="nobr">7-7(第4)</span></a>, <a href="" onclick="return false;" tooltip="3326非你莫属·华丽
+2950非你莫属
+2659锦缎鼓
+2649鹤膝竹
+2490水纱少灵" class="aTooltip"><span class="nobr">8-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="4059麦穗皮包·粉
+3828水纱少灵
+3780骖鹤驭凤
+3411清纱曲
+3338优雅天使" class="aTooltip"><span class="nobr">8-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="3458非你莫属·华丽
+3153非你莫属
+3035鹤膝竹
+2935水纱少灵
+2666水纱少灵·夏" class="aTooltip"><span class="nobr">8-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="5778非你莫属·华丽
+5236非你莫属
+4933鹤膝竹
+4734水纱少灵
+4380水纱少灵·夏" class="aTooltip"><span class="nobr">8-8(第4)</span></a>, <a href="" onclick="return false;" tooltip="4716非你莫属·华丽
+4321非你莫属
+4040鹤膝竹
+3881水纱少灵
+3579水纱少灵·夏" class="aTooltip"><span class="nobr">8-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="2807非你莫属·华丽
+2529非你莫属
+2252水纱少灵
+2252鹤膝竹
+1929芙蓉仙
+1929水纱少灵·夏" class="aTooltip"><span class="nobr">9-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="4547鹤膝竹
+4409水纱少灵·夏
+4388水纱少灵
+4066芙蓉仙
+3881骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">9-9-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="3034水纱少灵·夏
+2942水纱少灵
+2942鹤膝竹
+2825芙蓉仙
+2621清纱曲" class="aTooltip"><span class="nobr">9-支2(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3730_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">水纱少灵·夏</td><td rowspan="2" class="inName haveTop">饰品-特殊·肩部</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="1017水纱少灵·夏
+1005清纱曲
+987锦缎鼓
+980水纱少灵
+980鹤膝竹" class="aTooltip"><span class="nobr">3-4</span></a></td><td class="inTop"><a href="" onclick="return false;" tooltip="3105水纱少灵·夏
+3105水纱少灵
+3105鹤膝竹
+3081清纱曲
+2895芙蓉仙" class="aTooltip"><span class="nobr">2-8</span></a>, <a href="" onclick="return false;" tooltip="3105水纱少灵·夏
+3104恋叶包
+3074锦缎鼓
+2899清纱曲
+2865鸡米包" class="aTooltip"><span class="nobr">6-3</span></a>, <a href="" onclick="return false;" tooltip="4543水纱少灵·夏
+4384草莓派
+4174鹤膝竹
+4094骖鹤驭凤
+4094芙蓉仙" class="aTooltip"><span class="nobr">7-支1</span></a>, <a href="" onclick="return false;" tooltip="3034水纱少灵·夏
+2942水纱少灵
+2942鹤膝竹
+2825芙蓉仙
+2621清纱曲" class="aTooltip"><span class="nobr">9-支2</span></a>, <a href="" onclick="return false;" tooltip="2820水纱少灵·夏
+2714草莓派
+2598鹤膝竹
+2542骖鹤驭凤
+2542芙蓉仙" class="aTooltip"><span class="nobr">10-9-2</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2020优雅天使
+1703首领徽记
+1692草莓派
+1667水纱少灵·夏
+1650洛可小包" class="aTooltip"><span class="nobr">夏日(第4)</span></a>, <a href="" onclick="return false;" tooltip="2450非你莫属·华丽
+2294非你莫属
+2000鹤膝竹
+1894水纱少灵
+1815水纱少灵·夏" class="aTooltip"><span class="nobr">女王(第5)</span></a>, <a href="" onclick="return false;" tooltip="1955水纱少灵
+1955鹤膝竹
+1911清纱曲
+1894水纱少灵·夏
+1789芙蓉仙" class="aTooltip"><span class="nobr">奇幻(第4)</span></a>, <a href="" onclick="return false;" tooltip="2404骖鹤驭凤·华丽
+2258水纱少灵·夏
+2258鹤膝竹
+2178水纱少灵
+2039芙蓉仙" class="aTooltip"><span class="nobr">绝色(第2)</span></a>, <a href="" onclick="return false;" tooltip="2020优雅天使
+1735麦穗皮包·粉
+1730首领徽记
+1728水纱少灵·夏
+1717草莓派" class="aTooltip"><span class="nobr">清秀(第4)</span></a></td><td class="inSec"><span id="cell3743_sn2"><a href="" onclick="showTop('3743_sn2');return false;">共8关</a></span><span id="cell3743_sn2_f" style="display:none"><a href="" onclick="return false;" tooltip="1388非你莫属·华丽
+1249非你莫属
+1083水纱少灵
+1083鹤膝竹
+935水纱少灵·夏
+935锦缎鼓
+935芙蓉仙" class="aTooltip"><span class="nobr">1-5(第5)</span></a>, <a href="" onclick="return false;" tooltip="2162非你莫属·华丽
+1972非你莫属
+1863鹤膝竹
+1773水纱少灵
+1655水纱少灵·夏" class="aTooltip"><span class="nobr">1-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="2418水纱少灵
+1140骖鹤驭凤·华丽
+1056水纱少灵·夏
+1019鹤膝竹
+948芙蓉仙" class="aTooltip"><span class="nobr">2-1(第3)</span></a>, <a href="" onclick="return false;" tooltip="2343非你莫属·华丽
+2142非你莫属
+1892鹤膝竹
+1813水纱少灵
+1708水纱少灵·夏" class="aTooltip"><span class="nobr">2-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="2344鹤膝竹
+2283水纱少灵·夏
+2248水纱少灵
+2096芙蓉仙
+1954骖鹤驭凤·华丽
+1954非你莫属·华丽" class="aTooltip"><span class="nobr">2-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="1174水纱少灵
+1174鹤膝竹
+1155锦缎鼓
+1136清纱曲
+1124水纱少灵·夏" class="aTooltip"><span class="nobr">2-5(第5)</span></a>, <a href="" onclick="return false;" tooltip="2421鹤膝竹
+2372水纱少灵·夏
+2342水纱少灵
+2187芙蓉仙
+2004骖鹤驭凤·华丽
+2004非你莫属·华丽" class="aTooltip"><span class="nobr">3-5(第2)</span></a>, <a href="" onclick="return false;" tooltip="1756草莓派
+1748水纱少灵·夏
+1674青柠派
+1635骖鹤驭凤
+1577芙蓉仙
+1577鹤膝竹" class="aTooltip"><span class="nobr">3-6(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3743_sn2');return false;">收起</a></span></span></td><td class="inSec"><span id="cell3743_sn3"><a href="" onclick="showTop('3743_sn3');return false;">共34关</a></span><span id="cell3743_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4554水纱少灵
+4045水纱少灵·夏
+4045鹤膝竹
+3756芙蓉仙
+3627骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">1-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="3203优雅天使
+2951水纱少灵·夏
+2944麦穗皮包·粉
+2895骖鹤驭凤
+2845首领徽记" class="aTooltip"><span class="nobr">1-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="3342清纱曲
+2920锦缎鼓
+2865优雅天使
+2766水纱少灵·夏
+2766麦穗皮包·粉
+2766恋叶包" class="aTooltip"><span class="nobr">2-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="3418骖鹤驭凤
+3366草莓派
+3264水纱少灵·夏
+3104麦穗皮包·棕
+3104麦穗皮包·红
+3104白领单肩包" class="aTooltip"><span class="nobr">2-支2(第3)</span></a>, <a href="" onclick="return false;" tooltip="3613麦穗皮包·棕
+3613麦穗皮包·红
+3461麦穗皮包·白
+3418骖鹤驭凤
+3369水纱少灵·夏" class="aTooltip"><span class="nobr">3-1(第5)</span></a>, <a href="" onclick="return false;" tooltip="3203优雅天使
+2951水纱少灵·夏
+2944麦穗皮包·粉
+2895骖鹤驭凤
+2845首领徽记" class="aTooltip"><span class="nobr">3-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="2766水纱少灵
+2766鹤膝竹
+2663清纱曲
+2582水纱少灵·夏
+2477芙蓉仙" class="aTooltip"><span class="nobr">3-7(第4)</span></a>, <a href="" onclick="return false;" tooltip="3965骖鹤驭凤·华丽
+3787鹤膝竹
+3627水纱少灵
+3418水纱少灵·夏
+3289非你莫属·华丽" class="aTooltip"><span class="nobr">3-支1(第4)</span></a>, <a href="" onclick="return false;" tooltip="4045非你莫属·华丽
+3707鹤膝竹
+3627水纱少灵
+3579非你莫属
+3154水纱少灵·夏" class="aTooltip"><span class="nobr">3-支2(第5)</span></a>, <a href="" onclick="return false;" tooltip="3203优雅天使
+3024麦穗皮包·粉
+2975清纱曲
+2951水纱少灵·夏
+2845首领徽记" class="aTooltip"><span class="nobr">4-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="3965骖鹤驭凤·华丽
+3707鹤膝竹
+3627水纱少灵
+3522水纱少灵·夏
+3233芙蓉仙" class="aTooltip"><span class="nobr">4-7(第4)</span></a>, <a href="" onclick="return false;" tooltip="5278水纱少灵
+3418骖鹤驭凤
+3369水纱少灵·夏
+3286草莓派
+3080芙蓉仙" class="aTooltip"><span class="nobr">4-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="4125鹤膝竹
+3965水纱少灵
+3756水纱少灵·夏
+3627骖鹤驭凤·华丽
+3627非你莫属·华丽" class="aTooltip"><span class="nobr">5-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="4672水纱少灵
+4672鹤膝竹
+4396水纱少灵·夏
+4333清纱曲
+4239芙蓉仙" class="aTooltip"><span class="nobr">5-10(第3)</span></a>, <a href="" onclick="return false;" tooltip="3509水纱少灵
+3418骖鹤驭凤
+3369水纱少灵·夏
+3286草莓派
+3080芙蓉仙" class="aTooltip"><span class="nobr">6-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="3418非你莫属·华丽
+3265非你莫属
+3210白领单肩包
+2662水纱少灵·夏
+2662鹤膝竹" class="aTooltip"><span class="nobr">6-8(第4)</span></a>, <a href="" onclick="return false;" tooltip="3940非你莫属·华丽
+3759非你莫属
+3264鹤膝竹
+3105水纱少灵
+3080水纱少灵·夏" class="aTooltip"><span class="nobr">6-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="5278水纱少灵
+3418骖鹤驭凤
+3369水纱少灵·夏
+3286草莓派
+3080芙蓉仙" class="aTooltip"><span class="nobr">6-11(第3)</span></a>, <a href="" onclick="return false;" tooltip="5502骖鹤驭凤·华丽
+4985水纱少灵·夏
+4985鹤膝竹
+4826水纱少灵
+4512芙蓉仙" class="aTooltip"><span class="nobr">7-2(第2)</span></a>, <a href="" onclick="return false;" tooltip="4912水纱少灵
+3220骖鹤驭凤·华丽
+3087水纱少灵·夏
+3041鹤膝竹
+2771芙蓉仙" class="aTooltip"><span class="nobr">7-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="3522鹤膝竹
+3443水纱少灵
+3430水纱少灵·夏
+3193芙蓉仙
+2935骖鹤驭凤·华丽
+2935非你莫属·华丽" class="aTooltip"><span class="nobr">7-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="2881非你莫属·华丽
+2646非你莫属
+2523鹤膝竹
+2379水纱少灵
+2191水纱少灵·夏" class="aTooltip"><span class="nobr">7-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="3724水纱少灵
+2526优雅天使
+2203麦穗皮包·粉
+2121水纱少灵·夏
+2009草莓派" class="aTooltip"><span class="nobr">8-5(第4)</span></a>, <a href="" onclick="return false;" tooltip="3458非你莫属·华丽
+3153非你莫属
+3035鹤膝竹
+2935水纱少灵
+2666水纱少灵·夏" class="aTooltip"><span class="nobr">8-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="5778非你莫属·华丽
+5236非你莫属
+4933鹤膝竹
+4734水纱少灵
+4380水纱少灵·夏" class="aTooltip"><span class="nobr">8-8(第5)</span></a>, <a href="" onclick="return false;" tooltip="3535水纱少灵
+3535鹤膝竹
+3473清纱曲
+3443水纱少灵·夏
+3335锦缎鼓" class="aTooltip"><span class="nobr">8-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="4716非你莫属·华丽
+4321非你莫属
+4040鹤膝竹
+3881水纱少灵
+3579水纱少灵·夏" class="aTooltip"><span class="nobr">8-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="2807非你莫属·华丽
+2529非你莫属
+2252水纱少灵
+2252鹤膝竹
+1929水纱少灵·夏
+1929芙蓉仙" class="aTooltip"><span class="nobr">9-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="2784草莓派
+2726骖鹤驭凤
+2643水纱少灵·夏
+2632青柠派
+2457麦穗皮包·棕
+2457麦穗皮包·红
+2457白领单肩包" class="aTooltip"><span class="nobr">9-6-1(第3)</span></a>, <a href="" onclick="return false;" tooltip="4547鹤膝竹
+4409水纱少灵·夏
+4388水纱少灵
+4066芙蓉仙
+3881骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">9-9-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="3902草莓派
+3892骖鹤驭凤
+3741水纱少灵·夏
+3645青柠派
+3553麦穗皮包·棕
+3553麦穗皮包·红" class="aTooltip"><span class="nobr">11-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="2662水纱少灵
+2662鹤膝竹
+2496水纱少灵·夏
+2391芙蓉仙
+2324骖鹤驭凤·华丽
+2324非你莫属·华丽" class="aTooltip"><span class="nobr">12-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="4558水纱少灵
+2637水纱少灵·夏
+2637鹤膝竹
+2458芙蓉仙
+2357骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">12-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="3991水纱少灵
+3071骖鹤驭凤·华丽
+2946鹤膝竹
+2830水纱少灵·夏
+2595芙蓉仙" class="aTooltip"><span class="nobr">12-支1(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3743_sn3');return false;">收起</a></span></span></td></tr></tbody></table>
 </span>
 <span class="limit">
-  <table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟(极限)</td><td>关卡(极限)</td></tr><tr><td rowspan="1">水华十年</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水华十年·夏</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水华十年·雨</td><td rowspan="1">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">9-9-3(第5)</span></td></tr><tr><td rowspan="1">水华十年·雪</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水华</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水芝之约</td><td rowspan="1">连衣裙</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">水芝之约·夏</td><td rowspan="1">连衣裙</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">奇幻(第5)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">1-3(第2)</span>, <span class="nobr">2-8(第5)</span>, <span class="nobr">3-7(第5)</span>, <span class="nobr">5-10(第3)</span>, <span class="nobr">12-6(第3)</span></td></tr><tr><td rowspan="2">水芝</td><td rowspan="2">连衣裙</td><td>顶配</td><td></td><td></td><td><span class="nobr">1-6</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">1-3(第4)</span></td><td class="inSec"><span class="nobr">4-4(第3)</span>, <span class="nobr">4-9(第3)</span>, <span class="nobr">6-2(第3)</span>, <span class="nobr">6-11(第3)</span>, <span class="nobr">8-5(第3)</span></td></tr><tr><td rowspan="1">水芸云伤</td><td rowspan="1">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-1(第3)</span></td><td class="inSec"><span id="cell3716_sl3"><a href="" onclick="showTop('3716_sl3');return false;">共7关</a></span><span id="cell3716_sl3_f" style="display:none"><span class="nobr">1-3(第2)</span>, <span class="nobr">4-9(第3)</span>, <span class="nobr">6-2(第3)</span>, <span class="nobr">6-11(第3)</span>, <span class="nobr">7-4(第3)</span>, <span class="nobr">12-6(第2)</span>, <span class="nobr">12-支1(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3716_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">水芸云伤·夏</td><td rowspan="1">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-4(第4)</span>, <span class="nobr">3-5(第4)</span></td><td class="inSec"><span class="nobr">9-9-3(第4)</span>, <span class="nobr">10-9-2(第5)</span></td></tr><tr><td rowspan="1">水芸</td><td rowspan="1">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">5-6(第5)</span>, <span class="nobr">8-3(第3)</span>, <span class="nobr">8-5(第4)</span>, <span class="nobr">12-9(第4)</span></td></tr><tr><td rowspan="1">水旦一酒</td><td rowspan="1">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-1(第2)</span></td><td class="inSec"><span id="cell3727_sl3"><a href="" onclick="showTop('3727_sl3');return false;">共9关</a></span><span id="cell3727_sl3_f" style="display:none"><span class="nobr">1-3(第2)</span>, <span class="nobr">4-9(第5)</span>, <span class="nobr">6-2(第5)</span>, <span class="nobr">6-11(第5)</span>, <span class="nobr">8-3(第5)</span>, <span class="nobr">9-支2(第5)</span>, <span class="nobr">10-2(第5)</span>, <span class="nobr">12-6(第2)</span>, <span class="nobr">12-支1(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3727_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">水旦</td><td rowspan="2">饰品-头饰</td><td>顶配</td><td><span class="nobr">夏日</span></td><td></td><td><span class="nobr">7-支2</span>, <span class="nobr">11-支2</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">1-3(第4)</span></td><td class="inSec"><span id="cell3726_sl3"><a href="" onclick="showTop('3726_sl3');return false;">共8关</a></span><span id="cell3726_sl3_f" style="display:none"><span class="nobr">1-2(第3)</span>, <span class="nobr">1-6(第4)</span>, <span class="nobr">3-1(第5)</span>, <span class="nobr">3-4(第4)</span>, <span class="nobr">8-支2(第4)</span>, <span class="nobr">9-6-1(第4)</span>, <span class="nobr">11-3(第3)</span>, <span class="nobr">12-9(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3726_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">水链连心</td><td rowspan="1">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">绝色(第4)</span></td><td class="inSec"><span class="nobr">2-4(第4)</span>, <span class="nobr">3-5(第4)</span></td><td class="inSec"><span id="cell3728_sl3"><a href="" onclick="showTop('3728_sl3');return false;">共10关</a></span><span id="cell3728_sl3_f" style="display:none"><span class="nobr">1-3(第4)</span>, <span class="nobr">3-1(第3)</span>, <span class="nobr">4-9(第5)</span>, <span class="nobr">6-2(第4)</span>, <span class="nobr">6-11(第5)</span>, <span class="nobr">7-2(第4)</span>, <span class="nobr">7-6(第4)</span>, <span class="nobr">7-支1(第3)</span>, <span class="nobr">9-9-3(第4)</span>, <span class="nobr">10-9-2(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3728_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">水链连心·夏</td><td rowspan="1">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">绝色(第5)</span></td><td class="inSec"><span class="nobr">2-4(第2)</span>, <span class="nobr">3-5(第3)</span></td><td class="inSec"><span id="cell3741_sl3"><a href="" onclick="showTop('3741_sl3');return false;">共6关</a></span><span id="cell3741_sl3_f" style="display:none"><span class="nobr">1-3(第5)</span>, <span class="nobr">4-7(第5)</span>, <span class="nobr">5-3(第4)</span>, <span class="nobr">7-2(第5)</span>, <span class="nobr">7-6(第3)</span>, <span class="nobr">9-9-3(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3741_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">水笛由念</td><td rowspan="2">饰品-手持·左</td><td>顶配</td><td></td><td><span class="nobr">2-1</span></td><td><span id="cell3729_tl3"><a href="" onclick="showTop('3729_tl3');return false;">共7关</a></span><span id="cell3729_tl3_f" style="display:none"><span class="nobr">1-3</span>, <span class="nobr">5-3</span>, <span class="nobr">7-4</span>, <span class="nobr">9-4</span>, <span class="nobr">10-2</span>, <span class="nobr">12-6</span>, <span class="nobr">12-支1</span><br><span class="nobr"><a href="" onclick="hideTop('3729_tl3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">3-5(第4)</span></td><td class="inSec"><span id="cell3729_sl3"><a href="" onclick="showTop('3729_sl3');return false;">共9关</a></span><span id="cell3729_sl3_f" style="display:none"><span class="nobr">2-9(第4)</span>, <span class="nobr">3-支1(第5)</span>, <span class="nobr">3-支2(第5)</span>, <span class="nobr">4-9(第2)</span>, <span class="nobr">5-9(第3)</span>, <span class="nobr">6-11(第2)</span>, <span class="nobr">8-3(第3)</span>, <span class="nobr">8-5(第2)</span>, <span class="nobr">9-9-3(第4)</span><br><span class="nobr"><a href="" onclick="hideTop('3729_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">水笛由念·夏</td><td rowspan="1">饰品-手持·左</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-4(第5)</span>, <span class="nobr">3-5(第3)</span></td><td class="inSec"><span class="nobr">1-3(第5)</span>, <span class="nobr">5-3(第5)</span>, <span class="nobr">9-9-3(第3)</span></td></tr><tr><td rowspan="2">水纱少灵</td><td rowspan="2">饰品-特殊·肩部</td><td>顶配</td><td><span class="nobr">奇幻</span></td><td><span class="nobr">2-1</span></td><td><span id="cell3730_tl3"><a href="" onclick="showTop('3730_tl3');return false;">共18关</a></span><span id="cell3730_tl3_f" style="display:none"><span class="nobr">1-3</span>, <span class="nobr">2-8</span>, <span class="nobr">3-7</span>, <span class="nobr">4-9</span>, <span class="nobr">5-5</span>, <span class="nobr">5-10</span>, <span class="nobr">6-2</span>, <span class="nobr">6-11</span>, <span class="nobr">7-4</span>, <span class="nobr">7-8</span>, <span class="nobr">8-3</span>, <span class="nobr">8-5</span>, <span class="nobr">8-9</span>, <span class="nobr">9-4</span>, <span class="nobr">10-2</span>, <span class="nobr">12-3</span>, <span class="nobr">12-6</span>, <span class="nobr">12-支1</span><br><span class="nobr"><a href="" onclick="hideTop('3730_tl3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">女王(第4)</span>, <span class="nobr">绝色(第4)</span></td><td class="inSec"><span class="nobr">1-5(第3)</span>, <span class="nobr">1-6(第4)</span>, <span class="nobr">2-2(第4)</span>, <span class="nobr">2-4(第2)</span>, <span class="nobr">3-5(第2)</span></td><td class="inSec"><span id="cell3730_sl3"><a href="" onclick="showTop('3730_sl3');return false;">共21关</a></span><span id="cell3730_sl3_f" style="display:none"><span class="nobr">2-9(第3)</span>, <span class="nobr">2-支1(第4)</span>, <span class="nobr">3-2(第4)</span>, <span class="nobr">3-11(第4)</span>, <span class="nobr">3-支1(第3)</span>, <span class="nobr">3-支2(第3)</span>, <span class="nobr">4-7(第3)</span>, <span class="nobr">5-3(第2)</span>, <span class="nobr">5-9(第3)</span>, <span class="nobr">6-9(第4)</span>, <span class="nobr">7-2(第4)</span>, <span class="nobr">7-6(第2)</span>, <span class="nobr">7-7(第4)</span>, <span class="nobr">8-2(第5)</span>, <span class="nobr">8-6(第4)</span>, <span class="nobr">8-8(第4)</span>, <span class="nobr">8-支3(第4)</span>, <span class="nobr">9-2(第3)</span>, <span class="nobr">9-9-3(第2)</span>, <span class="nobr">9-支2(第3)</span>, <span class="nobr">11-5(第5)</span><br><span class="nobr"><a href="" onclick="hideTop('3730_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">水纱少灵·夏</td><td rowspan="2">饰品-特殊·肩部</td><td>顶配</td><td></td><td></td><td><span id="cell3743_tl3"><a href="" onclick="showTop('3743_tl3');return false;">共7关</a></span><span id="cell3743_tl3_f" style="display:none"><span class="nobr">1-6</span>, <span class="nobr">3-4</span>, <span class="nobr">4-4</span>, <span class="nobr">6-3</span>, <span class="nobr">7-支1</span>, <span class="nobr">9-支2</span>, <span class="nobr">10-9-2</span><br><span class="nobr"><a href="" onclick="hideTop('3743_tl3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">夏日(第4)</span>, <span class="nobr">女王(第5)</span>, <span class="nobr">奇幻(第4)</span>, <span class="nobr">绝色(第2)</span>, <span class="nobr">清秀(第4)</span></td><td class="inSec"><span id="cell3743_sl2"><a href="" onclick="showTop('3743_sl2');return false;">共8关</a></span><span id="cell3743_sl2_f" style="display:none"><span class="nobr">1-3(第4)</span>, <span class="nobr">1-5(第5)</span>, <span class="nobr">1-6(第5)</span>, <span class="nobr">2-1(第3)</span>, <span class="nobr">2-2(第5)</span>, <span class="nobr">2-4(第3)</span>, <span class="nobr">3-5(第3)</span>, <span class="nobr">3-6(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3743_sl2');return false;">收起</a></span></span></td><td class="inSec"><span id="cell3743_sl3"><a href="" onclick="showTop('3743_sl3');return false;">共32关</a></span><span id="cell3743_sl3_f" style="display:none"><span class="nobr">1-3(第3)</span>, <span class="nobr">2-8(第4)</span>, <span class="nobr">2-支2(第3)</span>, <span class="nobr">3-1(第3)</span>, <span class="nobr">3-支1(第5)</span>, <span class="nobr">4-7(第4)</span>, <span class="nobr">4-9(第2)</span>, <span class="nobr">5-3(第5)</span>, <span class="nobr">5-10(第3)</span>, <span class="nobr">5-12(第5)</span>, <span class="nobr">6-2(第2)</span>, <span class="nobr">6-8(第4)</span>, <span class="nobr">6-9(第5)</span>, <span class="nobr">6-11(第2)</span>, <span class="nobr">7-2(第3)</span>, <span class="nobr">7-4(第3)</span>, <span class="nobr">7-6(第3)</span>, <span class="nobr">7-支2(第4)</span>, <span class="nobr">8-5(第3)</span>, <span class="nobr">8-6(第5)</span>, <span class="nobr">8-8(第5)</span>, <span class="nobr">8-支3(第5)</span>, <span class="nobr">9-2(第5)</span>, <span class="nobr">9-6-1(第3)</span>, <span class="nobr">9-6-2(第4)</span>, <span class="nobr">9-9-3(第3)</span>, <span class="nobr">11-支1(第3)</span>, <span class="nobr">11-支2(第5)</span>, <span class="nobr">12-3(第3)</span>, <span class="nobr">12-6(第3)</span>, <span class="nobr">12-9(第5)</span>, <span class="nobr">12-支1(第4)</span><br><span class="nobr"><a href="" onclick="hideTop('3743_sl3');return false;">收起</a></span></span></td></tr></tbody></table>
+<!--limit table-->
+<table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟(极限)</td><td>关卡(极限)</td></tr><tr><td rowspan="1" class="inName">水华十年</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水华十年·夏</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水华十年·雨</td><td rowspan="1" class="inName">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="14767魅惑佳人·奇迹
+14209妃月
+14011纤媚狐
+14011月下美人
+13910水华十年·雨" class="aTooltip"><span class="nobr">9-9-3(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">水华十年·雪</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水华</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水芝之约</td><td rowspan="1" class="inName">连衣裙</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">水芝之约·夏</td><td rowspan="1" class="inName">连衣裙</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="25638采撷草莓·珍稀
+24841蝶舞翩跹·粉蝶
+24578糖果娃娃·珍稀
+24578桃心骑士
+24043水芝之约·夏" class="aTooltip"><span class="nobr">奇幻(第5)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="62446夕夜迢迢
+59065水芝之约·夏
+59065一品朱衣
+59061海上鹤
+58339姹紫嫣红·珍稀" class="aTooltip"><span class="nobr">1-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="51153采撷草莓·珍稀
+49558糖果娃娃·珍稀
+49360蝶舞翩跹·粉蝶
+48562桃心骑士
+47765水芝之约·夏
+47765水中月" class="aTooltip"><span class="nobr">2-8(第5)</span></a>, <a href="" onclick="return false;" tooltip="47771采撷草莓·珍稀
+46177糖果娃娃·珍稀
+45181蝶舞翩跹·粉蝶
+45181桃心骑士
+44383水芝之约·夏" class="aTooltip"><span class="nobr">3-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="78556蝶舞翩跹·粉蝶
+78556桃心骑士
+77360水芝之约·夏
+76644采撷草莓·珍稀
+73832森女羊·珍稀" class="aTooltip"><span class="nobr">5-10(第3)</span></a>, <a href="" onclick="return false;" tooltip="62430夕夜迢迢
+60455海上鹤
+60164水芝之约·夏
+60164一品朱衣
+59784姹紫嫣红·珍稀" class="aTooltip"><span class="nobr">12-6(第3)</span></a></td></tr><tr><td rowspan="1" class="inName">水芝</td><td rowspan="1" class="inName">连衣裙</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="36193戏水裳
+35179蓝水鱼
+35179史库水
+21729水芝
+21490歌者·白" class="aTooltip"><span class="nobr">1-3(第4)</span></a></td><td class="inSec"><span id="cell3674_sl3"><a href="" onclick="showTop('3674_sl3');return false;">共6关</a></span><span id="cell3674_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="[50625露珠+历史的涂鸦]
+50488水芝
+48059绿烟
+47907采撷草莓·蓝提
+47907采撷草莓·抹茶
+47904浮影·银灰" class="aTooltip"><span class="nobr">1-6(第1)</span></a>, <a href="" onclick="return false;" tooltip="51289采撷草莓·蓝提
+51289采撷草莓·抹茶
+51250水芝
+50293贺礼
+50225山茶春色·华丽" class="aTooltip"><span class="nobr">4-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="77907泪雨零霖
+76186桃花歌
+75287水芝
+75248隔花雨
+75126黄金城" class="aTooltip"><span class="nobr">4-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="54578泪雨零霖
+52857桃花歌
+51958水芝
+51919隔花雨
+51797黄金城" class="aTooltip"><span class="nobr">6-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="77907泪雨零霖
+76186桃花歌
+75287水芝
+75248隔花雨
+75126黄金城" class="aTooltip"><span class="nobr">6-11(第3)</span></a>, <a href="" onclick="return false;" tooltip="59971桃花歌
+57985绿烟
+57557水芝
+57201山茶春色
+56249云端初见" class="aTooltip"><span class="nobr">8-5(第3)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3674_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水芸云伤</td><td rowspan="1" class="inName">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="6381竹叶舟
+6373翡翠璧
+6200水芸云伤
+5879芙蓉馥
+5821花月摇" class="aTooltip"><span class="nobr">2-1(第3)</span></a></td><td class="inSec"><span id="cell3716_sl3"><a href="" onclick="showTop('3716_sl3');return false;">共7关</a></span><span id="cell3716_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="12808翡翠璧
+12031水芸云伤
+11412绣锦履
+11281花月摇
+11140吉祥扣" class="aTooltip"><span class="nobr">1-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="17159白锦履
+16334拂绿·华丽
+15430水芸云伤
+15317月兰
+15309拂绿" class="aTooltip"><span class="nobr">4-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="12493白锦履
+11668拂绿·华丽
+10764水芸云伤
+10651月兰
+10643拂绿" class="aTooltip"><span class="nobr">6-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="17159白锦履
+16334拂绿·华丽
+15430水芸云伤
+15317月兰
+15309拂绿" class="aTooltip"><span class="nobr">6-11(第3)</span></a>, <a href="" onclick="return false;" tooltip="13481竹叶舟
+13153翡翠璧
+12692水芸云伤
+12466良缘永结
+12375梅林邀共饮" class="aTooltip"><span class="nobr">7-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="12677翡翠璧
+12222水芸云伤
+11713花月摇
+11359梅林邀共饮
+11229白锦履" class="aTooltip"><span class="nobr">12-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="10916翡翠璧
+10144竹叶舟
+10026水芸云伤
+9433梅林邀共饮
+9349花月摇" class="aTooltip"><span class="nobr">12-支1(第3)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3716_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水芸云伤·夏</td><td rowspan="1" class="inName">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="6088绣锦履
+5949翡翠璧
+5813吉祥扣
+5761水芸云伤·夏
+5708金迷葉茂" class="aTooltip"><span class="nobr">2-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="6393绣锦履
+6234翡翠璧
+6105吉祥扣
+6008水芸云伤·夏
+6008金迷葉茂" class="aTooltip"><span class="nobr">3-5(第4)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="12032绣锦履
+11793翡翠璧
+11495吉祥扣
+11307水芸云伤·夏
+11228金迷葉茂" class="aTooltip"><span class="nobr">9-9-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="8055白锦履
+7945绮霞景
+7780蓝瓷·鞋
+7675草莓优酪·华丽
+7613水芸云伤·夏" class="aTooltip"><span class="nobr">10-9-2(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">水芸</td><td rowspan="1" class="inName">鞋子</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="10298翻折长靴
+10258嫣红履·珍稀
+9979绵羊小皮靴
+9726嫣红履·华丽
+9640水芸
+9640暗金扣·华丽" class="aTooltip"><span class="nobr">5-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="15271拂绿·华丽
+14917拂绿
+14550水芸
+13899兰猗
+13664白锦履" class="aTooltip"><span class="nobr">8-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="12708拂绿·华丽
+12124白锦履
+12092拂绿
+11701水芸
+11339花月摇" class="aTooltip"><span class="nobr">8-5(第4)</span></a>, <a href="" onclick="return false;" tooltip="11573荒原凉鞋
+5025拂绿·华丽
+4968白锦履
+4932水芸
+4932暗金扣·华丽" class="aTooltip"><span class="nobr">12-9(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">水旦一酒</td><td rowspan="1" class="inName">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="3224衔钗雀
+3028水旦一酒
+3027炽火凤冠
+3027红鸾凤冠
+2978月水莲" class="aTooltip"><span class="nobr">2-1(第2)</span></a></td><td class="inSec"><span id="cell3727_sl3"><a href="" onclick="showTop('3727_sl3');return false;">共9关</a></span><span id="cell3727_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="6484衔钗雀
+6066水旦一酒
+5834紫兰佩·珍稀
+5721兰佩·珍稀
+5706葉片发带" class="aTooltip"><span class="nobr">1-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="8551月水莲
+7716衔钗雀
+7416兰佩
+7373莺语
+7298水旦一酒" class="aTooltip"><span class="nobr">4-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="6218月水莲
+5383衔钗雀
+5083兰佩
+5040莺语
+4965水旦一酒" class="aTooltip"><span class="nobr">6-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="8551月水莲
+7716衔钗雀
+7416兰佩
+7373莺语
+7298水旦一酒" class="aTooltip"><span class="nobr">6-11(第5)</span></a>, <a href="" onclick="return false;" tooltip="7076莺语
+7025兰佩
+6832月水莲
+6026莺语·华丽
+5923水旦一酒" class="aTooltip"><span class="nobr">8-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="4975韵花枝
+4800蔷薇礼帽
+4728花月榣
+4494月寒樱
+4398水旦一酒" class="aTooltip"><span class="nobr">9-支2(第5)</span></a>, <a href="" onclick="return false;" tooltip="5007月水莲
+4280兰佩
+4219莺语
+4211衔钗雀
+3751水旦一酒" class="aTooltip"><span class="nobr">10-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="6392衔钗雀
+6112水旦一酒
+5979紫兰佩·珍稀
+5911兰佩·珍稀
+5891圣宜凤冠
+5891昊天云冠" class="aTooltip"><span class="nobr">12-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="5560衔钗雀
+5255炽火凤冠
+5208红鸾凤冠
+5029水旦一酒
+5029圣宜凤冠
+5029昊天云冠" class="aTooltip"><span class="nobr">12-支1(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3727_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">水旦</td><td rowspan="2" class="inName haveTop">饰品-头饰</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2239水旦
+2239枫叶头箍
+2209海滨草帽·白
+2179莺语
+2153海滨草帽·蓝" class="aTooltip"><span class="nobr">夏日</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="6095水旦
+6095枫叶头箍
+6051韵花枝
+5932花月榣
+5840莺语" class="aTooltip"><span class="nobr">7-支2</span></a>, <a href="" onclick="return false;" tooltip="4706水旦
+4706枫叶头箍
+4595海滨草帽·白
+4546街风黑帽
+4511莺语" class="aTooltip"><span class="nobr">11-支2</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="2212韵花枝
+2201海滨草帽·白
+2173海滨草帽·蓝
+2131水旦
+2131枫叶头箍" class="aTooltip"><span class="nobr">1-3(第4)</span></a></td><td class="inSec"><span id="cell3726_sl3"><a href="" onclick="showTop('3726_sl3');return false;">共8关</a></span><span id="cell3726_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="5981海滨草帽·白
+5935高级女帽
+5901水旦
+5901枫叶头箍
+5732侦探帽" class="aTooltip"><span class="nobr">1-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="5284海滨草帽·白
+5125海滨草帽·蓝
+4950韵花枝
+4909水旦
+4909枫叶头箍" class="aTooltip"><span class="nobr">1-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="5440月水莲
+5166惬意
+5083金扣结·蓝
+5007金扣结·白
+4863水旦
+4863枫叶头箍" class="aTooltip"><span class="nobr">3-1(第5)</span></a>, <a href="" onclick="return false;" tooltip="5284海滨草帽·白
+5125海滨草帽·蓝
+4950韵花枝
+4909水旦
+4909枫叶头箍" class="aTooltip"><span class="nobr">3-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="5256高级女帽
+5044学士帽
+5028海滨草帽·白
+5002水旦
+5002枫叶头箍" class="aTooltip"><span class="nobr">8-支2(第4)</span></a>, <a href="" onclick="return false;" tooltip="4387月水莲
+3889幽冥链
+3812紫色头纱·华丽
+3662水旦
+3662枫叶头箍" class="aTooltip"><span class="nobr">9-6-1(第4)</span></a>, <a href="" onclick="return false;" tooltip="5429高级女帽
+5268海滨草帽·白
+5250水旦
+5250枫叶头箍
+5203学士帽" class="aTooltip"><span class="nobr">11-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="5475荒原头饰
+2458水旦
+2458枫叶头箍
+2370海滨草帽·白
+2360月水莲" class="aTooltip"><span class="nobr">12-9(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3726_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水链连心</td><td rowspan="1" class="inName">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="3146思君归
+2504凤鸣鹤唳·华丽
+2364魅惑颈圈·奇迹
+2258水链连心
+2224水链连心·夏" class="aTooltip"><span class="nobr">绝色(第4)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="3002魅惑颈圈·奇迹
+2911水链连心·夏
+2883精灵颈饰
+2880水链连心
+2785葉片项链" class="aTooltip"><span class="nobr">2-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="3132魅惑颈圈·奇迹
+3041精灵颈饰
+3028水链连心·夏
+3004水链连心
+2924葉片项链" class="aTooltip"><span class="nobr">3-5(第4)</span></a></td><td class="inSec"><span id="cell3728_sl3"><a href="" onclick="showTop('3728_sl3');return false;">共10关</a></span><span id="cell3728_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="5907花月瑶
+5650魅惑颈圈·奇迹
+5550精灵颈饰
+5447水链连心
+5440水链连心·夏" class="aTooltip"><span class="nobr">1-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="5174玫瑰之钥
+4932翡翠环
+4870水链连心
+4870魅惑颈圈·奇迹
+4791葉片项链" class="aTooltip"><span class="nobr">3-1(第3)</span></a>, <a href="" onclick="return false;" tooltip="8043翡翠环
+7682月光石
+7095花月瑶
+5174玫瑰之钥
+4870水链连心
+4870魅惑颈圈·奇迹" class="aTooltip"><span class="nobr">4-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="5710翡翠环
+5349月光石
+5174玫瑰之钥
+4870水链连心
+4870魅惑颈圈·奇迹" class="aTooltip"><span class="nobr">6-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="8043翡翠环
+7682月光石
+7095花月瑶
+5174玫瑰之钥
+4870水链连心
+4870魅惑颈圈·奇迹" class="aTooltip"><span class="nobr">6-11(第5)</span></a>, <a href="" onclick="return false;" tooltip="7145凤鸣鹤唳·华丽
+6783魅惑颈圈·奇迹
+6556精灵颈饰
+6479水链连心
+6469水链连心·夏" class="aTooltip"><span class="nobr">7-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="4628魅惑颈圈·奇迹
+4581精灵颈饰
+4471水链连心·夏
+4426水链连心
+4346葉片项链" class="aTooltip"><span class="nobr">7-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="6321玫瑰之钥
+6162翡翠环
+6101水链连心
+6101魅惑颈圈·奇迹
+6009归真" class="aTooltip"><span class="nobr">7-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="5907魅惑颈圈·奇迹
+5744精灵颈饰
+5724水链连心·夏
+5654水链连心
+5494葉片项链" class="aTooltip"><span class="nobr">9-9-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3928玫瑰之钥
+3810翡翠环
+3806水链连心
+3806魅惑颈圈·奇迹
+3733归真" class="aTooltip"><span class="nobr">10-9-2(第3)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3728_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水链连心·夏</td><td rowspan="1" class="inName">饰品-颈饰·项链</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="3146思君归
+2504凤鸣鹤唳·华丽
+2364魅惑颈圈·奇迹
+2258水链连心
+2224水链连心·夏" class="aTooltip"><span class="nobr">绝色(第5)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="3002魅惑颈圈·奇迹
+2911水链连心·夏
+2883精灵颈饰
+2880水链连心
+2785葉片项链" class="aTooltip"><span class="nobr">2-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="3132魅惑颈圈·奇迹
+3041精灵颈饰
+3028水链连心·夏
+3004水链连心
+2924葉片项链" class="aTooltip"><span class="nobr">3-5(第3)</span></a></td><td class="inSec"><span id="cell3741_sl3"><a href="" onclick="showTop('3741_sl3');return false;">共7关</a></span><span id="cell3741_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="5907花月瑶
+5650魅惑颈圈·奇迹
+5550精灵颈饰
+5447水链连心
+5440水链连心·夏" class="aTooltip"><span class="nobr">1-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="5520凤鸣鹤唳·华丽
+5212精灵颈饰
+5019魅惑颈圈·奇迹
+4870红笺信
+4810水链连心·夏" class="aTooltip"><span class="nobr">4-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="5394精灵颈饰
+5368魅惑颈圈
+5253魅惑颈圈·奇迹
+5148水链连心·夏
+5129蝶舞流转·珍稀" class="aTooltip"><span class="nobr">5-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="7145凤鸣鹤唳·华丽
+6783魅惑颈圈·奇迹
+6556精灵颈饰
+6479水链连心
+6469水链连心·夏" class="aTooltip"><span class="nobr">7-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="4628魅惑颈圈·奇迹
+4581精灵颈饰
+4471水链连心·夏
+4426水链连心
+4346葉片项链" class="aTooltip"><span class="nobr">7-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="5907魅惑颈圈·奇迹
+5744精灵颈饰
+5724水链连心·夏
+5654水链连心
+5494葉片项链" class="aTooltip"><span class="nobr">9-9-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="4928花月瑶
+4014凤鸣鹤唳·华丽
+3968魅惑颈圈·奇迹
+3890精灵颈饰
+3835水链连心·夏" class="aTooltip"><span class="nobr">12-支1(第5)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3741_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">水笛由念</td><td rowspan="2" class="inName haveTop">饰品-手持·左</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="2994水笛由念
+2873桃花伞
+2050如意金箍棒
+1579绣缘情
+1460祥云舞·包" class="aTooltip"><span class="nobr">2-1</span></a></td><td class="inTop"><span id="cell3729_tl3"><a href="" onclick="showTop('3729_tl3');return false;">共7关</a></span><span id="cell3729_tl3_f" style="display:none"><a href="" onclick="return false;" tooltip="5766水笛由念
+5650祥云舞·包
+5570蓝瓷·包
+5438桃花伞
+5361水笛由念·夏" class="aTooltip"><span class="nobr">1-3</span></a>, <a href="" onclick="return false;" tooltip="5281水笛由念
+5253祥云舞·包
+5129万圣夜灯
+5093蓝瓷·包
+4988水笛由念·夏" class="aTooltip"><span class="nobr">5-3</span></a>, <a href="" onclick="return false;" tooltip="6084水笛由念
+5367桃花伞
+4653绣缘情
+4226祥云舞·包
+4111巧克力提包·棕" class="aTooltip"><span class="nobr">7-4</span></a>, <a href="" onclick="return false;" tooltip="4841水笛由念
+4292桃花伞
+3500如意金箍棒
+3204铁血长鞭
+3145绣缘情
+3145剪红窗" class="aTooltip"><span class="nobr">9-4</span></a>, <a href="" onclick="return false;" tooltip="3795水笛由念
+3539桃花伞
+2984十字架
+2760岚蝶·藏青
+2742复古手杖" class="aTooltip"><span class="nobr">10-2</span></a>, <a href="" onclick="return false;" tooltip="5906水笛由念
+5736桃花伞
+3721祥云舞·包
+3668蓝瓷·包
+3660如意金箍棒" class="aTooltip"><span class="nobr">12-6</span></a>, <a href="" onclick="return false;" tooltip="5003水笛由念
+4483桃花伞
+4055绣缘情
+3968祥云舞·包
+3867蓝瓷·包" class="aTooltip"><span class="nobr">12-支1</span></a><br><span class="nobr"><a href="" onclick="hideTop('3729_tl3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="3132祥云舞·包
+3053蓝瓷·包
+2948水笛由念·夏
+2881水笛由念
+2779草莓竹篮·抹茶" class="aTooltip"><span class="nobr">3-5(第4)</span></a></td><td class="inSec"><span id="cell3729_sl3"><a href="" onclick="showTop('3729_sl3');return false;">共9关</a></span><span id="cell3729_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="5547万圣夜灯
+5537金玉烟斗
+5201万圣夜灯·绮夜
+4943水笛由念
+4943贵宾犬" class="aTooltip"><span class="nobr">2-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="7035金玉烟斗
+5012绣缘情
+4943寒冰之证
+4914祥云舞·包
+4863水笛由念
+4863贵宾犬" class="aTooltip"><span class="nobr">3-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="6559花好
+5547万圣夜灯
+5201万圣夜灯·绮夜
+5129奇妙礼物盒
+5022水笛由念" class="aTooltip"><span class="nobr">3-支2(第5)</span></a>, <a href="" onclick="return false;" tooltip="7095桃花伞
+6955水笛由念
+5391十字架
+4882复古手杖
+4870祥云舞·包" class="aTooltip"><span class="nobr">4-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="5547万圣夜灯
+5201万圣夜灯·绮夜
+4943水笛由念
+4943贵宾犬
+4932黑珍珠·珍稀
+4932绘蓝瓷" class="aTooltip"><span class="nobr">5-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="7095桃花伞
+6955水笛由念
+5391十字架
+4882复古手杖
+4870祥云舞·包" class="aTooltip"><span class="nobr">6-11(第2)</span></a>, <a href="" onclick="return false;" tooltip="5852桃花伞
+5419岚蝶·藏青
+4807水笛由念
+4799绿茗伞
+4791玉如意" class="aTooltip"><span class="nobr">8-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="5670桃花伞
+4902水笛由念
+3517精装笔记
+3471预告函·华丽
+3422年代杖" class="aTooltip"><span class="nobr">8-5(第2)</span></a>, <a href="" onclick="return false;" tooltip="5907祥云舞·包
+5747蓝瓷·包
+5564水笛由念·夏
+5411水笛由念
+5220草莓竹篮·抹茶" class="aTooltip"><span class="nobr">9-9-3(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3729_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">水笛由念·夏</td><td rowspan="1" class="inName">饰品-手持·左</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="3053黑珍珠·珍稀
+3002祥云舞·包
+2906蓝瓷·包
+2867黑珍珠·华丽
+2815水笛由念·夏" class="aTooltip"><span class="nobr">2-4(第5)</span></a>, <a href="" onclick="return false;" tooltip="3132祥云舞·包
+3053蓝瓷·包
+2948水笛由念·夏
+2881水笛由念
+2779草莓竹篮·抹茶" class="aTooltip"><span class="nobr">3-5(第3)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="5766水笛由念
+5650祥云舞·包
+5570蓝瓷·包
+5438桃花伞
+5361水笛由念·夏" class="aTooltip"><span class="nobr">1-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="5281水笛由念
+5253祥云舞·包
+5129万圣夜灯
+5093蓝瓷·包
+4988水笛由念·夏" class="aTooltip"><span class="nobr">5-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="5907祥云舞·包
+5747蓝瓷·包
+5564水笛由念·夏
+5411水笛由念
+5220草莓竹篮·抹茶" class="aTooltip"><span class="nobr">9-9-3(第3)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">水纱少灵</td><td rowspan="2" class="inName haveTop">饰品-特殊·肩部</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="1955水纱少灵
+1955鹤膝竹
+1911清纱曲
+1894水纱少灵·夏
+1789芙蓉仙" class="aTooltip"><span class="nobr">奇幻</span></a></td><td class="inTop"><a href="" onclick="return false;" tooltip="3119水纱少灵
+1474骖鹤驭凤·华丽
+1422水纱少灵·夏
+1352鹤膝竹
+1296芙蓉仙" class="aTooltip"><span class="nobr">2-1</span></a></td><td class="inTop"><span id="cell3730_tl3"><a href="" onclick="showTop('3730_tl3');return false;">共18关</a></span><span id="cell3730_tl3_f" style="display:none"><a href="" onclick="return false;" tooltip="6245水纱少灵
+5547鹤膝竹
+5447水纱少灵·夏
+5158芙蓉仙
+5129骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">1-3</span></a>, <a href="" onclick="return false;" tooltip="3918水纱少灵
+3918鹤膝竹
+3771清纱曲
+3631水纱少灵·夏
+3579骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">2-8</span></a>, <a href="" onclick="return false;" tooltip="3579水纱少灵
+3579鹤膝竹
+3353清纱曲
+3241骖鹤驭凤·华丽
+3241非你莫属·华丽" class="aTooltip"><span class="nobr">3-7</span></a>, <a href="" onclick="return false;" tooltip="7433水纱少灵
+4870水纱少灵·夏
+4820骖鹤驭凤
+4525芙蓉仙
+4444草莓派" class="aTooltip"><span class="nobr">4-9</span></a>, <a href="" onclick="return false;" tooltip="4509水纱少灵
+4509鹤膝竹
+4170骖鹤驭凤·华丽
+4170非你莫属·华丽
+3819清纱曲" class="aTooltip"><span class="nobr">5-5</span></a>, <a href="" onclick="return false;" tooltip="6722水纱少灵
+6722鹤膝竹
+6296水纱少灵·夏
+6214骖鹤驭凤·华丽
+6214非你莫属·华丽" class="aTooltip"><span class="nobr">5-10</span></a>, <a href="" onclick="return false;" tooltip="5100水纱少灵
+4870水纱少灵·夏
+4820骖鹤驭凤
+4525芙蓉仙
+4444草莓派" class="aTooltip"><span class="nobr">6-2</span></a>, <a href="" onclick="return false;" tooltip="7433水纱少灵
+4870水纱少灵·夏
+4820骖鹤驭凤
+4525芙蓉仙
+4444草莓派" class="aTooltip"><span class="nobr">6-11</span></a>, <a href="" onclick="return false;" tooltip="6456水纱少灵
+4216骖鹤驭凤·华丽
+4126水纱少灵·夏
+4080鹤膝竹
+3766芙蓉仙" class="aTooltip"><span class="nobr">7-4</span></a>, <a href="" onclick="return false;" tooltip="4011水纱少灵
+3036首领徽记
+2568霞色锦囊
+2337洛可小包
+2337白领单肩包" class="aTooltip"><span class="nobr">7-8</span></a>, <a href="" onclick="return false;" tooltip="5016水纱少灵
+5015麦穗皮包·粉
+4795骖鹤驭凤
+4301圆形挎包·简约
+4295优雅天使" class="aTooltip"><span class="nobr">8-3</span></a>, <a href="" onclick="return false;" tooltip="5148水纱少灵
+3291优雅天使
+3048水纱少灵·夏
+2917芙蓉仙
+2854麦穗皮包·粉" class="aTooltip"><span class="nobr">8-5</span></a>, <a href="" onclick="return false;" tooltip="4551水纱少灵
+4551鹤膝竹
+4346锦缎鼓
+4335清纱曲
+4173恋叶包" class="aTooltip"><span class="nobr">8-9</span></a>, <a href="" onclick="return false;" tooltip="5120水纱少灵
+2978非你莫属·华丽
+2898骖鹤驭凤·华丽
+2873非你莫属
+2773圆形挎包·优雅" class="aTooltip"><span class="nobr">9-4</span></a>, <a href="" onclick="return false;" tooltip="3911水纱少灵
+3104骖鹤驭凤
+2837麦穗皮包·棕
+2817圆形挎包·简约
+2753麦穗皮包·红" class="aTooltip"><span class="nobr">10-2</span></a>, <a href="" onclick="return false;" tooltip="3702水纱少灵
+3702鹤膝竹
+3364骖鹤驭凤·华丽
+3364非你莫属·华丽
+3264水纱少灵·夏" class="aTooltip"><span class="nobr">12-3</span></a>, <a href="" onclick="return false;" tooltip="6243水纱少灵
+3660鹤膝竹
+3600水纱少灵·夏
+3421芙蓉仙
+3380骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">12-6</span></a>, <a href="" onclick="return false;" tooltip="5357水纱少灵
+4112骖鹤驭凤·华丽
+3986鹤膝竹
+3775水纱少灵·夏
+3541芙蓉仙" class="aTooltip"><span class="nobr">12-支1</span></a><br><span class="nobr"><a href="" onclick="hideTop('3730_tl3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2450非你莫属·华丽
+2294非你莫属
+2000鹤膝竹
+1894水纱少灵
+1815水纱少灵·夏" class="aTooltip"><span class="nobr">女王(第4)</span></a>, <a href="" onclick="return false;" tooltip="2404骖鹤驭凤·华丽
+2258鹤膝竹
+2258水纱少灵·夏
+2178水纱少灵
+2039芙蓉仙" class="aTooltip"><span class="nobr">绝色(第4)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="1826非你莫属·华丽
+1664非你莫属
+1521水纱少灵
+1521鹤膝竹
+1334芙蓉仙
+1334水纱少灵·夏" class="aTooltip"><span class="nobr">1-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="2724非你莫属·华丽
+2450鹤膝竹
+2443非你莫属
+2336水纱少灵
+2079水纱少灵·夏" class="aTooltip"><span class="nobr">1-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="2821非你莫属·华丽
+2544非你莫属
+2226鹤膝竹
+2147水纱少灵
+2042水纱少灵·夏" class="aTooltip"><span class="nobr">2-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="3001鹤膝竹
+2905水纱少灵
+2880水纱少灵·夏
+2694芙蓉仙
+2611骖鹤驭凤·华丽
+2611非你莫属·华丽" class="aTooltip"><span class="nobr">2-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="3117鹤膝竹
+3037水纱少灵
+3004水纱少灵·夏
+2819芙蓉仙
+2699骖鹤驭凤·华丽
+2699非你莫属·华丽" class="aTooltip"><span class="nobr">3-5(第2)</span></a></td><td class="inSec"><span id="cell3730_sl3"><a href="" onclick="showTop('3730_sl3');return false;">共21关</a></span><span id="cell3730_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="5547非你莫属·华丽
+5288鹤膝竹
+5129水纱少灵
+4912非你莫属
+4791骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">2-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="5209非你莫属·华丽
+5129骖鹤驭凤·华丽
+4950鹤膝竹
+4791水纱少灵
+4650非你莫属" class="aTooltip"><span class="nobr">2-支1(第4)</span></a>, <a href="" onclick="return false;" tooltip="5454非你莫属·华丽
+4633非你莫属
+4472鹤膝竹
+4393水纱少灵
+4054骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">3-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="5908非你莫属·华丽
+5274非你莫属
+5006鹤膝竹
+4847水纱少灵
+4509骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">3-11(第4)</span></a>, <a href="" onclick="return false;" tooltip="5467骖鹤驭凤·华丽
+5288鹤膝竹
+5129水纱少灵
+4791非你莫属·华丽
+4489水纱少灵·夏" class="aTooltip"><span class="nobr">3-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="5547非你莫属·华丽
+5209鹤膝竹
+5129水纱少灵
+4836非你莫属
+4453骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">3-支2(第3)</span></a>, <a href="" onclick="return false;" tooltip="5467骖鹤驭凤·华丽
+5209鹤膝竹
+5129水纱少灵
+4594水纱少灵·夏
+4453非你莫属·华丽" class="aTooltip"><span class="nobr">4-7(第3)</span></a>, <a href="" onclick="return false;" tooltip="5626鹤膝竹
+5467水纱少灵
+5129骖鹤驭凤·华丽
+5129非你莫属·华丽
+4827水纱少灵·夏" class="aTooltip"><span class="nobr">5-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="5547非你莫属·华丽
+5288鹤膝竹
+5129水纱少灵
+4912非你莫属
+4791骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">5-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="5386非你莫属·华丽
+5205非你莫属
+4484鹤膝竹
+4324水纱少灵
+4299水纱少灵·夏" class="aTooltip"><span class="nobr">6-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="7145骖鹤驭凤·华丽
+6628鹤膝竹
+6479水纱少灵·夏
+6469水纱少灵
+6005芙蓉仙" class="aTooltip"><span class="nobr">7-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="4618鹤膝竹
+4538水纱少灵
+4426水纱少灵·夏
+4189芙蓉仙
+4031骖鹤驭凤·华丽
+4031非你莫属·华丽" class="aTooltip"><span class="nobr">7-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="3777非你莫属·华丽
+3458鹤膝竹
+3396非你莫属
+3275水纱少灵
+3072骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">7-7(第4)</span></a>, <a href="" onclick="return false;" tooltip="4342非你莫属·华丽
+3762非你莫属
+3669锦缎鼓
+3666鹤膝竹
+3506水纱少灵" class="aTooltip"><span class="nobr">8-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="4553非你莫属·华丽
+4192非你莫属
+4130鹤膝竹
+4031水纱少灵
+3662水纱少灵·夏" class="aTooltip"><span class="nobr">8-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="7351非你莫属·华丽
+6564非你莫属
+6505鹤膝竹
+6306水纱少灵
+5522水纱少灵·夏" class="aTooltip"><span class="nobr">8-8(第4)</span></a>, <a href="" onclick="return false;" tooltip="6085非你莫属·华丽
+5620非你莫属
+5409鹤膝竹
+5250水纱少灵
+4824水纱少灵·夏" class="aTooltip"><span class="nobr">8-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3766非你莫属·华丽
+3438非你莫属
+3210水纱少灵
+3210鹤膝竹
+2800芙蓉仙
+2800水纱少灵·夏" class="aTooltip"><span class="nobr">9-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="5916鹤膝竹
+5757水纱少灵
+5654水纱少灵·夏
+5311芙蓉仙
+5250骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">9-9-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="4101水纱少灵·夏
+3729芙蓉仙
+3722水纱少灵
+3722鹤膝竹
+3436清纱曲" class="aTooltip"><span class="nobr">9-支2(第3)</span></a>, <a href="" onclick="return false;" tooltip="5765非你莫属·华丽
+5378骖鹤驭凤·华丽
+5268非你莫属
+5088鹤膝竹
+4929水纱少灵" class="aTooltip"><span class="nobr">11-5(第5)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3730_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">水纱少灵·夏</td><td rowspan="2" class="inName haveTop">饰品-特殊·肩部</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><span id="cell3743_tl3"><a href="" onclick="showTop('3743_tl3');return false;">共7关</a></span><span id="cell3743_tl3_f" style="display:none"><a href="" onclick="return false;" tooltip="4453水纱少灵·夏
+4217优雅天使
+3967骖鹤驭凤
+3959麦穗皮包·粉
+3894芙蓉仙" class="aTooltip"><span class="nobr">1-6</span></a>, <a href="" onclick="return false;" tooltip="4453水纱少灵·夏
+4217优雅天使
+3967骖鹤驭凤
+3959麦穗皮包·粉
+3894芙蓉仙" class="aTooltip"><span class="nobr">3-4</span></a>, <a href="" onclick="return false;" tooltip="4453水纱少灵·夏
+4217优雅天使
+4133清纱曲
+4039麦穗皮包·粉
+3894芙蓉仙" class="aTooltip"><span class="nobr">4-4</span></a>, <a href="" onclick="return false;" tooltip="4324水纱少灵·夏
+4305恋叶包
+4156清纱曲
+4145锦缎鼓
+3967首领徽记" class="aTooltip"><span class="nobr">6-3</span></a>, <a href="" onclick="return false;" tooltip="6101水纱少灵·夏
+5732鹤膝竹
+5697草莓派
+5588骖鹤驭凤
+5588芙蓉仙" class="aTooltip"><span class="nobr">7-支1</span></a>, <a href="" onclick="return false;" tooltip="4101水纱少灵·夏
+3729芙蓉仙
+3722水纱少灵
+3722鹤膝竹
+3436清纱曲" class="aTooltip"><span class="nobr">9-支2</span></a>, <a href="" onclick="return false;" tooltip="3806水纱少灵·夏
+3585鹤膝竹
+3546草莓派
+3488骖鹤驭凤
+3488芙蓉仙" class="aTooltip"><span class="nobr">10-9-2</span></a><br><span class="nobr"><a href="" onclick="hideTop('3743_tl3');return false;">收起</a></span></span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2020优雅天使
+1703首领徽记
+1692草莓派
+1667水纱少灵·夏
+1650洛可小包" class="aTooltip"><span class="nobr">夏日(第4)</span></a>, <a href="" onclick="return false;" tooltip="2450非你莫属·华丽
+2294非你莫属
+2000鹤膝竹
+1894水纱少灵
+1815水纱少灵·夏" class="aTooltip"><span class="nobr">女王(第5)</span></a>, <a href="" onclick="return false;" tooltip="1955水纱少灵
+1955鹤膝竹
+1911清纱曲
+1894水纱少灵·夏
+1789芙蓉仙" class="aTooltip"><span class="nobr">奇幻(第4)</span></a>, <a href="" onclick="return false;" tooltip="2404骖鹤驭凤·华丽
+2258水纱少灵·夏
+2258鹤膝竹
+2178水纱少灵
+2039芙蓉仙" class="aTooltip"><span class="nobr">绝色(第2)</span></a>, <a href="" onclick="return false;" tooltip="2020优雅天使
+1735麦穗皮包·粉
+1730首领徽记
+1728水纱少灵·夏
+1717草莓派" class="aTooltip"><span class="nobr">清秀(第4)</span></a></td><td class="inSec"><span id="cell3743_sl2"><a href="" onclick="showTop('3743_sl2');return false;">共8关</a></span><span id="cell3743_sl2_f" style="display:none"><a href="" onclick="return false;" tooltip="1906优雅天使
+1841首领徽记
+1815洛可小包
+1777水纱少灵·夏
+1737茶语" class="aTooltip"><span class="nobr">1-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="1826非你莫属·华丽
+1664非你莫属
+1521水纱少灵
+1521鹤膝竹
+1334水纱少灵·夏
+1334芙蓉仙" class="aTooltip"><span class="nobr">1-5(第5)</span></a>, <a href="" onclick="return false;" tooltip="2724非你莫属·华丽
+2450鹤膝竹
+2443非你莫属
+2336水纱少灵
+2079水纱少灵·夏" class="aTooltip"><span class="nobr">1-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="3119水纱少灵
+1474骖鹤驭凤·华丽
+1422水纱少灵·夏
+1352鹤膝竹
+1296芙蓉仙" class="aTooltip"><span class="nobr">2-1(第3)</span></a>, <a href="" onclick="return false;" tooltip="2821非你莫属·华丽
+2544非你莫属
+2226鹤膝竹
+2147水纱少灵
+2042水纱少灵·夏" class="aTooltip"><span class="nobr">2-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="3001鹤膝竹
+2905水纱少灵
+2880水纱少灵·夏
+2694芙蓉仙
+2611骖鹤驭凤·华丽
+2611非你莫属·华丽" class="aTooltip"><span class="nobr">2-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="3117鹤膝竹
+3037水纱少灵
+3004水纱少灵·夏
+2819芙蓉仙
+2699骖鹤驭凤·华丽
+2699非你莫属·华丽" class="aTooltip"><span class="nobr">3-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="2201草莓派
+2191骖鹤驭凤
+2183水纱少灵·夏
+2013青柠派
+2012芙蓉仙
+2012鹤膝竹" class="aTooltip"><span class="nobr">3-6(第3)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3743_sl2');return false;">收起</a></span></span></td><td class="inSec"><span id="cell3743_sl3"><a href="" onclick="showTop('3743_sl3');return false;">共32关</a></span><span id="cell3743_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="6245水纱少灵
+5547鹤膝竹
+5447水纱少灵·夏
+5158芙蓉仙
+5129骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">1-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="3918水纱少灵
+3918鹤膝竹
+3771清纱曲
+3631水纱少灵·夏
+3579骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">2-8(第4)</span></a>, <a href="" onclick="return false;" tooltip="4863骖鹤驭凤
+4524草莓派
+4484水纱少灵·夏
+4299鹤膝竹
+4262麦穗皮包·棕
+4262麦穗皮包·红
+4262白领单肩包" class="aTooltip"><span class="nobr">2-支2(第3)</span></a>, <a href="" onclick="return false;" tooltip="4960麦穗皮包·棕
+4960麦穗皮包·红
+4870水纱少灵·夏
+4820骖鹤驭凤
+4766麦穗皮包·白" class="aTooltip"><span class="nobr">3-1(第3)</span></a>, <a href="" onclick="return false;" tooltip="5467骖鹤驭凤·华丽
+5288鹤膝竹
+5129水纱少灵
+4791非你莫属·华丽
+4489水纱少灵·夏" class="aTooltip"><span class="nobr">3-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="5467骖鹤驭凤·华丽
+5209鹤膝竹
+5129水纱少灵
+4594水纱少灵·夏
+4453非你莫属·华丽" class="aTooltip"><span class="nobr">4-7(第4)</span></a>, <a href="" onclick="return false;" tooltip="7433水纱少灵
+4870水纱少灵·夏
+4820骖鹤驭凤
+4525芙蓉仙
+4444草莓派" class="aTooltip"><span class="nobr">4-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="5626鹤膝竹
+5467水纱少灵
+5129骖鹤驭凤·华丽
+5129非你莫属·华丽
+4827水纱少灵·夏" class="aTooltip"><span class="nobr">5-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="6722水纱少灵
+6722鹤膝竹
+6296水纱少灵·夏
+6214骖鹤驭凤·华丽
+6214非你莫属·华丽" class="aTooltip"><span class="nobr">5-10(第3)</span></a>, <a href="" onclick="return false;" tooltip="5394骖鹤驭凤
+4969麦穗皮包·粉
+4549圆形挎包·简约
+4499麦穗皮包·棕
+4463水纱少灵·夏" class="aTooltip"><span class="nobr">5-12(第5)</span></a>, <a href="" onclick="return false;" tooltip="5100水纱少灵
+4870水纱少灵·夏
+4820骖鹤驭凤
+4525芙蓉仙
+4444草莓派" class="aTooltip"><span class="nobr">6-2(第2)</span></a>, <a href="" onclick="return false;" tooltip="4863非你莫属·华丽
+4711非你莫属
+4327白领单肩包
+3881水纱少灵·夏
+3881鹤膝竹" class="aTooltip"><span class="nobr">6-8(第4)</span></a>, <a href="" onclick="return false;" tooltip="5386非你莫属·华丽
+5205非你莫属
+4484鹤膝竹
+4324水纱少灵
+4299水纱少灵·夏" class="aTooltip"><span class="nobr">6-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="7433水纱少灵
+4870水纱少灵·夏
+4820骖鹤驭凤
+4525芙蓉仙
+4444草莓派" class="aTooltip"><span class="nobr">6-11(第2)</span></a>, <a href="" onclick="return false;" tooltip="7145骖鹤驭凤·华丽
+6628鹤膝竹
+6479水纱少灵·夏
+6469水纱少灵
+6005芙蓉仙" class="aTooltip"><span class="nobr">7-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="6456水纱少灵
+4216骖鹤驭凤·华丽
+4126水纱少灵·夏
+4080鹤膝竹
+3766芙蓉仙" class="aTooltip"><span class="nobr">7-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="4618鹤膝竹
+4538水纱少灵
+4426水纱少灵·夏
+4189芙蓉仙
+4031骖鹤驭凤·华丽
+4031非你莫属·华丽" class="aTooltip"><span class="nobr">7-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="5377优雅天使
+5174麦穗皮包·粉
+4630清纱曲
+4340水纱少灵·夏
+4299骖鹤驭凤" class="aTooltip"><span class="nobr">7-支2(第4)</span></a>, <a href="" onclick="return false;" tooltip="5148水纱少灵
+3291优雅天使
+3048水纱少灵·夏
+2917芙蓉仙
+2854麦穗皮包·粉" class="aTooltip"><span class="nobr">8-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="4553非你莫属·华丽
+4192非你莫属
+4130鹤膝竹
+4031水纱少灵
+3662水纱少灵·夏" class="aTooltip"><span class="nobr">8-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="7351非你莫属·华丽
+6564非你莫属
+6505鹤膝竹
+6306水纱少灵
+5522水纱少灵·夏" class="aTooltip"><span class="nobr">8-8(第5)</span></a>, <a href="" onclick="return false;" tooltip="6085非你莫属·华丽
+5620非你莫属
+5409鹤膝竹
+5250水纱少灵
+4824水纱少灵·夏" class="aTooltip"><span class="nobr">8-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="3766非你莫属·华丽
+3438非你莫属
+3210水纱少灵
+3210鹤膝竹
+2800水纱少灵·夏
+2800芙蓉仙" class="aTooltip"><span class="nobr">9-2(第5)</span></a>, <a href="" onclick="return false;" tooltip="3765骖鹤驭凤
+3617草莓派
+3456水纱少灵·夏
+3290麦穗皮包·棕
+3290麦穗皮包·红
+3290白领单肩包" class="aTooltip"><span class="nobr">9-6-1(第3)</span></a>, <a href="" onclick="return false;" tooltip="3979白领单肩包
+3940非你莫属·华丽
+3849非你莫属
+3558水纱少灵·夏
+3558鹤膝竹" class="aTooltip"><span class="nobr">9-6-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="5916鹤膝竹
+5757水纱少灵
+5654水纱少灵·夏
+5311芙蓉仙
+5250骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">9-9-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="5294骖鹤驭凤
+5026草莓派
+4839水纱少灵·夏
+4677麦穗皮包·棕
+4677麦穗皮包·红" class="aTooltip"><span class="nobr">11-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="4150优雅天使
+3906麦穗皮包·粉
+3898骖鹤驭凤
+3526草莓派
+3345水纱少灵·夏" class="aTooltip"><span class="nobr">11-支2(第5)</span></a>, <a href="" onclick="return false;" tooltip="3702水纱少灵
+3702鹤膝竹
+3364骖鹤驭凤·华丽
+3364非你莫属·华丽
+3264水纱少灵·夏" class="aTooltip"><span class="nobr">12-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="6243水纱少灵
+3660鹤膝竹
+3600水纱少灵·夏
+3421芙蓉仙
+3380骖鹤驭凤·华丽" class="aTooltip"><span class="nobr">12-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="2169优雅天使
+2080骖鹤驭凤
+1995麦穗皮包·粉
+1891草莓派
+1757水纱少灵·夏" class="aTooltip"><span class="nobr">12-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="5357水纱少灵
+4112骖鹤驭凤·华丽
+3986鹤膝竹
+3775水纱少灵·夏
+3541芙蓉仙" class="aTooltip"><span class="nobr">12-支1(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3743_sl3');return false;">收起</a></span></span></td></tr></tbody></table>
 </span>
 <p class="title2">烈火之歌</p>
 <span class="norm">
-  <table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟</td><td>关卡</td></tr><tr><td rowspan="1">烈火之歌·珍稀</td><td rowspan="1">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-6(第4)</span></td></tr><tr><td rowspan="1">烈火之歌·淡紫</td><td rowspan="1">发型</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">2-支1(第4)</span>, <span class="nobr">4-6(第2)</span>, <span class="nobr">10-支3(第4)</span>, <span class="nobr">11-5(第3)</span>, <span class="nobr">11-7(第4)</span></td></tr><tr><td rowspan="1">烈火之歌·深紫</td><td rowspan="1">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-3(第5)</span></td></tr><tr><td rowspan="1">烈火之歌·华丽</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">烈火之歌</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">军官大衣</td><td rowspan="1">外套</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第5)</span>, <span class="nobr">宫廷(第4)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">2-支1(第4)</span>, <span class="nobr">7-支3(第5)</span>, <span class="nobr">10-4(第3)</span>, <span class="nobr">11-5(第4)</span></td></tr><tr><td rowspan="2">军官大衣·暗红</td><td rowspan="2">外套</td><td>顶配</td><td></td><td></td><td><span class="nobr">10-4</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-6(第2)</span>, <span class="nobr">7-支3(第4)</span>, <span class="nobr">11-5(第5)</span></td></tr><tr><td rowspan="1">军官大衣·墨蓝</td><td rowspan="1">外套</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-3(第5)</span>, <span class="nobr">4-6(第4)</span>, <span class="nobr">7-支3(第2)</span>, <span class="nobr">10-4(第2)</span></td></tr><tr><td rowspan="2">飒爽英姿·珍稀</td><td rowspan="2">上装</td><td>顶配</td><td><span class="nobr">金色</span>, <span class="nobr">宫廷</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">5-9</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span id="cell3694_sn3"><a href="" onclick="showTop('3694_sn3');return false;">共7关</a></span><span id="cell3694_sn3_f" style="display:none"><span class="nobr">2-9(第2)</span>, <span class="nobr">4-6(第2)</span>, <span class="nobr">4-7(第5)</span>, <span class="nobr">5-3(第3)</span>, <span class="nobr">10-4(第2)</span>, <span class="nobr">10-支3(第5)</span>, <span class="nobr">11-7(第5)</span><br><span class="nobr"><a href="" onclick="hideTop('3694_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">飒爽英姿·暗红</td><td rowspan="2">上装</td><td>顶配</td><td></td><td></td><td><span class="nobr">4-6</span>, <span class="nobr">10-4</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span>, <span class="nobr">宫廷(第3)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">2-支1(第3)</span>, <span class="nobr">6-9(第3)</span>, <span class="nobr">11-5(第3)</span>, <span class="nobr">11-7(第4)</span></td></tr><tr><td rowspan="2">飒爽英姿·墨蓝</td><td rowspan="2">上装</td><td>顶配</td><td></td><td></td><td><span class="nobr">1-8</span>, <span class="nobr">6-支1</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第2)</span>, <span class="nobr">女王(第3)</span>, <span class="nobr">宫廷(第2)</span></td><td class="inSec"><span class="nobr">1-6(第5)</span></td><td class="inSec"><span id="cell3698_sn3"><a href="" onclick="showTop('3698_sn3');return false;">共10关</a></span><span id="cell3698_sn3_f" style="display:none"><span class="nobr">2-9(第3)</span>, <span class="nobr">2-支1(第2)</span>, <span class="nobr">4-6(第2)</span>, <span class="nobr">5-4(第4)</span>, <span class="nobr">5-9(第2)</span>, <span class="nobr">7-支3(第5)</span>, <span class="nobr">10-4(第3)</span>, <span class="nobr">11-5(第2)</span>, <span class="nobr">11-7(第3)</span>, <span class="nobr">12-1(第4)</span><br><span class="nobr"><a href="" onclick="hideTop('3698_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">飒爽英姿·华丽</td><td rowspan="1">上装</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第5)</span>, <span class="nobr">宫廷(第5)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-6(第4)</span>, <span class="nobr">10-4(第4)</span></td></tr><tr><td rowspan="1">飒爽英姿</td><td rowspan="1">上装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">7-支3(第2)</span>, <span class="nobr">10-4(第5)</span></td></tr><tr><td rowspan="1">铁血柔情·珍稀</td><td rowspan="1">下装</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span>, <span class="nobr">宫廷(第2)</span></td><td class="inSec"></td><td class="inSec"><span id="cell3704_sn3"><a href="" onclick="showTop('3704_sn3');return false;">共9关</a></span><span id="cell3704_sn3_f" style="display:none"><span class="nobr">2-9(第2)</span>, <span class="nobr">2-支1(第2)</span>, <span class="nobr">4-6(第5)</span>, <span class="nobr">5-9(第2)</span>, <span class="nobr">6-支1(第3)</span>, <span class="nobr">10-4(第4)</span>, <span class="nobr">10-支3(第3)</span>, <span class="nobr">11-5(第3)</span>, <span class="nobr">11-7(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3704_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">铁血柔情·暗红</td><td rowspan="2">下装</td><td>顶配</td><td><span class="nobr">金色</span></td><td></td><td><span class="nobr">4-6</span>, <span class="nobr">6-9</span>, <span class="nobr">10-4</span>, <span class="nobr">11-7</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">女王(第4)</span>, <span class="nobr">宫廷(第3)</span></td><td class="inSec"></td><td class="inSec"><span id="cell3707_sn3"><a href="" onclick="showTop('3707_sn3');return false;">共8关</a></span><span id="cell3707_sn3_f" style="display:none"><span class="nobr">2-3(第5)</span>, <span class="nobr">2-9(第3)</span>, <span class="nobr">2-支1(第3)</span>, <span class="nobr">5-3(第4)</span>, <span class="nobr">5-9(第3)</span>, <span class="nobr">7-支3(第4)</span>, <span class="nobr">10-支3(第2)</span>, <span class="nobr">11-5(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3707_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">铁血柔情·纯白</td><td rowspan="1">下装</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">宫廷(第4)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-6(第4)</span>, <span class="nobr">7-支3(第3)</span>, <span class="nobr">10-4(第3)</span>, <span class="nobr">11-7(第2)</span></td></tr><tr><td rowspan="1">铁血柔情·华丽</td><td rowspan="1">下装</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第4)</span></td><td class="inSec"></td><td class="inSec"><span id="cell3703_sn3"><a href="" onclick="showTop('3703_sn3');return false;">共7关</a></span><span id="cell3703_sn3_f" style="display:none"><span class="nobr">2-支1(第5)</span>, <span class="nobr">4-6(第3)</span>, <span class="nobr">7-支3(第4)</span>, <span class="nobr">10-4(第2)</span>, <span class="nobr">10-支3(第5)</span>, <span class="nobr">11-5(第5)</span>, <span class="nobr">11-7(第4)</span><br><span class="nobr"><a href="" onclick="hideTop('3703_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">铁血柔情</td><td rowspan="1">下装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">5-支3(第3)</span>, <span class="nobr">7-支3(第2)</span></td></tr><tr><td rowspan="2">黑白信念·珍稀</td><td rowspan="2">鞋子</td><td>顶配</td><td><span class="nobr">金色</span>, <span class="nobr">宫廷</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-6(第4)</span></td></tr><tr><td rowspan="1">黑白信念·华丽</td><td rowspan="1">鞋子</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">黑白信念</td><td rowspan="1">鞋子</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="2">军官帽</td><td rowspan="2">饰品-头饰</td><td>顶配</td><td><span class="nobr">金色</span>, <span class="nobr">宫廷</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">4-6</span>, <span class="nobr">10-4</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">7-支3(第4)</span>, <span class="nobr">10-支3(第5)</span></td></tr><tr><td rowspan="1">士兵帽</td><td rowspan="1">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">7-支3(第3)</span>, <span class="nobr">10-4(第3)</span></td></tr><tr><td rowspan="2">铁血长鞭</td><td rowspan="2">饰品-手持·左</td><td>顶配</td><td><span class="nobr">金色</span></td><td></td><td><span class="nobr">4-6</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">宫廷(第4)</span></td><td class="inSec"></td><td class="inSec"><span id="cell3724_sn3"><a href="" onclick="showTop('3724_sn3');return false;">共10关</a></span><span id="cell3724_sn3_f" style="display:none"><span class="nobr">1-4(第4)</span>, <span class="nobr">2-3(第4)</span>, <span class="nobr">2-支1(第4)</span>, <span class="nobr">4-3(第3)</span>, <span class="nobr">9-4(第4)</span>, <span class="nobr">10-4(第2)</span>, <span class="nobr">10-支3(第5)</span>, <span class="nobr">11-5(第3)</span>, <span class="nobr">11-7(第3)</span>, <span class="nobr">12-1(第4)</span><br><span class="nobr"><a href="" onclick="hideTop('3724_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">信仰之握</td><td rowspan="2">饰品-手饰·双</td><td>顶配</td><td><span class="nobr">金色</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">宫廷(第2)</span></td><td class="inSec"></td><td class="inSec"><span id="cell3725_sn3"><a href="" onclick="showTop('3725_sn3');return false;">共14关</a></span><span id="cell3725_sn3_f" style="display:none"><span class="nobr">2-9(第2)</span>, <span class="nobr">3-支1(第2)</span>, <span class="nobr">4-6(第3)</span>, <span class="nobr">4-7(第3)</span>, <span class="nobr">5-3(第3)</span>, <span class="nobr">5-9(第2)</span>, <span class="nobr">7-2(第4)</span>, <span class="nobr">7-4(第4)</span>, <span class="nobr">7-支3(第4)</span>, <span class="nobr">9-4(第3)</span>, <span class="nobr">10-4(第3)</span>, <span class="nobr">10-支3(第3)</span>, <span class="nobr">11-7(第5)</span>, <span class="nobr">12-支1(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3725_sn3');return false;">收起</a></span></span></td></tr></tbody></table>
+<!--normal table-->
+<table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟</td><td>关卡</td></tr><tr><td rowspan="1" class="inName">烈火之歌·珍稀</td><td rowspan="1" class="inName">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="10511黛瑶·墨
+10112烈火之歌·淡紫
+10112白首之约
+10050舞之星
+9913烈火之歌·珍稀
+9913守护神
+9913心月狐
+9913创世梵音·仪
+9913贵妇短发" class="aTooltip"><span class="nobr">4-6(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">烈火之歌·淡紫</td><td rowspan="1" class="inName">发型</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="6410舞之星
+6389黛瑶·墨
+6276白首之约
+6144烈火之歌·淡紫
+6124塔罗女郎·珍稀" class="aTooltip"><span class="nobr">金色(第4)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="10511舞之星
+10050白首之约
+9988黛瑶·墨
+9803云端舞娘·黑
+9651烈火之歌·淡紫
+9651慕雪钟情" class="aTooltip"><span class="nobr">2-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="10511黛瑶·墨
+10112烈火之歌·淡紫
+10112白首之约
+10050舞之星
+9913烈火之歌·珍稀
+9913守护神
+9913心月狐
+9913创世梵音·仪
+9913贵妇短发" class="aTooltip"><span class="nobr">4-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="7756贵妇人
+6886舞之星
+6807黛瑶·墨
+6588白首之约
+6528烈火之歌·淡紫
+6528慕雪钟情" class="aTooltip"><span class="nobr">10-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="12145舞之星
+12104黛瑶·墨
+11705白首之约
+11438烈火之歌·淡紫
+11438慕雪钟情" class="aTooltip"><span class="nobr">11-5(第4)</span></a>, <a href="" onclick="return false;" tooltip="12178贵妇人
+11970黛瑶·墨
+11747塔罗女郎·珍稀
+11571烈火之歌·淡紫
+11486舞之星" class="aTooltip"><span class="nobr">11-7(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">烈火之歌·深紫</td><td rowspan="1" class="inName">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="8216齐天大圣
+8178凌乱纷扰
+8176庄园娇花·华丽
+8007蝶舞纷飞·紫蝶
+7838烈火之歌·深紫
+7838云端舞娘·黑
+7838塔罗女郎·珍稀" class="aTooltip"><span class="nobr">4-3(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">烈火之歌·华丽</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">烈火之歌</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">军官大衣</td><td rowspan="1" class="inName">外套</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2644繁华梦·珍稀
+2510繁华梦·华丽
+2458军官大衣·暗红
+2404锦瑟暖风裘
+2398军官大衣" class="aTooltip"><span class="nobr">金色(第5)</span></a>, <a href="" onclick="return false;" tooltip="2609繁华梦·珍稀
+2458海盗披风
+2450繁华梦·华丽
+2425军官大衣
+2404锦瑟暖风裘" class="aTooltip"><span class="nobr">宫廷(第4)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="4180繁华梦·珍稀
+4020繁华梦·华丽
+3965锦瑟暖风裘
+3915军官大衣
+3893毛绒风衣" class="aTooltip"><span class="nobr">2-支1(第4)</span></a>, <a href="" onclick="return false;" tooltip="6727迷彩外套
+6510海军少校
+6510军官大衣·墨蓝
+6494军官大衣·暗红
+6455军官大衣" class="aTooltip"><span class="nobr">7-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="5453军官大衣·暗红
+5145军官大衣·墨蓝
+5139军官大衣
+4885海军少校
+4867陆军少校" class="aTooltip"><span class="nobr">10-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="4947繁华梦·珍稀
+4682繁华梦·华丽
+4593锦瑟暖风裘
+4579军官大衣
+4575海盗披风
+4575军官大衣·暗红" class="aTooltip"><span class="nobr">11-5(第4)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">军官大衣·暗红</td><td rowspan="2" class="inName haveTop">外套</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="5453军官大衣·暗红
+5145军官大衣·墨蓝
+5139军官大衣
+4885海军少校
+4867陆军少校" class="aTooltip"><span class="nobr">10-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2644繁华梦·珍稀
+2510繁华梦·华丽
+2458军官大衣·暗红
+2404锦瑟暖风裘
+2398军官大衣" class="aTooltip"><span class="nobr">金色(第3)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="4284繁华梦·珍稀
+4045军官大衣·暗红
+4045繁华梦·华丽
+3811军官大衣·墨蓝
+3781绒领外套
+3781锦瑟暖风裘" class="aTooltip"><span class="nobr">4-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="6727迷彩外套
+6510海军少校
+6510军官大衣·墨蓝
+6494军官大衣·暗红
+6455军官大衣" class="aTooltip"><span class="nobr">7-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="4947繁华梦·珍稀
+4682繁华梦·华丽
+4593锦瑟暖风裘
+4579军官大衣
+4575军官大衣·暗红
+4575海盗披风" class="aTooltip"><span class="nobr">11-5(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">军官大衣·墨蓝</td><td rowspan="1" class="inName">外套</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="3270花月裴
+3203暗夜森林·珍稀
+2972流霞缎·紫
+2956热夏·黑
+2821军官大衣·墨蓝
+2821繁华梦·珍稀
+2821海军少校
+2821卓越风姿
+2821烟云花枝·墨" class="aTooltip"><span class="nobr">4-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="4284繁华梦·珍稀
+4045军官大衣·暗红
+4045繁华梦·华丽
+3811军官大衣·墨蓝
+3781绒领外套
+3781锦瑟暖风裘" class="aTooltip"><span class="nobr">4-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="6727迷彩外套
+6510军官大衣·墨蓝
+6510海军少校
+6494军官大衣·暗红
+6455军官大衣" class="aTooltip"><span class="nobr">7-支3(第2)</span></a>, <a href="" onclick="return false;" tooltip="5453军官大衣·暗红
+5145军官大衣·墨蓝
+5139军官大衣
+4885海军少校
+4867陆军少校" class="aTooltip"><span class="nobr">10-4(第2)</span></a></td></tr><tr><td rowspan="1" class="inName">飒爽英姿·珍稀</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819魔术上衣
+10819飒爽英姿·华丽" class="aTooltip"><span class="nobr">金色(第1)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688黑白名媛
+10688飒爽英姿·华丽" class="aTooltip"><span class="nobr">宫廷(第1)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3694_sn3"><a href="" onclick="showTop('3694_sn3');return false;">共10关</a></span><span id="cell3694_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="[46344精灵鹿后]
+19392怪盗上衣·华丽
+18135飒爽英姿·珍稀
+17487飒爽英姿·墨蓝
+17459海军背心
+17459墨色琉璃" class="aTooltip"><span class="nobr">2-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[40485缤纷圣诞夜]
+20225飒爽英姿·珍稀
+19178飒爽英姿·墨蓝
+18655飒爽英姿·暗红
+18135怪盗上衣·华丽
+17886战斗日常" class="aTooltip"><span class="nobr">2-支1(第1)</span></a>, <a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19976飒爽英姿·暗红
+19303飒爽英姿·珍稀
+19303飒爽英姿·墨蓝
+18399飒爽英姿·华丽
+18018黑白名媛" class="aTooltip"><span class="nobr">4-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="19826怪盗上衣·华丽
+19178战斗日常
+17857训练常服
+17762蒸汽时代
+16844飒爽英姿·珍稀" class="aTooltip"><span class="nobr">4-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="[40450金迷纸醉]
+18135怪盗上衣·华丽
+17886战斗日常
+16445飒爽英姿·珍稀
+15768训练常服
+15369海军背心
+15369墨色琉璃" class="aTooltip"><span class="nobr">5-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[41247蝶舞翩跹·珍稀]
+18135飒爽英姿·珍稀
+17487飒爽英姿·墨蓝
+17459海军背心
+17459墨色琉璃
+17209超级特工·衣" class="aTooltip"><span class="nobr">5-9(第1)</span></a>, <a href="" onclick="return false;" tooltip="27100飒爽英姿·暗红
+26039飒爽英姿·珍稀
+25756飒爽英姿·墨蓝
+25374飒爽英姿·华丽
+20345飒爽英姿" class="aTooltip"><span class="nobr">10-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="[42058红女巫]
+19025怪盗上衣·华丽
+18437公爵千金·上衣
+16138蒸汽时代
+15580首席特助·衣
+13333飒爽英姿·珍稀" class="aTooltip"><span class="nobr">10-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="[47521创世之凤舞]
+23493飒爽英姿·珍稀
+22792飒爽英姿·墨蓝
+22626飒爽英姿·暗红
+20804魔术上衣
+20537黑白名媛" class="aTooltip"><span class="nobr">11-5(第1)</span></a>, <a href="" onclick="return false;" tooltip="[63124红女巫]
+25735公爵千金·上衣
+25616怪盗上衣·华丽
+23493飒爽英姿·墨蓝
+22810飒爽英姿·暗红
+21907飒爽英姿·珍稀" class="aTooltip"><span class="nobr">11-7(第5)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3694_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">飒爽英姿·暗红</td><td rowspan="2" class="inName haveTop">上装</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="27100飒爽英姿·暗红
+26039飒爽英姿·珍稀
+25756飒爽英姿·墨蓝
+25374飒爽英姿·华丽
+20345飒爽英姿" class="aTooltip"><span class="nobr">10-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819魔术上衣
+10819飒爽英姿·华丽" class="aTooltip"><span class="nobr">金色(第3)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688黑白名媛
+10688飒爽英姿·华丽" class="aTooltip"><span class="nobr">宫廷(第3)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[40485缤纷圣诞夜]
+20225飒爽英姿·珍稀
+19178飒爽英姿·墨蓝
+18655飒爽英姿·暗红
+18135怪盗上衣·华丽
+17886战斗日常" class="aTooltip"><span class="nobr">2-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19976飒爽英姿·暗红
+19303飒爽英姿·珍稀
+19303飒爽英姿·墨蓝
+18399飒爽英姿·华丽
+18018黑白名媛" class="aTooltip"><span class="nobr">4-6(第1)</span></a>, <a href="" onclick="return false;" tooltip="[58600上海烟云梦]
+19332初云衫·墨
+18007超级特工·衣
+17886飒爽英姿·暗红
+17857海军背心
+17857墨色琉璃" class="aTooltip"><span class="nobr">6-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="[47521创世之凤舞]
+23493飒爽英姿·珍稀
+22792飒爽英姿·墨蓝
+22626飒爽英姿·暗红
+20804魔术上衣
+20537黑白名媛" class="aTooltip"><span class="nobr">11-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="[63124红女巫]
+25735公爵千金·上衣
+25616怪盗上衣·华丽
+23493飒爽英姿·墨蓝
+22810飒爽英姿·暗红
+21907飒爽英姿·珍稀" class="aTooltip"><span class="nobr">11-7(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">飒爽英姿·墨蓝</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819魔术上衣
+10819飒爽英姿·华丽" class="aTooltip"><span class="nobr">金色(第2)</span></a>, <a href="" onclick="return false;" tooltip="[24841黑天鹅]
+11326海军背心
+11326墨色琉璃
+11288飒爽英姿·墨蓝
+11160超级特工·衣
+11128初云衫·墨" class="aTooltip"><span class="nobr">女王(第3)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688黑白名媛
+10688飒爽英姿·华丽" class="aTooltip"><span class="nobr">宫廷(第2)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="[25615星之海]
+9950海军背心
+9950墨色琉璃
+9730超级特工·衣
+9359陆军背心
+9315飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">1-6(第5)</span></a></td><td class="inSec"><span id="cell3698_sn3"><a href="" onclick="showTop('3698_sn3');return false;">共12关</a></span><span id="cell3698_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="[45675黑天鹅]
+21147飒爽英姿·墨蓝
+20898初云衫·墨
+20345海军背心
+20345墨色琉璃
+20096超级特工·衣" class="aTooltip"><span class="nobr">1-8(第1)</span></a>, <a href="" onclick="return false;" tooltip="[46344精灵鹿后]
+19392怪盗上衣·华丽
+18135飒爽英姿·珍稀
+17487飒爽英姿·墨蓝
+17459海军背心
+17459墨色琉璃" class="aTooltip"><span class="nobr">2-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="[40485缤纷圣诞夜]
+20225飒爽英姿·珍稀
+19178飒爽英姿·墨蓝
+18655飒爽英姿·暗红
+18135怪盗上衣·华丽
+17886战斗日常" class="aTooltip"><span class="nobr">2-支1(第2)</span></a>, <a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19976飒爽英姿·暗红
+19303飒爽英姿·墨蓝
+19303飒爽英姿·珍稀
+18399飒爽英姿·华丽
+18018黑白名媛" class="aTooltip"><span class="nobr">4-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="[67728鬼姬冥花·珍稀]
+26411蝶兰抹胸·珍稀
+26411紫兰抹胸·珍稀
+24191舞娘上衣
+11805飒爽英姿·墨蓝
+11654超级特工·衣" class="aTooltip"><span class="nobr">5-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="[41247蝶舞翩跹·珍稀]
+18135飒爽英姿·珍稀
+17487飒爽英姿·墨蓝
+17459海军背心
+17459墨色琉璃
+17209超级特工·衣" class="aTooltip"><span class="nobr">5-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[40450黑暗精灵·珍稀]
+18933飒爽英姿·墨蓝
+18256海军背心
+18256墨色琉璃
+17608超级特工·衣
+17209陆军背心" class="aTooltip"><span class="nobr">6-支1(第1)</span></a>, <a href="" onclick="return false;" tooltip="33750北地英姿·衣
+33206飒爽英姿
+32892海军背心
+32735陆军背心
+32658飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">7-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="27100飒爽英姿·暗红
+26039飒爽英姿·珍稀
+25756飒爽英姿·墨蓝
+25374飒爽英姿·华丽
+20345飒爽英姿" class="aTooltip"><span class="nobr">10-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="[47521创世之凤舞]
+23493飒爽英姿·珍稀
+22792飒爽英姿·墨蓝
+22626飒爽英姿·暗红
+20804魔术上衣
+20537黑白名媛" class="aTooltip"><span class="nobr">11-5(第2)</span></a>, <a href="" onclick="return false;" tooltip="[63124红女巫]
+25735公爵千金·上衣
+25616怪盗上衣·华丽
+23493飒爽英姿·墨蓝
+22810飒爽英姿·暗红
+21907飒爽英姿·珍稀" class="aTooltip"><span class="nobr">11-7(第3)</span></a>, <a href="" onclick="return false;" tooltip="21907魔力·珍稀
+21194锁子黄金甲
+19856香甜梦境
+19336飒爽英姿·墨蓝
+18658奇迹之心·华丽" class="aTooltip"><span class="nobr">12-1(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3698_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">飒爽英姿·华丽</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819飒爽英姿·华丽
+10819魔术上衣" class="aTooltip"><span class="nobr">金色(第5)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688飒爽英姿·华丽
+10688黑白名媛" class="aTooltip"><span class="nobr">宫廷(第5)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19976飒爽英姿·暗红
+19303飒爽英姿·墨蓝
+19303飒爽英姿·珍稀
+18399飒爽英姿·华丽
+18018黑白名媛" class="aTooltip"><span class="nobr">4-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="27100飒爽英姿·暗红
+26039飒爽英姿·珍稀
+25756飒爽英姿·墨蓝
+25374飒爽英姿·华丽
+20345飒爽英姿" class="aTooltip"><span class="nobr">10-4(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">飒爽英姿</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="33750北地英姿·衣
+33206飒爽英姿
+32892海军背心
+32735陆军背心
+32658飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">7-支3(第2)</span></a>, <a href="" onclick="return false;" tooltip="27100飒爽英姿·暗红
+26039飒爽英姿·珍稀
+25756飒爽英姿·墨蓝
+25374飒爽英姿·华丽
+20345飒爽英姿" class="aTooltip"><span class="nobr">10-4(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">铁血柔情·珍稀</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12022铁血柔情·暗红
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11326铁血柔情·华丽
+11028雍容鱼尾" class="aTooltip"><span class="nobr">金色(第3)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11717铁血柔情·暗红
+11194铁血柔情·纯白
+11160雍容鱼尾" class="aTooltip"><span class="nobr">宫廷(第2)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3704_sn3"><a href="" onclick="showTop('3704_sn3');return false;">共9关</a></span><span id="cell3704_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="[46344精灵鹿后]
+18135诵霓裳·裙
+17487铁血柔情·珍稀
+17213铁血柔情·暗红
+17209岁月追怀·棕
+16554魔术下装" class="aTooltip"><span class="nobr">2-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[40485缤纷圣诞夜]
+19445诵霓裳·裙
+19178铁血柔情·珍稀
+18904铁血柔情·暗红
+18135冰蓝长裙
+17857铁血柔情·华丽" class="aTooltip"><span class="nobr">2-支1(第2)</span></a>, <a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19826铁血柔情·暗红
+18523诵霓裳·裙
+18256铁血柔情·华丽
+17857铁血柔情·纯白
+17733铁血柔情·珍稀" class="aTooltip"><span class="nobr">4-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="[41247蝶舞翩跹·珍稀]
+18135诵霓裳·裙
+17487铁血柔情·珍稀
+17213铁血柔情·暗红
+17209岁月追怀·棕
+16554魔术下装" class="aTooltip"><span class="nobr">5-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[40450黑暗精灵·珍稀]
+18399魔术下装
+18018夜色如歌
+17363铁血柔情·珍稀
+17318璀璨永恒·下
+17245舞娘纱裙
+17245岁月追怀·金" class="aTooltip"><span class="nobr">6-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="26070铁血柔情·暗红
+25196铁血柔情·华丽
+25060铁血柔情·纯白
+24364铁血柔情·珍稀
+24364白色军装裤" class="aTooltip"><span class="nobr">10-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="[42058红女巫]
+13840公爵千金·下装
+12618铁血柔情·暗红
+12481铁血柔情·珍稀
+12476诵霓裳·裙
+11885铁血柔情·华丽" class="aTooltip"><span class="nobr">10-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[47521创世之凤舞]
+22456诵霓裳·裙
+22345铁血柔情·暗红
+22096铁血柔情·珍稀
+20966雍容鱼尾
+20948铁血柔情·华丽" class="aTooltip"><span class="nobr">11-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="[63124红女巫]
+22345铁血柔情·暗红
+21566铁血柔情·纯白
+21395铁血柔情·珍稀
+21299铁血柔情·华丽
+20431雍容鱼尾" class="aTooltip"><span class="nobr">11-7(第3)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3704_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">铁血柔情·暗红</td><td rowspan="2" class="inName haveTop">下装</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="26070铁血柔情·暗红
+25196铁血柔情·华丽
+25060铁血柔情·纯白
+24364铁血柔情·珍稀
+24364白色军装裤" class="aTooltip"><span class="nobr">10-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12022铁血柔情·暗红
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11326铁血柔情·华丽
+11028雍容鱼尾" class="aTooltip"><span class="nobr">金色(第1)</span></a>, <a href="" onclick="return false;" tooltip="[24841黑天鹅]
+11071魔术下装
+11046岁月追怀·金
+10945夜色如歌
+10889铁血柔情·暗红
+10585诵霓裳·裙" class="aTooltip"><span class="nobr">女王(第4)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11717铁血柔情·暗红
+11194铁血柔情·纯白
+11160雍容鱼尾" class="aTooltip"><span class="nobr">宫廷(第3)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3707_sn3"><a href="" onclick="showTop('3707_sn3');return false;">共11关</a></span><span id="cell3707_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="[37594纳尔]
+17755怪盗绅士·下装
+17089怪盗下装·华丽
+16811琴键
+16715温雅侍者·裤
+16445铁血柔情·暗红" class="aTooltip"><span class="nobr">2-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="[46344精灵鹿后]
+18135诵霓裳·裙
+17487铁血柔情·珍稀
+17213铁血柔情·暗红
+17209岁月追怀·棕
+16554魔术下装" class="aTooltip"><span class="nobr">2-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="[40485缤纷圣诞夜]
+19445诵霓裳·裙
+19178铁血柔情·珍稀
+18904铁血柔情·暗红
+18135冰蓝长裙
+17857铁血柔情·华丽" class="aTooltip"><span class="nobr">2-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19826铁血柔情·暗红
+18523诵霓裳·裙
+18256铁血柔情·华丽
+17857铁血柔情·纯白
+17733铁血柔情·珍稀" class="aTooltip"><span class="nobr">4-6(第1)</span></a>, <a href="" onclick="return false;" tooltip="[40450金迷纸醉]
+18534冰蓝长裙
+16445诵霓裳·裙
+15768菱格裙
+15523铁血柔情·暗红
+15519岁月追怀·棕" class="aTooltip"><span class="nobr">5-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="[41247蝶舞翩跹·珍稀]
+18135诵霓裳·裙
+17487铁血柔情·珍稀
+17213铁血柔情·暗红
+17209岁月追怀·棕
+16554魔术下装" class="aTooltip"><span class="nobr">5-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="[58600上海烟云梦]
+18135铁血柔情·暗红
+18025岁月追怀·金
+17477魔术下装
+17477夜色如歌
+17213静谧夜色·下
+17213诵霓裳·裙" class="aTooltip"><span class="nobr">6-9(第1)</span></a>, <a href="" onclick="return false;" tooltip="33569北地英姿·裤
+33048铁血柔情
+32501铁血柔情·纯白
+32474铁血柔情·暗红
+32474铁血柔情·华丽" class="aTooltip"><span class="nobr">7-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="[42058红女巫]
+13840公爵千金·下装
+12618铁血柔情·暗红
+12481铁血柔情·珍稀
+12476诵霓裳·裙
+11885铁血柔情·华丽" class="aTooltip"><span class="nobr">10-支3(第2)</span></a>, <a href="" onclick="return false;" tooltip="[47521创世之凤舞]
+22456诵霓裳·裙
+22345铁血柔情·暗红
+22096铁血柔情·珍稀
+20966雍容鱼尾
+20948铁血柔情·华丽" class="aTooltip"><span class="nobr">11-5(第2)</span></a>, <a href="" onclick="return false;" tooltip="[63124红女巫]
+22345铁血柔情·暗红
+21566铁血柔情·纯白
+21395铁血柔情·珍稀
+21299铁血柔情·华丽
+20431雍容鱼尾" class="aTooltip"><span class="nobr">11-7(第1)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3707_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">铁血柔情·纯白</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11717铁血柔情·暗红
+11194铁血柔情·纯白
+11160雍容鱼尾" class="aTooltip"><span class="nobr">宫廷(第4)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19826铁血柔情·暗红
+18523诵霓裳·裙
+18256铁血柔情·华丽
+17857铁血柔情·纯白
+17733铁血柔情·珍稀" class="aTooltip"><span class="nobr">4-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="33569北地英姿·裤
+33048铁血柔情
+32501铁血柔情·纯白
+32474铁血柔情·暗红
+32474铁血柔情·华丽" class="aTooltip"><span class="nobr">7-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="26070铁血柔情·暗红
+25196铁血柔情·华丽
+25060铁血柔情·纯白
+24364铁血柔情·珍稀
+24364白色军装裤" class="aTooltip"><span class="nobr">10-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="[63124红女巫]
+22345铁血柔情·暗红
+21566铁血柔情·纯白
+21395铁血柔情·珍稀
+21299铁血柔情·华丽
+20431雍容鱼尾" class="aTooltip"><span class="nobr">11-7(第2)</span></a></td></tr><tr><td rowspan="1" class="inName">铁血柔情·华丽</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12022铁血柔情·暗红
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11326铁血柔情·华丽
+11028雍容鱼尾" class="aTooltip"><span class="nobr">金色(第4)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3703_sn3"><a href="" onclick="showTop('3703_sn3');return false;">共7关</a></span><span id="cell3703_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="[40485缤纷圣诞夜]
+19445诵霓裳·裙
+19178铁血柔情·珍稀
+18904铁血柔情·暗红
+18135冰蓝长裙
+17857铁血柔情·华丽" class="aTooltip"><span class="nobr">2-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="[42044韶颜倾城·墨]
+19826铁血柔情·暗红
+18523诵霓裳·裙
+18256铁血柔情·华丽
+17857铁血柔情·纯白
+17733铁血柔情·珍稀" class="aTooltip"><span class="nobr">4-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="33569北地英姿·裤
+33048铁血柔情
+32501铁血柔情·纯白
+32474铁血柔情·华丽
+32474铁血柔情·暗红" class="aTooltip"><span class="nobr">7-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="26070铁血柔情·暗红
+25196铁血柔情·华丽
+25060铁血柔情·纯白
+24364铁血柔情·珍稀
+24364白色军装裤" class="aTooltip"><span class="nobr">10-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="[42058红女巫]
+13840公爵千金·下装
+12618铁血柔情·暗红
+12481铁血柔情·珍稀
+12476诵霓裳·裙
+11885铁血柔情·华丽" class="aTooltip"><span class="nobr">10-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="[47521创世之凤舞]
+22456诵霓裳·裙
+22345铁血柔情·暗红
+22096铁血柔情·珍稀
+20966雍容鱼尾
+20948铁血柔情·华丽" class="aTooltip"><span class="nobr">11-5(第5)</span></a>, <a href="" onclick="return false;" tooltip="[63124红女巫]
+22345铁血柔情·暗红
+21566铁血柔情·纯白
+21395铁血柔情·珍稀
+21299铁血柔情·华丽
+20431雍容鱼尾" class="aTooltip"><span class="nobr">11-7(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3703_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">铁血柔情</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[49377白衣天使]
+15917黑纱裙
+15672蝴蝶兰·珍稀
+15519铁血柔情
+15519神圣医者·裙
+15369静谧夜色·下" class="aTooltip"><span class="nobr">5-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="33569北地英姿·裤
+33048铁血柔情
+32501铁血柔情·纯白
+32474铁血柔情·华丽
+32474铁血柔情·暗红" class="aTooltip"><span class="nobr">7-支3(第2)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">黑白信念·珍稀</td><td rowspan="2" class="inName haveTop">鞋子</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="5021黑白信念·珍稀
+4916绕祥云
+4809幻世之凰
+4727魅惑蔓延
+4707刀光倩影·瓷砖" class="aTooltip"><span class="nobr">金色</span></a>, <a href="" onclick="return false;" tooltip="4968黑白信念·珍稀
+4809地狱阁楼
+4809魅翅
+4794绕祥云
+4690幽灵舞鞋" class="aTooltip"><span class="nobr">宫廷</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="8249黑白信念·珍稀
+8090绕祥云
+7573罂夭
+7562幻世之凰
+7523魅惑蔓延" class="aTooltip"><span class="nobr">2-支1</span></a>, <a href="" onclick="return false;" tooltip="9504黑白信念·珍稀
+9150绕祥云
+8938地狱阁楼
+8938魅翅
+8938幻世之凰" class="aTooltip"><span class="nobr">11-5</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="7930地狱阁楼
+7930魅翅
+7930幻世之凰
+7881黑白信念·珍稀
+7778怪盗皮靴·华丽
+7778刀光倩影·瓷砖" class="aTooltip"><span class="nobr">4-6(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">黑白信念·华丽</td><td rowspan="1" class="inName">鞋子</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">黑白信念</td><td rowspan="1" class="inName">鞋子</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="2" class="inName haveTop">军官帽</td><td rowspan="2" class="inName haveTop">饰品-头饰</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2538军官帽
+2510炽火凤冠
+2458红鸾凤冠
+2450骷髅海盗帽
+2450游龙钗" class="aTooltip"><span class="nobr">金色</span></a>, <a href="" onclick="return false;" tooltip="2564军官帽
+2484炽火凤冠
+2458红鸾凤冠
+2450骷髅海盗帽
+2450游龙钗" class="aTooltip"><span class="nobr">宫廷</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="4125军官帽
+4125炽火凤冠
+4049繁花礼帽
+4045红鸾凤冠
+3965花迭罗
+3965星晶鹿冠" class="aTooltip"><span class="nobr">2-支1</span></a>, <a href="" onclick="return false;" tooltip="4020军官帽
+4020骷髅海盗帽
+3940炽火凤冠
+3890黑耀礼帽
+3861游龙钗
+3861红鸾凤冠" class="aTooltip"><span class="nobr">4-6</span></a>, <a href="" onclick="return false;" tooltip="5314军官帽
+5151陆军宽檐帽
+5012士兵帽
+4973海军宽檐帽
+4540迷彩帽" class="aTooltip"><span class="nobr">10-4</span></a>, <a href="" onclick="return false;" tooltip="4858军官帽
+4752炽火凤冠
+4699红鸾凤冠
+4600繁花礼帽
+4593花迭罗
+4593星晶鹿冠" class="aTooltip"><span class="nobr">11-5</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="6648迷彩帽
+6531陆军宽檐帽
+6510士兵帽
+6455军官帽
+6448海军宽檐帽" class="aTooltip"><span class="nobr">7-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3975蓝宝石礼帽·华丽
+3924贵妇礼帽
+3056齿轮礼帽
+2803粉蔷薇帽·珍稀
+2754军官帽" class="aTooltip"><span class="nobr">10-支3(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">士兵帽</td><td rowspan="1" class="inName">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="6648迷彩帽
+6531陆军宽檐帽
+6510士兵帽
+6455军官帽
+6448海军宽檐帽" class="aTooltip"><span class="nobr">7-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="5314军官帽
+5151陆军宽檐帽
+5012士兵帽
+4973海军宽檐帽
+4540迷彩帽" class="aTooltip"><span class="nobr">10-4(第3)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">信仰之握</td><td rowspan="2" class="inName haveTop">饰品-手饰·双</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2510信仰之握
+2504星海手套
+2404圣灵手套
+2397墨花笺
+2343黑耀手套" class="aTooltip"><span class="nobr">金色</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="4125信仰之握
+3970星海手套
+3965圣灵手套
+3787蜜雪糖霜·华丽
+3681冰晶手套" class="aTooltip"><span class="nobr">2-支1</span></a>, <a href="" onclick="return false;" tooltip="4752信仰之握
+4738星海手套
+4593圣灵手套
+4575墨花笺
+4353冰晶手套" class="aTooltip"><span class="nobr">11-5</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2504星海手套
+2484信仰之握
+2458墨花笺
+2404圣灵手套
+2343黑耀手套" class="aTooltip"><span class="nobr">宫廷(第2)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3725_sn3"><a href="" onclick="showTop('3725_sn3');return false;">共14关</a></span><span id="cell3725_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="4125蜜雪糖霜·华丽
+3787信仰之握
+3781相濡以沫
+3761金叶缎带
+3731双瓣茉莉" class="aTooltip"><span class="nobr">2-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="3926怪盗手套
+3787信仰之握
+3627圣灵手套
+3552星海手套
+3495左右逢源·蓝" class="aTooltip"><span class="nobr">3-支1(第2)</span></a>, <a href="" onclick="return false;" tooltip="4075星海手套
+4045墨花笺
+3940信仰之握
+3781圣灵手套
+3781黑耀手套" class="aTooltip"><span class="nobr">4-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="3552冰雪之握
+3443葉片手链
+3369信仰之握
+3311左右逢源·蓝
+3289圣灵手套" class="aTooltip"><span class="nobr">4-7(第3)</span></a>, <a href="" onclick="return false;" tooltip="3787蜜雪糖霜·华丽
+3596葉片手链
+3448信仰之握
+3443相濡以沫
+3343金叶缎带" class="aTooltip"><span class="nobr">5-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="4125蜜雪糖霜·华丽
+3787信仰之握
+3781相濡以沫
+3761金叶缎带
+3731双瓣茉莉" class="aTooltip"><span class="nobr">5-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="4911冰雪之握
+4851左右逢源·蓝
+4826葉片手链
+4647信仰之握
+4566左右逢源" class="aTooltip"><span class="nobr">7-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="3883雀环
+3073左右逢源·蓝
+2928葉片手链
+2872信仰之握
+2821星海手套" class="aTooltip"><span class="nobr">7-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="6646迷彩手套
+6612海军皮手套
+6579长款皮手套
+6463信仰之握
+3972蝶趣" class="aTooltip"><span class="nobr">7-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3870雀环
+2664星海手套
+2609信仰之握
+2570墨花笺
+2490圣灵手套
+2490黑耀手套" class="aTooltip"><span class="nobr">9-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="5462长款皮手套
+5350海军皮手套
+5075信仰之握
+4235迷彩手套
+3500丝绸手套·棕" class="aTooltip"><span class="nobr">10-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="3364怪盗手套
+2696星海手套
+2667信仰之握
+2611墨花笺
+2579圣灵手套" class="aTooltip"><span class="nobr">10-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="5010怪盗手套
+4668星海手套
+4629墨花笺
+4593黑耀手套
+4435信仰之握" class="aTooltip"><span class="nobr">11-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="3114雀环
+2743信仰之握
+2728葉片手链
+2705左右逢源·蓝
+2642圣灵手套" class="aTooltip"><span class="nobr">12-支1(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3725_sn3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">铁血长鞭</td><td rowspan="2" class="inName haveTop">饰品-手持·左</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2345铁血长鞭
+2345贵宾犬
+2343突击步枪
+2319寒冰之证
+2265钻石挎包
+2265夜蔷薇
+2265贵妇扣包
+2265年货拼盘" class="aTooltip"><span class="nobr">金色</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="3811铁血长鞭
+3787剪红窗
+3781突击步枪
+3676钻石挎包
+3676贵妇扣包
+3676年货拼盘" class="aTooltip"><span class="nobr">4-6</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2371贵宾犬
+2343突击步枪
+2319寒冰之证
+2310铁血长鞭
+2284万圣夜灯" class="aTooltip"><span class="nobr">宫廷(第4)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3724_sn3"><a href="" onclick="showTop('3724_sn3');return false;">共10关</a></span><span id="cell3724_sn3_f" style="display:none"><a href="" onclick="return false;" tooltip="3263薄荷烟
+3237小蓝山
+3233黑耀手杖
+3159铁血长鞭
+3105突击步枪" class="aTooltip"><span class="nobr">1-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="3418黑耀手杖
+3263薄荷烟
+3157小蓝山
+3055铁血长鞭
+3031绣缘情
+3031剪红窗" class="aTooltip"><span class="nobr">2-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="3836寒冰之证
+3836贵宾犬
+3707万圣夜灯
+3651铁血长鞭
+3651钻石挎包
+3651贵妇扣包
+3651年货拼盘" class="aTooltip"><span class="nobr">2-支1(第4)</span></a>, <a href="" onclick="return false;" tooltip="3135突击步枪
+2874剪红窗
+2821铁血长鞭
+2821特殊印记
+2666黑珍珠·珍稀
+2666绘蓝瓷" class="aTooltip"><span class="nobr">4-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="3686水笛由念
+3151桃花伞
+2969如意金箍棒
+2505铁血长鞭
+2490突击步枪" class="aTooltip"><span class="nobr">9-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="2969突击步枪
+2963铁血长鞭
+2857夜蔷薇
+2851寒冰之证
+2830特殊印记" class="aTooltip"><span class="nobr">10-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="3576金玉烟斗
+2520寒冰之证
+2520贵宾犬
+2468突击步枪
+2465铁血长鞭" class="aTooltip"><span class="nobr">10-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="4473贵宾犬
+4419寒冰之证
+4349铁血长鞭
+4345突击步枪
+4313钻石挎包
+4313贵妇扣包
+4313年货拼盘" class="aTooltip"><span class="nobr">11-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="5267金玉烟斗
+4593突击步枪
+4473铁血长鞭
+4313特殊印记
+4260夜蔷薇" class="aTooltip"><span class="nobr">11-7(第3)</span></a>, <a href="" onclick="return false;" tooltip="3692突击步枪
+3654寒冰之证
+3565守护小熊
+3535铁血长鞭
+3535贵宾犬
+3535特殊印记" class="aTooltip"><span class="nobr">12-1(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3724_sn3');return false;">收起</a></span></span></td></tr></tbody></table>
 </span>
 <span class="limit">
-  <table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟(极限)</td><td>关卡(极限)</td></tr><tr><td rowspan="1">烈火之歌·珍稀</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">烈火之歌·淡紫</td><td rowspan="1">发型</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-6(第4)</span>, <span class="nobr">10-支3(第4)</span></td></tr><tr><td rowspan="1">烈火之歌·深紫</td><td rowspan="1">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">4-3(第5)</span>, <span class="nobr">11-7(第4)</span></td></tr><tr><td rowspan="1">烈火之歌·华丽</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">烈火之歌</td><td rowspan="1">发型</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">军官大衣</td><td rowspan="1">外套</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第5)</span>, <span class="nobr">宫廷(第4)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">2-支1(第5)</span>, <span class="nobr">7-支3(第5)</span>, <span class="nobr">10-4(第2)</span>, <span class="nobr">11-5(第4)</span></td></tr><tr><td rowspan="2">军官大衣·暗红</td><td rowspan="2">外套</td><td>顶配</td><td></td><td></td><td><span class="nobr">10-4</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">1-4(第4)</span>, <span class="nobr">2-3(第4)</span>, <span class="nobr">4-6(第2)</span>, <span class="nobr">7-支3(第4)</span></td></tr><tr><td rowspan="1">军官大衣·墨蓝</td><td rowspan="1">外套</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">7-支3(第2)</span>, <span class="nobr">10-4(第3)</span></td></tr><tr><td rowspan="2">飒爽英姿·珍稀</td><td rowspan="2">上装</td><td>顶配</td><td><span class="nobr">金色</span>, <span class="nobr">宫廷</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">3-支2</span>, <span class="nobr">5-9</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"><span class="nobr">2-4(第4)</span></td><td class="inSec"><span id="cell3694_sl3"><a href="" onclick="showTop('3694_sl3');return false;">共11关</a></span><span id="cell3694_sl3_f" style="display:none"><span class="nobr">2-9(第2)</span>, <span class="nobr">4-6(第2)</span>, <span class="nobr">4-7(第3)</span>, <span class="nobr">5-3(第3)</span>, <span class="nobr">6-9(第3)</span>, <span class="nobr">7-2(第4)</span>, <span class="nobr">8-8(第5)</span>, <span class="nobr">8-支3(第5)</span>, <span class="nobr">9-9-3(第4)</span>, <span class="nobr">10-4(第2)</span>, <span class="nobr">11-7(第5)</span><br><span class="nobr"><a href="" onclick="hideTop('3694_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">飒爽英姿·暗红</td><td rowspan="2">上装</td><td>顶配</td><td></td><td></td><td><span class="nobr">4-6</span>, <span class="nobr">10-4</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span>, <span class="nobr">宫廷(第3)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">2-3(第3)</span>, <span class="nobr">2-支1(第5)</span>, <span class="nobr">6-9(第2)</span>, <span class="nobr">11-5(第3)</span>, <span class="nobr">11-7(第4)</span></td></tr><tr><td rowspan="2">飒爽英姿·墨蓝</td><td rowspan="2">上装</td><td>顶配</td><td></td><td></td><td><span class="nobr">1-8</span>, <span class="nobr">6-支1</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第2)</span>, <span class="nobr">女王(第3)</span>, <span class="nobr">宫廷(第2)</span></td><td class="inSec"><span class="nobr">1-6(第4)</span></td><td class="inSec"><span id="cell3698_sl3"><a href="" onclick="showTop('3698_sl3');return false;">共11关</a></span><span id="cell3698_sl3_f" style="display:none"><span class="nobr">1-4(第5)</span>, <span class="nobr">1-9(第5)</span>, <span class="nobr">2-9(第4)</span>, <span class="nobr">2-支1(第4)</span>, <span class="nobr">4-6(第5)</span>, <span class="nobr">5-4(第4)</span>, <span class="nobr">5-9(第4)</span>, <span class="nobr">7-支3(第4)</span>, <span class="nobr">10-4(第4)</span>, <span class="nobr">11-5(第2)</span>, <span class="nobr">11-7(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3698_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1">飒爽英姿·华丽</td><td rowspan="1">上装</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第5)</span>, <span class="nobr">宫廷(第5)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">2-3(第5)</span>, <span class="nobr">4-6(第3)</span>, <span class="nobr">6-9(第5)</span>, <span class="nobr">10-4(第3)</span></td></tr><tr><td rowspan="1">飒爽英姿</td><td rowspan="1">上装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">7-支3(第2)</span>, <span class="nobr">10-4(第5)</span></td></tr><tr><td rowspan="1">铁血柔情·珍稀</td><td rowspan="1">下装</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第3)</span>, <span class="nobr">宫廷(第2)</span></td><td class="inSec"><span class="nobr">1-6(第2)</span></td><td class="inSec"><span id="cell3704_sl3"><a href="" onclick="showTop('3704_sl3');return false;">共11关</a></span><span id="cell3704_sl3_f" style="display:none"><span class="nobr">2-9(第2)</span>, <span class="nobr">2-支1(第2)</span>, <span class="nobr">3-支2(第4)</span>, <span class="nobr">5-3(第3)</span>, <span class="nobr">5-9(第2)</span>, <span class="nobr">6-支1(第5)</span>, <span class="nobr">8-8(第5)</span>, <span class="nobr">10-4(第4)</span>, <span class="nobr">10-支3(第4)</span>, <span class="nobr">11-5(第2)</span>, <span class="nobr">11-7(第3)</span><br><span class="nobr"><a href="" onclick="hideTop('3704_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">铁血柔情·暗红</td><td rowspan="2">下装</td><td>顶配</td><td><span class="nobr">金色</span></td><td></td><td><span class="nobr">4-6</span>, <span class="nobr">6-9</span>, <span class="nobr">10-4</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">女王(第4)</span>, <span class="nobr">宫廷(第3)</span></td><td class="inSec"></td><td class="inSec"><span id="cell3707_sl3"><a href="" onclick="showTop('3707_sl3');return false;">共10关</a></span><span id="cell3707_sl3_f" style="display:none"><span class="nobr">1-4(第2)</span>, <span class="nobr">2-3(第3)</span>, <span class="nobr">2-9(第5)</span>, <span class="nobr">2-支1(第4)</span>, <span class="nobr">5-9(第5)</span>, <span class="nobr">7-支3(第3)</span>, <span class="nobr">8-支3(第3)</span>, <span class="nobr">10-支3(第3)</span>, <span class="nobr">11-5(第3)</span>, <span class="nobr">11-7(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3707_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2">铁血柔情·纯白</td><td rowspan="2">下装</td><td>顶配</td><td></td><td></td><td><span class="nobr">11-7</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">宫廷(第4)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">1-8(第5)</span>, <span class="nobr">4-6(第5)</span>, <span class="nobr">6-支1(第3)</span>, <span class="nobr">7-支3(第5)</span>, <span class="nobr">10-4(第3)</span></td></tr><tr><td rowspan="1">铁血柔情·华丽</td><td rowspan="1">下装</td><td class="inSec">高配</td><td class="inSec"><span class="nobr">金色(第4)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">1-4(第5)</span>, <span class="nobr">4-6(第3)</span>, <span class="nobr">7-支3(第3)</span>, <span class="nobr">10-4(第2)</span>, <span class="nobr">11-7(第4)</span></td></tr><tr><td rowspan="1">铁血柔情</td><td rowspan="1">下装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">5-支3(第3)</span>, <span class="nobr">7-支3(第2)</span>, <span class="nobr">10-5(第5)</span></td></tr><tr><td rowspan="2">黑白信念·珍稀</td><td rowspan="2">鞋子</td><td>顶配</td><td><span class="nobr">金色</span>, <span class="nobr">宫廷</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">2-9(第5)</span>, <span class="nobr">4-6(第4)</span>, <span class="nobr">5-9(第5)</span></td></tr><tr><td rowspan="1">黑白信念·华丽</td><td rowspan="1">鞋子</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="1">黑白信念</td><td rowspan="1">鞋子</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="2">军官帽</td><td rowspan="2">饰品-头饰</td><td>顶配</td><td><span class="nobr">金色</span>, <span class="nobr">宫廷</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">4-6</span>, <span class="nobr">10-4</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">7-支3(第5)</span>, <span class="nobr">10-支3(第5)</span></td></tr><tr><td rowspan="1">士兵帽</td><td rowspan="1">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><span class="nobr">7-支3(第3)</span>, <span class="nobr">10-4(第4)</span></td></tr><tr><td rowspan="2">铁血长鞭</td><td rowspan="2">饰品-手持·左</td><td>顶配</td><td><span class="nobr">金色</span></td><td></td><td><span class="nobr">1-4</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">宫廷(第4)</span></td><td class="inSec"></td><td class="inSec"><span class="nobr">3-3(第5)</span>, <span class="nobr">4-3(第3)</span>, <span class="nobr">9-4(第4)</span>, <span class="nobr">10-4(第3)</span>, <span class="nobr">11-7(第3)</span></td></tr><tr><td rowspan="2">信仰之握</td><td rowspan="2">饰品-手饰·双</td><td>顶配</td><td><span class="nobr">金色</span></td><td></td><td><span class="nobr">2-支1</span>, <span class="nobr">3-支1</span>, <span class="nobr">4-7</span>, <span class="nobr">11-5</span></td></tr><tr><td class="inSec">高配</td><td class="inSec"><span class="nobr">宫廷(第2)</span></td><td class="inSec"><span class="nobr">2-4(第4)</span>, <span class="nobr">3-5(第5)</span></td><td class="inSec"><span id="cell3725_sl3"><a href="" onclick="showTop('3725_sl3');return false;">共17关</a></span><span id="cell3725_sl3_f" style="display:none"><span class="nobr">1-3(第5)</span>, <span class="nobr">2-9(第2)</span>, <span class="nobr">3-11(第3)</span>, <span class="nobr">4-6(第3)</span>, <span class="nobr">5-3(第2)</span>, <span class="nobr">5-9(第2)</span>, <span class="nobr">6-9(第5)</span>, <span class="nobr">7-2(第3)</span>, <span class="nobr">7-4(第4)</span>, <span class="nobr">7-7(第5)</span>, <span class="nobr">7-支3(第4)</span>, <span class="nobr">8-支3(第4)</span>, <span class="nobr">9-4(第3)</span>, <span class="nobr">9-9-3(第4)</span>, <span class="nobr">10-4(第3)</span>, <span class="nobr">10-支3(第2)</span>, <span class="nobr">12-支1(第2)</span><br><span class="nobr"><a href="" onclick="hideTop('3725_sl3');return false;">收起</a></span></span></td></tr></tbody></table>
+<!--limit table-->
+<table border="1" class="calcByAll"><tbody><tr><td>名称</td><td>部位</td><td>顶配</td><td>竞技场</td><td>联盟(极限)</td><td>关卡(极限)</td></tr><tr><td rowspan="1" class="inName">烈火之歌·珍稀</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">烈火之歌·淡紫</td><td rowspan="1" class="inName">发型</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="6410舞之星
+6389黛瑶·墨
+6276白首之约
+6144烈火之歌·淡紫
+6124塔罗女郎·珍稀" class="aTooltip"><span class="nobr">金色(第4)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="14266黛瑶·墨
+13667守护神
+13667心月狐
+13618烈火之歌·淡紫
+13618白首之约" class="aTooltip"><span class="nobr">4-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="9855贵妇人
+8803舞之星
+8625黛瑶·墨
+8406白首之约
+8271烈火之歌·淡紫" class="aTooltip"><span class="nobr">10-支3(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">烈火之歌·深紫</td><td rowspan="1" class="inName">发型</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="12323齐天大圣
+12285凌乱纷扰
+12283庄园娇花·华丽
+12114蝶舞纷飞·紫蝶
+11945烈火之歌·深紫
+11945云端舞娘·黑
+11945塔罗女郎·珍稀" class="aTooltip"><span class="nobr">4-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="16283贵妇人
+15437黛瑶·墨
+15402塔罗女郎·珍稀
+15021烈火之歌·深紫
+14988云端舞娘·黑" class="aTooltip"><span class="nobr">11-7(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">烈火之歌·华丽</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">烈火之歌</td><td rowspan="1" class="inName">发型</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">军官大衣</td><td rowspan="1" class="inName">外套</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2644繁华梦·珍稀
+2510繁华梦·华丽
+2458军官大衣·暗红
+2404锦瑟暖风裘
+2398军官大衣" class="aTooltip"><span class="nobr">金色(第5)</span></a>, <a href="" onclick="return false;" tooltip="2609繁华梦·珍稀
+2458海盗披风
+2450繁华梦·华丽
+2425军官大衣
+2404锦瑟暖风裘" class="aTooltip"><span class="nobr">宫廷(第4)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="5716祥云盘蕊·靛
+5467锦瑟暖风裘
+5437繁华梦·珍稀
+5394毛绒风衣
+5361军官大衣" class="aTooltip"><span class="nobr">2-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="8458迷彩外套
+8275海军少校
+8275军官大衣·墨蓝
+8259军官大衣·暗红
+8177军官大衣" class="aTooltip"><span class="nobr">7-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="7394军官大衣·暗红
+7033军官大衣
+6853军官大衣·墨蓝
+6622陆军少校
+6522海军少校" class="aTooltip"><span class="nobr">10-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="6192繁华梦·珍稀
+6055锦瑟暖风裘
+6008毛绒风衣
+5965军官大衣
+5927繁华梦·华丽" class="aTooltip"><span class="nobr">11-5(第4)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">军官大衣·暗红</td><td rowspan="2" class="inName haveTop">外套</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="7394军官大衣·暗红
+7033军官大衣
+6853军官大衣·墨蓝
+6622陆军少校
+6522海军少校" class="aTooltip"><span class="nobr">10-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2644繁华梦·珍稀
+2510繁华梦·华丽
+2458军官大衣·暗红
+2404锦瑟暖风裘
+2398军官大衣" class="aTooltip"><span class="nobr">金色(第3)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="5209流霞缎·紫
+5047花月裴
+4950繁华梦·珍稀
+4870军官大衣·暗红
+4863蕾丝外套·月
+4863蕾丝外套·粉" class="aTooltip"><span class="nobr">1-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="5209流霞缎·紫
+4950繁华梦·珍稀
+4894茶花纱缎·华丽
+4870军官大衣·暗红
+4863枫叶大衣
+4863蕾丝外套·黑" class="aTooltip"><span class="nobr">2-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="5729繁华梦·珍稀
+5447军官大衣·暗红
+5447繁华梦·华丽
+5183绒领外套
+5183锦瑟暖风裘" class="aTooltip"><span class="nobr">4-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="8458迷彩外套
+8275海军少校
+8275军官大衣·墨蓝
+8259军官大衣·暗红
+8177军官大衣" class="aTooltip"><span class="nobr">7-支3(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">军官大衣·墨蓝</td><td rowspan="1" class="inName">外套</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="8458迷彩外套
+8275军官大衣·墨蓝
+8275海军少校
+8259军官大衣·暗红
+8177军官大衣" class="aTooltip"><span class="nobr">7-支3(第2)</span></a>, <a href="" onclick="return false;" tooltip="7394军官大衣·暗红
+7033军官大衣
+6853军官大衣·墨蓝
+6622陆军少校
+6522海军少校" class="aTooltip"><span class="nobr">10-4(第3)</span></a></td></tr><tr><td rowspan="1" class="inName">飒爽英姿·珍稀</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819魔术上衣
+10819飒爽英姿·华丽" class="aTooltip"><span class="nobr">金色(第1)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688黑白名媛
+10688飒爽英姿·华丽" class="aTooltip"><span class="nobr">宫廷(第1)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="[30433夜系名媛·珍稀]
+13056怪盗上衣·华丽
+12418战斗日常
+11998训练常服
+11585飒爽英姿·珍稀
+11440游鲤图·上衣" class="aTooltip"><span class="nobr">2-4(第4)</span></a></td><td class="inSec"><span id="cell3694_sl3"><a href="" onclick="showTop('3694_sl3');return false;">共15关</a></span><span id="cell3694_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="[62248精灵鹿后]
+27842怪盗上衣·华丽
+25644飒爽英姿·珍稀
+23422战斗日常
+23277飒爽英姿·墨蓝
+22429公爵千金·上衣" class="aTooltip"><span class="nobr">2-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[55503缤纷圣诞夜]
+27734飒爽英姿·珍稀
+25644怪盗上衣·华丽
+25112战斗日常
+24968飒爽英姿·墨蓝
+24012飒爽英姿·暗红" class="aTooltip"><span class="nobr">2-支1(第1)</span></a>, <a href="" onclick="return false;" tooltip="[66955缘定今生]
+23954飒爽英姿·珍稀
+23766百合花精
+22720蝶兰抹胸·珍稀
+22720紫兰抹胸·珍稀
+22263怪盗上衣·华丽" class="aTooltip"><span class="nobr">3-支2(第1)</span></a>, <a href="" onclick="return false;" tooltip="[57062韶颜倾城·墨]
+27202飒爽英姿·暗红
+26314飒爽英姿·珍稀
+25410飒爽英姿·华丽
+24823黑白名媛
+24660飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">4-6(第2)</span></a>, <a href="" onclick="return false;" tooltip="27335怪盗上衣·华丽
+26404战斗日常
+24352飒爽英姿·珍稀
+23766蒸汽时代
+23214训练常服" class="aTooltip"><span class="nobr">4-7(第3)</span></a>, <a href="" onclick="return false;" tooltip="[55467金迷纸醉]
+25644怪盗上衣·华丽
+25112战斗日常
+23954飒爽英姿·珍稀
+21231夕成玦·上衣
+21125训练常服" class="aTooltip"><span class="nobr">5-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[56265蝶舞翩跹·珍稀]
+25644飒爽英姿·珍稀
+23954怪盗上衣·华丽
+23422战斗日常
+23277飒爽英姿·墨蓝
+22318海军背心
+22318墨色琉璃" class="aTooltip"><span class="nobr">5-9(第1)</span></a>, <a href="" onclick="return false;" tooltip="[79009上海弄堂]
+26558初云衫·墨
+25112飒爽英姿·暗红
+24224飒爽英姿·珍稀
+24012超级特工·衣
+23719飒爽英姿·华丽" class="aTooltip"><span class="nobr">6-9(第3)</span></a>, <a href="" onclick="return false;" tooltip="[73045鸣鹤之应·珍稀]
+35725怪盗上衣·华丽
+33731战斗日常
+33408训练常服
+31451飒爽英姿·珍稀
+31122蒸汽时代" class="aTooltip"><span class="nobr">7-2(第4)</span></a>, <a href="" onclick="return false;" tooltip="[73906蝶舞翩跹·紫蝶]
+31213海军背心
+31213墨色琉璃
+31170超级特工·衣
+30840百合花精
+30685飒爽英姿·珍稀" class="aTooltip"><span class="nobr">8-8(第5)</span></a>, <a href="" onclick="return false;" tooltip="[83363星之海]
+34592怪盗上衣·华丽
+31402公爵千金·上衣
+28424糕点师·粉
+27223蒸汽时代
+26671飒爽英姿·珍稀" class="aTooltip"><span class="nobr">8-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="[59068格莱斯·奇迹]
+26249怪盗上衣·华丽
+24720战斗日常
+24019训练常服
+23290飒爽英姿·珍稀
+23174游鲤图·上衣" class="aTooltip"><span class="nobr">9-9-3(第4)</span></a>, <a href="" onclick="return false;" tooltip="36802飒爽英姿·暗红
+35741飒爽英姿·珍稀
+34145飒爽英姿·华丽
+34111飒爽英姿·墨蓝
+24754飒爽英姿" class="aTooltip"><span class="nobr">10-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="[62142创世之凤舞]
+30804飒爽英姿·珍稀
+28351飒爽英姿·墨蓝
+28022飒爽英姿·暗红
+27028魔术上衣
+26892怪盗上衣·华丽" class="aTooltip"><span class="nobr">11-5(第1)</span></a>, <a href="" onclick="return false;" tooltip="[81794靡颜佚貌·绿茵]
+32440公爵千金·上衣
+30804飒爽英姿·墨蓝
+29199怪盗上衣·华丽
+28656飒爽英姿·暗红
+26638飒爽英姿·珍稀" class="aTooltip"><span class="nobr">11-7(第5)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3694_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">飒爽英姿·暗红</td><td rowspan="2" class="inName haveTop">上装</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="36802飒爽英姿·暗红
+35741飒爽英姿·珍稀
+34145飒爽英姿·华丽
+34111飒爽英姿·墨蓝
+24754飒爽英姿" class="aTooltip"><span class="nobr">10-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819魔术上衣
+10819飒爽英姿·华丽" class="aTooltip"><span class="nobr">金色(第3)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688黑白名媛
+10688飒爽英姿·华丽" class="aTooltip"><span class="nobr">宫廷(第3)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3697_sl3"><a href="" onclick="showTop('3697_sl3');return false;">共6关</a></span><span id="cell3697_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="[51616纳尔]
+26043初云衫·墨
+23631紫薯毛衣
+23422飒爽英姿·暗红
+23232豆沙毛衣
+22624飒爽英姿·华丽" class="aTooltip"><span class="nobr">2-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[55503缤纷圣诞夜]
+27734飒爽英姿·珍稀
+25644怪盗上衣·华丽
+25112战斗日常
+24968飒爽英姿·墨蓝
+24012飒爽英姿·暗红" class="aTooltip"><span class="nobr">2-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="[57062韶颜倾城·墨]
+27202飒爽英姿·暗红
+26314飒爽英姿·珍稀
+25410飒爽英姿·华丽
+24823黑白名媛
+24660飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">4-6(第1)</span></a>, <a href="" onclick="return false;" tooltip="[79009上海弄堂]
+26558初云衫·墨
+25112飒爽英姿·暗红
+24224飒爽英姿·珍稀
+24012超级特工·衣
+23719飒爽英姿·华丽" class="aTooltip"><span class="nobr">6-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[62142创世之凤舞]
+30804飒爽英姿·珍稀
+28351飒爽英姿·墨蓝
+28022飒爽英姿·暗红
+27028魔术上衣
+26892怪盗上衣·华丽" class="aTooltip"><span class="nobr">11-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="[81794靡颜佚貌·绿茵]
+32440公爵千金·上衣
+30804飒爽英姿·墨蓝
+29199怪盗上衣·华丽
+28656飒爽英姿·暗红
+26638飒爽英姿·珍稀" class="aTooltip"><span class="nobr">11-7(第4)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3697_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">飒爽英姿·墨蓝</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819魔术上衣
+10819飒爽英姿·华丽" class="aTooltip"><span class="nobr">金色(第2)</span></a>, <a href="" onclick="return false;" tooltip="[24841黑天鹅]
+11326海军背心
+11326墨色琉璃
+11288飒爽英姿·墨蓝
+11160超级特工·衣
+11128初云衫·墨" class="aTooltip"><span class="nobr">女王(第3)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688黑白名媛
+10688飒爽英姿·华丽" class="aTooltip"><span class="nobr">宫廷(第2)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="[32256精灵鹿后]
+12234海军背心
+12234墨色琉璃
+12146怪盗上衣·华丽
+11949飒爽英姿·墨蓝
+11854超级特工·衣" class="aTooltip"><span class="nobr">1-6(第4)</span></a></td><td class="inSec"><span id="cell3698_sl3"><a href="" onclick="showTop('3698_sl3');return false;">共13关</a></span><span id="cell3698_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="[50527罪爱之花·红]
+26043初云衫·墨
+23631紫薯毛衣
+23282条纹吊带衫·白
+23232豆沙毛衣
+22534飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">1-4(第5)</span></a>, <a href="" onclick="return false;" tooltip="[64758黑天鹅]
+30191飒爽英姿·墨蓝
+28810初云衫·墨
+27760海军背心
+27760墨色琉璃
+27726超级特工·衣" class="aTooltip"><span class="nobr">1-8(第1)</span></a>, <a href="" onclick="return false;" tooltip="[54472刺客信念·华丽]
+25146北地英姿·衣
+24482破碎星空·玄
+24046薇薇
+23401破碎星空·梦
+22662飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">1-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="[62248精灵鹿后]
+27842怪盗上衣·华丽
+25644飒爽英姿·珍稀
+23422战斗日常
+23277飒爽英姿·墨蓝
+22429公爵千金·上衣" class="aTooltip"><span class="nobr">2-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="[55503缤纷圣诞夜]
+27734飒爽英姿·珍稀
+25644怪盗上衣·华丽
+25112战斗日常
+24968飒爽英姿·墨蓝
+24012飒爽英姿·暗红" class="aTooltip"><span class="nobr">2-支1(第4)</span></a>, <a href="" onclick="return false;" tooltip="[57062韶颜倾城·墨]
+27202飒爽英姿·暗红
+26314飒爽英姿·珍稀
+25410飒爽英姿·华丽
+24823黑白名媛
+24660飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">4-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="[92924鬼姬冥花·珍稀]
+35250蝶兰抹胸·珍稀
+35250紫兰抹胸·珍稀
+33030舞娘上衣
+16548飒爽英姿·墨蓝
+15453超级特工·衣" class="aTooltip"><span class="nobr">5-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="[56265蝶舞翩跹·珍稀]
+25644飒爽英姿·珍稀
+23954怪盗上衣·华丽
+23422战斗日常
+23277飒爽英姿·墨蓝
+22318海军背心
+22318墨色琉璃" class="aTooltip"><span class="nobr">5-9(第4)</span></a>, <a href="" onclick="return false;" tooltip="[55467黑暗精灵·珍稀]
+26159飒爽英姿·墨蓝
+24046海军背心
+24046墨色琉璃
+23398超级特工·衣
+22999陆军背心" class="aTooltip"><span class="nobr">6-支1(第1)</span></a>, <a href="" onclick="return false;" tooltip="42496北地英姿·衣
+42078飒爽英姿
+41717海军背心
+41483飒爽英姿·墨蓝
+41438陆军背心" class="aTooltip"><span class="nobr">7-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="36802飒爽英姿·暗红
+35741飒爽英姿·珍稀
+34145飒爽英姿·华丽
+34111飒爽英姿·墨蓝
+24754飒爽英姿" class="aTooltip"><span class="nobr">10-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="[62142创世之凤舞]
+30804飒爽英姿·珍稀
+28351飒爽英姿·墨蓝
+28022飒爽英姿·暗红
+27028魔术上衣
+26892怪盗上衣·华丽" class="aTooltip"><span class="nobr">11-5(第2)</span></a>, <a href="" onclick="return false;" tooltip="[81794靡颜佚貌·绿茵]
+32440公爵千金·上衣
+30804飒爽英姿·墨蓝
+29199怪盗上衣·华丽
+28656飒爽英姿·暗红
+26638飒爽英姿·珍稀" class="aTooltip"><span class="nobr">11-7(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3698_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">飒爽英姿·华丽</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945黑白名媛
+10819飒爽英姿·华丽
+10819魔术上衣" class="aTooltip"><span class="nobr">金色(第5)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+12289飒爽英姿·珍稀
+12248飒爽英姿·墨蓝
+11992飒爽英姿·暗红
+10945魔术上衣
+10688飒爽英姿·华丽
+10688黑白名媛" class="aTooltip"><span class="nobr">宫廷(第5)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[51616纳尔]
+26043初云衫·墨
+23631紫薯毛衣
+23422飒爽英姿·暗红
+23232豆沙毛衣
+22624飒爽英姿·华丽" class="aTooltip"><span class="nobr">2-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="[57062韶颜倾城·墨]
+27202飒爽英姿·暗红
+26314飒爽英姿·珍稀
+25410飒爽英姿·华丽
+24823黑白名媛
+24660飒爽英姿·墨蓝" class="aTooltip"><span class="nobr">4-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="[79009上海弄堂]
+26558初云衫·墨
+25112飒爽英姿·暗红
+24224飒爽英姿·珍稀
+24012超级特工·衣
+23719飒爽英姿·华丽" class="aTooltip"><span class="nobr">6-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="36802飒爽英姿·暗红
+35741飒爽英姿·珍稀
+34145飒爽英姿·华丽
+34111飒爽英姿·墨蓝
+24754飒爽英姿" class="aTooltip"><span class="nobr">10-4(第3)</span></a></td></tr><tr><td rowspan="1" class="inName">飒爽英姿</td><td rowspan="1" class="inName">上装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="42496北地英姿·衣
+42078飒爽英姿
+41717海军背心
+41483飒爽英姿·墨蓝
+41438陆军背心" class="aTooltip"><span class="nobr">7-支3(第2)</span></a>, <a href="" onclick="return false;" tooltip="36802飒爽英姿·暗红
+35741飒爽英姿·珍稀
+34145飒爽英姿·华丽
+34111飒爽英姿·墨蓝
+24754飒爽英姿" class="aTooltip"><span class="nobr">10-4(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">铁血柔情·珍稀</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12022铁血柔情·暗红
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11326铁血柔情·华丽
+11028雍容鱼尾" class="aTooltip"><span class="nobr">金色(第3)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11717铁血柔情·暗红
+11194铁血柔情·纯白
+11160雍容鱼尾" class="aTooltip"><span class="nobr">宫廷(第2)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="[32256精灵鹿后]
+11913岁月追怀·棕
+11763铁血柔情·珍稀
+11678诵霓裳·裙
+11615魔术下装
+11576舞娘纱裙" class="aTooltip"><span class="nobr">1-6(第2)</span></a></td><td class="inSec"><span id="cell3704_sl3"><a href="" onclick="showTop('3704_sl3');return false;">共11关</a></span><span id="cell3704_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="[62248精灵鹿后]
+25644诵霓裳·裙
+24498铁血柔情·珍稀
+23954冰蓝长裙
+22999岁月追怀·棕
+22570铁血柔情·暗红" class="aTooltip"><span class="nobr">2-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[55503缤纷圣诞夜]
+26954诵霓裳·裙
+26189铁血柔情·珍稀
+25644冰蓝长裙
+24261铁血柔情·暗红
+23613雍容鱼尾" class="aTooltip"><span class="nobr">2-支1(第2)</span></a>, <a href="" onclick="return false;" tooltip="[66955缘定今生]
+23954诵霓裳·裙
+22720蝶兰翩翩·珍稀
+22600岁月追怀·棕
+22409铁血柔情·珍稀
+22321蝴蝶兰·华丽" class="aTooltip"><span class="nobr">3-支2(第4)</span></a>, <a href="" onclick="return false;" tooltip="[55467金迷纸醉]
+26043冰蓝长裙
+23954诵霓裳·裙
+22409铁血柔情·珍稀
+21308岁月追怀·棕
+21125菱格裙" class="aTooltip"><span class="nobr">5-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[56265蝶舞翩跹·珍稀]
+25644诵霓裳·裙
+24498铁血柔情·珍稀
+23954冰蓝长裙
+22999岁月追怀·棕
+22570铁血柔情·暗红" class="aTooltip"><span class="nobr">5-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="[55467黑暗精灵·珍稀]
+25410魔术下装
+24823夜色如歌
+24100铁血柔情·纯白
+23858璀璨永恒·下
+23650铁血柔情·珍稀" class="aTooltip"><span class="nobr">6-支1(第5)</span></a>, <a href="" onclick="return false;" tooltip="[73906蝶舞翩跹·紫蝶]
+31034岁月追怀·棕
+30685诵霓裳·裙
+30335岁月追怀·金
+30070魔术下装
+29751铁血柔情·珍稀" class="aTooltip"><span class="nobr">8-8(第5)</span></a>, <a href="" onclick="return false;" tooltip="34841铁血柔情·暗红
+33731铁血柔情·华丽
+33415铁血柔情·纯白
+32719铁血柔情·珍稀
+32719白色军装裤" class="aTooltip"><span class="nobr">10-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="[53318靡颜佚貌·华丽]
+18828公爵千金·下装
+16309诵霓裳·裙
+16103铁血柔情·暗红
+15310铁血柔情·珍稀
+14933雍容鱼尾" class="aTooltip"><span class="nobr">10-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="[62142创世之凤舞]
+29767诵霓裳·裙
+28742铁血柔情·珍稀
+27741铁血柔情·暗红
+26892冰蓝长裙
+26812雍容鱼尾" class="aTooltip"><span class="nobr">11-5(第2)</span></a>, <a href="" onclick="return false;" tooltip="[81794靡颜佚貌·绿茵]
+28499铁血柔情·纯白
+27741铁血柔情·暗红
+27241铁血柔情·珍稀
+26694铁血柔情·华丽
+26521渲色沉静" class="aTooltip"><span class="nobr">11-7(第3)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3704_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">铁血柔情·暗红</td><td rowspan="2" class="inName haveTop">下装</td><td class="inTop">顶配</td><td class="inTop"></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="34841铁血柔情·暗红
+33731铁血柔情·华丽
+33415铁血柔情·纯白
+32719铁血柔情·珍稀
+32719白色军装裤" class="aTooltip"><span class="nobr">10-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12022铁血柔情·暗红
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11326铁血柔情·华丽
+11028雍容鱼尾" class="aTooltip"><span class="nobr">金色(第1)</span></a>, <a href="" onclick="return false;" tooltip="[24841黑天鹅]
+11071魔术下装
+11046岁月追怀·金
+10945夜色如歌
+10889铁血柔情·暗红
+10585诵霓裳·裙" class="aTooltip"><span class="nobr">女王(第4)</span></a>, <a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11717铁血柔情·暗红
+11194铁血柔情·纯白
+11160雍容鱼尾" class="aTooltip"><span class="nobr">宫廷(第3)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3707_sl3"><a href="" onclick="showTop('3707_sl3');return false;">共12关</a></span><span id="cell3707_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="[50527罪爱之花·红]
+24224静谧夜色·下
+23954铁血柔情·暗红
+22999琴键
+22720温雅侍者·裤
+22624条纹背带裙
+22624铁血柔情·华丽" class="aTooltip"><span class="nobr">1-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="[51616纳尔]
+24766怪盗绅士·下装
+24100怪盗下装·华丽
+23954铁血柔情·暗红
+22720温雅侍者·裤
+22321美术老师·紫
+22321神圣医者·裙" class="aTooltip"><span class="nobr">2-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[62248精灵鹿后]
+25644诵霓裳·裙
+24498铁血柔情·珍稀
+23954冰蓝长裙
+22999岁月追怀·棕
+22570铁血柔情·暗红" class="aTooltip"><span class="nobr">2-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="[55503缤纷圣诞夜]
+26954诵霓裳·裙
+26189铁血柔情·珍稀
+25644冰蓝长裙
+24261铁血柔情·暗红
+23613雍容鱼尾" class="aTooltip"><span class="nobr">2-支1(第4)</span></a>, <a href="" onclick="return false;" tooltip="[57062韶颜倾城·墨]
+26837铁血柔情·暗红
+25534诵霓裳·裙
+24046铁血柔情·华丽
+23613雍容鱼尾
+23214前沿少女·珍稀
+23214铁血柔情·纯白" class="aTooltip"><span class="nobr">4-6(第1)</span></a>, <a href="" onclick="return false;" tooltip="[56265蝶舞翩跹·珍稀]
+25644诵霓裳·裙
+24498铁血柔情·珍稀
+23954冰蓝长裙
+22999岁月追怀·棕
+22570铁血柔情·暗红" class="aTooltip"><span class="nobr">5-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="[79009上海弄堂]
+25146铁血柔情·暗红
+24224诵霓裳·裙
+24029岁月追怀·金
+22833魔术下装
+22833夜色如歌" class="aTooltip"><span class="nobr">6-9(第1)</span></a>, <a href="" onclick="return false;" tooltip="42315北地英姿·裤
+41738铁血柔情
+41299铁血柔情·暗红
+41299铁血柔情·华丽
+41204铁血柔情·纯白" class="aTooltip"><span class="nobr">7-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[83363星之海]
+29515公爵千金·下装
+26671诵霓裳·裙
+25588铁血柔情·暗红
+25460岁月追怀·金
+24667岁月追怀·棕" class="aTooltip"><span class="nobr">8-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[53318靡颜佚貌·华丽]
+18828公爵千金·下装
+16309诵霓裳·裙
+16103铁血柔情·暗红
+15310铁血柔情·珍稀
+14933雍容鱼尾" class="aTooltip"><span class="nobr">10-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="[62142创世之凤舞]
+29767诵霓裳·裙
+28742铁血柔情·珍稀
+27741铁血柔情·暗红
+26892冰蓝长裙
+26812雍容鱼尾" class="aTooltip"><span class="nobr">11-5(第3)</span></a>, <a href="" onclick="return false;" tooltip="[81794靡颜佚貌·绿茵]
+28499铁血柔情·纯白
+27741铁血柔情·暗红
+27241铁血柔情·珍稀
+26694铁血柔情·华丽
+26521渲色沉静" class="aTooltip"><span class="nobr">11-7(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3707_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">铁血柔情·纯白</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25375韶颜倾城·墨]
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11717铁血柔情·暗红
+11194铁血柔情·纯白
+11160雍容鱼尾" class="aTooltip"><span class="nobr">宫廷(第4)</span></a></td><td class="inSec"></td><td class="inSec"><span id="cell3708_sl3"><a href="" onclick="showTop('3708_sl3');return false;">共6关</a></span><span id="cell3708_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="[64758黑天鹅]
+30055魔术下装
+30055夜色如歌
+29792静谧夜色·下
+29261璀璨永恒·下
+28745铁血柔情·纯白" class="aTooltip"><span class="nobr">1-8(第5)</span></a>, <a href="" onclick="return false;" tooltip="[57062韶颜倾城·墨]
+26837铁血柔情·暗红
+25534诵霓裳·裙
+24046铁血柔情·华丽
+23613雍容鱼尾
+23214铁血柔情·纯白
+23214前沿少女·珍稀" class="aTooltip"><span class="nobr">4-6(第5)</span></a>, <a href="" onclick="return false;" tooltip="[55467黑暗精灵·珍稀]
+25410魔术下装
+24823夜色如歌
+24100铁血柔情·纯白
+23858璀璨永恒·下
+23650铁血柔情·珍稀" class="aTooltip"><span class="nobr">6-支1(第3)</span></a>, <a href="" onclick="return false;" tooltip="42315北地英姿·裤
+41738铁血柔情
+41299铁血柔情·暗红
+41299铁血柔情·华丽
+41204铁血柔情·纯白" class="aTooltip"><span class="nobr">7-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="34841铁血柔情·暗红
+33731铁血柔情·华丽
+33415铁血柔情·纯白
+32719铁血柔情·珍稀
+32719白色军装裤" class="aTooltip"><span class="nobr">10-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="[81794靡颜佚貌·绿茵]
+28499铁血柔情·纯白
+27741铁血柔情·暗红
+27241铁血柔情·珍稀
+26694铁血柔情·华丽
+26521渲色沉静" class="aTooltip"><span class="nobr">11-7(第1)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3708_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="1" class="inName">铁血柔情·华丽</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="[25030韶颜倾城·墨]
+12022铁血柔情·暗红
+11767诵霓裳·裙
+11724铁血柔情·珍稀
+11326铁血柔情·华丽
+11028雍容鱼尾" class="aTooltip"><span class="nobr">金色(第4)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[50527罪爱之花·红]
+24224静谧夜色·下
+23954铁血柔情·暗红
+22999琴键
+22720温雅侍者·裤
+22624铁血柔情·华丽
+22624条纹背带裙" class="aTooltip"><span class="nobr">1-4(第5)</span></a>, <a href="" onclick="return false;" tooltip="[57062韶颜倾城·墨]
+26837铁血柔情·暗红
+25534诵霓裳·裙
+24046铁血柔情·华丽
+23613雍容鱼尾
+23214铁血柔情·纯白
+23214前沿少女·珍稀" class="aTooltip"><span class="nobr">4-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="42315北地英姿·裤
+41738铁血柔情
+41299铁血柔情·华丽
+41299铁血柔情·暗红
+41204铁血柔情·纯白" class="aTooltip"><span class="nobr">7-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="34841铁血柔情·暗红
+33731铁血柔情·华丽
+33415铁血柔情·纯白
+32719铁血柔情·珍稀
+32719白色军装裤" class="aTooltip"><span class="nobr">10-4(第2)</span></a>, <a href="" onclick="return false;" tooltip="[81794靡颜佚貌·绿茵]
+28499铁血柔情·纯白
+27741铁血柔情·暗红
+27241铁血柔情·珍稀
+26694铁血柔情·华丽
+26521渲色沉静" class="aTooltip"><span class="nobr">11-7(第4)</span></a></td></tr><tr><td rowspan="1" class="inName">铁血柔情</td><td rowspan="1" class="inName">下装</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="[64619白衣天使]
+21960蝴蝶兰·珍稀
+21707黑纱裙
+21308铁血柔情
+21308神圣医者·裙
+20927高腰短裙·红" class="aTooltip"><span class="nobr">5-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="42315北地英姿·裤
+41738铁血柔情
+41299铁血柔情·华丽
+41299铁血柔情·暗红
+41204铁血柔情·纯白" class="aTooltip"><span class="nobr">7-支3(第2)</span></a>, <a href="" onclick="return false;" tooltip="[61729维纳斯之舞]
+23124雍容鱼尾
+17911神圣医者·裙
+17911黑纱裙
+17804静谧夜色·下
+16874铁血柔情
+16874高腰短裙·红" class="aTooltip"><span class="nobr">10-5(第5)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">黑白信念·珍稀</td><td rowspan="2" class="inName haveTop">鞋子</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="5021黑白信念·珍稀
+4916绕祥云
+4809幻世之凰
+4727魅惑蔓延
+4707刀光倩影·瓷砖" class="aTooltip"><span class="nobr">金色</span></a>, <a href="" onclick="return false;" tooltip="4968黑白信念·珍稀
+4809地狱阁楼
+4809魅翅
+4794绕祥云
+4690幽灵舞鞋" class="aTooltip"><span class="nobr">宫廷</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="11253黑白信念·珍稀
+10894绕祥云
+10577罂夭
+10258心月缘
+10258启世之凰" class="aTooltip"><span class="nobr">2-支1</span></a>, <a href="" onclick="return false;" tooltip="12428黑白信念·珍稀
+11809绕祥云
+11529罂夭
+11273魅惑蔓延
+11210启世之凰" class="aTooltip"><span class="nobr">11-5</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="11253罂夭
+10934启世之凰
+10894御天之帝
+10715魅惑蔓延
+10577黑白信念·珍稀" class="aTooltip"><span class="nobr">2-9(第5)</span></a>, <a href="" onclick="return false;" tooltip="10934地狱阁楼
+10934魅翅
+10735幻世之凰
+10685黑白信念·珍稀
+10623魅惑蔓延" class="aTooltip"><span class="nobr">4-6(第4)</span></a>, <a href="" onclick="return false;" tooltip="11253罂夭
+10934启世之凰
+10894御天之帝
+10715魅惑蔓延
+10577黑白信念·珍稀" class="aTooltip"><span class="nobr">5-9(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">黑白信念·华丽</td><td rowspan="1" class="inName">鞋子</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="1" class="inName">黑白信念</td><td rowspan="1" class="inName">鞋子</td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td><td class="inNone"></td></tr><tr><td rowspan="2" class="inName haveTop">军官帽</td><td rowspan="2" class="inName haveTop">饰品-头饰</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2538军官帽
+2510炽火凤冠
+2458红鸾凤冠
+2450骷髅海盗帽
+2450游龙钗" class="aTooltip"><span class="nobr">金色</span></a>, <a href="" onclick="return false;" tooltip="2564军官帽
+2484炽火凤冠
+2458红鸾凤冠
+2450骷髅海盗帽
+2450游龙钗" class="aTooltip"><span class="nobr">宫廷</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="5626军官帽
+5626炽火凤冠
+5550繁花礼帽
+5547红鸾凤冠
+5467花迭罗
+5467星晶鹿冠" class="aTooltip"><span class="nobr">2-支1</span></a>, <a href="" onclick="return false;" tooltip="5465军官帽
+5342炽火凤冠
+5278骷髅海盗帽
+5263红鸾凤冠
+5207圣宜凤冠" class="aTooltip"><span class="nobr">4-6</span></a>, <a href="" onclick="return false;" tooltip="7255军官帽
+6823陆军宽檐帽
+6728海军宽檐帽
+6683士兵帽
+6059迷彩帽" class="aTooltip"><span class="nobr">10-4</span></a>, <a href="" onclick="return false;" tooltip="6320军官帽
+6214炽火凤冠
+6161红鸾凤冠
+6062繁花礼帽
+6055花迭罗
+6055星晶鹿冠" class="aTooltip"><span class="nobr">11-5</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="8416迷彩帽
+8296陆军宽檐帽
+8275士兵帽
+8188海军宽檐帽
+8177军官帽" class="aTooltip"><span class="nobr">7-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="5075贵妇礼帽
+4942蓝宝石礼帽·华丽
+4053齿轮礼帽
+3753粉蔷薇帽·珍稀
+3521军官帽" class="aTooltip"><span class="nobr">10-支3(第5)</span></a></td></tr><tr><td rowspan="1" class="inName">士兵帽</td><td rowspan="1" class="inName">饰品-头饰</td><td class="inSec">高配</td><td class="inSec"></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="8416迷彩帽
+8296陆军宽檐帽
+8275士兵帽
+8188海军宽檐帽
+8177军官帽" class="aTooltip"><span class="nobr">7-支3(第3)</span></a>, <a href="" onclick="return false;" tooltip="7255军官帽
+6823陆军宽檐帽
+6728海军宽檐帽
+6683士兵帽
+6059迷彩帽" class="aTooltip"><span class="nobr">10-4(第4)</span></a></td></tr><tr><td rowspan="2" class="inName haveTop">信仰之握</td><td rowspan="2" class="inName haveTop">饰品-手饰·双</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2510信仰之握
+2504星海手套
+2404圣灵手套
+2397墨花笺
+2343黑耀手套" class="aTooltip"><span class="nobr">金色</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="5626信仰之握
+5467圣灵手套
+5288蜜雪糖霜·华丽
+5228星海手套
+4968刺客手套·红" class="aTooltip"><span class="nobr">2-支1</span></a>, <a href="" onclick="return false;" tooltip="5288信仰之握
+5129圣灵手套
+4961怪盗手套
+4950蜜雪糖霜·华丽
+4810星海手套" class="aTooltip"><span class="nobr">3-支1</span></a>, <a href="" onclick="return false;" tooltip="4870信仰之握
+4810冰雪之握
+4791圣灵手套
+4660轻粉手套·珍稀
+4532蜜雪糖霜·华丽" class="aTooltip"><span class="nobr">4-7</span></a>, <a href="" onclick="return false;" tooltip="6214信仰之握
+6055圣灵手套
+5983星海手套
+5765蜜雪糖霜·华丽
+5654墨花笺" class="aTooltip"><span class="nobr">11-5</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2504星海手套
+2484信仰之握
+2458墨花笺
+2404圣灵手套
+2343黑耀手套" class="aTooltip"><span class="nobr">宫廷(第2)</span></a></td><td class="inSec"><a href="" onclick="return false;" tooltip="2785葉片手链
+2707蜜雪糖霜·华丽
+2551相濡以沫
+2452双瓣茉莉
+2413信仰之握" class="aTooltip"><span class="nobr">2-4(第5)</span></a></td><td class="inSec"><span id="cell3725_sl3"><a href="" onclick="showTop('3725_sl3');return false;">共16关</a></span><span id="cell3725_sl3_f" style="display:none"><a href="" onclick="return false;" tooltip="5367葉片手链
+4870蜜雪糖霜·华丽
+4693雀环
+4684冰雪之握
+4532信仰之握" class="aTooltip"><span class="nobr">1-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="5626蜜雪糖霜·华丽
+5288信仰之握
+5129圣灵手套
+5110雀环
+5002人鱼手套" class="aTooltip"><span class="nobr">2-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="5865蜜雪糖霜·华丽
+5571雀环
+5527信仰之握
+5478怪盗手套
+5463人鱼手套" class="aTooltip"><span class="nobr">3-11(第3)</span></a>, <a href="" onclick="return false;" tooltip="5547墨花笺
+5520星海手套
+5342信仰之握
+5183圣灵手套
+5102丝绸手套·棕" class="aTooltip"><span class="nobr">4-6(第3)</span></a>, <a href="" onclick="return false;" tooltip="5288蜜雪糖霜·华丽
+4950信仰之握
+4791圣灵手套
+4693雀环
+4668葉片手链" class="aTooltip"><span class="nobr">5-3(第2)</span></a>, <a href="" onclick="return false;" tooltip="5626蜜雪糖霜·华丽
+5288信仰之握
+5129圣灵手套
+5110雀环
+5002人鱼手套" class="aTooltip"><span class="nobr">5-9(第2)</span></a>, <a href="" onclick="return false;" tooltip="6469冰雪之握
+6319葉片手链
+6290信仰之握
+6131圣灵手套
+6101左右逢源·蓝" class="aTooltip"><span class="nobr">7-2(第3)</span></a>, <a href="" onclick="return false;" tooltip="5100雀环
+4005左右逢源·蓝
+3923葉片手链
+3911信仰之握
+3860星海手套" class="aTooltip"><span class="nobr">7-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="4776星海手套
+4701舞会手套
+4547怪盗手套
+3863蜜雪糖霜·华丽
+3660信仰之握" class="aTooltip"><span class="nobr">7-7(第5)</span></a>, <a href="" onclick="return false;" tooltip="8408迷彩手套
+8404海军皮手套
+8316长款皮手套
+8204信仰之握
+5192蝶趣" class="aTooltip"><span class="nobr">7-支3(第4)</span></a>, <a href="" onclick="return false;" tooltip="6085蜜雪糖霜·华丽
+5753双瓣茉莉
+5709相濡以沫
+5587金叶缎带
+5494信仰之握" class="aTooltip"><span class="nobr">8-支3(第5)</span></a>, <a href="" onclick="return false;" tooltip="4901雀环
+3443星海手套
+3388信仰之握
+3316墨花笺
+3237圣灵手套" class="aTooltip"><span class="nobr">9-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="5494葉片手链
+5325蜜雪糖霜·华丽
+4949相濡以沫
+4833双瓣茉莉
+4817信仰之握" class="aTooltip"><span class="nobr">9-9-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="7319长款皮手套
+7022海军皮手套
+6829信仰之握
+5577迷彩手套
+4869怪盗手套" class="aTooltip"><span class="nobr">10-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="4317怪盗手套
+3433信仰之握
+3423星海手套
+3346圣灵手套
+3308墨花笺" class="aTooltip"><span class="nobr">10-支3(第2)</span></a>, <a href="" onclick="return false;" tooltip="4208雀环
+3783信仰之握
+3682圣灵手套
+3674葉片手链
+3584星海手套
+3584冰雪之握" class="aTooltip"><span class="nobr">12-支1(第2)</span></a><br><span class="nobr"><a href="" onclick="hideTop('3725_sl3');return false;">收起</a></span></span></td></tr><tr><td rowspan="2" class="inName haveTop">铁血长鞭</td><td rowspan="2" class="inName haveTop">饰品-手持·左</td><td class="inTop">顶配</td><td class="inTop"><a href="" onclick="return false;" tooltip="2345铁血长鞭
+2345贵宾犬
+2343突击步枪
+2319寒冰之证
+2265钻石挎包
+2265夜蔷薇
+2265贵妇扣包
+2265年货拼盘" class="aTooltip"><span class="nobr">金色</span></a></td><td class="inTop"></td><td class="inTop"><a href="" onclick="return false;" tooltip="4605铁血长鞭
+4532绣缘情
+4532剪红窗
+4525银泡沫
+4525夜蔷薇" class="aTooltip"><span class="nobr">1-4</span></a></td></tr><tr><td class="inSec">高配</td><td class="inSec"><a href="" onclick="return false;" tooltip="2371贵宾犬
+2343突击步枪
+2319寒冰之证
+2310铁血长鞭
+2284万圣夜灯" class="aTooltip"><span class="nobr">宫廷(第4)</span></a></td><td class="inSec"></td><td class="inSec"><a href="" onclick="return false;" tooltip="4950绣缘情
+4863银泡沫
+4711菱格拎包·红
+4330十字架
+4187铁血长鞭
+4187夜蔷薇" class="aTooltip"><span class="nobr">3-3(第5)</span></a>, <a href="" onclick="return false;" tooltip="4778突击步枪
+4272剪红窗
+4220铁血长鞭
+4220特殊印记
+4143素馨包" class="aTooltip"><span class="nobr">4-3(第3)</span></a>, <a href="" onclick="return false;" tooltip="4841水笛由念
+4292桃花伞
+3500如意金箍棒
+3204铁血长鞭
+3145绣缘情
+3145剪红窗" class="aTooltip"><span class="nobr">9-4(第4)</span></a>, <a href="" onclick="return false;" tooltip="4032绣缘情
+4015寒冰之证
+3941铁血长鞭
+3911突击步枪
+3835夜蔷薇" class="aTooltip"><span class="nobr">10-4(第3)</span></a>, <a href="" onclick="return false;" tooltip="6910金玉烟斗
+6055突击步枪
+5717铁血长鞭
+5558特殊印记
+5339夜蔷薇" class="aTooltip"><span class="nobr">11-7(第3)</span></a></td></tr></tbody></table>
 </span>
+<!--child content end-->
 </div>
 </body>
 </html>
