@@ -1,0 +1,42 @@
+table.calcByAll {
+  width:100%;
+  table-layout:fixed;
+}
+table.calcByAll tr td:nth-child(-n+3) {
+  width:10%;
+}
+td.inTop,td.haveTop {
+  color:red;
+  background-color: rgba(248, 229, 219, 0.5);
+}
+.nobr {
+  white-space:nowrap;
+}
+a {
+  color:inherit;
+}
+a.aTooltip {
+  text-decoration:none;
+}
+[tooltip]:hover:before {
+	margin-top:25px; 
+	margin-left:-80px; 
+	padding: 5px; 
+	position: absolute; 
+	content: attr(tooltip);
+	display: inline-block; 
+	z-index: 255; 
+	white-space:pre;
+	color: black; 
+	background-color: #F2FFF2;
+	text-align:left;
+}
+.normTip [tooltip]:hover:before {
+	margin-left:0px; 
+	width: 170px; 
+	word-break:break-all; 
+	white-space:pre-wrap;
+}
+.limit {
+  display:none;
+}
