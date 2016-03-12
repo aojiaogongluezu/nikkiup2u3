@@ -20,3 +20,10 @@ function chgMode(mode){
 		for (var i=0;i<x.length;i++) {x[i].style.display="none";}
 	}
 }
+window.onload = function(){
+	var radio_text='<form action="">';
+	radio_text+='<input type="radio" name="limit" id="limitn" value="n" checked onclick="chgMode(this.value)"><label for="limitn">标准权重</label>';
+	radio_text+='<input type="radio" name="limit" id="limitl" value="l" onclick="chgMode(this.value)"><label for="limitl">极限权重</label><br>';
+	radio_text+='</form>';
+	document.getElementById("radio").innerHTML = radio_text;
+};
