@@ -5,6 +5,9 @@ table.calcByAll {
 table.calcByAll tr td:nth-child(-n+3) {
   width:10%;
 }
+table.calcSrc tr td:nth-child(3),table.calcSrc tr td:nth-child(4) {
+  width:7.5%;
+}
 td.inTop,td.haveTop {
   color:red;
   background-color: rgba(248, 229, 219, 0.5);
