@@ -15,11 +15,9 @@ td.inTop,td.haveTop {
 .nobr {
   white-space:nowrap;
 }
-td a {
-  color:inherit;
-}
 a.aTooltip {
   text-decoration:none;
+  color:inherit;
 }
 [tooltip]:hover:before {
 	margin-top:25px; 
