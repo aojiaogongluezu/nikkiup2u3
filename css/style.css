@@ -6,6 +6,19 @@ hr.mhr {
 	"SimSun"-------------宋体
         "Microsoft YaHei"----微软雅黑   
 ******************************************/ 
+/*************链接***************/ 
+a {
+	text-decoration:none;
+	color:#3377ff;
+	font-family:"Microsoft YaHei", Sans-Serif;
+}
+
+a:hover {
+	text-decoration:none;
+	color:#B576FF;
+	font-family:"Microsoft YaHei", Sans-Serif;
+}
+
 /*************正文段首缩进字体***************/ 
 p.indenttext {
 	font-size: 100%;
