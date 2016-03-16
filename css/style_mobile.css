@@ -110,6 +110,9 @@
     padding:3px 8px;
     text-decoration:none
 }
+.tree li span a {
+    text-decoration:none;
+}
 .tree li.parent_li>span {	
     cursor:pointer    
 }
