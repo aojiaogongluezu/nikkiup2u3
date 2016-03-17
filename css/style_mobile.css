@@ -76,6 +76,17 @@
 #lmenu {
 	display: none;
 }
+#nav { 
+	margin-top: 2em;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 4.5em;
+	overflow-y:hidden;
+	overflow-x:hidden;
+}
 /*************index.html相关***************/
 
 
