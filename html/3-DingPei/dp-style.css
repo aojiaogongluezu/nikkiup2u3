@@ -10,7 +10,7 @@ table.calcSrc tr td:nth-child(3),table.calcSrc tr td:nth-child(4) {
 }
 td.inTop,td.haveTop {
   color:red;
-  background-color: rgba(248, 229, 219, 0.5);
+  background-color: rgba(255, 230, 245, 0.5);
 }
 .nobr {
   white-space:nowrap;
@@ -32,7 +32,7 @@ a.aTooltip {
 	z-index: 255; 
 	white-space:pre;
 	color: black; 
-	background-color: #F2FFF2;
+	background-color: #FFFFFA;
 	text-align:left;
 }
 .normTip [tooltip]:hover:before {
