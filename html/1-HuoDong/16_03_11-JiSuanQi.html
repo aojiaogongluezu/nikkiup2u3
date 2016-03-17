@@ -163,7 +163,7 @@ function calc(ind){
 	calcres+=tr(td('还需挑战'+times+'次（免费'+to_get_times+'次）'));
 	calcres+=tr(td('还需'+diff_stamina+'体买次数+每日'+stamina_daily+'体×'+remain_days+'天+今天'+stamina_today+'体='+stamina_total+'体'));
 	calcres+=tr(td('还需购买'+to_buy+'次，花钻'+to_pay+'个'));
-	calcres+=tr(td('≈每天：挑战'+diff_times_daily+'次，购买'+to_buy_daily+'次='+to_pay_daily+'钻，消耗'+stamina_daily_tot+'体'));
+	//calcres+=tr(td('≈每天：挑战'+diff_times_daily+'次，购买'+to_buy_daily+'次='+to_pay_daily+'钻，消耗'+stamina_daily_tot+'体'));
 	calcres+='</table>';
 	document.getElementById("calcres").innerHTML = calcres;
 	
