@@ -47,23 +47,23 @@ p.normal,label {
 /*************关卡名字字体***************/ 
 p.title1 {
 	font-size: 180%;
-	font-weight : 700;
+	font-weight : 800;
 	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #1F4499;
 	text-align: center;
 }
 /*************分割标题字体***************/ 
 p.title2 {
-	font-size: 110%;
-	font-weight : 750;
+	font-size: 120%;
+	font-weight : 900;
 	font-family: "Microsoft YaHei", Sans-Serif;
-	color: #1F4499;
+	color: #1F3489;
 	text-align: center;
 }
 /*************行首标题字体***************/ 
 span.title3 {
-	font-weight : 750;
-	color: #0CC;
+	font-weight : 900;
+	color: #111111;
 }
 /*************关卡说明字体***************/ 
 span.comment {
@@ -71,11 +71,11 @@ span.comment {
 }
 /*************顶配字体***************/ 
 span.top {
-	color: #CC3300;
+	color: #FF0000;
 }
 /*************顶配代替字体***************/ 
 span.instead {
-	color: #003366;
+	color: #111111;
 }
 /*************标配字体***************/ 
 span.general {
@@ -83,7 +83,7 @@ span.general {
 }
 /*************新手字体***************/ 
 span.newguy {
-	color: #33CC66;
+	color: #111111;
 }
 /*************table***************/ 
 table {
