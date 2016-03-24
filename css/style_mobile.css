@@ -42,8 +42,8 @@
 	border:1px solid #278FC9;
 	background-image: url(../images/bk1.png);	
 	background-size:60%;
-	background-repeat:no-repeat;
-  	background-position:50% 50%;
+	background-repeat:repeat-y;
+  	background-position:50% 0%;
 }
 
 #guestbook {
