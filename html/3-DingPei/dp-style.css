@@ -25,6 +25,12 @@ td a {
 a.aTooltip {
   text-decoration:none;
 }
+
+a.cTip {
+	color:#3377ff;
+  text-decoration:none;
+}
+
 [tooltip]:hover:before {
 	margin-top:25px; 
 	margin-left:-80px; 
