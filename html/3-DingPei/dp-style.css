@@ -26,11 +26,6 @@ a.aTooltip {
   text-decoration:none;
 }
 
-a.cTip {
-	color:#3377ff;
-  text-decoration:none;
-}
-
 [tooltip]:hover:before {
 	margin-top:25px; 
 	margin-left:-80px; 
@@ -55,9 +50,16 @@ a.cTip {
 }
 
 ///////////////////////////
+
 #top {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
 }
+
+a.cTip {
+	color:#3377ff;
+  text-decoration:none;
+}
+
 /////////////////////////////
 
