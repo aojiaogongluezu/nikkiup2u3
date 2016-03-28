@@ -8,6 +8,21 @@ table.calcByAll tr td:nth-child(-n+3) {
 table.calcSrc tr td:nth-child(3),table.calcSrc tr td:nth-child(4) {
   width:7.5%;
 }
+
+///////////////////////////
+
+#top {
+  color:red;
+  background-color: rgba(255, 230, 245, 0.5);
+}
+
+a.cTip {
+  color:#3377ff;
+  text-decoration:none;
+}
+
+/////////////////////////////
+
 td.inTop,td.haveTop {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
@@ -49,17 +64,5 @@ a.aTooltip {
   display:none;
 }
 
-///////////////////////////
 
-#top {
-  color:red;
-  background-color: rgba(255, 230, 245, 0.5);
-}
-
-a.cTip {
-	color:#3377ff;
-  text-decoration:none;
-}
-
-/////////////////////////////
 
