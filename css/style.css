@@ -125,7 +125,7 @@ tr:nth-child(1) {
 
 ///////////////////////////
 
-#top {
+tr.top {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
 }
