@@ -122,8 +122,6 @@ tr:nth-child(1) {
 	color:232425;
 }
 
-///////////////////////////
-
 tr.top td {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
@@ -133,8 +131,6 @@ a.cTip {
   color:#3377ff;
   text-decoration:none;
 }
-
-/////////////////////////////
 
 /*************防滚条***************/ 
 body {
