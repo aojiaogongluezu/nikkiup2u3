@@ -99,7 +99,6 @@ td {
 	border:solid #999;
 	border-width:0px 1px 1px 0px;
 	border-spacing:0;
-	background: rgba(0, 0, 0, 0);
 }
 
 tr:nth-child(2n+1) {
@@ -125,7 +124,7 @@ tr:nth-child(1) {
 
 ///////////////////////////
 
-tr.top {
+tr.top td {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
 }
