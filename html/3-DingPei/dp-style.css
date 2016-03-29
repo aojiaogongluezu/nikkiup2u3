@@ -8,8 +8,7 @@ table.calcByAll tr td:nth-child(-n+3) {
 table.calcSrc tr td:nth-child(3),table.calcSrc tr td:nth-child(4) {
   width:7.5%;
 }
-
-td.inTop,td.haveTop {
+td.inTop,td.haveTop,tr.top {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
 }
@@ -26,7 +25,6 @@ td a {
 a.aTooltip {
   text-decoration:none;
 }
-
 [tooltip]:hover:before {
 	margin-top:25px; 
 	margin-left:-80px; 
@@ -49,6 +47,3 @@ a.aTooltip {
 .limit {
   display:none;
 }
-
-
-
