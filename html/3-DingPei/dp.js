@@ -1,10 +1,12 @@
 function showTop(id){
 	document.getElementById('cell'+id+'_f').style.display="block";
 	document.getElementById('cell'+id).style.display="none";
+	return false;
 }
 function hideTop(id){
 	document.getElementById('cell'+id+'_f').style.display="none";
 	document.getElementById('cell'+id).style.display="block";
+	return false;
 }
 function chgMode(mode){
 	var x=[];
