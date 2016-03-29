@@ -1,12 +1,10 @@
 function showTop(id){
 	document.getElementById('cell'+id+'_f').style.display="block";
 	document.getElementById('cell'+id).style.display="none";
-	return false;
 }
 function hideTop(id){
 	document.getElementById('cell'+id+'_f').style.display="none";
 	document.getElementById('cell'+id).style.display="block";
-	return false;
 }
 function chgMode(mode){
 	var x=[];
@@ -28,4 +26,9 @@ window.onload = function(){
 	radio_text+='<input type="radio" name="limit" id="limitl" value="l" onclick="chgMode(this.value)"><label for="limitl">极限权重</label><br>';
 	radio_text+='</form>';
 	document.getElementById("radio").innerHTML = radio_text;
+	
+	var elts = document.getElementsByTagName('a');
+	for (var i = elts.length - 1; i >= 0; --i) {
+		if(elts[i].innerHTML.indexOf('nobr') > -1) {elts[i].onclick = function() {return false;};}
+	}
 };
