@@ -72,7 +72,7 @@ function init(){
 		cell1+=inputBox('each_gain'+i,'calc()',2);
 		cell2+=inputBox('remain_today'+i,'calc()',2);
 	}
-	var input='<table border="0">';
+	var input='<table border="0">'+tr(td(''),'style="display:none"');
 	input+=tr(td('已领消费档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');
 	input+=tr(td('預計消费档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
 	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
