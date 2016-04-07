@@ -135,7 +135,7 @@ function init(ind){
 	table+='</table></form>';
 	document.getElementById("table").innerHTML = table;
 	
-	var drop='<table border="1">';
+	var drop='<table border="1">'+tr(td(''),'style="display:none"');
 	drop+=tr(td('少女级掉率')+td(inputBox('drops','calc3()',3)+'%'));
 	drop+=tr(td('公主级掉率')+td(inputBox('dropg','calc3()',3)+'%'));
 	drop+=tr(td('剩余天数')+td(inputBox('remain_days','calc3()',3)+'<input type="checkbox" id="used_today" onclick="calc3()">今天已刷'));
