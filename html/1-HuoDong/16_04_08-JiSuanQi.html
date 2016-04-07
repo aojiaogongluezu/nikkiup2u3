@@ -256,9 +256,9 @@ function calc2(){//diamond calc
 	for(var i in reqCnt){
 		reqDif.push(reqCnt[i]);
 	}
-	for(var i in wardrobe){
+	/*for(var i in wardrobe){
 		updreqown(i);
-	}
+	}*/
 	for (var i in wardrobe){
 		if(document.getElementById('reqown'+i)){reqown[i]=Math.min(reqCnt[i],noNaN(parseInt(document.getElementById('reqown'+i).value)));}
 		else{reqown[i]=0;}
