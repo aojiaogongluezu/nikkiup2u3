@@ -26,6 +26,7 @@
 </p>
 
 <p align="center">
+<table><tr><td>
 <input type="checkbox" id="notecheck" onchange=noteview()><span style="font-size:80%">注释</span></br>
 月卡：<input type="text" id="gain4" size="2" onkeyup=calc2() />×<input type="text" id="times4" size="2" onkeyup=calc2() />天
 </br>
@@ -45,12 +46,13 @@
 <span class="note">※每30天35</span></br>
 活动奖励：<input type="text" id="gain9" size="4" onkeyup=calc2() />
 <span class="note">※活动期间的福利，请手动填写</span></br>
-</p>
-
-<p align="center">
+</br>
 共可获得<output id="total"></output>钻</br>
 若现在有<input type="text" id="ownnow" size="5" onkeyup=calc2() />钻，则<span id="target_day"></span>可得<output id="total2"></output>钻</br>
+
+</td></tr></table>
 </p>
+
 </div>
 </body>
 </html>
