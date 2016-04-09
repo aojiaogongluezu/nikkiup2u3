@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Miracle Nikki - 攒钻计算器</title>
+<link rel="stylesheet" href="../../../css/style.css">
+<style>
+.note {font-size:80%;display:none;}
+</style>
+<script type="text/javascript" src="http://reanrean.github.io/index/js/nikki_days.js"></script> 
+</head>
+
+<body>
+<div class="myframe" >
+		<p class="title1">攒钻计算</p>
+		<p class="normal">
+			<span class="title3">作者：</span>Rean翎
+		</p>
+		<hr class="mhr">
+
+<p align="center">
+从<input type="text" id="ny" size="4" onkeyup=calc1() />年<input type="text" id="nm" size="2" onkeyup=calc1() />月<input type="text" id="nd" size="2" onkeyup=calc1() />日<span style="color:red" id="n_invalid"></span></br>
+到<input type="text" id="ty" size="4" onkeyup=calc1() />年<input type="text" id="tm" size="2" onkeyup=calc1() />月<input type="text" id="td" size="2" onkeyup=calc1() />日<span style="color:red" id="t_invalid"></span></br>
+共<output id="diff"></output>天（不计今天）</br>
+</p>
+
+<p align="center">
+<input type="checkbox" id="notecheck" onchange=noteview()><span style="font-size:80%">注释</span></br>
+月卡：<input type="text" id="gain4" size="2" onkeyup=calc2() />×<input type="text" id="times4" size="2" onkeyup=calc2() />天
+</br>
+每日任务：<input type="text" id="gain2" size="2" onkeyup=calc2() />×<input type="text" id="times2" size="2" onkeyup=calc2() />天
+</br>
+签到：<input type="text" id="gain1" size="4" onkeyup=calc2() />
+<span class="note">※每5天50/100/50/100/50/150</span></br>
+竞技场：<input type="text" id="gain5" size="2" onkeyup=calc2() />×<input type="text" id="times5" size="2" onkeyup=calc2() />次
+<span class="note">※每周一50</span></br>
+评选赛：<input type="text" id="gain6" size="2" onkeyup=calc2() />×<input type="text" id="times6" size="2" onkeyup=calc2() />次
+<span class="note">※每周二周六25(前5%)/20(前20%)</span></br>
+分享：<input type="text" id="gain3" size="2" onkeyup=calc2() />×<input type="text" id="times3" size="2" onkeyup=calc2() />天
+<span class="note">※排名上升5+自由换装2+评选赛换装2+过关分享2+过关求助2</span></br>
+点赞：<input type="text" id="gain7" size="2" onkeyup=calc2() />×<input type="text" id="times7" size="2" onkeyup=calc2() />天
+</br>
+微信签到：<input type="text" id="gain8" size="2" onkeyup=calc2() />×<input type="text" id="times8" size="2" onkeyup=calc2() />次
+<span class="note">※每30天35</span></br>
+活动奖励：<input type="text" id="gain9" size="4" onkeyup=calc2() />
+<span class="note">※活动期间的福利，请手动填写</span></br>
+</p>
+
+<p align="center">
+共可获得<output id="total"></output>钻</br>
+若现在有<input type="text" id="ownnow" size="5" onkeyup=calc2() />钻，则<span id="target_day"></span>可得<output id="total2"></output>钻</br>
+</p>
+</div>
+</body>
+</html>
