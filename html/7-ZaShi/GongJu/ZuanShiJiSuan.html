@@ -7,8 +7,9 @@
 <link rel="stylesheet" href="../../../css/style.css">
 <style>
 .note {font-size:80%;display:none;}
-td {text-align:left;border:0px;}
-tr {background: rgba(255, 255, 255, 0);}
+table.days tr td {text-align:left;border:0px;}
+table.days tr {background: rgba(255, 255, 255, 0);border:0px;}
+table.days {border:0px;}
 </style>
 <script type="text/javascript" src="http://reanrean.github.io/index/js/nikki_days.js"></script> 
 </head>
@@ -27,7 +28,7 @@ tr {background: rgba(255, 255, 255, 0);}
 共<output id="diff"></output>天（不计今天）</br>
 </p>
 
-<table align="center"><tr style="display:none"><td></td></tr><tr><td>
+<table align="center" class="days"><tr style="display:none"><td></td></tr><tr><td>
 <input type="checkbox" id="notecheck" onchange=noteview()><span style="font-size:80%">注释</span></br>
 月卡：<input type="text" id="gain4" size="2" onkeyup=calc2() />×<input type="text" id="times4" size="2" onkeyup=calc2() />天
 </br>
