@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Miracle Nikki - Stamina Timer</title>
+<link rel="stylesheet" href="../../../css/style.css">
+<style>
+a {color:black;text-decoration:none;}
+</style>
+<script type="text/javascript" src="http://reanrean.github.io/index/js/nikki_stamina.js"></script> 
+</head>
+
+<body>
+<div class="myframe" >
+		<p class="title1">体力回复计算</p>
+		<p class="normal">
+			<span class="title3">作者：</span>Rean翎
+		</p>
+		<hr class="mhr">
+
+<span id="advanced_options_span" style="display:none">体力回复间隔：<output id="aptime"></output>分钟<button onclick="add('aptime')">+</button><button onclick="min('aptime')">-</button></span></br>
+
+<table border="1" ><col width="200px" />
+<tr style="display:nond"><td></td></tr>
+<tr><td>
+</br>
+现有体力：<input type="text" id="nowap1" size="3" onkeyup=calc() />/<input type="text" id="maxap1" size="3" onkeyup=maxap(this.value) /></br>
+</br>
+体力会在<span id="res1"></span>回满</br>
+（<span id="res1_time"></span>后）</br>
+</br>
+</td></tr>
+<tr><td>
+</br>
+休息到<span id="tmr"></span><span id="select_hr2"></span>:<span id="select_min2"></span></br>
+</br>
+<span id="ap_rec_tmp"></span></br>
+<span id="nowap2"></span><span id="red" style="color:red"></span></br>
+</br>
+</td></tr>
+</table>
+
+</div>
+</body>
+</html>
