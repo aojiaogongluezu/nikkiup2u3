@@ -38,7 +38,7 @@ function event_alert(){
 	}
 	if(out){
 		document.getElementById('event_alert').innerHTML='<table width="100%"><tr style="display:none"><td></td></tr><tr><td id="event_alert_c" style="text-align:left"></td></tr></table><br>';
-		document.getElementById('event_alert_c').innerHTML='活动提醒：<br>'+out;
+		document.getElementById('event_alert_c').innerHTML=/*'活动提醒：<br>'+*/out;
 	}
 }
 
