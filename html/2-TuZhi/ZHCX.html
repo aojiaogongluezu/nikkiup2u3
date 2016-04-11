@@ -17,6 +17,10 @@
 			.xzh {color:blue;}
 			.syqc {color:#FF88FF;}
 			.gls {color:red;}
+			#myClothes {width:60%}
+			@media only screen and (max-width:650px){
+				#myClothes {width:100%}
+			}
 		</style>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/jquery.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/wardrobe.js'></script>
@@ -44,7 +48,8 @@
 			<span class="title3">更新时间：</span><span id="lastupd">2016-03-05</span><br>
 			<span class="title3">更新人员：</span>Rean翎
 		</p>
-		<p class="large" align="center"><span id="chooseScope"></span><span id="chooseLevel"></span><span id="chooseSub"></span><span id="chooseSub2"></span></p>
+		<p class="large" align="center"><span id="chooseScope"></span><span id="chooseLevel"></span><span id="chooseSub"></span><span id="chooseSub2"></span><span id="showInv"></span></p>
+		<p id="custInv" align="center" style="display:none;"><button onclick="loadCustomInventory()">更新</button><button onclick="clearCustomInventory()">清空</button><br><textarea id="myClothes" rows="5"></textarea></p>
 		<p id="levelDropInfo" align="center"></p>
 		<p id="levelDropNote" align="center"></p>
 	</div>
