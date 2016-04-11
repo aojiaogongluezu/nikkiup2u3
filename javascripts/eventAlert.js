@@ -33,7 +33,7 @@ function event_alert(){
 			var time_d = Math.floor((time_end-time_now)/1000/60/60/24);
 			var time_h = Math.floor((time_end-time_now)/1000/60/60)%24;
 			var time_m = Math.floor((time_end-time_now)/1000/60)%60;
-			if(time_d<1) {ret.push([0,eventList[i][0]+'&emsp;<span style="color:red">'+time_h+'时'+time_m+'分后结束</span>']);}
+			if(time_d<1) {ret.push([0,'<span style="color:red">'+eventList[i][0]+'&emsp;'+time_h+'时'+time_m+'分后结束</span>']);}
 			else {ret.push([1,eventList[i][0]+'&emsp;'+time_d+'天'+time_h+'时'+time_m+'分后结束']);}
 		}
 	}
