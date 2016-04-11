@@ -9,12 +9,12 @@ function event_alert(){
 	var date=new Date(new Date().getTime() + 8*60*60*1000 + new Date().getTimezoneOffset()*60000);
 	if((date.getDay()==1||date.getDay()==5)&&date.getHours()>5){
 		var h = 23-date.getHours() +5;
-		var m = 58-date.getMinutes();
+		var m = 59-date.getMinutes();
 		out+='搭配评选赛&emsp;'+h+'时'+m+'分后结算<br>';
 	}
 	else if((date.getDay()==2||date.getDay()==6)&&date.getHours()<5){
 		var h = 4-date.getHours();
-		var m = 58-date.getMinutes();
+		var m = 59-date.getMinutes();
 		out+='搭配评选赛&emsp;'+h+'时'+m+'分后结算<br>';
 	}
 	
@@ -37,7 +37,7 @@ function event_alert(){
 		}
 	}
 	if(out){
-		document.getElementById('event_alert').innerHTML='<table><tr style="display:none"><td></td></tr><tr><td id="event_alert_c"></td></tr></table>';
+		document.getElementById('event_alert').innerHTML='<table width="100%"><tr style="display:none"><td></td></tr><tr><td id="event_alert_c" style="text-align:left"></td></tr></table><br>';
 		document.getElementById('event_alert_c').innerHTML='活动提醒：<br>'+out;
 	}
 }
