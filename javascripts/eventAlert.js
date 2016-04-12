@@ -1,6 +1,6 @@
 window.onload = function(){
 	event_alert();
-	setInterval(event_alert, 60000);
+	setInterval(event_alert, 30000);//30s
 };
 
 function event_alert(){
@@ -34,7 +34,7 @@ function event_alert(){
 			var time_d = Math.floor((time_end-time_now)/1000/60/60/24);
 			var time_h = Math.floor((time_end-time_now)/1000/60/60)%24;
 			var time_m = Math.floor((time_end-time_now)/1000/60)%60;
-			if(time_d<1) {ret1.push([time_h,'<span style="color:red">'+eventList[i][0]+'&emsp;'+time_h+'时'+time_m+'分后结束</span>']);}
+			if(time_d<1) {ret1.push([time_h,'<span style="color:red;font-weight: bold;">'+eventList[i][0]+'&emsp;'+time_h+'时'+time_m+'分后结束</span>']);}
 			else {ret1.push([time_h+time_d*24,eventList[i][0]+'&emsp;'+time_d+'天'+time_h+'时'+time_m+'分后结束']);}
 		}
 	}
@@ -45,6 +45,7 @@ function event_alert(){
 		ret2.sort(function(a,b){return a[0] - b[0]});
 		var ret=ret1.concat(ret2);
 		for(var i in ret){
+			document.getElementById('event_alert_c').innerHTML+=(i==0?'':'<span style="opacity:0">')+'提醒：'+(i==0?'':'</span>');
 			document.getElementById('event_alert_c').innerHTML+=ret[i][1]+'<br>';
 		}
 	}
