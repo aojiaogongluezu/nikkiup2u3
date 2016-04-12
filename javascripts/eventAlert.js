@@ -45,7 +45,7 @@ function event_alert(){
 		ret2.sort(function(a,b){return a[0] - b[0]});
 		var ret=ret1.concat(ret2);
 		for(var i in ret){
-			document.getElementById('event_alert_c').innerHTML+=ret[i][0]+ret[i][1]+'<br>';
+			document.getElementById('event_alert_c').innerHTML+=ret[i][1]+'<br>';
 		}
 	}
 }
