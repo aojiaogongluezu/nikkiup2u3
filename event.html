@@ -4,7 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-</head>
 <style>
 p {
     text-align:center;
@@ -25,6 +24,23 @@ p {
     margin-top: 0.5em;
 }
 </style>
+<script type='text/javascript' charset="UTF-8">
+window.onload = function(){ 
+    latestEvent();
+};
+function latestEvent(){
+	var location_href=window.location.href;
+	if (location_href.indexOf('event.html?New')>0) {
+		var a = document.getElementsByTagName('table');
+		for (i=1;i<a.length;i++){ //hide all except first
+			a[i].style.display="none";
+		}
+		var b = document.getElementsByClassName('title1');
+		b[0].innerHTML="最新活动";
+	}
+}
+</script>
+</head>
 <body>
 <div class="myframe" >
   <p class="title1">活动相关</p>
