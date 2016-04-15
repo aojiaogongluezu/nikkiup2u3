@@ -4,7 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-</head>
 <style>
 p {
     text-align:center;
@@ -24,38 +23,167 @@ p {
     font-family:"Microsoft YaHei", Sans-Serif;
     margin-top: 0.5em;
 }
+
+table tr td:nth-child(1){
+  width:20%;
+}
+table tr td:nth-child(3) {
+  width:15%;
+}
 </style>
+<script type='text/javascript' charset="UTF-8">
+function go_img(src){
+	var out='<p class="normal" style="text-align:left;font-weight:normal;"><a href="course.html" target="framemain">←返回</a></p><p>';
+	var sp=src.split('|');
+	for (var p in sp) {out+='<img style="max-width: 80%;" src="'+sp[p]+'">';}
+	out+='</p><p class="normal" style="text-align:left;font-weight:normal;"><a href="course.html" target="framemain">←返回</a></p>';
+	document.getElementById('course_body').innerHTML=out;
+}
+</script>
+</head>
 <body>
 <div class="myframe" >
   <p class="title1">傲娇讲堂</p>
-  <p class="normal"><span class="title3">主讲人：又又</span></p>
+<!--  <p class="normal"><span class="title3">主讲人：又又</span></p> -->
   <hr class="mhr"/>
-	<br>
+ <span id="course_body">
+ 
+ 
+ 
+<br>
 <table width="100%">
 	<tr>
-		<td colspan="2">课程</td>
+		<td colspan="3">文字课程</td>
 	</tr>
 	<tr>
 		<td>竞技场 1</td>
 		<td><a href="html/8-JiangTang/1_LianSheng.html"target="framemain">连胜？连胜！</a></td>
+		<td>又又</td>
 	</tr>
 	<tr>
 		<td>竞技场 2</td>
 		<td><a href="html/8-JiangTang/2_DaQunZi.html"target="framemain">大裙子</a></td>
+		<td>又又</td>
 	</tr>
-	<tr>
-		<td>权重 1</td>
-		<td><a href="html/8-JiangTang/3_QuanZhong.html"target="framemain">权重那些事（图片，流量党慎入）<font color="red">new</font></a></td>
-	</tr>
-	<tr>
-		<td> </td>
-		<td>待续……</td>
-	</tr>	
 </table>
+<br>
+<table width="100%">
+	<tr>
+		<td colspan="3">图片课程</td>
+	</tr>
+	<tr>
+		<td>权重</td>
+		<td><a href="html/8-JiangTang/3_QuanZhong.html"target="framemain">权重算法那些事</a></td>
+		<td>又又</td>
+	</tr>
+	<tr>
+		<td>刷分</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2911jg6bpj30ku246k64.jpg');return false;">用了攻略分数不高？</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>竞技场 1</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2cep7p3srj30ku239gtu.jpg');return false;">竞技场只是一场豪赌</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>竞技场 2</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2cep7p3srj30ku239gtu.jpg');return false;">进阶！竞技场大裙子</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>竞技场 3</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2ey2vq96dj30kv1mi7c6.jpg');return false;">敬你三倍毒酒，杀遍竞技场</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>竞技场 4</td>
+		<td><a href="" onclick="go_img('http://aojiaogongluezu.github.io/nikkiup2u3/images/JiangTang_MiTao_JJC4.jpg');return false;">如何看竞技场的头像</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>竞技场 5</td>
+		<td><a href="" onclick="go_img('http://aojiaogongluezu.github.io/nikkiup2u3/images/JiangTang_MiTao_JJC5.jpg');return false;">通用技巧卡</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>技能</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2fvvj2qzfj30ku2z2tmd.jpg');return false;">暖暖手残党技能三板斧</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>福利</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2mzh7auq6j30go1vy795.jpg');return false;">游戏内不起眼的签到福利</a></td>
+		<td>抹茶冰</td>
+	</tr>
+</table>
+<br>
+<table width="100%">
+	<tr>
+		<td colspan="3">傲娇小故事（图片版本）</td>
+	</tr>
+	<tr>
+		<td>玄学</td>
+		<td><a href="" onclick="go_img('http://aojiaogongluezu.github.io/nikkiup2u3/images/JiangTang_MiTao_White.jpg');return false;">欧喵教你美白小妙招</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>剧情</td>
+		<td><a href="" onclick="go_img('http://aojiaogongluezu.github.io/nikkiup2u3/images/JiangTang_MiTao_Story1.jpg|http://aojiaogongluezu.github.io/nikkiup2u3/images/JiangTang_MiTao_Story2.jpg');return false;">【脑洞】剧情全解说</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>NPC</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3njw1f2m5wq8y64j30kv2mw7i4.jpg');return false;">【苏苏】为红茶婊代言</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>NPC</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2n58hfxv6j30ku5ok4qp.jpg');return false;">【小满】得不到的才是最好的</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>NPC</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2pgbnsea7j30ku76m4qp.jpg');return false;">【N角恋】大喵的抉择</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>NPC</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2qglrpkh1j30ku5sq1kx.jpg');return false;">【主仆】黑卡&王子 洁洁云&总理</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>NPC</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3njw1f2ricv4eguj30ku6rib1g.jpg');return false;">一百零一种甜蜜方法</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>NPC</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2stypttrsj30ku5m71kx.jpg');return false;">【八卦】答记者问</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>剧情</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2v0bx0woqj30hs73kb29.jpg');return false;">烧脑特辑·强行瞎掰</a></td>
+		<td>米桃</td>
+	</tr>
+	<tr>
+		<td>刷分</td>
+		<td><a href="" onclick="go_img('http://ww1.sinaimg.cn/mw690/006oNL3ngw1f2wd1l4ykfj30hs5gj1kx.jpg');return false;">【刷分成长记】经历比攻略重要</a></td>
+		<td>米桃</td>
+	</tr>
+<!--	<tr>
+		<td> </td>
+		<td>待续……<font color="red">new</font></td>
+	</tr>	
+-->
+</table>
+
 
 <br><br>
 <p>你希望讲堂讲些什么呢？</p>
 <p>欢迎留言(≥◇≤) </p>
 <br><br> 
+</span>
 </body>
 </html>
