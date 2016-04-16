@@ -29,6 +29,7 @@ window.onload = function(){
 	
 	var elts = document.getElementsByTagName('a');
 	for (var i = elts.length - 1; i >= 0; --i) {
-		if(elts[i].innerHTML.indexOf('nobr') > -1) {elts[i].onclick = function() {return false;};}
+		//if(elts[i].innerHTML.indexOf('nobr') > -1) {elts[i].onclick = function() {return false;};}
+		if(!elts[i].onclick&&elts[i].href==window.location.href){elts[i].onclick = function() {return false;};}
 	}
 };
