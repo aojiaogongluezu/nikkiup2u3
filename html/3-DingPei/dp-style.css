@@ -12,7 +12,7 @@ tr.top td {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
 }
-em { /*hijack for nobr*/
+em, .nobr { /*hijack em for nobr*/
   white-space:nowrap;
   font-style:normal;
 }
@@ -21,6 +21,10 @@ td a {
   text-decoration:underline;
 }
 a.aTooltip {
+  text-decoration:none;
+}
+a.cTip {
+  color:#3377ff;
   text-decoration:none;
 }
 [tooltip]:hover:before {
@@ -44,9 +48,6 @@ table.calcByAll tr td:nth-child(1) [tooltip]:hover:before {
 }
 
 /*below to be removed in next version*/
-.nobr {
-  white-space:nowrap;
-}
 .normTip [tooltip]:hover:before {
 	margin-left:0px; 
 	width: 170px; 
