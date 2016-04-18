@@ -31,7 +31,7 @@ window.onload = function(){
 	radio_text+='<input type="radio" name="limit" id="limitn" value="n" checked onclick="chgMode(this.value)"><label for="limitn">标准权重</label>';
 	radio_text+='<input type="radio" name="limit" id="limitl" value="l" onclick="chgMode(this.value)"><label for="limitl">极限权重</label><br>';
 	radio_text+='</form>';
-	document.getElementById("radio").innerHTML = radio_text;
+	if(document.getElementById("radio")) {document.getElementById("radio").innerHTML = radio_text;}
 	
 	var elts = document.getElementsByTagName('a');
 	for (var i = elts.length - 1; i >= 0; --i) {
