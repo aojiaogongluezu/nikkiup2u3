@@ -1,10 +1,16 @@
 function showTop(id){
-	document.getElementById('cell'+id+'_f').style.display="block";
-	document.getElementById('cell'+id).style.display="none";
+	//below to be removed in next version
+	if(document.getElementById('cell'+id+'_f')) document.getElementById('cell'+id+'_f').style.display="block";
+	//above to be removed in next version
+	if(document.getElementById('cell'+id+'f')) {document.getElementById('cell'+id+'f').style.display="block"};
+	if(document.getElementById('cell'+id)) {document.getElementById('cell'+id).style.display="none";}
 }
 function hideTop(id){
-	document.getElementById('cell'+id+'_f').style.display="none";
-	document.getElementById('cell'+id).style.display="block";
+	//below to be removed in next version
+	if(document.getElementById('cell'+id+'_f')) document.getElementById('cell'+id+'_f').style.display="none";
+	//above to be removed in next version
+	if(document.getElementById('cell'+id+'f')) {document.getElementById('cell'+id+'_f').style.display="none";}
+	if(document.getElementById('cell'+id)) {document.getElementById('cell'+id).style.display="block";}
 }
 function chgMode(mode){
 	var x=[];
