@@ -5,18 +5,16 @@ table.calcByAll {
 table.calcByAll tr td:nth-child(-n+3) {
   width:10%;
 }
-table.calcSrc tr td:nth-child(3),table.calcSrc tr td:nth-child(4) {
-  width:7.5%;
+table.calcSrc tr td:nth-child(4) {
+  width:7%;
 }
-td.inTop,td.haveTop,tr.top td {
+tr.top td {
   color:red;
   background-color: rgba(255, 230, 245, 0.5);
 }
-td.inName{
-  word-break:break-all;
-}
-.nobr {
+em { /*hijack for nobr*/
   white-space:nowrap;
+  font-style:normal;
 }
 td a {
   color:inherit;
@@ -38,12 +36,20 @@ a.aTooltip {
 	background-color: #FFFFFA;
 	text-align:left;
 }
+table.calcByAll tr td:nth-child(1) [tooltip]:hover:before {
+	margin-left:0px;
+}
+.limit {
+  display:none;
+}
+
+/*below to be removed in next version*/
+.nobr {
+  white-space:nowrap;
+}
 .normTip [tooltip]:hover:before {
 	margin-left:0px; 
 	width: 170px; 
 	word-break:break-all; 
 	white-space:pre-wrap;
-}
-.limit {
-  display:none;
 }
