@@ -36,6 +36,9 @@ window.onload = function(){
 			elts[i].href="";
 			if(!elts[i].onclick) {elts[i].onclick = function() {return false;};}
 		}
-		if(!elts[i].className&&elts[i].getAttribute('tooltip')){elts[i].className="aTooltip";}
+		if(elts[i].getAttribute('tooltip')){
+			elts[i].setAttribute('tooltip',elts[i].getAttribute('tooltip').replace(/\\n/g,'\n'));
+			if(!elts[i].className) {elts[i].className="aTooltip";}
+		}
 	}
 };
