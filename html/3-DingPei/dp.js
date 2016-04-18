@@ -29,7 +29,13 @@ window.onload = function(){
 	
 	var elts = document.getElementsByTagName('a');
 	for (var i = elts.length - 1; i >= 0; --i) {
-		//if(elts[i].innerHTML.indexOf('nobr') > -1) {elts[i].onclick = function() {return false;};}
+		//below to be removed in next version
 		if(!elts[i].onclick&&elts[i].href==window.location.href){elts[i].onclick = function() {return false;};}
+		//above to be removed in next version
+		if(!elts[i].href) {
+			elts[i].href="";
+			if(!elts[i].onclick) {elts[i].onclick = function() {return false;};}
+		}
+		if(!elts[i].className&&elts[i].getAttribute('tooltip')){elts[i].className="aTooltip";}
 	}
 };
