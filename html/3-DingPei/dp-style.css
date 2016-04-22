@@ -10,7 +10,7 @@ table.calcSrc tr td:nth-child(4) {
 }
 tr.top td {
   color:red;
-  background-color: rgba(255, 230, 245, 0.5);
+  background-color: rgba(255, 240, 250, 0.5);
 }
 em, .nobr { /*hijack em for nobr*/
   white-space:nowrap;
