@@ -5,10 +5,13 @@
 		<meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 		<title>材料需求综合查询</title>
 		<link rel="stylesheet" href="../../css/style.css">
+		<link rel="stylesheet" href="http://reanrean.github.io/nikkis_choice/bootstrap/bootstrap.min.css">
 		<style>
+			<!--
 			a{color:#337ab7;text-decoration:none}
 			a:focus,a:hover{color:#23527c;text-decoration:underline}
 			a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
+			-->
 			td {padding:5px;}
 			a.inherit {color:inherit;}
 			a.search {color:black;text-decoration:none;}
@@ -18,8 +21,14 @@
 			.syqc {color:#FF88FF;}
 			.gls {color:red;}
 			#myClothes {width:60%}
+			em {opacity:0;}
 			@media only screen and (max-width:650px){
 				#myClothes {width:100%}
+			}
+			[tooltip]:hover:before {
+				margin-top:25px; margin-left:0px; padding: 5px; width: 170px;
+				position: absolute; content: attr(tooltip); display: inline-block; z-index: 255; 
+				white-space:pre-wrap; word-break:break-all; color: black; background-color: #EAF2FA;
 			}
 		</style>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/jquery.js'></script>
@@ -29,6 +38,7 @@
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/pattern.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/convert.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/construct.js'></script>
+		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/merchant.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/setcategory.js'></script>
 		<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/material.js'></script>
 		<script type='text/javascript' charset="UTF-8">
@@ -45,11 +55,12 @@
 		<p class="title1">材料需求综合查询</p>
 		<hr class="mhr">
 		<p class="normal">
-			<span class="title3">更新时间：</span><span id="lastupd">2016-03-05</span><br>
+			<span class="title3">更新时间：</span><span id="lastupd">2016-04-22</span><br>
 			<span class="title3">更新人员：</span>Rean翎
 		</p>
-		<p class="large" align="center"><span id="chooseScope"></span><span id="chooseLevel"></span><span id="chooseSub"></span><span id="chooseSub2"></span><span id="showInv"></span></p>
-		<p id="custInv" align="center" style="display:none;"><button onclick="loadCustomInventory()">更新</button><button onclick="clearCustomInventory()">清空</button><br><textarea id="myClothes" rows="5"></textarea></p>
+		<p class="large" align="center"><span id="chooseScope"></span><span id="chooseLevel"></span><span id="chooseSub"></span><span id="chooseSub2"></span></p>
+		<p id="invopts" align="center"></p>
+		<p id="custInv" align="center" style="display:none;"></p><p id="custCart" align="center" style="display:none;"></p>
 		<p id="levelDropInfo" align="center"></p>
 		<p id="levelDropNote" align="center"></p>
 	</div>
