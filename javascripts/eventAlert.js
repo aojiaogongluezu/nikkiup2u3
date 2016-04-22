@@ -14,7 +14,7 @@ function event_alert(){
 		var m = 59-date.getMinutes();
 		ret1.push([h,'搭配评选赛&emsp;'+h+'时'+m+'分后结算']);
 	}
-	else if((date.getDay()==2||date.getDay()==6)&&date.getHours()<5){
+	else if((date.getDay()==2||date.getDay()==6)&&date.getHours()<4){
 		var h = 3-date.getHours();
 		var m = 59-date.getMinutes();
 		ret1.push([h,'搭配评选赛&emsp;'+h+'时'+m+'分后结算']);
