@@ -46,6 +46,11 @@
 				for (var i = elts.length - 1; i >= 0; --i) {
 					if(elts[i].getAttribute('tooltip')) {elts[i].style.display="none";}
 				}
+				
+				//cookies
+				if (typeof(Storage) !== "undefined"&&localStorage.getItem("nikki_ZHCX_hideIntro")){
+					if(localStorage.getItem("nikki_ZHCX_hideIntro")>0) {showIntro();};
+				}
 			});
 			function tab(text,attr){
 				return '<td'+(attr? ' '+attr : '')+' style="text-align:left">'+text+'</td>';
@@ -54,9 +59,14 @@
 				if (document.getElementById('intro').style.display=="none"){
 					document.getElementById('intro').style.display="inline";
 					document.getElementById('aIntro').innerHTML="<收起>";
+					var hideIntro=0;
 				}else{
 					document.getElementById('intro').style.display="none";
 					document.getElementById('aIntro').innerHTML="<展开>";
+					var hideIntro=1;
+				}
+				if (typeof(Storage) !== "undefined") {
+					localStorage.setItem("nikki_ZHCX_hideIntro", hideIntro);
 				}
 			}
 		</script>
