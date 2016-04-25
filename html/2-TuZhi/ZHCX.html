@@ -45,9 +45,26 @@
 		<script type='text/javascript' charset="UTF-8">
 			$(document).ready(function () {
 				$('#lastupd').html(wardrobe_lastupd.replace("/","-").replace("/","-"));
+				
+				//hide the intro in custInv
+				var elts = document.getElementsByTagName('a');
+				for (var i = elts.length - 1; i >= 0; --i) {
+					if(elts[i].getAttribute('tooltip')){
+						elts[i].style.display="none";
+					}
+				}
 			});
 			function tab(text,attr){
 				return '<td'+(attr? ' '+attr : '')+' style="text-align:left">'+text+'</td>';
+			}
+			function showIntro(){
+				if (document.getElementById('intro').style.display=="none"){
+					document.getElementById('intro').style.display="inline";
+					document.getElementById('aIntro').innerHTML="<收起>";
+				}else{
+					document.getElementById('intro').style.display="none";
+					document.getElementById('aIntro').innerHTML="<展开>";
+				}
 			}
 		</script>
 	</head>
@@ -58,6 +75,16 @@
 		<p class="normal">
 			<span class="title3">更新时间：</span><span id="lastupd">2016-04-22</span><br>
 			<span class="title3">更新人员：</span>Rean翎
+		</p>
+		<p class="normal">
+			使用说明：<a href="" onclick="showIntro();return false;" id="aIntro"><收起></a>
+			<span id="intro"><br>
+			- 按关卡：可按章节查看关卡掉落是哪些衣服的材料及所需数量；<br>
+			- 按套装：可按套装查看整个套装的制作材料(配合购物车功能可一并查看染色)；最后有过关套列表；<br>
+			- 按部件：可查询一个部件的制作材料、该部件是哪些衣服的材料及所需数量；选择「特殊属性」可按tag搜索；<br>
+			- 衣柜：导入配装器衣柜后，计算部件作为材料所需数量时会扣除已有成品的所需数量(计算制作部件所需材料时不会扣除已有材料)；<br>
+			- 购物车：点击<>添加到购物车后可计算购物车内所有衣服的材料；点击购物车内单件可查看单件的计算。
+			</span>
 		</p>
 		<p class="large" align="center"><span id="chooseScope"></span><span id="chooseLevel"></span><span id="chooseSub"></span><span id="chooseSub2"></span></p>
 		<p id="invopts" align="center"></p>
