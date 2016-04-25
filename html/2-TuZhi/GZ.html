@@ -3,10 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../../css/style.css" />
-<script type='text/javascript' charset="UTF-8" src='data/wardrobe.js'></script>
-<script type='text/javascript' charset="UTF-8" src='scoring.js'></script>
-<script type='text/javascript' charset="UTF-8" src='model.js'></script>
-<script type='text/javascript' charset="UTF-8" src='data/pattern.js'></script>
+<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/wardrobe.js'></script>
+<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/scoring.js'></script>
+<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/model.js'></script>
+<script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/pattern.js'></script>
 <script type='text/javascript' charset="UTF-8">
 var degree='公';
 
@@ -17,7 +17,8 @@ window.onload = function(){
 	var location_href_index=location_href.indexOf('?');
 	var chap_tmp=parseInt(location_href.substr(location_href_index+1));
 	var chap=isNaN(chap_tmp)?0:chap_tmp;
-	
+		
+	document.getElementById('chap_num').innerHTML=chap;
 	genMaterial('dropInfo',chap);
 	document.getElementById('lastupd').innerHTML=wardrobe_lastupd.replace("/","-").replace("/","-");
 }
@@ -90,7 +91,7 @@ function td(text,attr){
 </head>
 <body>
 <div class="myframe" >
-  <p class="title1">公主掉落 十三章</p>
+  <p class="title1">公主掉落 第<span id="chap_num">　</span>章</p>
   <hr class="mhr">
 	<p class="normal">
 		<span class="title3">更新时间：</span><span id="date">2016-04-25</span><br>
