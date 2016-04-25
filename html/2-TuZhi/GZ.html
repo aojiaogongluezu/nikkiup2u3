@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../../css/style.css" />
 <style>
-td {padding:0.5em;}
+td {padding-left:0.5em; padding-right:0.5em;}
 </style>
 <script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/data/wardrobe.js'></script>
 <script type='text/javascript' charset="UTF-8" src='http://reanrean.github.io/nikkis_choice/scoring.js'></script>
@@ -23,7 +23,7 @@ window.onload = function(){
 		
 	document.getElementById('chap_num').innerHTML=chap;
 	genMaterial('dropInfo',chap);
-	document.getElementById('lastupd').innerHTML=wardrobe_lastupd.replace("/","-").replace("/","-");
+	document.getElementById('date').innerHTML=wardrobe_lastupd.replace("/","-").replace("/","-");
 }
 
 function genMaterial(output_id,chap){
