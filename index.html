@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -627,14 +627,22 @@ window.onload = function(){
     <script type="text/javascript">
         function reinitIframe(){
             var iframe = document.getElementById("framemain");
+            var cssLink = document.createElement("link");
+            	cssLink.href = "css/overflow.css";
+            	cssLink.rel = "stylesheet";
+            	cssLink.type = "text/css";
             try{
                 var bHeight = iframe.contentWindow.document.body.scrollHeight;
                 var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
                 var fHeight = iframe.height;
                 if(dHeight&&fHeight){
-                    if(dHeight>fHeight||dHeight<fHeight-500) {iframe.height = Math.max(500, dHeight);}
+                    if(dHeight>fHeight||dHeight<fHeight-500) {
+                    	iframe.height = Math.max(500, dHeight); 
+                    	frames['framemain'].document.body.appendChild(cssLink);
+                    }
                 }else{
                     iframe.height = Math.max(bHeight, dHeight+150);
+                    frames['framemain'].document.body.appendChild(cssLink);
                 }
             }catch (ex){}
         }
