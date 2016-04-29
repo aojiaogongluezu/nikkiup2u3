@@ -179,6 +179,8 @@ function loadSettings(){
 		
 		var each_gain=getStoredStr(loadString, 'each_gain').split(',');
 		for (i=0;i<level_cnt;i++){setVal("each_gain"+i,each_gain[i]);}
+		
+		calc();
 	}
 }
 function getStoredStr(string, id){
