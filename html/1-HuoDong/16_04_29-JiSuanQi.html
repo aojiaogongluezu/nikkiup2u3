@@ -149,13 +149,14 @@ function calc(){
 	}
 	var rem=aim-current;
 	var rem_free=rem_cnt_today+freegain_1day*remain_days;
-		
-	var times=Math.max(0,Math.ceil((rem-rem_free)/max_item[0]));
+	var extra=rem-rem_free;
+	var times=Math.max(0,Math.ceil(extra/max_item[0]));
 	var to_buy=Math.max(0,Math.ceil(times/once));
 	var to_pay=to_buy*price;
 	
 	var calcres='<table>'+tr(td('计算结果：'));
-	calcres+=tr(td('还需刷'+rem+'个'+item_name+'（共需'+aim+'个，免费'+rem_free+'个）'));
+	calcres+=tr(td('共需'+aim+'个'+item_name));
+	calcres+=tr(td('扣除已有还需刷'+rem+'个（免费'+rem_free+'个，额外'+extra+'个）'));
 	calcres+=tr(td('需额外刷第'+max_item[1]+'关'+times+'次，购买'+to_buy+'次，花钻'+to_pay+'个'));
 	calcres+='</table>';
 	document.getElementById("calcres").innerHTML = calcres;
