@@ -101,7 +101,7 @@ function frametarget(){
     var location_href=window.location.href;
     var location_href_pos=location_href.indexOf('index.html?');
     var conv_href=location_href.substr(location_href_pos+'index.html?'.length);
-    if (location_href_pos>0 && conv_href.substr(conv_href.length-4)=='html') {
+    if (location_href_pos>0 && conv_href.indexOf('html')>0) {
         $('iframe#framemain').attr('src',conv_href);
     }
 }
