@@ -39,18 +39,11 @@ function genMaterial(output_id,chap){
 					var deps = clothes[i].getDeps('   ', 1);
 					if (deps) {
 						var deps1=deps.split('\n'); 
-						//var rowspan=Math.max(1,deps1.length-2);
-						//var rowspan=Math.max(1,deps.match(/消耗/g).length);
-						var rowspan=Math.max(1,deps.split('[消耗').length-1);
-						
 						var pos1=deps.indexOf('总计需'); 
 						var pos2=deps.indexOf('件',pos1); 
 						var total=deps.substr(pos1+3,pos2-pos1-3);
 						
-						var line=td(level,'rowspan="'+rowspan+'"');
-						line+=td(clothes[i].name,'rowspan="'+rowspan+'"');
-						line+=td(total,'rowspan="'+rowspan+'"');
-						
+						var container=[]; /*var container_key=[];*/ var rowspan=0;
 						for (var j=1;j<=deps1.length-2;j++){
 							var pos_end=(deps1[j].indexOf('[消耗')>-1 ? deps1[j].indexOf('[消耗') : deps1[j].length);
 							var pos_start=deps1[j].substr(0,pos_end).lastIndexOf(']')+1;
@@ -62,16 +55,28 @@ function genMaterial(output_id,chap){
 							var clo_num=deps1[j].substr(pos_end).replace('[消耗','').replace(']','');
 							
 							if(clo_num){
-								line+=td(clo_pat)+td(clo_name)+td(clo_type)+td(clo_num);
-								output+=tr(line);
-								line='';
+								if (!container[clo_pat+'|'+clo_name+'|'+clo_type]) {
+									container[clo_pat+'|'+clo_name+'|'+clo_type]=parseInt(clo_num); 
+									rowspan++; 
+									//container_key.push(clo_pat+'|'+clo_name+'|'+clo_type);
+								} else {container[clo_pat+'|'+clo_name+'|'+clo_type]+=parseInt(clo_num);}
+								
 							}
+							//container_key.sort(function(a,b){if(a.substr(0,1)=='设') {return -1;}else{return 1;}});
+						}
+						var line=td(level,'rowspan="'+rowspan+'"');
+						line+=td(clothes[i].name,'rowspan="'+rowspan+'"');
+						line+=td(total,'rowspan="'+rowspan+'"');
+						
+						for (var j in container){
+							var line_raw=j.split('|');
+							line+=td(line_raw[0])+td(line_raw[1])+td(line_raw[2])+td(container[j]);
+							output+=tr(line);
+							line='';
 						}
 					}else {
 						output+=tr(td(level)+td(clothes[i].name)+td(1)+td('-')+td('-')+td('-')+td('-'));
 					}
-					
-					
 					output+=tr(line);
 				}
 			}
