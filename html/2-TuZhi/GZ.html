@@ -24,6 +24,16 @@ window.onload = function(){
 	document.getElementById('chap_num').innerHTML=chap;
 	genMaterial('dropInfo',chap);
 	document.getElementById('date').innerHTML=wardrobe_lastupd.replace("/","-").replace("/","-");
+	
+	//text align of dependents showing
+	var dtr=document.getElementsByTagName('tr');
+	for (i=1;i<dtr.length;i++){
+		var dtd=dtr[i].getElementsByTagName('td');
+		if(dtd.length>0){
+			if(dtd.length>=7) {dtd[3].style.textAlign = "left";}
+			else {dtd[0].style.textAlign = "left";}
+		}
+	}
 }
 
 function genMaterial(output_id,chap){
