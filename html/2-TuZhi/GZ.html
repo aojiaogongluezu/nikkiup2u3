@@ -38,7 +38,7 @@ window.onload = function(){
 
 function genMaterial(output_id,chap){
 	var output='<table border="1">';
-	output+=tr(td('关卡')+td('名称')+td('总需求')+td('类别')+td('部位')+td('成品名称')+td('消耗'));
+	output+=tr(td('关卡')+td('名称(心级)')+td('总需求')+td('类别')+td('部位')+td('成品名称')+td('消耗'));
 	for (l=1;l<30;l++){//sort by levels
 		var l2=l>20?"支"+l%10:l;
 		var level=chap+'-'+l2+degree;
@@ -75,7 +75,7 @@ function genMaterial(output_id,chap){
 							}
 						}
 						var line=td(dlevel,'rowspan="'+rowspan+'"');
-						line+=td(clothes[i].name,'rowspan="'+rowspan+'"');
+						line+=td(clothes[i].name+'<br>('+clothes[i].stars+')','rowspan="'+rowspan+'"');
 						line+=td(total,'rowspan="'+rowspan+'"');
 						
 						for (var j in container){
