@@ -45,7 +45,7 @@ function event_alert(){
 		var ret=ret1.concat(ret2);
 		var event_alert_c='';
 		for(var i in ret){
-			if(maxHide>0&&i==maxHide) {event_alert_c+='<span id="maxHide" '+(document.getElementById('maxHide')?'style="display:'+document.getElementById('maxHide').style.display+'"':'style="display:none;"')+'>';}
+			if(maxHide>0&&i==maxHide) {event_alert_c+='<span id="maxHide" style="display:'+(document.getElementById('maxHide')?document.getElementById('maxHide').style.display:'none')+';">';}
 			switch(parseInt(i)){
 				case maxHide-1: event_alert_c+='<a id="showMaxHide" href="" onclick="showMaxHide();return false;">'+(document.getElementById('showMaxHide')?document.getElementById('showMaxHide').innerHTML:'展开'+opac('：'))+'</a>'; break;
 				case 0: event_alert_c+='提醒：'; break;
