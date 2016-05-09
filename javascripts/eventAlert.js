@@ -40,13 +40,39 @@ function event_alert(){
 	}
 	
 	if(ret1.length||ret2.length){
-		document.getElementById('event_alert').innerHTML='<table width="100%"><tr style="display:none"><td></td></tr><tr><td id="event_alert_c" style="text-align:left"></td></tr></table><br>';
 		ret1.sort(function(a,b){return a[0] - b[0]});
 		ret2.sort(function(a,b){return a[0] - b[0]});
 		var ret=ret1.concat(ret2);
+		var event_alert_c='';
 		for(var i in ret){
-			document.getElementById('event_alert_c').innerHTML+=(i==0?'':'<span style="opacity:0">')+'提醒：'+(i==0?'':'</span>');
-			document.getElementById('event_alert_c').innerHTML+=ret[i][1]+'<br>';
+			if(maxHide>0&&i==maxHide) {event_alert_c+='<span id="maxHide" '+(document.getElementById('maxHide')?'style="display:'+document.getElementById('maxHide').style.display+'"':'style="display:none;"')+'>';}
+			switch(parseInt(i)){
+				case maxHide-1: event_alert_c+='<a id="showMaxHide" href="" onclick="showMaxHide();return false;">'+(document.getElementById('showMaxHide')?document.getElementById('showMaxHide').innerHTML:'展开'+opac('：'))+'</a>'; break;
+				case 0: event_alert_c+='提醒：'; break;
+				default: event_alert_c+=opac('提醒：'); break;
+			}
+			event_alert_c+=ret[i][1]+'<br>';
+		}
+		if(maxHide>0) {event_alert_c+='</span>';}
+		document.getElementById('event_alert').innerHTML='<table width="100%"><tr style="display:none"><td></td></tr><tr><td id="event_alert_c" style="text-align:left"></td></tr></table><br>';
+		document.getElementById('event_alert_c').innerHTML=event_alert_c;
+	}else{
+		document.getElementById('event_alert').innerHTML='';
+	}
+}
+
+function showMaxHide(){
+	if(document.getElementById('maxHide')){
+		if(document.getElementById('maxHide').style.display=='none'){
+			document.getElementById('maxHide').style.display='inline';
+			document.getElementById('showMaxHide').innerHTML='收起'+opac('：');
+		}else{
+			document.getElementById('maxHide').style.display='none';
+			document.getElementById('showMaxHide').innerHTML='展开'+opac('：');
 		}
 	}
+}
+
+function opac(txt){
+	return '<span style="opacity:0">'+txt+'</span>';
 }
