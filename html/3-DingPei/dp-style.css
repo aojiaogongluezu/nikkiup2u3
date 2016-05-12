@@ -1,11 +1,11 @@
-table.calcByAll {
+table.calcByAll,table.propByAll {
   width:100%;
   table-layout:fixed;
 }
-table.calcByAll tr td:nth-child(-n+3) {
+table.calcByAll tr td:nth-child(-n+3),table.propByAll tr td:nth-child(-n+2) {
   width:10%;
 }
-table.calcSrc tr td:nth-child(4) {
+table.calcSrc tr td:nth-child(4),table.propSrc tr td:nth-child(3) {
   width:7%;
 }
 tr.top td {
@@ -40,17 +40,14 @@ a.cTip {
 	background-color: #FFFFFA;
 	text-align:left;
 }
-table.calcByAll tr td:nth-child(1) [tooltip]:hover:before {
-	margin-left:0px;
-}
-.limit {
-  display:none;
-}
-
-/*below to be removed in next version*/
-.normTip [tooltip]:hover:before {
-	margin-left:0px; 
+table.propByAll [tooltip]:hover:before {
 	width: 170px; 
 	word-break:break-all; 
 	white-space:pre-wrap;
+}
+table.calcByAll tr td:nth-child(1) [tooltip]:hover:before, table.propByAll tr td:nth-child(1) [tooltip]:hover:before {
+	margin-left:0px;
+}
+.limit, .prop {
+  display:none;
 }
