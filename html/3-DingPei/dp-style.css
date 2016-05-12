@@ -40,11 +40,13 @@ a.cTip {
 	background-color: #FFFFFA;
 	text-align:left;
 }
-table.propByAll [tooltip]:hover:before {
-	margin-left:-150px; 
-	width: 170px; 
-	word-break:break-all; 
+table.propByAll tr td:nth-last-child(2) [tooltip]:hover:before, table.propByAll tr td:nth-last-child(3) [tooltip]:hover:before {
+	width: 150px; 
+	word-break:break-all;
 	white-space:pre-wrap;
+}
+table.propByAll tr td:nth-last-child(1) [tooltip]:hover:before {
+	margin-left:-120px; 
 }
 table.calcByAll tr td:nth-child(1) [tooltip]:hover:before, table.propByAll tr td:nth-child(1) [tooltip]:hover:before {
 	margin-left:0px;
