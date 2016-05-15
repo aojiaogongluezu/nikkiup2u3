@@ -50,7 +50,7 @@ function event_alert(){
 					for (var g in GZList){
 						output+='<td><a href="html/2-TuZhi/GZ.html?'+GZList[g]+'" target="framemain">第'+GZList[g]+'章</a></td>'
 					}
-					output+='<td><a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a></td></tr></table>';
+					output+='<td><a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a></td></tr></table><br>';
 					document.getElementById('autogenGZ').innerHTML=output;
 				}
 			}
