@@ -36,6 +36,24 @@ function event_alert(){
 			var time_m = Math.floor((time_end-time_now)/1000/60)%60;
 			if(time_d<1) {ret1.push([time_h,'<span style="color:red;font-weight: bold;">'+eventList[i][0]+'&emsp;'+time_h+'时'+time_m+'分后结束</span>']);}
 			else {ret1.push([time_h+time_d*24,eventList[i][0]+'&emsp;'+time_d+'天'+time_h+'时'+time_m+'分后结束']);}
+			
+			//gen 公主双倍材料
+			if(eventList[i][0].indexOf('公主')>=0&&eventList[i][0].indexOf('双倍')>=0&&document.getElementById('autogenGZ')){
+				var GZList_r=eventList[i][0].split('/');
+				var GZList=[];
+				for (var g in GZList_r){
+					GZList_r[g]=GZList_r[g].replace(/\D/g,'');
+					if (GZList_r[g].length>0){GZList.push(GZList_r[g]);}
+				}
+				if(GZList.length>0){
+					var output='<table width = "100%"><tr><td colspan="'+(GZList.length+1)+'">公主级双倍-材料汇总</td></tr><tr>';
+					for (var g in GZList){
+						output+='<td><a href="html/2-TuZhi/GZ.html?'+GZList[g]+'" target="framemain">第'+GZList[g]+'章</a></td>'
+					}
+					output+='<td><a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a></td></tr></table>';
+					document.getElementById('autogenGZ').innerHTML=output;
+				}
+			}
 		}
 	}
 	
