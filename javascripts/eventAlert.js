@@ -6,6 +6,7 @@ window.onload = function(){
 function event_alert(){
 	var ret1=[]; var ret2=[];
 	var d=new Date();
+	var GZList=[];
 	
 	//calc for contest
 	var date=new Date(d.getTime() + 8*60*60*1000 + d.getTimezoneOffset()*60000);
@@ -28,7 +29,18 @@ function event_alert(){
 			var time_d = Math.floor((time_start-time_now)/1000/60/60/24);
 			var time_h = Math.floor((time_start-time_now)/1000/60/60)%24;
 			var time_m = Math.floor((time_start-time_now)/1000/60)%60;
-			if(time_d<1) {ret2.push([time_h,eventList[i][0]+'&emsp;'+time_h+'时'+time_m+'分后开启']);}
+			if(time_d<1) {
+				ret2.push([time_h,eventList[i][0]+'&emsp;'+time_h+'时'+time_m+'分后开启']);
+				
+				//gen 公主双倍材料
+				if(eventList[i][0].indexOf('公主')>=0&&eventList[i][0].indexOf('双倍')>=0&&document.getElementById('autogenGZ')){
+					var GZList_r=eventList[i][0].split('/');
+					for (var g in GZList_r){
+						GZList_r[g]=GZList_r[g].replace(/\D/g,'');
+						if (GZList_r[g].length>0){GZList.push(GZList_r[g]);}
+					}
+				}
+			}
 		}
 		else if(time_now<time_end) { //event ending in future
 			var time_d = Math.floor((time_end-time_now)/1000/60/60/24);
@@ -40,21 +52,23 @@ function event_alert(){
 			//gen 公主双倍材料
 			if(eventList[i][0].indexOf('公主')>=0&&eventList[i][0].indexOf('双倍')>=0&&document.getElementById('autogenGZ')){
 				var GZList_r=eventList[i][0].split('/');
-				var GZList=[];
 				for (var g in GZList_r){
 					GZList_r[g]=GZList_r[g].replace(/\D/g,'');
 					if (GZList_r[g].length>0){GZList.push(GZList_r[g]);}
 				}
-				if(GZList.length>0){
-					var output='<table width = "100%"><tr><td colspan="'+(GZList.length+1)+'">公主级双倍-材料汇总</td></tr><tr>';
-					for (var g in GZList){
-						output+='<td><a href="html/2-TuZhi/GZ.html?'+GZList[g]+'" target="framemain">第'+GZList[g]+'章</a></td>'
-					}
-					output+='<td><a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a></td></tr></table><br>';
-					document.getElementById('autogenGZ').innerHTML=output;
-				}
 			}
 		}
+	}
+	
+	if(GZList.length>0){
+		GZList.sort(function(a,b){return parseInt(a) - parseInt(b)});
+		GZList=getDistinct(GZList);
+		var output='<table width = "100%"><tr><td colspan="'+(GZList.length+1)+'">公主级双倍-材料汇总</td></tr><tr>';
+		for (var g in GZList){
+			output+='<td><a href="html/2-TuZhi/GZ.html?'+GZList[g]+'" target="framemain">第'+GZList[g]+'章</a></td>'
+		}
+		output+='<td><a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a></td></tr></table><br>';
+		document.getElementById('autogenGZ').innerHTML=output;
 	}
 	
 	if(ret1.length||ret2.length){
@@ -93,4 +107,16 @@ function showMaxHide(){
 
 function opac(txt){
 	return '<span style="opacity:0">'+txt+'</span>';
+}
+
+function getDistinct(arr){
+	var newArr=[];
+	for (var i in arr){
+		var ind=0;
+		for (var j in newArr){
+			if (arr[i]==newArr[j]) {ind=1;break;}
+		}
+		if(ind==0) {newArr.push(arr[i])};
+	}
+	return newArr;
 }
