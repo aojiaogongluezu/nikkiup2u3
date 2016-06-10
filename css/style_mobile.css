@@ -1,6 +1,6 @@
 /*************index.html相关***************/
 #Container {
-	background-color: #fff3f9;
+	background-color: #f0f8ff;
 	overflow: hidden;
 	background-image: url(../images/background_mobile.png);
 	background-repeat: no-repeat;
@@ -32,7 +32,7 @@
 
 #Content-Main {
 	border-radius: 25px;
-	background-color: rgba(240, 248, 255, 1); 
+	background-color: rgba(255, 255, 255, 0.6); 
 	padding: 2%;
 	//box-shadow: 5px 5px 5px #888888;
 	margin-top: 30%;
