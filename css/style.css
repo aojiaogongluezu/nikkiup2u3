@@ -45,8 +45,9 @@ p.normal,label,p.filter-table {
 	line-height: 1.5em;
 }
 p.normal br {
-	line-height: 280%;
 	display: block;
+	margin: 1.2em;
+	content: " ";
 }
 /*************关卡名字字体***************/ 
 p.title1 {
