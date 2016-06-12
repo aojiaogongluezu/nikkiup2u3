@@ -39,8 +39,8 @@ p.center {
 
 /*************攻略左对齐字体***************/ 
 p.normal,label,p.filter-table {
-	font-size: 110%;
-	font-family: "SimSun", Sans-Serif;
+	font-size: 100%;
+	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #111111;
 	line-height: 1.5em;
 }
