@@ -4,6 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<script type='text/javascript' charset='UTF-8' src='../../javascripts/jquery-1.7.2.min.js'></script>
+<script type='text/javascript' charset='UTF-8' src='../../javascripts/jquery.filtertable.min.js'></script>
+<script>
+    $(document).ready(function() {
+        $('table').filterTable(); // apply filterTable to all tables on this page
+    });
+</script>
 </head>
 
 <body>
@@ -13,6 +20,7 @@
   <p class="normal"> <span class="title3">更新时间：</span>2016-03-01<br>
     <span class="title3">更新人员：</span>翡翠 </p>
   <TABLE width="100%">
+  <thead>
     <tr>
       <td>分类</td>
       <td>名称</td>
@@ -24,6 +32,9 @@
       <td>套装<br>
         名称</td>
     </tr>
+	</thead>
+	<tbody>
+	<tr style="display:none"></tr>
     <tr>
       <td>发型</td>
       <td>葫芦铃铛串</td>
@@ -3363,7 +3374,7 @@
       <td>图</td>
       <td>格莱斯</td>
     </tr>
-  </TABLE>
+	</tbody>
   </table>
 </div>
 </body>
