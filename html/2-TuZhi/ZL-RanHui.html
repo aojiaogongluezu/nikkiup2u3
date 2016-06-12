@@ -4,6 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
 
 <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<script type='text/javascript' charset='UTF-8' src='../../javascripts/jquery-1.7.2.min.js'></script>
+<script type='text/javascript' charset='UTF-8' src='../../javascripts/jquery.filtertable.min.js'></script>
+<script>
+    $(document).ready(function() {
+        $('table').filterTable(); // apply filterTable to all tables on this page
+    });
+</script>
 
 </head>
 
@@ -17,6 +24,7 @@
   	<span class="title3">更新人员：</span>翡翠
   </p>
 	<table width="100%">
+	<thead>
 	  <tr>
 	    <td>类型</td>
 	    <td>名称</td>
@@ -24,6 +32,9 @@
 	    <td>染料<br>
 	      数量</td>
       </tr>
+      </thead>
+      <tbody>
+	<tr style="display:none"></tr>
 	  <tr>
 	    <td>发型</td>
 	    <td>小护士</td>
@@ -3180,6 +3191,7 @@
 	    <td>其他染料</td>
 	    <td>1</td>
       </tr>
+      </tbody>
   </table>
 	<p class="normal">&nbsp;</p>
   
