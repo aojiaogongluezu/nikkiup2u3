@@ -79,7 +79,7 @@ function init(){
 		cell2+=inputBox('remain_today'+i,'calc()',2);
 	}
 
-	var out='<table>'+tr(td(''),'style="display:none"');
+	var out='<table>'+tr(td('基本设置','colspan="2"'));
 	out+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
 	out+=tr(td('每关'+item_name+'：')+td(cell1));
 	out+=tr(td('剩余天数：')+td(inputBox('remain_days','calc()')));
@@ -224,7 +224,7 @@ function calc(){
 	var to_pay=to_buy*price;
 	var to_stamina=times*per_stamina;
 	
-	var calcres='<table>'+tr(td('——计算结果——'));
+	var calcres='<table>'+tr(td('计算结果'));
 	calcres+=tr(td('共需'+aim+'个'+item_name));
 	calcres+=tr(td('扣除已有还需刷'+rem+'个（免费'+rem_free+'个，额外'+extra+'个）'));
 	calcres+=tr(td('需额外刷第'+max_item[1]+'关'+times+'次，购买'+to_buy+'次，花钻'+to_pay+'个，共'+to_stamina+'体'));
