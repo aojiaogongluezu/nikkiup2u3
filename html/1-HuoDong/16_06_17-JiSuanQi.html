@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../../css/style.css">
 <title>Miracle Nikki - 黑蔷薇之舞</title>
 <style>
-.remark{font-size:80%;}
+.remark{font-size:60%;}
 tr.blue{color:#0050FF;}
 td {text-align:left;}
 </style>
@@ -161,7 +161,7 @@ function calc(){
 	setVal('base10_3',getVal('base9_3'));
 	
 	var aim=0;
-	
+	/*
 	for (var i=0;i<totalCnt.length;i++){
 		if(document.getElementById('base'+i+'_3')&&getVal('base'+i+'_3')>0){
 			if(document.getElementById('base'+i+'_2')&&getVal('base'+i+'_2')<1) setVal('base'+i+'_2',1);
@@ -175,7 +175,7 @@ function calc(){
 		if(document.getElementById('base'+i+'_1')&&getVal('base'+i+'_1')>0){
 			if(document.getElementById('base'+i)&&getVal('base'+i)<1) setVal('base'+i,1);
 		}
-	}
+	}*/
 
 	for (var i=0;i<totalCnt.length;i++){
 		own[i]=getVal('base'+i);
@@ -307,12 +307,12 @@ function settime(){
 <p align="center" class="title1">活动·黑蔷薇之舞计算器</p>
 <hr class="mhr">
 <p class="normal">
-	<span class="title3">更新时间：</span>2016-6-17<br>
+	<span class="title3">更新时间：</span>2016-6-20<br>
 	<span class="title3">更新人员：</span>Rean翎
 </p>
 <p align="center">距离活动结束还有　<span id="showTime"></span><br>
 <button onclick="saveSettings()">保存设置</button><button onclick="loadSettings()">读取设置</button><br>
-<span class="remark">已修复不能读取设置的问题，抱歉没及时发现T_T</span>
+<span class="remark">已修复读取设置；去掉已有珍稀时自动填入华丽数量，方便不做全套的小伙伴把不需要的填1</span>
 </p>
 <p id="table" align="center"></p>
 <p id="input" align="center"></p>
