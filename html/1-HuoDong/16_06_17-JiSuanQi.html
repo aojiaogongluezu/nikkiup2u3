@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>
@@ -184,9 +185,12 @@ function calc(){
 		own3[i]=getVal('base'+i+'_3');
 		
 		if (document.getElementById("to"+i)){
-			var max3=own3[i]>=maxevo3 ? maxevo3 : own3[i];
+			/*var max3=own3[i]>=maxevo3 ? maxevo3 : own3[i];
 			var max2=own3[i]>=maxevo3 ? 1 : (own2[i]>=maxevo2 ? maxevo2 : own2[i]);
-			var max1=own3[i]>=maxevo3 ? 1 : (own2[i]>=maxevo2 ? 1 : (own1[i]>=maxevo1 ? maxevo1 : own1[i]));
+			var max1=own3[i]>=maxevo3 ? 1 : (own2[i]>=maxevo2 ? 1 : (own1[i]>=maxevo1 ? maxevo1 : own1[i]));*/
+			var max3=own3[i]>=maxevo3 ? maxevo3 : own3[i];
+			var max2=own2[i]>=maxevo2 ? maxevo2 : own2[i];
+			var max1=own1[i]>=maxevo1 ? maxevo1 : own1[i];
 		
 			var to_i=Math.max(0, totalCnt[i]-evo3[i]*max3-evo2[i]*max2-evo1[i]*max1-own[i]);
 			var rose_i=to_i*need[getHtml('part'+i)];
