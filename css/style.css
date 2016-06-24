@@ -90,6 +90,14 @@ span.general {
 span.newguy {
 	color: #111111;
 }
+
+span.jump{
+	color: #333333;
+	font-family:"Microsoft YaHei", Sans-Serif;
+	font-size: 90%;
+}
+
+
 /*************table***************/ 
 table {
 	border:solid #999;
