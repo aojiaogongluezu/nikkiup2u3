@@ -51,7 +51,7 @@ p.normal br {
 }
 /*************关卡名字字体***************/ 
 p.title1 {
-	font-size: 180%;
+	font-size: 150%;
 	font-weight : 800;
 	font-family: "Microsoft YaHei", Sans-Serif;
 	color: #1F4499;
