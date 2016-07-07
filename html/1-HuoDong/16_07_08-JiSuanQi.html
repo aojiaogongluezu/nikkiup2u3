@@ -67,18 +67,19 @@ window.onload = function(){
 
 function init(){
 	var table='<table border="1">';
-	table+=tr(td('套装')+td('部位')+td('名称'));
-	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="3"'));
+	table+=tr(td('套装')+td('部位')+td('名称')+td('所需'));
+	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="4"'));
 	var pos=0;
 	for (var s in set){
 		var line=td('<label><input type="checkbox" id="all'+s+'" onclick=checkall('+s+') >'+set[s]+'</label>');
-		var cell1=''; var cell2='';
+		var cell1=''; var cell2=''; var cell3='';
 		for (i=pos;i<pos+setCnt[s];i++){
 			cell2+='<label><input type="checkbox" id="own'+i+'" onclick=calc() >'+cname[i]+'</label><br>';
 			cell1+=type[i]+'<br>';
+			cell3+=need[i]+'<br>';
 		}
 		pos+=setCnt[s];
-		line+=td(cell1,'style="border-right-width:0"')+td(cell2,'style="border-left-width:0"');
+		line+=td(cell1,'style="border-right-width:0"')+td(cell2,'style="border-left-width:0;border-right-width:0"')+td(cell3,'style="border-left-width:0"');
 		table+=tr(line);
 	}
 	table+='</table>';
