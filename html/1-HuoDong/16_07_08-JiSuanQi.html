@@ -76,7 +76,7 @@ function init(){
 		for (i=pos;i<pos+setCnt[s];i++){
 			cell2+='<label><input type="checkbox" id="own'+i+'" onclick=calc() >'+cname[i]+'</label><br>';
 			cell1+=type[i]+'<br>';
-			cell3+=need[i]+'<br>';
+			cell3+='&emsp;'+need[i]+'<br>';
 		}
 		pos+=setCnt[s];
 		line+=td(cell1,'style="border-right-width:0"')+td(cell2,'style="border-left-width:0;border-right-width:0"')+td(cell3,'style="border-left-width:0"');
