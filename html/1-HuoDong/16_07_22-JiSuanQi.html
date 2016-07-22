@@ -66,7 +66,7 @@ function init(){
 	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="4"'));
 	var pos=0;
 	for (var s in set){
-		var line=td('<label><input type="checkbox" id="all'+s+'" onclick=checkall('+s+') >'+set[s]+'</label>'+'<br>&emsp;<label><input type="radio" name="radio" id="radio'+s+'" onclick="calc()"><span class="remark">打折</span></label>');
+		var line=td('<label><input type="checkbox" id="all'+s+'" onclick=checkall('+s+') >'+set[s]+'</label>'+'<br>&emsp;<label><input type="radio" name="radio" id="radio'+s+'" onclick="calc()">打折</label>');
 		var cell1=''; var cell2=''; var cell3='';
 		for (i=pos;i<pos+setCnt[s];i++){
 			cell2+='<label><input type="checkbox" id="own'+i+'" onclick=calc() >'+cname[i]+'</label><br>';
