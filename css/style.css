@@ -98,6 +98,10 @@ span.jump{
 }
 
 
+span.bold7 {
+	font-weight:700;
+}
+
 /*************table***************/ 
 table {
 	border:solid #999;
