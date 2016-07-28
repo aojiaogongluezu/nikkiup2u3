@@ -35,22 +35,33 @@ p {
 }
 
 </style>
-
+<script type='text/javascript' charset="UTF-8">
+function go_img(src){
+	var out='<p class="normal" style="text-align:left;font-weight:normal;"><a href="course.html" target="framemain">←返回</a></p><p>';
+	var sp=src.split('|');
+	for (var p in sp) {out+='<img style="max-width: 100%;" src="'+sp[p]+'">';}
+	out+='</p><p class="normal" style="text-align:left;font-weight:normal;"><a href="course.html" target="framemain">←返回</a></p>';
+	document.getElementById('course_body').innerHTML=out;
+}
+</script>
 </head>
 
 <body>
+
+<span id="course_body">
+	
 <div class="myframe" >
   <p class="title1">网站导航</p>   
   <hr class="mhr"/>
 <p>
 <span class="ditem">关于网站使用说明：</span><br>
-<span class="ditem"> 1. 强烈推荐使用chrome浏览器高版本进行浏览，对html5支持的更好。 </span><br>
-<span class="ditem"> 2. 最新更新内容都会在首页提示，并给出了更新时间，方便大家查看。所有攻略都有标注更新时间，请大家自己确认时效性。 </span><br>
-<span class="ditem"> 3. 热门内容在首页有快捷链接， 时效性过后会转入相应栏目下供查看。</span><br>
-<span class="ditem"> 4. 当前进行中的活动的起始时间在首页有提示，敬请关注，字体变红提示活动快结束。 </span><br>
-<span class="ditem"> 5. 常用工具链接在首页下方，除了配装器，还有梦幻大使工具、顶配查询器、材料查询器、攒钻计算、体力计算等等。善用工具事半功倍哦。 </span><br>
-<span class="ditem"> 6. 活动攻略如果网站没更新可以去<a href="http://weibo.com/p/1005055863288005" target="_blank">@傲娇攻略组的微博</a>看看，不一定哪边快。 </span><br>
-<span class="ditem"> 7. 微信号<font color="#3377ff">傲娇游戏组</font>，输入qj会返回每日一题答案， 直接复制全部，然后粘贴到奇迹暖暖公众号即可。不定时也有一些攻略推送，目前网站版的攻略也在搬往微信号。</span><br>
+<span class="ditem"> 1. 强烈推荐使用chrome浏览器(V50.*以上版本)进行浏览，对html5具有更好的支持。 网站内点击网页返回键均会返回主页，建议灵活使用页面内提供的跳转链接，减少不必要的操作。 </span><br>
+<span class="ditem"> 2. 最近更新内容都会在首页提示，并给出更新时间，方便大家查看。所有攻略都有标注更新时间，使用时请确认时效性。 </span><br>
+<span class="ditem"> 3. 热门内容在首页有快捷链接， 时效性过后会转入相应栏目下以供查看。</span><br>
+<span class="ditem"> 4. 当前进行中的活动的起止时间在首页有提示，字体变红表示活动即将结束。 </span><br>
+<span class="ditem"> 5. 常用工具链接在首页下方，包括配装器、梦幻大使工具、顶配查询器、材料查询器、攒钻计算、体力计算等等。 </span><br>
+<span class="ditem"> 6. 微博<a href="http://weibo.com/p/1005055863288005" target="_blank">@傲娇攻略组的微博</a>，主要发布活动攻略与日常提醒，更新时间不分先后。 </span><br>
+<span class="ditem"> 7. 微信号<font color="#3377ff">@傲娇游戏组</font>，目前主要提供每日一题帮助（发送qj，将回复内容复制粘贴到奇迹暖暖官方公众号即可），以及部分攻略推送。关卡关略等内容陆续更新搬运中。</span><br>
 </p>
 <hr class="mhr"/><br>
 
@@ -61,10 +72,10 @@ p {
 	<span class="dtitle"> 新手专区 </span> <span class="ditem"></span>
 </summary><br>
 <p>
-<span class="ditem">1. 可以直接点击顶部的<a href="guanqia.html" target="framemain">新手</a>栏目进入，该栏目下攻略为顶配、高配衣服比较少的玩家设置，基本都是易获取的衣服，已排查F件，公主少女通用，全部都实测，配合技能能够S通关。</span><br>
-<span class="ditem">2. 如果是第一次使用，建议阅读<a href="html/6-GuanQia/0-GuanQiaZongShu.html#top" target="framemain">关卡综述</a>, 关卡S除了衣服搭配以外，技能很重要。所以即使是新手也需要适当升级技能哦， 当然关于技能，<a href="course.html" target="framemain">傲娇大讲堂</a>中有详细讲哦。</span><br>
-<span class="ditem">3. 另外，想了解游戏的玩法，<a href="course.html" target="framemain">傲娇大讲堂</a>栏目下有很多文章可供参考，建议新手讲堂和各部分综述都看一看。</span><br>
-<span class="ditem">4. 目前，新手攻略提供联盟攻略第1章、关卡1-4章（因为某人的小号过到第4章， 嘻嘻），希望四章之后的你应该已经学会收集顶配衣服，使用普通关卡攻略了哦</span><br>
+<span class="ditem">1. 点击顶部<a href="guanqia.html" target="framemain">【新手】</a>栏目进入，该栏目下攻略为顶配、高配衣服比较少的玩家设置，基本都是易获取的衣服，已排查F件，公主少女通用，全部都实测，配合技能能够S通关。</span><br>
+<span class="ditem">2. 如果是第一次使用，建议阅读<a href="html/6-GuanQia/0-GuanQiaZongShu.html#top" target="framemain">关卡综述</a>, 关卡S除了衣服搭配以外，技能也很重要。所以即使是新手也需要适当升级技能哦。 关于技能可以参看<a href="course.html" target="framemain">傲娇大讲堂</a>。</span><br>
+<span class="ditem">3. 游戏的玩法在<a href="course.html" target="framemain">【讲堂】</a>栏目下有很多文章可供参考，建议新手首先阅读讲堂和各部分综述。</span><br>
+<span class="ditem">4. 新手攻略提供关卡一至四章、以及联盟攻略第一章，第四章之后请移步普通关卡攻略。</span><br>
 <span class="ditem">5. 章节快捷跳转：
 	<a href="newguy.html#g1"> 关卡第1章 </a>&emsp;<a href="newguy.html#g2"> 关卡第2章 </a>&emsp;
 	<a href="newguy.html#g3"> 关卡第3章 </a>&emsp;<a href="newguy.html#g4"> 关卡第4章 </a>&emsp;
@@ -77,10 +88,10 @@ p {
 	<span class="dtitle"> 关卡少女公主通用S攻略 </span> <span class="ditem">如果是第一次使用，建议阅读<a href="html/6-GuanQia/0-GuanQiaZongShu.html#top" target="framemain">关卡综述</a></span>
 </summary><br>
 <p>
-<span class="ditem">1. 可以直接点击顶部的<a href="guanqia.html" target="framemain">关卡</a>栏目进入，该栏目下攻略给出顶配和替换，已排查F件，公主少女通用。同时提供过关必做图纸、图纸制作物品顶配属性分析、掉落物品顶配属性分析、双倍时刷公主关卡参考等等。</span><br>
-<span class="ditem">2. 如果是新手或者通用攻略里面衣服缺少太多， 请进入<a href="newguy.html" target="framemain">新手专区</a>查看。</span><br>
-<span class="ditem">3. 所有攻略都有标注更新时间，请大家自己确认时效性。会不定期更新旧关卡。 </span><br>
-<span class="ditem">4. 该栏目提供关卡相关工具：<a href="html/2-TuZhi/ZHCX.html#top" target="framemain">掉落材料查询</a> &emsp;
+<span class="ditem">1. 点击顶部<a href="guanqia.html" target="framemain">【关卡】</a>栏目进入，该栏目下攻略给出顶配和高配替换，已排查F件，公主少女通用。同时提供过关必做图纸、图纸制作物品顶配/属性分析、掉落物品顶配/属性分析、公主级双倍活动刷关卡参考等等。</span><br>
+<span class="ditem">2. 新手或者衣柜收集度较低者， 请移步<a href="newguy.html" target="framemain">【新手】</a>栏目。</span><br>
+<span class="ditem">3. 所有攻略都有标注更新时间并不定期进行更新维护，请大家自己使用时请确认时效性。 </span><br>
+<span class="ditem">4. 该栏目相关工具：<a href="html/2-TuZhi/ZHCX.html#top" target="framemain">掉落材料查询</a> &emsp;
 														<a href="html/6-GuanQia/0-GuanQiaChaXun.html#top" target="framemain">关卡属性查询</a></span><br>
 <span class="ditem">5. 章节快捷跳转：
 	<a href="guanqia.html#1"> 第1章 </a>&emsp;<a href="guanqia.html#2"> 第2章 </a>&emsp;
@@ -98,7 +109,7 @@ p {
 	<span class="dtitle"> 活动分析及攻略 </span> <span class="ditem"></span>
 </summary><br>
 <p>
-	<span class="ditem"> 1. 可从顶部<a href="event.html" target="framemain">活动</a>栏目进入。 </span><br>
+	<span class="ditem"> 1. 点击顶部<a href="event.html" target="framemain">【活动】</a>栏目进入。 </span><br>
 	<span class="ditem"> 2. 该栏目记录从2016年3月以来的所有活动，包括活动说明、活动计算、活动关卡攻略等等。 </span><br>
 </p>
 </details><br>
@@ -108,14 +119,8 @@ p {
 	<span class="dtitle"> 傲娇大讲堂 </span> <span class="ditem">提供各种游戏玩法深入分析</span>
 </summary><br>
 <p>
-	<span class="ditem">1. 可从顶部<a href="course.html" target="framemain">讲堂</a>栏目进入。</span><br>
-	<span class="ditem">2. 打竞技场得详细教程，解释jjc的原理，打连胜的策略、打大裙子的策略、打第一的策略。</span><br>
-	<span class="ditem">3. 傲娇君的脑洞小故事。</span><br>
-	<span class="ditem">4. 供权重测量发法说明。</span><br>
-	<span class="ditem">5. 技能使用说明及刷高分方法。</span><br>
-	<span class="ditem">6. 分解重构攻略。</span><br>
-	<span class="ditem">7. 双阁限定一览。</span><br>
-	<span class="ditem">8. 搭配赛参赛说明。</span><br>
+	<span class="ditem">1. 点击顶部<a href="course.html" target="framemain">【讲堂】</a>栏目进入。包含竞技场教程、傲娇脑洞故事、关卡权重测量方法说明、技能使用说明及刷分技巧、分解重构攻略、双阁限定一览、搭配赛参赛技巧。</span><br>
+	<span class="ditem">2. 其中打竞技场得详细教程包括：，解释jjc的原理竞技场基本原理，、打连胜的策略、打大裙子的策略、，以及打第一的策略。</span><br>
 </p>
 </details><br>
 
@@ -124,14 +129,14 @@ p {
 	<span class="dtitle"> 顶配分析 </span> <span class="ditem">如果是第一次使用，建议阅读<a href="html/3-DingPei/ZS-ZongShu.html" target="framemain">顶配综述</a></span>
 </summary><br>
 <p>
-	<span class="ditem">1. 可从顶部<a href="top.html" target="framemain">顶配</a>栏目进入，每次大的版本更新后， 所有栏目都会刷新一次， 大家可根据页面更新时间参考顶配时效性。</span><br>
-	<span class="ditem">2. 该栏目提供<a href="http://reanrean.github.io/nikkis_choice/top.html" target="_blank">顶配查询器</a>，自助查询各种衣服顶配信息，随游戏同步更新。</span><br>
-	<span class="ditem">3. 最新部件下，提供最新衣服的顶配及属性分析。时效性过后衣服会转入相应来源下。</span><br>
-	<span class="ditem">4. 织梦人学会栏目提供<a href="html/3-DingPei/YingGuangZhiLing.html" target="framemain">萤光之灵</a>的顶配分析。</span><br>
-	<span class="ditem">4. 活动部件栏目提供各种活动获取衣服的顶配分析。提供周期性活动、往期节日活动、往期充值套以及其他往期活动衣服顶配分析。</span><br>
-	<span class="ditem">5. 另外还有兑换部件、分解重构、图纸制作（有生之年）、章节掉落进化等等不同获取途径的衣服的顶配分析，大家可以根据获取途径来查找。如果有未列出的可到顶配查询器查询。</span><br>
-	<span class="ditem">6. <a href="top.html#1" target="framemain">懒人专用——竞技场联盟新衣服替换</a>提供最近更新的新衣服在竞技场和联盟里的替换顺序，大家可参考进行更新替换。</span><br>
-	<span class="ditem">7. <a href="top.html#2" target="framemain">刷分参考——关卡极限分数更新一览</a>提供最近更新后极限权重下分数变化较大的关卡，供大家刷分拿成就参考</span><br>
+	<span class="ditem">1. 点击顶部<a href="top.html" target="framemain">【顶配】</a>栏目进入，每次版本更新后，所有栏目都会刷新一次， 使用时可根据页面更新时间参考顶配时效性。</span><br>
+	<span class="ditem">2. 该栏目相关工具：<a href="http://reanrean.github.io/nikkis_choice/top.html" target="_blank">顶配查询器</a>，随游戏同步更新，可以自助查询各种衣服顶配信息。</span><br>
+	<span class="ditem">3. 【最新部件】分组下，提供最新衣服的顶配及/属性分析。时效性过后衣服会转入相应来源下。</span><br>
+	<span class="ditem">4. 【织梦人学会】栏目分组提供<a href="html/3-DingPei/YingGuangZhiLing.html" target="framemain">萤光之灵</a>的顶配分析。</span><br>
+	<span class="ditem">5. 【活动部件】栏目分组提供各种活动获取衣服的顶配/属性分析。提供，包括各类周期性活动、往期节日活动、往期充值套，以及其他往期活动衣服顶配分析。</span><br>
+	<span class="ditem">6. 此外包含另外还有【兑换部件】、【分解重构】、【图纸制作】（包含有生之年）、【章节掉落及进化】等不同分组，等等不同获取途径的衣服的顶配分析，大家使用时可以根据获取途径来进行查找。如果有未列出的衣服可到顶配查询器进行查询。</span><br>
+	<span class="ditem">7. 【<a href="top.html#1" target="framemain">懒人专用——竞技场联盟新衣服替换</a>】分组提供最近更新的新衣服在竞技场和联盟里的替换顺序，可参考进行更新替换。</span><br>
+	<span class="ditem">8. 【<a href="top.html#2" target="framemain">刷分参考——关卡极限分数更新一览</a>】分组提供最近更新后极限权重下分数变化较大的关卡列表以及相应的分差参考，供大家刷分拿及获取排名挑战成就参考。</span><br>
 </p>
 </details><br>	
 
@@ -139,9 +144,14 @@ p {
 <summary> 
 	<span class="dtitle"> 织梦人学会 </span> 
 </summary><br>
+<p>
+	<span class="ditem">1. 点击首页页内跳转【织梦人】到达。包含活动概述、各路线开启条件、综合推荐，以及顶配分析等。</span><br>
+	<span class="ditem">2. 点击单个萤光之灵可以查询完整关卡说明、奖励汇总、萤光之灵属性及加分。</span><br>
+	<span class="ditem">3. 【顶配分析】分组包含所有萤光之灵的顶配/属性分析，以及梦境奖励衣服的顶配/属性分析，随版本及时更新。</span><br>
+</p>
 <table width="100%">
 	<tr>
-		<td colspan="12">织梦人学会</td>
+		<td colspan="12">快捷跳转</td>
 	</tr>
 	<tr>
 		<td colspan="3"><a href="html/10-ZhiMengRen/ZMR_0.html#top" target="framemain">活动概述</a></td>
@@ -179,8 +189,12 @@ p {
 	
 <details class="dd">
 <summary> 
-	<span class="dtitle"> 竞技场攻略 </span> <span class="ditem">如果是第一次使用，建议阅读<a href="html/4-JingJiChang/0-JingJiChangZongShu.html#top" target="framemain">竞技场综述</a>，想连胜或打大裙子请阅读<a href="course.html" target="framemain">傲娇大讲堂</a>中竞技场相关内容</span>
+	<span class="dtitle"> 竞技场 </span> <span class="ditem">如果是第一次使用，建议阅读<a href="html/4-JingJiChang/0-JingJiChangZongShu.html#top" target="framemain">竞技场综述</a></span>
 </summary><br>
+<p>
+	<span class="ditem">1. 点击首页页内跳转【竞技场】到达。包含所有题目的搭配攻略，随版本及时更新。</span><br>
+	<span class="ditem">2. 竞技场过关技巧请阅读<a href="course.html" target="framemain">【讲堂】</a>栏目中竞技场相关内容：<a href="html/8-JiangTang/1_LianSheng.html"target="framemain">连胜</a>、<a href="html/8-JiangTang/2_DaQunZi.html"target="framemain">大裙子</a>、<a href="" onclick="go_img('http://ww1.sinaimg.cn/large/006oNL3ngw1f2cep7p3srj30ku239gtu.jpg');return false;">竞技场只是一场豪赌</a>、<a href="" onclick="go_img('http://ww1.sinaimg.cn/large/006oNL3ngw1f2doku1hipj30kv2l3k30.jpg');return false;">进阶！竞技场大裙子</a>、<a href="" onclick="go_img('http://ww1.sinaimg.cn/large/006oNL3ngw1f2ey2vq96dj30kv1mi7c6.jpg');return false;">敬你三倍毒酒，杀遍竞技场</a>、<a href="" onclick="go_img('http://aojiaogongluezu.github.io/nikkiup2u3/images/JiangTang_MiTao_JJC4.jpg');return false;">如何看竞技场的头像</a>、<a href="" onclick="go_img('http://aojiaogongluezu.github.io/nikkiup2u3/images/JiangTang_MiTao_JJC5.jpg');return false;">通用技巧卡</a>。</span><br>
+</p>
 <table width = "100%">
 	<tbody>
   <tr>
@@ -222,11 +236,15 @@ p {
 
 <details class="dd">
 <summary> 
-	<span class="dtitle"> 联盟攻略 </span> <span class="ditem"></span>
+	<span class="dtitle"> 联盟 </span> <span class="ditem"></span>
 </summary><br>
+<p>
+	<span class="ditem">1. 点击首页页内跳转【联盟】到达。包含所有关卡的搭配攻略，随版本及时更新推荐章节。</span><br>
+	<span class="ditem">2. <a href="html/3-DingPei/DH-LianMengXiaoPu.html" target="framemain">联盟小铺顶配分析</a>、<a href="html/3-DingPei/DH-MengHuanGongFang.html" target="framemain">梦幻工坊顶配分析</a></span><br>
+</p>
 <table width = "100%">
   <tr>
-    <td colspan="7">联盟搭配</td>
+    <td colspan="7">联盟搭配攻略</td>
   </tr>
     <tr>
     <td><a href="html/5-LianMeng/l5-1.html#top"target="framemain">5-1</a></td>
@@ -281,11 +299,10 @@ p {
 	<span class="dtitle"> 图纸制作 </span> <span class="ditem"></span>
 </summary><br>
 <p>
-	<span class="ditem">1. 可从顶部<a href="tuzhi.html" target="framemain">图纸</a>栏目进入。</span><br>
-	<span class="ditem">2. 该栏目提供<a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a>工具，自助查询各种衣服信息，图纸、进化、重构等等信息，可以录入自己衣柜查看图纸所缺材料。</span><br>
-	<span class="ditem">3. 该栏目提供进化数据、定制数据、染回数据、成就套装等原始数据查看。</span><br>
-	<span class="ditem">4. 该栏目提供图纸制作消耗分析，有生之年系列，以及其他图纸。</span><br>
-	<span class="ditem">5. 该栏目提供进化数据、定制数据、染回数据、成就套装等原始数据查看。</span><br>
+	<span class="ditem">1. 点击顶部<a href="tuzhi.html" target="framemain">【图纸】</a>栏目进入。包含图纸制作消耗分析、公主级掉落双倍参考等。</span><br>
+	<span class="ditem">2. 该栏目提供相关工具<a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a>工具，自助查询各种衣服信息，图纸、进化、重构等等信息，可以录入自己的衣柜数据查看图纸所缺材料。</span><br>
+	<span class="ditem">3. 【套装材料】分组提供图纸制作消耗分析，有生之年系列，以及其他图纸。</span><br>
+	<span class="ditem">4. 【其他图纸相关资料】分组提供进化数据、定制数据、染回数据、成就套装等原始数据查看。</span><br>
 </p>
 </details><br>
 
@@ -294,9 +311,9 @@ p {
 	<span class="dtitle"> 联盟好友互助系统 </span> <span class="ditem"></span>
 </summary><br>
 <p>
-	<span class="ditem">1. 可从顶部<a href="friend.html" target="framemain">联盟好友互助</a>栏目进入。</span><br>
+	<span class="ditem">1. 点击顶部<a href="friend.html" target="framemain">【互助】</a>栏目或滚动条链接进入。</span><br>
 	<span class="ditem">2. 该系统用于帮助大家加游戏好友（获取花香套）、寻找联盟以及联盟招人。</span><br>
-	<span class="ditem">3. 输入信息时请记好密码，需要更改自己发布的信息时需要输入该密码。</span><br>
+	<span class="ditem">3. 浏览信息无需登录，填写新信息需登录创建密码， 密码用于更改自己发布的信息，请记好密码。</span><br>
 </p>
 </details><br>
 
@@ -305,7 +322,7 @@ p {
 	<span class="dtitle"> 游戏福利 </span> <span class="ditem"></span>
 </summary><br>
 <p>
-	<span class="ditem"> 可从顶部<a href="html/nikkiup2u3/html/7-ZaShi/FuLiHuiZong.html" target="framemain">福利</a>栏目进入，不定期更新游戏福利、蚊子腿。</span>
+	<span class="ditem"> 点击顶部<a href="html/nikkiup2u3/html/7-ZaShi/FuLiHuiZong.html" target="framemain">【福利】</a>栏目进入，不定期更新游戏福利、蚊子腿。</span>
 </p>
 </details><br>
 
@@ -314,7 +331,7 @@ p {
 	<span class="dtitle"> 游戏版本更新说明 </span> <span class="ditem"></span>
 </summary><br>
 <p>
-	<span class="ditem"> 可从顶部<a href="html/nikkiup2u3/html/7-ZaShi/BanBen-3.html" target="framemain">版本</a>栏目进入，不定期更新游戏版本更新情况。</span>
+	<span class="ditem"> 点击顶部<a href="html/nikkiup2u3/html/7-ZaShi/BanBen-3.html" target="framemain">【版本】</a>栏目进入，不定期更新游戏版本相关情况。</span>
 </p>
 </details><br>
 
@@ -329,4 +346,8 @@ p {
 
 </div>
 
+</span>
+
+</body>
+</html>
 
