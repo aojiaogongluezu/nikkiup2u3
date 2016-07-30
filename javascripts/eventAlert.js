@@ -10,7 +10,7 @@ function event_alert(){
 	
 	//calc for contest
 	var date=new Date(d.getTime() + 8*60*60*1000 + d.getTimezoneOffset()*60000);
-	if((date.getDay()==1||date.getDay()==5)&&date.getHours()>2){
+	if((date.getDay()==1||date.getDay()==5)&&date.getHours()>5){
 		var h = 23-date.getHours() +2;
 		var m = 59-date.getMinutes();
 		ret1.push([h,'搭配评选赛&emsp;'+h+'时'+m+'分后结算']);
@@ -19,6 +19,16 @@ function event_alert(){
 		var h = 1-date.getHours();
 		var m = 59-date.getMinutes();
 		ret1.push([h,'搭配评选赛&emsp;'+h+'时'+m+'分后结算']);
+	}
+	if(date.getDay()==0&&date.getHours()>5){
+		var h = 23-date.getHours() +2;
+		var m = 59-date.getMinutes();
+		ret1.push([h,'竞技场&emsp;'+h+'时'+m+'分后结算']);
+	}
+	else if(date.getDay()==1&&date.getHours()<2){
+		var h = 1-date.getHours();
+		var m = 59-date.getMinutes();
+		ret1.push([h,'竞技场&emsp;'+h+'时'+m+'分后结算']);
 	}
 	
 	var time_now=d.getTime();
