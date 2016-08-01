@@ -1,0 +1,177 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" href="../index/img/favicon.jpg" type="image/x-icon" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Miracle Nikki - 奇迹暖暖顶配查询器</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<style>
+		.unwrap {word-break:keep-all; color:#ff7890;}
+		.nobr {white-space:nowrap;}
+		.inTop,.haveTop {color:red;}
+		.inSec {color:black;}
+		.inName {word-break:break-all;}
+		a.aTooltip {color:inherit;}
+		a.aTooltip:hover {text-decoration:none;}
+		body {margin:1em; font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;}
+		fieldset {width:100%; max-width:270px; padding:.35em .625em .75em; border:1px solid silver;}
+		legend {border:0; width:auto; margin-bottom:0; font-size:14px;}
+		label {font-weight:normal; line-height:100%;}
+		td {padding:5px;}
+		tr:first-child {font-weight:bold;}
+		table.calcByAll, table.propByAll {width:100%; table-layout:fixed; min-width:285px;}
+		table.calcByAll tr td:nth-child(-n+3), table.propByAll tr td:nth-child(-n+2), table.propSrc tr td:nth-child(3) {width:10%;}
+		table.calcSrc tr td:nth-child(3),table.calcSrc tr td:nth-child(4) {width:7.5%;}
+		@media only screen and (max-width: 360px){
+			table.calcByAll tr td, table.propByAll tr td {padding:1px;}
+			table.calcByAll tr td:nth-child(-n+3), table.propByAll tr td:nth-child(-n+2), table.propSrc tr td:nth-child(3) {width:16px;}
+			table.calcSrc tr td:nth-child(4) {width:16px;}
+		}
+		[tooltip]:hover:before {
+			margin-top:25px; margin-left:-80px; padding: 5px; 
+			position: absolute; content: attr(tooltip); display: inline-block; z-index: 255; 
+			white-space:pre; color: black; background-color: #EAF2FA;
+		}
+		table.propByAll tr td:nth-last-child(2) [tooltip]:hover:before, table.propByAll tr td:nth-last-child(3) [tooltip]:hover:before {
+			width: 150px; word-break:break-all; white-space:pre-wrap;
+		}
+		table.propByAll tr td:nth-last-child(1) [tooltip]:hover:before {margin-left:-120px;}
+		.normTip [tooltip]:hover:before {
+			margin-left:0px; width: 170px; word-break:break-all; white-space:pre-wrap;
+		}
+	</style>
+	<script type='text/javascript' charset="UTF-8" src='../../javascripts/jquery.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../data/wardrobe.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../data/exc.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../javascripts/scoring.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../javascripts/model.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../data/flist.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../data/merchant.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../data/construct.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../data/levels.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../data/levels-hs.js'></script>
+	<script type='text/javascript' charset="UTF-8" src='../../javascripts/top.js'></script>
+	<script type='text/javascript' charset="UTF-8">
+	$(document).ready(function () {
+		if (typeof(Storage) !== "undefined"&&localStorage.getItem("rean_top_buzz")){
+			if(localStorage.getItem("rean_top_buzz")>0) {showBuzz();};
+		}
+	});
+	function showBuzz(){
+		if ($('#buzz').is(":visible")){
+			$('#buzz').hide();
+			$('#abuzz').html("&lt;碎碎念&gt;");
+			var hideBuzz=1;
+		}else{
+			$('#buzz').show();
+			$('#abuzz').html("&lt;收起&gt;");
+			var hideBuzz=0;
+		}
+		if (typeof(Storage) !== "undefined") {
+			localStorage.setItem("rean_top_buzz", hideBuzz);
+		}
+	}
+	</script>
+</head>
+<body>
+	<p>
+		<b>奇迹暖暖顶配查询器</b> by Rean@<a href="http://aojiaogongluezu.github.io">傲娇攻略组</a><br/>
+		&emsp;部分算法基于 <a href="http://seal100x.github.io/nikkiup2u3/">配装器 by 黑的升华</a><br/>
+		&emsp;微调  by 傲娇攻略组<span id="buzz"><br/>
+		&emsp;碎碎念：为了方便大家使用，工具是开源的，但请考虑到我们编写算法和维护数据的付出，引用或抱走时请保留作者信息。</span>
+		<a href="" onclick="showBuzz();return false;" id="abuzz" class="nobr">&lt;收起&gt;</a><br/>
+	</p>
+	<hr>
+	<p>
+		<input type="text" id="textBox" placeholder="名称/套装/来源" />
+		<button id="searchById" onclick="searchById()">查找</button>
+		<button id="calc" onclick="calctop()">计算</button>
+		<span id='alert_msg' class="unwrap"></span>
+	</p>
+	<span id="show_opt">　<a href="" onclick="show_opt();return false;">↓展开选项↓</a></span>
+	<span id="options">
+	<fieldset>
+		<legend><a href="" onclick="hide_opt();return false;">选项（重新计算生效）</a></legend>
+		计算<input type="text" id="showCnt" size="2" style="line-height:100%;"/>件高配信息<br>
+		<span class="levels">计算 <input type="checkbox" id="showJJC" checked /><label for="showJJC">竞技场</label> <input type="checkbox" id="showAlly" checked /><label for="showAlly">联盟</label> <input type="checkbox" id="showNormal"/><label for="showNormal">主线</label><br></span>
+		<!--<input type="checkbox" id="limitMode" />极限权重模式 <span id="limitNote" class="normTip">说明</span><br>-->
+		<input type="radio" name="limit" id="limitN" value="0" checked onclick="chgLimitType(this.value)"><label for="limitN">标准权重</label> <input type="radio" name="limit" value="1" id="limitL" onclick="chgLimitType(this.value)"><label for="limitL">极限权重</label><span id="limitNote" class="normTip">[注]</span> <input type="radio" name="limit" value="2" id="limitA" onclick="chgLimitType(this.value)"><label for="limitA">属性分析</label><br>
+		<input type="checkbox" id="cartMode" onclick="chgcartMode()"/><label for="cartMode">选取多件</label>
+		<span class="cartContent">
+			<br>　结果大于<input type="text" id="maxHide" size="2" style="line-height:100%;"/>时折叠
+			<br>　<input type="checkbox" id="hideNores" /><label for="hideNores">只显示顶配/高配部件</label>
+			<br>　显示 <input type="checkbox" id="showSource" /><label for="showSource">来源</label> <input type="checkbox" id="showMerc" /><label for="showMerc">兑换数量</label>
+		</span>
+	</fieldset></span>
+	<span class="cartContent">
+	<hr>
+	<p>
+	<span id="cart"></span><button class="btn btn-xs btn-default" onclick="addCart_All()">添加整个列表</button> <button class="btn btn-xs btn-default" onclick="clearCart()">清空</button>
+	</p>
+	</span>
+	<hr>
+	<p id='topsearch_note'></p>
+	<p id='topsearch_info'></p>
+
+	<span style="display:none">
+	<div class='facet'><!-- for criteria use -->
+		<div class="weightContainer" role="group" data-toggle="buttons">
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="simple" value="1"/> 简约</label>
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="simple" value="-1"/> 华丽</label>
+			<input class="btn-sm" placeholder="权重" type="text" id="simpleWeight" name="simpleWeight" value="1" onChange="changeFilter()" />
+		</div>
+		<div class="weightContainer" role="group" data-toggle="buttons">
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="cute" value="1"/> 可爱</label>
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="cute" value="-1"/> 成熟</label>
+			<input class="btn-sm" placeholder="权重" type="text" id="cuteWeight" name="cuteWeight" value="1" onChange="changeFilter()" />
+		</div>
+		<div class="weightContainer" role="group" data-toggle="buttons">
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="active" value="1"/> 活泼</label>
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="active" value="-1"/> 优雅</label>
+			<input class="btn-sm" placeholder="权重" type="text" id="activeWeight" name="activeWeight" value="1" onChange="changeFilter()" />
+		</div>
+		<div class="weightContainer" role="group" data-toggle="buttons">
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="pure" value="1"/> 清纯</label>
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="pure" value="-1"/> 性感</label>
+			<input class="btn-sm" placeholder="权重" type="text" id="pureWeight" name="pureWeight" value="1" onChange="changeFilter()" />
+		</div>
+		<div class="weightContainer" role="group" data-toggle="buttons">
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="cool" value="1"/> 清凉</label>
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="cool" value="-1"/> 保暖</label>
+			<input class="btn-sm" placeholder="权重" type="text" id="coolWeight" name="coolWeight" value="1" onChange="changeFilter()" />
+		</div>
+		<div class='weightContainer' id = "tag1Container" role="group" data-toggle="buttons">
+			<input class="btn-sm" placeholder="tag1" type="text" id="tag1" name="tag1" onChange="changeFilter()" />
+			<label class="btn btn-sm btn-default active"><input class="filter-radio" type="radio" name="tag1method" value="add" checked/> 加分</label>
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="tag1method" value="replace"/> 替换</label>
+			<select class="btn-sm" id="tag1base" onChange="changeFilter()">
+				<option>SS</option>
+				<option>S</option>
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+				<option>F</option>
+			</select>
+			<input class="btn-sm" type="text" id="tag1weight" name="tag1weight" value="1" onChange="changeFilter()" />
+		</div>
+		<div class='weightContainer' id = "tag2Container" role="group" data-toggle="buttons">
+			<input class="btn-sm" placeholder="tag2" type="text" id="tag2" name="tag2" onChange="changeFilter()" />
+			<label class="btn btn-sm btn-default active"><input class="filter-radio" type="radio" name="tag2method" value="add" checked/> 加分</label>
+			<label class="btn btn-sm btn-default"><input class="filter-radio" type="radio" name="tag2method" value="replace"/> 替换</label>
+			<select class="btn-sm" id="tag2base" onChange="changeFilter()">
+				<option>SS</option>
+				<option>S</option>
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+				<option>F</option>
+			</select>
+			<input class="btn-sm" type="text" id="tag2weight" name="tag2weight" value="1" onChange="changeFilter()" />
+		</div>
+	</div>
+	</span>
+</body>
+</html>
