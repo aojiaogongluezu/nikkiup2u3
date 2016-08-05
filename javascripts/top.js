@@ -227,8 +227,8 @@ function propanal_byid(id){
 	//1.同属性排名 2.同属性+tag 3.tag数 4.被吊打 5.被吊打+tag
 	var showCnt=$("#showCnt").val();
 	var withTag=clothesWithTag(clothes[id]);
-	var rank=[]; var rankEq=[];
-	var rankTag=[]; var rankTagEq=[];
+	var rank=[]; var rankEq=[]; var rankLow=[];
+	var rankTag=[]; var rankTagEq=[]; var rankTagLow=[];
 	var tagCnt=[];
 	var repl=[];
 	var replTag=[];
@@ -240,10 +240,11 @@ function propanal_byid(id){
 		var supped=supp_byid(id,i);
 		
 		if (rankScore>thisScore) {rank.push([rankScore,i]);}
-		if (rankScore==thisScore) { 
+		else if (rankScore==thisScore) { 
 			if(i==id) rankEq.unshift([rankScore,i]); 
 			else rankEq.push([rankScore,i]);
 		}
+		else {rankLow.push([rankScore,i]);}
 		if (supped) {repl.push([rankScore,i]);}
 		
 		if (withTag&&clothes[i].tags[0]){
@@ -255,6 +256,7 @@ function propanal_byid(id){
 				if(!tagCnt[tagj]) {tagCnt[tagj]=[];}
 				if(!rankTag[tagj]) {rankTag[tagj]=[];}
 				if(!rankTagEq[tagj]) {rankTagEq[tagj]=[];}
+				if(!rankTagLow[tagj]) {rankTagLow[tagj]=[];}
 				if(!replTag[tagj]) {replTag[tagj]=[];}
 			
 				for (var k=0;k<clothes[i].tags.length+1;k++){
@@ -263,10 +265,11 @@ function propanal_byid(id){
 					if(tagk==tagj) {
 						if (i!=id) tagCnt[tagj].push([rankScore,i]);
 						if (rankScore>thisScore) {rankTag[tagj].push([rankScore,i]);}
-						if (rankScore==thisScore) {
+						else if (rankScore==thisScore) {
 							if(i==id) rankTagEq[tagj].unshift([rankScore,i]); 
 							else rankTagEq[tagj].push([rankScore,i]);
 						}
+						else {rankTagLow[tagj].push([rankScore,i]);}
 						if (supped) {replTag[tagj].push([rankScore,i]);}
 					}
 				}
@@ -276,6 +279,7 @@ function propanal_byid(id){
 	
 	//同属性排名
 	rank.sort(function(a,b){return b[0] - a[0]});
+	rankLow.sort(function(a,b){return b[0] - a[0]}); rankLow=rankLow.slice(0,showCnt-1);
 	var rankTxt=(rank.length+1);
 	var rankTip='';
 	if (rank.length==0) {//除去错误连衣裙/上下装顶配
@@ -297,7 +301,7 @@ function propanal_byid(id){
 		}else {isTop=1;}
 	}
 	if (rank.length<showCnt) {isSec=1;}
-	rank=rank.concat(rankEq);
+	rank=rank.concat(rankEq).concat(rankLow);
 	if (rank.length>showCnt*2) {rank=rank.slice(0,showCnt*2); var rankSlice=1;}
 	else {var rankSlice=0;}
 	if (rank.length>1){
@@ -314,6 +318,7 @@ function propanal_byid(id){
 	if (withTag){
 		for (var tagj in rankTag){
 			rankTag[tagj].sort(function(a,b){return b[0] - a[0]});
+			rankTagLow[tagj].sort(function(a,b){return b[0] - a[0]}); rankTagLow[tagj]=rankTagLow[tagj].slice(0,showCnt-1);
 			var rankTagTxt=(rankTag[tagj].length+1);
 			var rankTagTip='';
 			if (rankTag[tagj].length==0) {//除去错误连衣裙/上下装顶配
@@ -335,7 +340,7 @@ function propanal_byid(id){
 				}else {isTop=1;}
 			}
 			if (rankTag[tagj].length<showCnt) {isSec=1;}
-			rankTag[tagj]=rankTag[tagj].concat(rankTagEq[tagj]);
+			rankTag[tagj]=rankTag[tagj].concat(rankTagEq[tagj]).concat(rankTagLow[tagj]);
 			if (rankTag[tagj].length>showCnt*2) {rankTag[tagj]=rankTag[tagj].slice(0,showCnt*2); var rankTagSlice=1;}
 			else {var rankTagSlice=0;}
 			if (rankTag[tagj].length>1){
