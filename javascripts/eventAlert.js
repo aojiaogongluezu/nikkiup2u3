@@ -73,11 +73,23 @@ function event_alert(){
 	if(GZList.length>0){
 		GZList.sort(function(a,b){return parseInt(a) - parseInt(b)});
 		GZList=getDistinct(GZList);
-		var output='<table width = "100%"><tr><td colspan="'+(GZList.length+1)+'">公主级双倍-材料汇总</td></tr><tr>';
+		var maxcolspan=4;
+		var perrow=GZList.length>maxcolspan-1 ? maxcolspan-1 : GZList.length;
+		var output='<table width = "100%"><tr><td colspan="'+(perrow+1)+'">公主级双倍-材料汇总</td></tr><tr>';
 		for (var g in GZList){
-			output+='<td><a href="html/2-TuZhi/GZ.html?'+GZList[g]+'" target="framemain">第'+GZList[g]+'章</a></td>'
+			output+='<td><a href="html/2-TuZhi/GZ.html?'+GZList[g]+'" target="framemain">第'+GZList[g]+'章</a></td>';
+			if (g%(perrow)==(perrow-1)) { //add extra col per row
+				if (g==perrow-1) output+='<td><a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a></td>'; //if first row
+				else output+='<td></td>';
+				if (g!=GZList.length-1) output+='</tr><tr>'; //if not end of all table
+			}
+			
 		}
-		output+='<td><a href="html/2-TuZhi/ZHCX.html" target="framemain">综合查询</a></td></tr></table><br>';
+		var restcells = GZList.length%perrow;
+		if (restcells>0) for (var i=0; i<=perrow-restcells;i++){ //add 1 extra blank
+			output+='<td></td>';
+		}
+		output+='</tr></table><br>';
 		document.getElementById('autogenGZ').innerHTML=output;
 	}
 	
