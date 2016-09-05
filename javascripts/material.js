@@ -834,7 +834,7 @@ function conv_source(src,subs,mainType){
 
 function getMerc(piece){
 	for (var m in merchant){
-		if(piece.type.mainType==merchant[m][0]&&piece.name==merchant[m][1]){
+		if(piece==clothesSet[merchant[m][0]][merchant[m][1]]){
 			return [merchant[m][3],merchant[m][2]];
 		}
 	}
