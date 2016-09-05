@@ -242,6 +242,18 @@ var levelsRaw = {
   '14-支1': [3.1, 1.67, 2.33, 1, 0.8],
   '14-支2': [2.9, -2.27, -2.9, 1.33, -0.67],
   '14-支3': [0.67, 1.33, -0.67, 1.6, -2.5],
+  '15-1': [0.67, 2.1, 2.8, 2.8, 0.67],
+  '15-2': [-1.2, 2.33, 2.33, 0.9, -0.5],
+  '15-3': [0.67, -3.33, -2, -3.33, -1.33],
+  '15-4': [2.8, -1.6, -2.8, 1.2, -1.2],
+  '15-5': [-1, -2.1, 2.8, 0.8, -2.8],
+  '15-6': [2.33, 1, 2.33, 0.5, -1.33],
+  '15-7': [0.67, 2.33, 2.33, 0.67, -0.67],
+  '15-8': [2.67, -2.67, -1.67, 0.67, -1],
+  '15-9': [-33.3, -21, -33.3, 6.7, -6.7],
+  '15-支1': [-3, 1.33, 3, -2, 1.33],
+  '15-支2': [2.33, 0.67, -3, 1.67, 0.67],
+  '15-支3': [-0.8, -0.8, -2.2, 2.2, -0.5],
 };
 
 function tagMatcher(whitelist, clothes) {
@@ -282,14 +294,6 @@ function weightedFilter(tagWhitelist, nameWhitelist, weight) {
 
 function normalFilter(tagWhitelist, nameWhitelist) {
   return weightedFilter(tagWhitelist, nameWhitelist, 10);
-}
-
-function noOp() {
-  return {
-    filter: function() {
-      return;
-    }
-  };
 }
 
 // IP君按tag过滤F品, 目前只显示提示文字
@@ -378,62 +382,6 @@ function addScoreBonusFactory(bonus, multiplier, tagWhitelist, nameWhitelist) {
 function replaceScoreBonusFactory(bonus, multiplier, tagWhitelist, nameWhitelist) {
   return abstractBonusFactory('各属性均视为相符，且替换为', true, bonus + " * " + multiplier,
       tagWhitelist, nameWhitelist, featureBasedScoringFactory(bonus, multiplier));
-}
-
-function swimsuitFactory() {
-  return abstractBonusFactory('仅可爱/成熟与清纯/性感依权重加分', false, 'SS', "泳装",
-      null, function(criteria, clothes) {
-        var total = 0;
-        var onlyFeatures = ['cute', 'pure'];
-        var byFeature = {};
-        for (var i in onlyFeatures) {
-          var f = onlyFeatures[i];
-          var addon = Math.abs(criteria[f] * clothes.type.score['SS']);
-          byFeature[f] = addon;
-          total += addon;
-        }
-        return [total, byFeature];
-  });
-}
-
-function specialFactory76A() {
-  return abstractBonusFactory('华丽	成熟	优雅	清纯	清凉 分别按照权重增加', false, 'B, SS, B, C, C', "晚礼服",
-      null, function(criteria, clothes) {
-        var total = 0;
-        var byFeature = {};
-        byFeature['simple'] = Math.abs(criteria['simple'] * clothes.type.score['B']);
-        byFeature['cute'] = Math.abs(criteria['cute'] * clothes.type.score['SS']);
-        byFeature['active'] = Math.abs(criteria['active'] * clothes.type.score['B']);
-        byFeature['pure'] = Math.abs(criteria['pure'] * clothes.type.score['C']);
-        byFeature['cool'] = Math.abs(criteria['cool'] * clothes.type.score['C']);
-        
-        total += byFeature['simple'];
-        total += byFeature['cute'];
-        total += byFeature['active'];
-        total += byFeature['pure'];
-        total += byFeature['cool'];
-        return [total, byFeature];
-  });
-}
-
-function specialFactory76B() {
-  return abstractBonusFactory('华丽	成熟	优雅	清纯	清凉 分别按照权重增加', false, 'B, SS, B, C, C', "中式现代",
-      null, function(criteria, clothes) {
-        var total = 0;
-        var byFeature = {};
-        byFeature['simple'] = Math.abs(criteria['simple'] * clothes.type.score['B']);
-        byFeature['cute'] = Math.abs(criteria['cute'] * clothes.type.score['SS']);
-        byFeature['active'] = Math.abs(criteria['active'] * clothes.type.score['B']);
-        byFeature['pure'] = Math.abs(criteria['pure'] * clothes.type.score['C']);
-        byFeature['cool'] = Math.abs(criteria['cool'] * clothes.type.score['C']);
-        
-        total += byFeature['simple'];
-        total += byFeature['cute'];
-        total += byFeature['active'];
-        total += byFeature['pure'];
-        total += byFeature['cool'];
-        return [total, byFeature];
-  });
 }
 
 function bonusInfo(base, weight, tag, replace) {
@@ -652,15 +600,17 @@ function addBonusInfo(base, weight, tag) {
   "14-9": [addBonusInfo('B', 0.5, "冬装")],
   "14-支1": [addBonusInfo('B', 1, "波西米亚")],
   "14-支3": [addBonusInfo('SS', 1, "睡衣")],
+  "15-1": [addBonusInfo('S', 0.25, "运动系")],
+  "15-2": [addBonusInfo('B', 1, "洛丽塔")],
+  "15-4": [addBonusInfo('B', 0.5, "侠客联盟"), addBonusInfo('B', 0.5, "中式古典")],
+  "15-5": [addBonusInfo('S', 0.5, "冬装")],
+  "15-6": [addBonusInfo('B', 1, "中性风")],
+  "15-7": [addBonusInfo('S', 1, "英伦")],
+  "15-8": [addBonusInfo('B', 1, "军装")],
+  "15-9": [addBonusInfo('A', 1, "军装"), addBonusInfo('S', 0.25, "中性风")],
+  "15-支2": [addBonusInfo('B', 1, "波西米亚")],
+  "15-支3": [addBonusInfo('A', 1, "中式古典")],
  };
- 
-var additionalLevelInfo = {
-/*
-  "4-2": [swimsuitFactory()],
-  "4-3": [swimsuitFactory()],
-  '7-6': [specialFactory76A(), specialFactory76B()]
-*/
-};
 
 var addSkillsInfo = {
 '1-1': [null,['微笑','挑剔','沉睡','灰姑娘']],
@@ -843,6 +793,18 @@ var addSkillsInfo = {
 '14-支1' :[['反挑','微笑','沉睡','免挑'],['反挑','微笑','沉睡','免挑']],
 '14-支2' :[['反挑','微笑','挑剔','飞吻'],['反挑','微笑','挑剔','飞吻']],
 '14-支3' :[['反挑','微笑','沉睡','圣诞'],['反挑','微笑','沉睡','圣诞']],
+'15-1' :[['微笑','沉睡','飞吻','反挑'],['微笑','沉睡','飞吻','反挑']],
+'15-2' :[['微笑','挑剔','圣诞','反挑'],['微笑','挑剔','圣诞','反挑']],
+'15-3' :[['微笑','沉睡','免挑','反挑'],['微笑','沉睡','免挑','反挑']],
+'15-4' :[['微笑','挑剔','飞吻','反挑'],['微笑','挑剔','飞吻','反挑']],
+'15-5' :[['微笑','沉睡','圣诞','反挑'],['微笑','沉睡','圣诞','反挑']],
+'15-6' :[['微笑','沉睡','免挑','反挑'],['微笑','沉睡','免挑','反挑']],
+'15-7' :[['微笑','挑剔','飞吻','反挑'],['微笑','挑剔','飞吻','反挑']],
+'15-8' :[['微笑','沉睡','圣诞','反挑'],['微笑','沉睡','圣诞','反挑']],
+'15-9' :[['挑剔','飞吻','沉睡'],['挑剔','飞吻','沉睡']],
+'15-支1' :[['微笑','挑剔','免挑','反挑'],['微笑','挑剔','免挑','反挑']],
+'15-支2' :[['微笑','沉睡','飞吻','反挑'],['微笑','沉睡','飞吻','反挑']],
+'15-支3' :[['微笑','挑剔','圣诞','反挑'],['微笑','挑剔','圣诞','反挑']],
 '联盟委托: 1-1': [null,null,['微笑','挑剔','免挑','圣诞']],
 '联盟委托: 1-2': [null,null,['微笑','挑剔','免挑','灰姑娘']],
 '联盟委托: 1-3': [null,null,['微笑','挑剔','真爱','反挑']],
@@ -936,13 +898,13 @@ var addHintInfo = {
 '5-3' :[[''],['仙雾森林·珍稀，玉壶园，绿烟林微，一品朱衣'],['']],
 '5-4' :[['外套较易F。'],['风度·棕，枫女忍，鬼姬冥花·珍稀'],['仙雾森林·珍稀']],
 '5-5' :[[''],[''],['']],
-'5-6' :[['衣服要求民国服饰tag，不然F。'],['下雨的天气，春山新雨，西江月'],['相思意']],
+'5-6' :[['衣服（尤其是下装）要求民国服饰tag，不过有奇葩可用品。'],['下雨的天气，画家·白，西江月，女神·苹果汁，桔梗'],['相思意，山茶春色，歌者·粉']],
 '5-7' :[['连衣裙要求波西米亚tag。推荐用荒原的花，过关套。'],[''],['']],
 '5-8' :[[''],['记号，乐队主唱'],['罪爱之花·红']],
 '5-9' :[[''],['钻影披风，雪境羽，高腰娃娃裙·蓝，镜中花，黑天鹅，星河曲·白，缤纷圣诞夜'],['仙雾森林·珍稀']],
 '5-10' :[[''],['水中月，漫纱轻舞，茶话会，贺礼'],['水芝之约·夏，蝶舞翩跹·粉蝶，采撷草莓·珍稀，春之少女·珍稀，糖果娃娃·珍稀']],
 '5-11' :[['下装要穿超级特工·裤，上衣外套可用牛仔套。'],['刺客信念'],['侠客行']],
-'5-12' :[[''],['凝墨，小家碧玉，繁华梦，杏花阁，西江月，前程似锦，花开富贵，小镇姑娘，民国校服，白绸裤，玲珑·上衣'],['水墨抄·衣，采茶曲·裙']],
+'5-12' :[['外套怀疑要求中式现代tag。'],['凝墨，小家碧玉，繁华梦，杏花阁，西江月，前程似锦，花开富贵，小镇姑娘，民国校服，白绸裤，玲珑·上衣'],['水墨抄·衣，采茶曲·裙']],
 '5-支1' :[['连衣裙疑似排斥围裙和中式古典tag。'],['绵羊外套，森女与麋鹿，冬眠，渐变色毛衣，枫糖毛衣，芷兰下装，牛仔七分裤'],['森女羊，格蕾雅•红酒']],
 '5-支2' :[['衣服推测要求海军风tag，例外见可用栏。'],['水手服·上衣，奶油号角，花香，沁蜜桃·裤裙'],['水手少女·白，船锚上衣·蓝']],
 '5-支3' :[[''],[''],['茶花纱缎•华丽']],
@@ -1060,6 +1022,18 @@ var addHintInfo = {
 '14-支1' :[['连衣裙怀疑要求波西米亚tag，没发现可用的上下装。'],[''],['']],
 '14-支2' :[[''],[''],['']],
 '14-支3' :[[''],[''],['']],
+'15-1' :[[''],[''],['']],
+'15-2' :[[''],[''],['']],
+'15-3' :[['必做云端迷情+意醉情迷'],[''],['']],
+'15-4' :[[''],[''],['']],
+'15-5' :[[''],[''],['']],
+'15-6' :[[''],[''],['']],
+'15-7' :[['必做千鸟时光+蔷薇梦想，鞋子不是必做！'],[''],['']],
+'15-8' :[[''],[''],['']],
+'15-9' :[['必做荣耀同行+风暴披风,必带赠送的黎明之刃。这关先随便穿一身、会被压到10000分，然后过关14次、累积达到要求的15w分，看番外关卡的剧情、拿到黎明之刃，再回来穿必做、正常搭配过关。'],[''],['']],
+'15-支1' :[[''],[''],['']],
+'15-支2' :[[''],[''],['']],
+'15-支3' :[[''],[''],['']],
 '联盟委托: 3-1' :[[''],[''],['抹胸小马甲+星星百褶裙，一起穿会F']],
 '联盟委托: 3-2' :[[''],[''],['']],
 '联盟委托: 3-3' :[[''],[''],['']],
@@ -1104,12 +1078,6 @@ function level(name, criteria) {
       bonusFilter.push(levelBonus[name][i]);
     }
   }
-  var additionalBonus = [];
-  if (additionalLevelInfo[name]) {
-    for (var i in additionalLevelInfo[name]) {
-      additionalBonus.push(additionalLevelInfo[name][i](criteria));
-    }
-  }
   var skills = [];
   if (addSkillsInfo[name]) {
     for (var i in addSkillsInfo[name]) {
@@ -1125,7 +1093,6 @@ function level(name, criteria) {
     weight: criteria,
     filter: filter,
     bonus: bonusFilter,
-    additionalBonus: additionalBonus,
 	skills: skills,
 	hint: hint
   }
