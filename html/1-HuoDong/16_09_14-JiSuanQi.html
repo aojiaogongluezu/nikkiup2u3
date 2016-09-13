@@ -103,7 +103,8 @@ function init(){
 	if(date_now.getHours()<5&&time_end-time_now>0){time_d+=1;}
 	setVal("remain_days", time_d);
 	for (i=0;i<level_cnt;i++){
-		setVal("remain_today"+i, 0);
+		if(date_now.getDate()==14) setVal("remain_today"+i, free_1day);
+		else setVal("remain_today"+i, 0);
 		setVal("each_gain"+i, default_gain[i]?default_gain[i]:default_gain[default_gain.length-1]);
 	}
 	setVal('current', 0);
