@@ -63,7 +63,7 @@ var win_gain=5;
 //输
 var lose_gain=3;
 //每关体力
-//var perstamina=0;
+var perstamina=4;
 //默认每关道具
 //var default_gain=[5,5,5,5,5];
 //==========参数设置完毕==========//
@@ -178,13 +178,14 @@ function calc(ind){
 		setVal('wrong_exp',Math.round(times*(1-pct_exp/100)));
 	}
 	
+	var stamina=times*perstamina;
 	var diff_times=times-to_get_times;
 	var to_buy=Math.max(0,Math.ceil(diff_times/once));
 	var to_pay=to_buy*price;
 	
 	var calcres='<table>'+tr(td('计算结果：'));
 	calcres+=tr(td('共需'+aim+'个'+item_name+'，扣除已有还需刷'+rem+'个'));
-	calcres+=tr(td('约需挑战'+times+'次（其中免费'+to_get_times+'次）'));
+	calcres+=tr(td('约需挑战'+times+'次（其中免费'+to_get_times+'次），消耗'+stamina+'体力'));
 	calcres+=tr(td('需购买'+to_buy+'次，花钻'+to_pay+'个'));
 	calcres+='</table>';
 	document.getElementById("calcres").innerHTML = calcres;
