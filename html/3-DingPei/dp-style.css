@@ -8,7 +8,7 @@ table.calcByAll tr td:nth-child(-n+3), table.propByAll tr td:nth-child(-n+2), ta
 table.calcSrc tr td:nth-child(4) {
   width:7%;
 }
-tr.top td, td.top {
+table.calcByAll tr.top td, table.propByAll tr.top td:nth-child(-n+2), td.top{
   color:red;
   background-color: rgba(255, 240, 250, 0.5);
 }
