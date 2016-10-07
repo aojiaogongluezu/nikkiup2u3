@@ -439,7 +439,7 @@ function propanal_byid(id){
 					else if($.inArray(clothes[id].type.type, repelCates[i])>0){
 						if (repelCates[i][0]&&countIfTag(repelCates[i][0],tagj)){
 							repelTags = true;
-							repelCateNames += (repelCateNames.length>0 ? '+' : '') + shortForm(repelCates[i][j]);
+							repelCateNames += (repelCateNames.length>0 ? '+' : '') + shortForm(repelCates[i][0]);
 						}
 						if (repelTags) {tagTxt+='(有'+repelCateNames+')'; rmTop=1;}
 					}
