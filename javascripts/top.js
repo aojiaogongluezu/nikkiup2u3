@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 	init_top();
 });
@@ -281,7 +280,8 @@ function propanal_byid(id){
 	//同属性排名
 	rank.sort(function(a,b){return b[0] - a[0]});
 	rankLow.sort(function(a,b){return b[0] - a[0]}); rankLow=rankLow.slice(0,showCnt-1);
-	var rankTxt=(rank.length+1);
+	var rankTxt='第'+(rank.length+1);
+	if (rankEq.length>1&&rank.length==0) rankTxt='并列'+rankTxt;
 	var rankTip='';
 	if (rank.length==0) {//除去错误连衣裙上下/手持顶配
 		var rmTop=0;
@@ -350,7 +350,8 @@ function propanal_byid(id){
 		for (var tagj in rankTag){
 			rankTag[tagj].sort(function(a,b){return b[0] - a[0]});
 			rankTagLow[tagj].sort(function(a,b){return b[0] - a[0]}); rankTagLow[tagj]=rankTagLow[tagj].slice(0,showCnt-1);
-			var rankTagTxt=(rankTag[tagj].length+1);
+			var rankTagTxt='第'+(rankTag[tagj].length+1);
+			if (rankTagEq[tagj].length>1&&rankTag[tagj].length==0) rankTagTxt='并列'+rankTagTxt;
 			var rankTagTip='';
 			if (rankTag[tagj].length==0) {//除去错误连衣裙上下/手持顶配
 				var rmTop=0;
@@ -600,12 +601,12 @@ function out_propanal_byid(id){
 	output+='<span class="normTip">';
 	//同属性排名
 	output+='同属性排名：<br>';
-	var rankTxt='－'+(withTag?'不计tag：':'')+(out_rank[0]==1&&out_rank[1]?'并列':'')+'第'+out_rank[0];
+	var rankTxt='－'+(withTag?'不计tag：':'')+out_rank[0];
 	output+=(out_rank[1] ? addTooltip(rankTxt,out_rank[1]) : rankTxt) +'<br>';
 	//同属性同tag排名
 	if (withTag){
 		for (var tagj in out_rankTag){
-			var rankTagTxt='－'+rmtagstr(tagj)+'：'+(out_rankTag[tagj][0]==1&&out_rankTag[tagj][1]?'并列':'')+'第'+out_rankTag[tagj][0];
+			var rankTagTxt='－'+rmtagstr(tagj)+'：'+out_rankTag[tagj][0];
 			output+=(out_rankTag[tagj][1] ? addTooltip(rankTagTxt,out_rankTag[tagj][1]) : rankTagTxt) +'<br>';
 		}
 	}
@@ -682,11 +683,11 @@ function propanal_byall(){
 			
 			//同属性排名
 			var cellRank='';
-			var rankTxt=(withTag?'不计tag：':'')+(out_rank[0]==1&&out_rank[1]?'并列':'')+'第'+out_rank[0];
+			var rankTxt=(withTag?'不计tag：':'')+out_rank[0];
 			cellRank+=(out_rank[1] ? addTooltip(rankTxt,out_rank[1]) : rankTxt) +'<br>';
 			if (withTag){
 				for (var tagj in out_rankTag){
-					var rankTagTxt=rmtagstr(tagj)+'：'+(out_rankTag[tagj][0]==1&&out_rankTag[tagj][1]?'并列':'')+'第'+out_rankTag[tagj][0];
+					var rankTagTxt=rmtagstr(tagj)+'：'+out_rankTag[tagj][0];
 					cellRank+=(out_rankTag[tagj][1] ? addTooltip(rankTagTxt,out_rankTag[tagj][1]) : rankTagTxt) +'<br>';
 				}
 			}
