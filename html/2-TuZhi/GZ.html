@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../../css/style.css" />
 <style>
 td {padding-left:0.5em; padding-right:0.5em;}
@@ -55,6 +55,7 @@ function genMaterial(output_id,chap){
 						var total=deps.substr(pos1+3,pos2-pos1-3);
 						
 						var container=[]; var rowspan=0;
+						var exInd=0;
 						for (var j=1;j<=deps1.length-2;j++){
 							var pos_end=(deps1[j].indexOf('[消耗')>-1 ? deps1[j].indexOf('[消耗') : deps1[j].length);
 							var pos_start=deps1[j].substr(0,pos_end).lastIndexOf(']')+1;
@@ -71,7 +72,11 @@ function genMaterial(output_id,chap){
 									container[clo_name+'|'+clo_type]=[parseInt(clo_num),indent,clo_pat]; 
 									rowspan++;
 								} else {container[clo_name+'|'+clo_type][0]+=parseInt(clo_num);}
-								
+							}
+							else if(clo_type=='织梦'){
+								container[clo_name+'|'+clo_type+'|'+exInd]=['',indent,clo_pat];
+								exInd++;
+								rowspan++;
 							}
 						}
 						var line=td(dlevel,'rowspan="'+rowspan+'"');
