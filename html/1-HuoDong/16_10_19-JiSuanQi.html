@@ -11,7 +11,9 @@
 </style>
 <script type="text/javascript" charset="UTF-8">
 //结束时间
-var time_end=new Date("5/26/2016 23:59:59 GMT+0800").getTime();
+var time_end=new Date("10/25/2016 23:59:59 GMT+0800").getTime();
+//开始时间
+var time_start=new Date("10/19/2016 23:59:59 GMT+0800").getTime();
 //部件类别
 var type=['发型','连衣裙','外套','袜子','鞋子','特殊·脸部','头饰','手饰·双','手持·右','发型','外套','上装','下装','鞋子','手持·左','头饰','手饰·双'];
 //部件名称
@@ -79,7 +81,7 @@ function init(){
 	var input='<table border="0">'+tr(td(''),'style="display:none"');
 	if(haveConsume){
 	input+=tr(td('已领消费档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');
-	input+=tr(td('預計消费档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
+	input+=tr(td('預算消费档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
 	}
 	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
 	input+=tr(td('剩余天数：')+td(inputBox('remain_days','calc()')));
@@ -97,7 +99,7 @@ function init(){
 	if(date_now.getHours()<5&&time_end-time_now>0){time_d+=1;}
 	setVal("remain_days", time_d);
 	setVal("remain_today", 0);
-	setVal('current', 5);
+	setVal('current', 0);
 	setVal('pct_exp', 100);
 	setVal('wrong_exp', 0);
 	setInterval(settime, 1000);
