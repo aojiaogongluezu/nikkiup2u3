@@ -23,11 +23,13 @@ var need=[28,65,32,26,28,22,23,23,26,33,38,38,42,30,36,28,28];
 //每套部件数量
 var setCnt=[9,8];
 //消费档位
-//var consume=[0,199,599,999,1499,1999];
+var consume=[0,199,599,999,1499,1999];
+//是否有消費送
+var haveConsume=1;
 //消费赠送
-//var consume_gain=[0,0,0,0,0,0];
+var consume_gain=[0,0,0,0,0,0];
 //道具名称
-var item_name='冰火之印';
+var item_name='以太之光';
 //关卡数量
 var level_cnt=1;
 //买一次花费钻石
@@ -75,10 +77,10 @@ function init(){
 	document.getElementById("table").innerHTML = table;
 	
 	var input='<table border="0">'+tr(td(''),'style="display:none"');
-	/*
+	if(haveConsume){
 	input+=tr(td('已领消费档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');
 	input+=tr(td('預計消费档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
-	*/
+	}
 	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
 	input+=tr(td('剩余天数：')+td(inputBox('remain_days','calc()')));
 	input+=tr(td('今天剩余次数：')+td(inputBox('remain_today','calc()')));
@@ -124,7 +126,7 @@ function calc(ind){
 	var remain_days=Math.max(0,getVal('remain_days'));
 	var remain_today=Math.max(0,getVal('remain_today'));
 	var current=Math.max(0,getVal('current'));
-	/*
+	if(haveConsume){
 	var already_consume=Math.max(0,getVal('already_consume'));
 	var plan_consume=Math.max(0,getVal('plan_consume'));
 	
@@ -133,7 +135,7 @@ function calc(ind){
 			current+=consume_gain[i];
 		}
 	}
-	*/
+	}
 	
 	for (i=0;i<need.length;i++){
 		if (document.getElementById('own'+i).checked){own[i]=1;}
@@ -177,8 +179,8 @@ function calc(ind){
 	*/
 }
 function loadSettings(){
-	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_concert")) {
-		var loadString=localStorage.getItem("nikki_concert");
+	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_interstella")) {
+		var loadString=localStorage.getItem("nikki_interstella");
 		
 		var own_str=getStoredStr(loadString, 'own').split(',');
 		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
@@ -194,7 +196,7 @@ function saveSettings(){
 	var saveString='own:['+own.join(',')+'];';
 	//own:[1,1,0,0,0];
 	if (typeof(Storage) !== "undefined") {
-		localStorage.setItem("nikki_concert", saveString);
+		localStorage.setItem("nikki_interstella", saveString);
 	}
 	document.getElementById('storage').innerHTML=saveString;
 }
@@ -240,11 +242,11 @@ function selectBox(id,onchange,valArr,textArr){
 </head>
 <body>
 <div class="myframe" >
-<p align="center" class="title1">活动·风暴战歌二选一计算器</p>
+<p align="center" class="title1">活动·星际二选一计算器</p>
 <hr class="mhr">
 <p class="normal">
-	<span class="title3">更新时间：</span>2016-5-20<br>
-	<span class="title3">更新人员：</span>Rean翎
+	<span class="title3">更新时间：</span>2016-10-19<br>
+	<span class="title3">更新人员：</span>Rean翎 九猫
 </p>
 <p align="center">
 距离活动结束还有<span id="showTime"></span><br>
