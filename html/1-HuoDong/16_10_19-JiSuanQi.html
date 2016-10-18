@@ -13,7 +13,7 @@
 //结束时间
 var time_end=new Date("10/25/2016 23:59:59 GMT+0800").getTime();
 //开始时间
-var time_start=new Date("10/19/2016 00:00:00 GMT+0800").getTime();
+var time_start=new Date("10/19/2016 5:00:00 GMT+0800").getTime();
 //部件类别
 var type=['发型','连衣裙','外套','袜子','鞋子','特殊·脸部','头饰','手饰·双','手持·右','发型','外套','上装','下装','鞋子','手持·左','头饰','手饰·双'];
 //部件名称
@@ -24,8 +24,8 @@ var set=['凛冬战地','炽夏疆场'];
 var need=[28,65,32,26,28,22,23,23,26,33,38,38,42,30,36,28,28];
 //每套部件数量
 var setCnt=[9,8];
-//是否有消費送
-var haveConsume=1;
+//是否有消费送
+var haveConsume=0;
 //消费档位
 var consume=[0,199,599,999,1499,1999];
 //消费赠送
@@ -81,7 +81,7 @@ function init(){
 	var input='<table border="0">'+tr(td(''),'style="display:none"');
 	if(haveConsume){
 	input+=tr(td('已领消费档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');
-	input+=tr(td('預算消费档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
+	input+=tr(td('预算消费档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
 	}
 	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
 	input+=tr(td('剩余天数：')+td(inputBox('remain_days','calc()')));
