@@ -13,7 +13,7 @@
 //结束时间
 var time_end=new Date("10/25/2016 23:59:59 GMT+0800").getTime();
 //开始时间
-var time_start=new Date("10/19/2016 23:59:59 GMT+0800").getTime();
+var time_start=new Date("10/19/2016 00:00:00 GMT+0800").getTime();
 //部件类别
 var type=['发型','连衣裙','外套','袜子','鞋子','特殊·脸部','头饰','手饰·双','手持·右','发型','外套','上装','下装','鞋子','手持·左','头饰','手饰·双'];
 //部件名称
@@ -98,7 +98,8 @@ function init(){
 	var time_d = Math.max(0,Math.floor((time_end-time_now)/1000/60/60/24));
 	if(date_now.getHours()<5&&time_end-time_now>0){time_d+=1;}
 	setVal("remain_days", time_d);
-	setVal("remain_today", 0);
+	if(date_now.getDate()==new Date(time_start).getDate()) setVal("remain_today", free_1day*level_cnt);
+	else setVal("remain_today", 0);
 	setVal('current', 0);
 	setVal('pct_exp', 100);
 	setVal('wrong_exp', 0);
