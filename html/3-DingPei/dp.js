@@ -37,9 +37,9 @@ function chgMode(mode){
 }
 window.onload = function(){
 	var radio_text='<form action="">';
-	radio_text+='<input type="radio" name="limit" id="limitn" value="n" checked onclick="chgMode(this.value)"><label for="limitn">标准权重</label>';
-	radio_text+='<input type="radio" name="limit" id="limitl" value="l" onclick="chgMode(this.value)"><label for="limitl">极限权重</label>';
-	if(document.getElementsByClassName('prop').length>0) radio_text+='<input type="radio" name="limit" id="limitp" value="p" onclick="chgMode(this.value)"><label for="limitp">属性分析</label>';
+	radio_text+='<label><input type="radio" name="limit" id="limitn" value="n" checked onclick="chgMode(this.value)">标准权重</label>';
+	radio_text+='<label><input type="radio" name="limit" id="limitl" value="l" onclick="chgMode(this.value)">极限权重</label>';
+	if(document.getElementsByClassName('prop').length>0) radio_text+='<label><input type="radio" name="limit" id="limitp" value="p" onclick="chgMode(this.value)">属性分析</label>';
 	radio_text+='<br></form>';
 	if(document.getElementById("radio")) {document.getElementById("radio").innerHTML = radio_text;}
 	
