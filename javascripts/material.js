@@ -514,7 +514,7 @@ function genFactor(id,showConstructInd,showConsumeInd){
 	}else if(clothes[id].source.indexOf('重构')>-1){ //if construct show formula
 		cell+=' = ';
 		for (var con in construct) {
-			if (construct[con][0]==clothes[id].type.mainType && construct[con][1]==clothes[id].name){
+			if (clothesSet[construct[con][0]][construct[con][1]]==clothes[id]){
 				cell+=construct[con][2]+'x'+construct[con][3]+' ';
 			}
 		}
@@ -712,7 +712,7 @@ function genBasicMaterial(setInd,id,showConstructInd,showConsumeInd){
 			}();
 			for (var i in clothes){ if((!shownFactor[i])&&reqCnt[i]&&(!parentInd[i])&&clothes[i].source.indexOf(src[s])>-1){
 				for (var con in construct) {
-					if (construct[con][0]==clothes[i].type.mainType && construct[con][1]==clothes[i].name){
+					if (clothesSet[construct[con][0]][construct[con][1]]==clothes[i]){
 						shownFactor[i]=1;
 						for (var m in constructMaterialName){ if($.trim(construct[con][2])==constructMaterialName[m]) {
 							constructMaterial[m]+=(construct[con][3]-1)*reqCnt[i];

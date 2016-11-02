@@ -1376,11 +1376,11 @@ function getMerc(id){
 		}
 	}
 	for (var m in construct){
-		if(clothes[id].type.mainType==construct[m][0]&&clothes[id].name==construct[m][1]){
+		if(clothesSet[construct[m][0]][construct[m][1]]==clothes[id]){
 			var constructMaterial=[];
 			for (var i in constructMaterialName) {
 				for (var mm in construct){
-					if(clothes[id].type.mainType==construct[mm][0]&&clothes[id].name==construct[mm][1]&&constructMaterialName[i]==construct[mm][2]) {
+					if(clothesSet[construct[mm][0]][construct[mm][1]]==clothes[id]&&constructMaterialName[i]==construct[mm][2]) {
 						constructMaterial.push(construct[mm][3]);
 					}
 				}
