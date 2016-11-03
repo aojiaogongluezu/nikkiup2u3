@@ -44,6 +44,10 @@ function chgScope(){
 				chapVal.push(i);
 				chapText.push('第'+i+'章');
 			}
+			if(maxc>0) {
+				chapVal.push(-1);
+				chapText.push('尚缺材料');
+			}
 			chooseLevel+=selectBox("level_select","showLevelDropInfo()",chapVal,chapText);
 			chooseLevel+=ahref('&#x1f50d;','showLevelDropInfo()','search');
 			$("#chooseLevel").html(chooseLevel);
@@ -414,23 +418,54 @@ function showLevelDropInfo(){
 	var degree=$("#degree_level").val();
 	var levelDropInfo='';
 	var levelDropNote='';
-	if (j!=0){//chapter chosen
+	if (j==-1){//material to get
+		levelDropInfo+=table()+tr(tab('名称')+tab('关卡')+tab('材料需求统计'),'style="font-weight:bold;"');
+		for(var c=1;c<=maxc;c++){ //by chapter
+			for (l=1;l<30;l++){ //by levels
+				var l2=l;
+				if(l>20){l2="支"+l%10;}
+				var curLevel=c+'-'+l2+degree;
+				for (var i in clothes){
+					if (matchClothesLevels(i,curLevel)){//if source matches chapter&level
+						var currDeps=clothes[i].getDeps('   ', 1);
+						if (currDeps&&currDeps.indexOf('总计需 1 件')<0){
+							var depsResult=addhighlightdeps(i);
+							var depsSplit=depsResult[0].split('\n');
+							var lack=[];
+							for (var d in depsSplit){
+								if(depsSplit[d].indexOf('总计需')>0||depsSplit[d].indexOf('[消耗')>0) lack.push(depsSplit[d]);
+							}
+							var item=depsResult[1]?depsResult[1]:clothes[i].name;
+							var line=tab(ahref(item,'genFactor('+i+')','inherit'));
+								line+=tab(curLevel);
+								line+=tab(lack.join('\n'),'class="level_drop_cnt"');
+							levelDropInfo+=tr(line);
+						}
+					}
+				}
+				
+			}
+		}
+		levelDropInfo+=table(1);
+		for (var h in highlight){
+			if(h>0){levelDropNote+='&ensp;/&ensp;';}
+			levelDropNote+=span(highlight[h]+'材料',highlight_style[h]);
+		}
+	}
+	else if (j!=0){//chapter chosen
 		levelDropInfo+=table()+tr(tab('名称')+tab('关卡')+tab('材料需求统计'),'style="font-weight:bold;"');
 		for (l=1;l<30;l++){//sort by levels
 			var l2=l;
 			if(l>20){l2="支"+l%10;}
-			
+			var curLevel=j+'-'+l2+degree;
 			for (var i in clothes){
-				var src_sp=clothes[i].source.split("/");
-				for (k=0;k<src_sp.length;k++){
-					if(src_sp[k].indexOf(j+'-'+l2+degree)==0){//if source matches chapter&level
-						var depsResult=addhighlightdeps(i);
-						var item=depsResult[1]?depsResult[1]:clothes[i].name;
-						var line=tab(ahref(item,'genFactor('+i+')','inherit'));
-							line+=tab(src_sp[k]);
-							line+=tab(depsResult[0],'class="level_drop_cnt"');
-						levelDropInfo+=tr(line);
-					}
+				if (matchClothesLevels(i,curLevel)){//if source matches chapter&level
+					var depsResult=addhighlightdeps(i);
+					var item=depsResult[1]?depsResult[1]:clothes[i].name;
+					var line=tab(ahref(item,'genFactor('+i+')','inherit'));
+						line+=tab(curLevel);
+						line+=tab(depsResult[0],'class="level_drop_cnt"');
+					levelDropInfo+=tr(line);
 				}
 			}
 		}
@@ -442,6 +477,16 @@ function showLevelDropInfo(){
 	}
 	$("#levelDropInfo").html(levelDropInfo);
 	$("#levelDropNote").html(levelDropNote);
+}
+
+function matchClothesLevels(i,level){
+	var src_sp=clothes[i].source.split("/");
+	for (k=0;k<src_sp.length;k++){
+		if(src_sp[k]==level){
+			return true;
+		}
+	}
+	return false;
 }
 
 function genFactor_main(){
