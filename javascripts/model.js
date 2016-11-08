@@ -186,8 +186,11 @@ Clothes = function(csv) {
         }
       }
 
-      this.tmpScore = Math.round(this.tmpScore);   
-	  this.sumScore = this.tmpScore + this.bonusScore;
+      this.tmpScore = Math.round(this.tmpScore);
+      this.sumScore = this.tmpScore + this.bonusScore;
+      if(manualScoring && manualScoring[filters.levelName] && manualScoring[filters.levelName][this.type.mainType+this.id]){
+        if(!filters.highscore1&&!filters.highscore2&&!filters.balance) this.sumScore = manualScoring[filters.levelName][this.type.mainType+this.id];
+      }
     }
   };
 }
