@@ -68,11 +68,15 @@ function toggleDuoshuoComments(ind){
 //链接到框架
 function frametarget(){
     var location_href=window.location.href;
-    var location_href_pos=location_href.indexOf('index.html?');
-    var conv_href=location_href.substr(location_href_pos+'index.html?'.length);
-    if (location_href_pos>0 && conv_href.indexOf('.html')>0 && conv_href.indexOf('//')<0) {
-        $('iframe#framemain').attr('src',conv_href);
-    }
+	var jump_query=['index.html?','/?'];
+	for (var i in jump_query){
+		var location_href_pos=location_href.indexOf(jump_query[i]);
+		var conv_href=location_href.substr(location_href_pos+jump_query[i].length);
+		if (location_href_pos>0 && conv_href.indexOf('.html')>0 && conv_href.indexOf('//')<0){
+			$('iframe#framemain').attr('src',conv_href);
+			break;
+		}
+	}
 }
 
 window.onload = function(){ 
