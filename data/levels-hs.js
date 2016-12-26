@@ -128,7 +128,7 @@ var tasksAdd={
 '关卡: 6-支3':['simple','pure'],
 '关卡: 7-1':['active','cute'],
 '关卡: 7-2':['active','simple'],
-'关卡: 7-3':['cute','pure'],
+'关卡: 7-3':['pure','cute'],
 '关卡: 7-4':['cute','active'],
 '关卡: 7-5':['simple','active'],
 '关卡: 7-6':['simple','active'],
