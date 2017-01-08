@@ -102,7 +102,7 @@ var tasksAdd={
 '关卡: 5-3':['active','simple'],
 '关卡: 5-4':['active','pure'],
 '关卡: 5-5':['active','simple'],
-'关卡: 5-6':['active','simple'],
+'关卡: 5-6':['pure','simple'],
 '关卡: 5-7':['pure','active'],
 '关卡: 5-8':['active','cool'],
 '关卡: 5-9':['active','simple'],
