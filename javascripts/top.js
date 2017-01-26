@@ -23,6 +23,8 @@ var currentSetList=[];
 var setList=[];
 var storeTop=[];
 var limitMode=0;
+var manflist='';
+var manfresult={};
 var replaceSrc=['店·钻石'];
 
 function searchById(){
@@ -1171,6 +1173,7 @@ function calctop_bytheme(id,them){
 function getTopCloByCate(filters,rescnt,type){
 	var result = [];
 	if ($.inArray(type, skipCategory)>=0) return result;
+	
 	for (var i in clothes) {
 		if (clothes[i].type.type!=type) continue;//skip other categories
 		clothes[i].calc(filters);
@@ -1222,6 +1225,20 @@ function getTopCloByCate(filters,rescnt,type){
 			}
 		}
 	}
+	
+	//manual flist handling
+	if (manflist) {
+		var manflist_curr=getTextContent(manflist,theme_name).split(',');
+		var result_new = [];
+		for (var i in result){
+			if (jQuery.inArray(result[i][0].longid, manflist_curr)>=0){
+				if (!manfresult[result[i][0].name]) manfresult[result[i][0].name] = {};
+				manfresult[result[i][0].name][theme_name] = 'F';
+			}else result_new.push(result[i]);
+		}
+		return result_new;
+	}
+	
 	return result;
 }
 
@@ -1586,4 +1603,13 @@ function setFilters(level) {
 			bonusToTag(parseInt(i) + 1, level.bonus[i]);
 		}
 	}
+}
+
+function getTextContent(txt,key){
+	var key1 = "'"+key+"'";
+	if (txt.indexOf(key1) >= 0) {
+		var tmp1 = txt.split(key1)[1]; 
+		if (tmp1.indexOf('[') >= 0) return tmp1.split('[')[1].split(']')[0].replace(/ /g,'');
+	}
+	return '';
 }
