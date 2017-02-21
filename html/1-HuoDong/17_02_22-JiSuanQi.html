@@ -11,9 +11,9 @@ td {text-align:left;}
 </style>
 <script type="text/javascript" charset="UTF-8">
 //结束时间
-var time_end=new Date("2/22/2016 23:59:59 GMT+0800").getTime();
+var time_end=new Date("2/22/2017 5:00:00 GMT+0800").getTime();
 //开始时间
-var time_start=new Date("2/28/2016 5:00:00 GMT+0800").getTime();
+var time_start=new Date("2/28/2017 23:59:59 GMT+0800").getTime();
 //部件类别
 var type=['发型','外套','上装','下装','鞋子','头饰·发饰','头饰·耳朵','手饰·双','妆容','发型','连衣裙','鞋子','头饰·发饰','耳饰','颈饰·项链','手饰·双','妆容'];
 //部件名称
@@ -185,8 +185,8 @@ function calc(ind){
 	*/
 }
 function loadSettings(){
-	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_interstella")) {
-		var loadString=localStorage.getItem("nikki_interstella");
+	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_crescent")) {
+		var loadString=localStorage.getItem("nikki_crescent");
 		
 		var own_str=getStoredStr(loadString, 'own').split(',');
 		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
@@ -202,7 +202,7 @@ function saveSettings(){
 	var saveString='own:['+own.join(',')+'];';
 	//own:[1,1,0,0,0];
 	if (typeof(Storage) !== "undefined") {
-		localStorage.setItem("nikki_interstella", saveString);
+		localStorage.setItem("nikki_crescent", saveString);
 	}
 	document.getElementById('storage').innerHTML=saveString;
 }
