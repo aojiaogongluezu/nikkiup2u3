@@ -72,6 +72,8 @@ var tasksRaw = {
 
 //活动关卡，总在最前
 var extraRaw = {
+'奥兰多-中性风': [1.13, -2, -2.4, 0.53, -0.47],
+'奥兰多-晚礼服': [-1.93, -1.53, -2, -1.07, 0.6],
 };
 
 // all data are presented in order "simple", "cute", "active", "pure", "cool"
@@ -446,6 +448,8 @@ function addBonusInfo(base, weight, tag) {
  *  - Special rules
  */
  var levelBonus = {
+'奥兰多-中性风': [addBonusInfo('A', 1, "中性风")],
+'奥兰多-晚礼服': [addBonusInfo('B', 1, "晚礼服")],
 '清秀佳人':[addBonusInfo('F',117.7,'中式现代')],
 '绝色无双':[addBonusInfo('F',117.7,'中式现代')],
 '联盟委托: 1-1':[addBonusInfo('F',170.7,'居家服'),addBonusInfo('F',170.7,'睡衣')],
@@ -632,7 +636,6 @@ function addBonusInfo(base, weight, tag) {
 };
 
 var addSkillsInfo = {
-
 '1-1': [null,['微笑','挑剔','沉睡','灰姑娘']],
 '1-2': [null,['微笑','挑剔','飞吻','圣诞']],
 '1-3': [null,['微笑','挑剔','真爱','圣诞']],
@@ -898,6 +901,8 @@ var addSkillsInfo = {
 '联盟委托: 7-5': [null,['微笑','挑剔','沉睡','圣诞']],
 '联盟委托: 7-6': [null,['微笑','挑剔','沉睡','灰姑娘']],
 '联盟委托: 7-7': [null,['微笑','挑剔','沉睡','圣诞']],
+'奥兰多-中性风': [null,null,['挑剔','沉睡']],
+'奥兰多-晚礼服': [null,null,['微笑','飞吻']],
 };
 
 var addHintInfo = {
