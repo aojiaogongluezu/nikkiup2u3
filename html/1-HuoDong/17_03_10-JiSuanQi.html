@@ -15,15 +15,21 @@ var time_end=new Date("3/16/2017 23:59:59 GMT+0800").getTime();
 //开始时间
 var time_start=new Date("3/10/2017 5:00:00 GMT+0800").getTime();
 //部件类别
-var type=['发型','连衣裙','鞋子','头饰·发饰','手饰·双','颈饰·项链','特殊·地面','妆容','发型','连衣裙','鞋子','特殊前景','头饰·发饰','手饰·双','颈饰·项链','头饰·发卡'];
+var type=['发型','连衣裙','鞋子','头饰·发饰','手饰·双','颈饰·项链','特殊·地面','妆容','发型','连衣裙','鞋子','特殊前景','头饰·发饰','手饰·双','颈饰·项链','头饰·发卡',
+'发型','连衣裙','鞋子','特殊·颈部','颈饰·项链','手饰·双','特殊·背景','妆容',
+'发型','连衣裙','鞋子','特殊·颈部','手饰·双','颈饰·项链','特殊·前景'];
 //部件名称
-var cname=['草竖琴','纯白永恒','无梦之愿','海颂枝','晨雾漫舞','梦境低语','风露阶梯','雾中迷梦','懵懂年华','憧憬心语','情愫微羽','誓言蝶舞','心意钻冕','勇气珠链','闪耀轻纱','豆蔻情结'];
+var cname=['草竖琴','纯白永恒','无梦之愿','海颂枝','晨雾漫舞','梦境低语','风露阶梯','雾中迷梦','懵懂年华','憧憬心语','情愫微羽','誓言蝶舞','心意钻冕','勇气珠链','闪耀轻纱','豆蔻情结',
+'十年之约','如约而至','踏花漫行','致凯恩','蔷薇梦语','邂逅之爱','不期而遇','温暖恋梦',
+'一见钟情','缘定今生','时间锁爱','轻纱蔓舞','相濡以沫','思恋花誓','白花紫藤'];
 //套装名称
-var set=['梦中的婚礼','花雨誓约'];
+var set=['梦中的婚礼','花雨誓约','明日如诗','缘定今生'];
 //单价
-var need=[118,198,110,105,86,94,150,134,103,152,103,111,88,74,88,96];
+var need=[118,198,110,105,86,94,150,134,103,152,103,111,88,74,88,96,
+115,180,100,90,90,90,120,120,
+110,220,126,88,88,88,185];
 //每套部件数量
-var setCnt=[8,8];
+var setCnt=[8,8,8,7];
 //是否有消费or充值送
 var haveConsume=1;
 //消费or充值档位
@@ -66,10 +72,10 @@ function init(){
 	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="4"'));
 	var pos=0;
 	for (var s in set){
-		var line=td('<input type="checkbox" id="all'+s+'" onclick=checkall('+s+') >'+set[s]);
+		var line=td('<label><input type="checkbox" id="all'+s+'" onclick=checkall('+s+') >'+set[s]+'</label>');
 		var cell1=''; var cell2=''; var cell3='';
 		for (i=pos;i<pos+setCnt[s];i++){
-			cell2+='<input type="checkbox" id="own'+i+'" onclick=calc() >'+cname[i]+'<br>';
+			cell2+='<label><input type="checkbox" id="own'+i+'" onclick=calc() >'+cname[i]+'</label><br>';
 			cell1+=type[i]+'<br>';
 cell3+='&emsp;'+need[i]+'<br>';
 		}
@@ -108,6 +114,10 @@ line+=td(cell1,'style="border-right-width:0"')+td(cell2,'style="border-left-widt
 	setVal('wrong_exp', 0);
 	setInterval(settime, 1000);
 	calc();
+	
+	//disable old ones calculation - wedding4 only
+	document.getElementById("all2").click();
+	document.getElementById("all3").click();
 }
 function checkall(n){
 	var pos=0;
@@ -257,8 +267,8 @@ function selectBox(id,onchange,valArr,textArr){
 <p class="normal">
 	<span class="title3">更新时间：</span>2016-3-10<br>
 	<span class="title3">更新人员：</span>Rean 陆道甍<br>
-	<span class="title3">以下计算未考虑联邦商贸！体力不够、且胜率很低的新玩家可以考虑从联邦商贸直接买戒指。<br>
-	<span class="title3">联邦商贸内其它礼包也按其附赠的VIP经验数量计入累计充值活动。<br>
+	<span class="title3">注意：</span>以下计算未考虑联邦商贸！体力不够、且胜率很低的新玩家可以考虑从联邦商贸直接买戒指。<br>
+	联邦商贸内其它礼包也按其附赠的VIP经验数量计入累计充值活动。<br>
 </p>
 <p align="center">
 距离活动结束还有<span id="showTime"></span><br>
