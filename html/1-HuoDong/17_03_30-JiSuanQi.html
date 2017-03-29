@@ -4,9 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="../../css/style.css">
-<title>Miracle Nikki - 小丑与纸牌谜语</title>
+<title>Miracle Nikki - 愚人节2017</title>
 <style>
-	.remark{font-size:80%;}
+.remark{font-size:80%;}
 td {text-align:left;}
 </style>
 <script type="text/javascript" charset="UTF-8">
@@ -15,31 +15,20 @@ var time_end=new Date("4/5/2017 23:59:59 GMT+0800").getTime();
 //开始时间
 var time_start=new Date("3/30/2016 5:00:00 GMT+0800").getTime();
 //部件类别
-var type=[
-
-
-'发型','上装','下装','鞋子','特殊·前景','头饰·发饰','腰饰','特殊·地面',
-'发型','连衣裙','外套','鞋子','头饰·发饰','耳饰','手饰·右','手持·左'
-];
+var type=['发型','上装','下装','袜子','鞋子','特殊·前景','头饰·发饰','特殊·面饰','颈饰·围巾','手持·右','特殊·后景',
+'发型','连衣裙','袜子','鞋子','特殊·前景','头饰·发饰','颈饰·围巾','手饰·双','手持·右','妆容'];
 //部件名称
-var cname=[
-
-
-'白棋士兵','梦之风笛手','风笛手短裙','风笛手长靴','胡桃夹子','勇者前行','沉默风笛','缤纷庆典',
-'白棋皇后','黑白谜局','夜梦无声','星棋奥秘','夜梦皇冠','澄之星','夜梦宝石','紫晶权杖'
-];
+var cname=['粉色双子星','小丑的恶作剧','梦想棋兵','彩夜星光','幻想节拍','糖吉熊','胜利之星','彩面小丑','星光彩领','魔力纸牌','不思议游戏',
+'小丑克莱儿','夜的咏叹调','愚人梦呓','梦途微光','小猫之夜','虚妄之羽','悲恸序曲','孤独之翼','猫咪指挥','深渊咏叹'];
 //套装名称
-
-var set=['梦之吹笛手','白棋皇后'];
+var set=['小丑与纸牌谜语','夜的咏叹调'];
 //单价
 var need=[
-
-
-85,112,110,108,103,70,100,73,
-138,186,142,107,120,109,100,113
+0,0,112,110,108,103,70,100,73,0,
+0,0,0,138,186,142,107,120,109,100,113
 ];
 //每套部件数量
-var setCnt=[8,8];
+var setCnt=[10,11];
 //是否有消费送
 var haveConsume=0;
 //消费档位
@@ -47,7 +36,7 @@ var consume=[0,99,399,899,1599,2499];
 //消费赠送(每档)
 var consume_gain=[0,0,0,0,0,0,0,0];
 //道具名称
-var item_name='白棋之证';
+var item_name='魔力纸牌';
 //关卡数量
 var level_cnt=5;
 //买一次花费钻石
@@ -59,7 +48,7 @@ var free_1day=3;
 //默认每关道具
 var default_gain=[5,5,5,5,5];
 //可刷起始关(音乐会专用?)
-var reset_level=1;
+var reset_level=3;
 //==========参数设置完毕==========//
 var own=[];
 
@@ -69,7 +58,6 @@ window.onload = function(){
 
 function init(){
 	if(need[0]==0) document.getElementById("notice").innerHTML = '<br>尚未更新，请勿使用！';
-	
 	var table='<table border="1">';
 	table+=tr(td('套装')+td('部位')+td('名称')+td('所需'));
 	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="4"'));
@@ -203,8 +191,8 @@ function calc(){
 	}*/
 }
 function loadSettings(){
-	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_chess")) {
-		var loadString=localStorage.getItem("nikki_chess");
+	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_fool2017")) {
+		var loadString=localStorage.getItem("nikki_fool2017");
 		
 		var own_str=getStoredStr(loadString, 'own').split(',');
 		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
@@ -225,7 +213,7 @@ function saveSettings(){
 	var saveString='own:['+own.join(',')+'];each_gain:['+each_gain.join(',')+'];';
 	//own:[1,1,0,0,0];each_gain:[3,3,5,5,5];
 	if (typeof(Storage) !== "undefined") {
-		localStorage.setItem("nikki_chess", saveString);
+		localStorage.setItem("nikki_fool2017", saveString);
 	}
 	document.getElementById('storage').innerHTML=saveString;
 }
@@ -272,8 +260,7 @@ function selectBox(id,onchange,valArr,textArr){
 <body>
 <div class="myframe" >
 <p align="center" class="title1">
-
-活动·小丑与纸牌谜语计算器
+活动·愚人节2017计算器
 </p>
 <hr class="mhr">
 <p class="normal">
