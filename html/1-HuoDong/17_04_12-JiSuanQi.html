@@ -204,7 +204,7 @@ function loadSettings(){
 		for (i=0;i<level_cnt;i++){setVal("each_gain"+i,each_gain[i]);}
 		
 		var radio_c=getStoredStr(loadString, 'radio');
-		document.getElementById('radio'+radio_c).checked = true;
+		if(document.getElementById('radio'+radio_c)) document.getElementById('radio'+radio_c).checked = true;
 		
 		calc();
 	}
@@ -216,6 +216,7 @@ function getStoredStr(string, id){
 function saveSettings(){
 	var each_gain=[];
 	for (i=0;i<level_cnt;i++){each_gain.push(getVal("each_gain"+i));}
+	var radio_c='';
 	for (var s in setCnt){if(document.getElementById('radio'+s).checked){radio_c=s; break;}}
 	var saveString='own:['+own.join(',')+'];each_gain:['+each_gain.join(',')+'];radio:['+radio_c+'];';
 	//own:[1,1,0,0,0,...];each_gain:[3,3,5,5,5];radio:[1];
