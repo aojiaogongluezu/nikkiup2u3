@@ -203,6 +203,9 @@ function loadSettings(){
 		var each_gain=getStoredStr(loadString, 'each_gain').split(',');
 		for (i=0;i<level_cnt;i++){setVal("each_gain"+i,each_gain[i]);}
 		
+		var radio_c=getStoredStr(loadString, 'radio');
+		document.getElementById('radio'+radio_c).checked = true;
+		
 		calc();
 	}
 }
@@ -213,8 +216,9 @@ function getStoredStr(string, id){
 function saveSettings(){
 	var each_gain=[];
 	for (i=0;i<level_cnt;i++){each_gain.push(getVal("each_gain"+i));}
-	var saveString='own:['+own.join(',')+'];each_gain:['+each_gain.join(',')+'];';
-	//own:[1,1,0,0,0];each_gain:[3,3,5,5,5];
+	for (var s in setCnt){if(document.getElementById('radio'+s).checked){radio_c=s; break;}}
+	var saveString='own:['+own.join(',')+'];each_gain:['+each_gain.join(',')+'];radio:['+radio_c+'];';
+	//own:[1,1,0,0,0,...];each_gain:[3,3,5,5,5];radio:[1];
 	if (typeof(Storage) !== "undefined") {
 		localStorage.setItem("nikki_wind1704", saveString);
 	}
