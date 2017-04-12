@@ -1,4 +1,4 @@
-﻿function noNaN( n ) { return isNaN( n ) ? 0 : n; }
+function noNaN( n ) { return isNaN( n ) ? 0 : n; }
 function calc1(){
 	//n = now, t = target
 	var ty=noNaN(parseInt(document.getElementById('ty').value));
@@ -153,7 +153,7 @@ window.onload = function(){
 	document.getElementById("tm").value=m2+1;
 	document.getElementById("ty").value=y2;
 	document.getElementById("gain2").value=53;
-	document.getElementById("gain3").value=13;
+	document.getElementById("gain3").value=15;
 	document.getElementById("gain4").value=60;
 	document.getElementById("gain5").value=50;
 	document.getElementById("gain6").value=25;
