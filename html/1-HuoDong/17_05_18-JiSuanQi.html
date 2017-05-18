@@ -110,7 +110,10 @@ function init(){
 		else setVal("remain_today"+i, 0);
 		setVal("each_gain"+i, default_gain[i]?default_gain[i]:default_gain[default_gain.length-1]);
 	}
-	setVal('current', 0);
+	//setVal('current', 0);
+	//init 5 keys
+		if(date_now.getDate()==new Date(time_start).getDate()) setVal('current', 5);
+		else setVal('current', 0);
 	setInterval(settime, 1000);
 	calc();
 }
