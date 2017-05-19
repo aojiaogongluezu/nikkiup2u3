@@ -1,4 +1,4 @@
-﻿function noNaN( n ) { return isNaN( n ) ? 0 : n; }
+function noNaN( n ) { return isNaN( n ) ? 0 : n; }
 function twoDigit(number) {
 	var twodigit = number >= 10 ? number : "0"+number.toString();
 	return twodigit;
