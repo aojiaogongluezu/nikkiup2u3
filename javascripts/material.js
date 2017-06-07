@@ -6,9 +6,10 @@ $(document).ready(function () {
 	show_inv();
 });
 
-var highlight=['星之海','韶颜倾城','格莱斯'];
-var highlight_style=['xzh','syqc','gls'];
-var src=['公','少','店·金币,店·钻石,店','设计图','重构','迷,幻,飘渺,昼夜,云禅,流光庭园','兑,联盟·小铺,联盟·工坊','']; //note:'重构'&'联盟·小铺' are hardcoded in function
+var highlight=['星之海','韶颜倾城','格莱斯','冰风战歌','白樱恋歌'];
+var highlight_style=['xzh','syqc','gls','bfzg','bylg'];
+
+var src=['公','少','店·金币,店·钻石,店','设计图','重构','抽·,礼盒·','兑·,联盟·','']; //note:'重构'&'联盟·小铺' are hardcoded in function
 var src_desc=['公主级掉落','少女级掉落','商店购买','设计图','元素重构','谜之屋','兑换','其它']; //note:'谜之屋','兑换' is hardcoded in function
 var maxc=1;
 var reqCnt=[];
@@ -20,6 +21,29 @@ var convertlist=[];
 var convertlistCnt=[];
 var allSetInCate=[];
 var cartCont=[];
+
+var highlight_parts = function(){
+	var ret = {};
+	var highlight_id = {};
+	for (var i in highlight){
+		var setName = highlight[i];
+		ret[setName] = [];
+		highlight_id[setName] = [];
+		for (var c in clothes){
+			if (clothes[c].set == setName) {
+				ret[setName].push(clothes[c].name);
+				highlight_id[setName].push(clothes[c].type.mainType+clothes[c].id);
+			}
+		}
+		for (var c in clothes){//search for dye once only
+			if (clothes[c].source.indexOf('定')==0){
+				var cl = clothes[c].type.mainType+clothes[c].source.replace('定','');
+				if ($.inArray(cl,highlight_id[setName])>=0) ret[setName].push(clothes[c].name);
+			}
+		}
+	}
+	return ret;
+}();
 
 function show_scope(){
 	$("#chooseSub2").html('');
@@ -396,21 +420,34 @@ function addhighlightdeps(i){
 	var deps1=clothes[i].getDeps('   ', 1);
 	var deps=add_genFac(deps1,1);
 	var item='';
-						
+	
 	for (var h in highlight){
-		if(deps1.indexOf(highlight[h])>-1){
+		if(getLastIndexHL(deps1,highlight[h])>-1){
 			var style=highlight_style[h];
-			var ind=deps.lastIndexOf(highlight[h]);
+			var ind=getLastIndexHL(deps,highlight[h]);			
 			while(ind>-1){//in case it appears 2 times like 5-10
 				var HRow_end=deps.indexOf('\n',ind)>-1 ? deps.indexOf('\n',ind) : deps.length;
 				var HRow_start=deps.substr(0,ind).lastIndexOf('\n   [')+1;
 				deps=deps.substr(0,HRow_start)+span(deps.substr(HRow_start,HRow_end-HRow_start),style)+deps.substr(HRow_end);
-				ind=deps.substr(0,HRow_start).lastIndexOf(highlight[h]);
+				ind=getLastIndexHL(deps.substr(0,HRow_start),highlight[h]);
 			}
 			item+=span(clothes[i].name,style)+'<br/>';
 		}
 	}
 	return [deps,item];
+}
+
+function getLastIndexHL(txt,setName){
+	var max_index = -1;
+	//var max_name = '';
+	for (var c in highlight_parts[setName]){
+		var name = highlight_parts[setName][c];
+		if(txt.lastIndexOf(name) > max_index) {
+			max_index = txt.lastIndexOf(name);
+			//max_name = name;
+		}
+	}
+	return max_index;
 }
 
 function showLevelDropInfo(){
