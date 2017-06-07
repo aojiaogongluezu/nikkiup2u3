@@ -32,9 +32,8 @@ $(function(){
 function gotop(){ 
         window.scrollTo(0,0); 
     } 
-</script>
 
-<script>
+//百度统计
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -42,10 +41,8 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>
 
-<!--评论框-->
-<script type="text/javascript">
+//评论框
 	var refer = "aojiaogongluezu.github.io/nikkiup2u3/";
 	   (function(d, s) {
 		   var j, e = d.getElementsByTagName(s)[0];
@@ -55,26 +52,6 @@ var _hmt = _hmt || [];
 		   j.async = true;
 		   e.parentNode.insertBefore(j, e);
 	   })(document, 'script');
-</script>
-<script src="http://static.duoshuo.com/embed.js"></script>
-<script>
-var duoshuoQuery = {short_name:"aojiaogongluezu"};
-function toggleDuoshuoComments(ind){
-    container='#comment-box';
-    if(ind){
-        $('.ds-comments').html('');
-        $('#guestbook_href').html('<a href="javascript:void(0);" onclick="toggleDuoshuoComments();">展开评论</a>');
-    }else{
-        $(container).html('');
-        $('#guestbook_href').html('<a href="javascript:void(0);" onclick="toggleDuoshuoComments(1);">收起评论</a>');
-        var el = document.createElement('div');
-        el.setAttribute('data-thread-key', 'aojiaogongluezu_qjnn');
-        el.setAttribute('data-url', 'http://aojiaogongluezu.github.io/nikkiup2u3/');
-        el.setAttribute('data-title', "奇迹暖暖傲娇攻略组");
-        DUOSHUO.EmbedThread(el);
-        jQuery(container).append(el);
-    }
-}
 
 //链接到框架
 function frametarget(){
@@ -92,7 +69,6 @@ function frametarget(){
 
 window.onload = function(){ 
     frametarget();
-    toggleDuoshuoComments();
 };
 </script>
 </head>
@@ -139,8 +115,6 @@ window.onload = function(){
     </script> 
   </div>
   <div id="guestbook">
-    <div id="guestbook_href" style="display:none"></div>
-    <div id="comment-box" ></div>
     <div id="lv-container" data-id="city" data-uid="MTAyMC8yODU5NS81MTY2"></div>
   </div>
   <div id="Footer">
