@@ -4,48 +4,66 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="../../css/style.css">
-<title>Miracle Nikki - 倾心回忆2 2017.04</title>
+<title>Miracle Nikki - 满天繁星 2017.06</title>
 <style>
 .remark{font-size:80%;}
 td {text-align:left;}
 </style>
 <script type="text/javascript" charset="UTF-8">
-//结束时间
-var time_end=new Date("4/16/2017 23:59:59 GMT+0800").getTime();
 //开始时间
-var time_start=new Date("4/10/2017 5:00:00 GMT+0800").getTime();
+var time_start=new Date("6/30/2017 5:00:00 GMT+0800").getTime();
+//结束时间
+var time_end=new Date("7/6/2017 23:59:59 GMT+0800").getTime();
 //部件类别
-var type=['发型','上装','下装','鞋子','特殊·前景','手持·左','头饰','特殊·背景','特殊·脚部','妆容','发型','连衣裙','鞋子','头饰','耳饰','颈饰·项链','妆容'];
+var type=[
+'假的',
+'假的',
+'发型','连衣裙','外套','鞋子','头饰','手饰·双','颈饰·项链','特殊·前景','妆容',
+'发型','连衣裙','鞋子','特殊·前景','耳饰','手饰·左','颈饰·项链','颈饰·围巾','特殊·背景','妆容',
+'发型','连衣裙','鞋子','头饰','手持·右','特殊·前景','特殊·背景',
+'发型','连衣裙','鞋子','妆容','头饰','特殊·尾部','特殊·前景','特殊·耳朵'];
 //部件名称
-var cname=['青丝棠雪','龙凤对襟衣','富贵牡丹裙','如意绣花鞋','红烛微漾','芙蓉邀月镜','彩蝶双栖冠','映绮如霞','喜盈绣闺','桃夭灼华','白首之约','与子成说','良缘永结','红鸾凤冠','红叶之盟','同心佩','死生契阔'];
+var cname=[
+'房日兔',
+'张月鹿',
+'尾火虎','凛夜九卿','幽岚夜鸢','夜摩罗','夜合冠','凛夜护手','天江珠','幽夜白虎','幽冥紫鸢',
+'女土蝠','水月镜花','雪锦靴','雷霆蝠影','灵蝠玦','月离珠','吉祥玉','月色锦披','中天玄月','星落玄影',
+'亢金龙','九天帝女','绕祥云','游龙钗','玉龙琴','瑶台玉雾','瑶台寿客',
+'心月狐','一品朱衣','心月缘','朱颜国色','花迭罗','心月狐尾','曜月心灯','心月狐耳'];
 //套装名称
-var set=['辞绣闺','与子成说'];
+var set=['房日兔','张月鹿','尾火虎','女土蝠','亢金龙','心月狐'];
 //单价
-var need=[100,80,80,75,86,86,86,106,86,120,116,230,130,98,98,98,135];
+var need=[
+0,
+0,
+32,52,56,34,31,29,27,61,49,
+39,56,31,57,28,28,29,59,70,46,
+40,92,54,29,36,55,65,
+39,96,42,72,33,70,62,29];
 //每套部件数量
-var setCnt=[10,7];
+var setCnt=[1,1,9,10,7,8];
 //是否有消费or充值送
-var haveConsume=0;
+var haveConsume=1;
 //消费or充值档位
-var consume=[0,30,60,180,300,520];
+var consume=[0,60,180,300,600,1200,1800,2900,4200,5900];
 //消费or充值赠送
-var consume_gain=[0,0,0,12,0,32];
+var consume_gain=[0,5,10,0,25,50,60,120,160,300];
 //道具名称
-var item_name='誓言戒指';
+var item_name='星辰石';
 //关卡数量
-var level_cnt=5;
+var level_cnt=1;
 //买一次花费钻石
-var price=30;
+var price=24;
 //买一次获得次数
-var once=3;
+var once=1;
 //每天免费次数(每关)
-var free_1day=0;
+var free_1day=5;
 //赢
 var win_gain=5;
 //输
 var lose_gain=3;
 //每关体力
-var perstamina=4;
+//var perstamina=0;
 //默认每关道具
 //var default_gain=[5,5,5,5,5];
 //可刷起始关(音乐会专用?)
@@ -164,7 +182,7 @@ function calc(ind){
 	}
 	
 	//体力计算
-	var stamina=times*perstamina;
+	//var stamina=times*perstamina;
 	
 	var diff_times=times-to_get_times;
 	var to_buy=Math.max(0,Math.ceil(diff_times/once));
@@ -172,8 +190,7 @@ function calc(ind){
 	
 	var calcres='<table>'+tr(td('计算结果：'));
 	calcres+=tr(td('共需'+aim+'个'+item_name+'，扣除已有还需刷'+rem+'个'));
-	//calcres+=tr(td('约需选择'+times+'次（其中免费'+to_get_times+'次）'));
-	calcres+=tr(td('约需挑战'+times+'次（其中免费'+to_get_times+'次），消耗'+stamina+'体力'));
+	calcres+=tr(td('约需挑战'+times+'次（其中免费'+to_get_times+'次）'));
 	calcres+=tr(td('需购买'+to_buy+'次，花钻'+to_pay+'个'));
 	calcres+='</table>';
 	document.getElementById("calcres").innerHTML = calcres;
@@ -189,8 +206,8 @@ function calc(ind){
 	*/
 }
 function loadSettings(){
-	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_memories2")) {
-		var loadString=localStorage.getItem("nikki_memories2");
+	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_star3")) {
+		var loadString=localStorage.getItem("nikki_star3");
 		
 		var own_str=getStoredStr(loadString, 'own').split(',');
 		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
@@ -206,7 +223,7 @@ function saveSettings(){
 	var saveString='own:['+own.join(',')+'];';
 	//own:[1,1,0,0,0];
 	if (typeof(Storage) !== "undefined") {
-		localStorage.setItem("nikki_memories2", saveString);
+		localStorage.setItem("nikki_star3", saveString);
 	}
 	document.getElementById('storage').innerHTML=saveString;
 }
@@ -250,27 +267,24 @@ function selectBox(id,onchange,valArr,textArr){
 }
 </script>
 </head>
-<body>
-<div class="myframe" >
-<p align="center" class="title1">活动·倾心回忆2计算器</p>
+<body><div class="myframe" >
+  
+<p align="center" class="title1">活动·满天繁星3计算器</p>
 <hr class="mhr">
 <p class="normal">
-	<span class="title3">更新时间：</span>2016-4-10<br>
-	<span class="title3">更新人员：</span>Rean 陆道甍<br>
-	<span class="title3">注意：</span>以下计算未考虑联邦商贸！体力不够、且胜率很低的新玩家可以考虑从联邦商贸直接买戒指。<br>
-	联邦商贸内其它礼包也按其附赠的VIP经验数量计入累计充值活动。<br>
+	<span class="title3">更新时间：</span>2017-6-30<br>
+	<span class="title3">更新人员：</span>Rean翎
 </p>
+<hr class="mhr">
 <p align="center">
-距离活动结束还有<span id="showTime"></span><br>
+距离活动结束还有　<span id="showTime"></span><br>
 <button onclick="saveSettings()">保存设置</button><button onclick="loadSettings()">读取设置</button>
 <span id="notice"></span>
 </p>
-<p align="center">
-<span id="table"></span>
-<span id="input"></span>
-<span id="calcres"></span>
-<span id="storage" style="display:none"></span>
-</p>
+<p align="center" id="table"></p>
+<p align="center" id="input"></p>
+<p align="center" id="calcres"></p>
+<p align="center" id="storage" style="display:none"></p>
 </div>
 </body>
 </html>
