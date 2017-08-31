@@ -1,5 +1,3 @@
-// Ivan's Workshop
-
 var FEATURES = ["simple", "cute", "active", "pure", "cool"];
 var CHINESE_TO_FEATURES = {
 	"简约":["simple","+"],
@@ -89,16 +87,12 @@ Clothes = function(csv) {
               + c.name + ((c.own || depNumAll == 0)? '' : '[消耗' + (depNumAll)  + ']')+ '\n';
           ret += c.getDeps(indent + "   ", depNumAll);
         }
-		var splits1=ret.split('[');
-		var splits2='';
-		for (var i =1; i<splits1.length; i++){
-			splits2 += splits1[i].split(']')[0];
-		}
-		//get text in [] and join tgt
-		var splits = splits2.split(/[^0-9]+/);
-		//split by and keep numbers
 		var depNumAlls = 1;
-		if (splits.length > 1) for (i=0;i<splits.length;i++) if(splits[i]) depNumAlls += Number(splits[i]);
+		var splits = ret.split('\n');
+		for (var i = 0; i<splits.length; i++){
+			var depNums = splits[i].indexOf('消耗') < 0 ? 0 : splits[i].replace(/[^(消耗)]*(消耗)([0-9]+)[^0-9]*/,"$2");
+			if (depNums) depNumAlls += Number(depNums);
+		}
 		if (this.exDep) {
 			ret = indent + "[织梦]" + this.exDep + "\n" + ret;
 		}
@@ -206,6 +200,14 @@ Clothes = function(csv) {
     }
   };
 }
+
+var lastVersion = function() {
+	var last = ''; var largest = 0;
+	for (var i in wardrobe) {
+		if (wardrobe[i][17].replace(/[^0-9]/g,'') > largest) last = wardrobe[i][17];
+	}
+	return last;
+}();
 
 function clotonum(type,id){
 	var mainType='';
