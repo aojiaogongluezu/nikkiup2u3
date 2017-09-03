@@ -97,7 +97,6 @@ span.jump{
 	font-size: 90%;
 }
 
-
 span.bold7 {
 	font-weight:700;
 }
@@ -136,7 +135,10 @@ tr:nth-child(1) {
 	font-weight : 700;
 	text-align : center;
 	background-color: rgba(191, 219, 255, 0.9);
-	color:232425;
+}
+
+tr:nth-child(1) td a {
+	color:#232425;
 }
 
 /*************防滚条***************/ 
