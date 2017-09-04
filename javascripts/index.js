@@ -154,6 +154,11 @@ function clickExpand(){
 	for (i = 0; i < tables.length; i++){
 		var trs = tables[i].getElementsByTagName("tr");
 		trs[0].onclick = function() {
+			if (this.getElementsByTagName('a')[0]){
+				this.getElementsByTagName('a')[0].click();
+				return;
+			}
+			
 			var contents = this.parentNode.getElementsByTagName("tr");
 			var title = this.getElementsByTagName('td')[0].innerHTML.replace('▶','').replace('▲','').replace('▼','');
 			if (contents[1]){
