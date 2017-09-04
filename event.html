@@ -18,11 +18,26 @@ table {
     table-layout:fixed;
 }
 </style>
-<!--script type='text/javascript' charset="UTF-8">
+<script type='text/javascript' charset="UTF-8">
 window.onload = function(){ 
-    latestEvent();
+    expandJump();
 };
-function latestEvent(){
+function expandJump(){
+	var trs = document.getElementsByTagName("table")[0].getElementsByTagName("tr");
+	trs[0].onclick = function() {
+		var contents = this.parentNode.getElementsByTagName("tr");
+		if (contents[1]){
+			if (contents[1].style.display=='none'){
+				for (j = 1; j< contents.length; j++) contents[j].style.display = "table-row";
+			}else {
+				for (j = 1; j< contents.length; j++) contents[j].style.display = "none";
+			}
+		}
+	}
+	trs[0].getElementsByTagName('td')[0].innerHTML += '▼';
+	for (j = 1; j< trs.length; j++) trs[j].style.display = "none";
+}
+/*function latestEvent(){
 	var location_href=window.location.href;
 	if (location_href.indexOf('event.html?New')>0) {
 		var a = document.getElementsByTagName('table');
@@ -32,8 +47,8 @@ function latestEvent(){
 		var b = document.getElementsByClassName('title1');
 		b[0].innerHTML="最新活动";
 	}
-}
-</script-->
+}*/
+</script>
 </head>
 <body>
 <div class="myframe" >
@@ -41,7 +56,7 @@ function latestEvent(){
   <hr class="mhr"/>
 	<br>
 
-<!--table width="100%">
+<table width="100%">
 	<tr>
 		<td colspan="10">快捷跳转</td>
 	</tr>	
@@ -148,7 +163,7 @@ function latestEvent(){
 		<td colspan="3"></td>
 	</tr>
 </table>
-<br-->
+<br>
 
 <a id="41"></a>
 <table width="100%">

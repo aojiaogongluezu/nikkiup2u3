@@ -137,10 +137,6 @@ tr:nth-child(1) {
 	background-color: rgba(191, 219, 255, 0.9);
 }
 
-tr:nth-child(1) td a {
-	color:#232425;
-}
-
 /*************防滚条***************/ 
 body {
     /*overflow-y:hidden;*/
