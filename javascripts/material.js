@@ -11,7 +11,7 @@ var highlight_style=['xzh','syqc','gls','bfzg','bylg'];
 
 var src=['公','少','店·金币,店·钻石,店','设计图','重构','抽·,礼盒·','兑·,联盟·','']; //note:'重构'&'联盟·小铺' are hardcoded in function
 var src_desc=['公主级掉落','少女级掉落','商店购买','设计图','元素重构','谜之屋','兑换','其它']; //note:'谜之屋','兑换' is hardcoded in function
-var maxc=1;
+var chapList = [];
 var reqCnt=[];
 var parentInd=[];
 var extraInd=[];
@@ -64,11 +64,11 @@ function chgScope(){
 			chooseLevel+=selectBox("degree_level","showLevelDropInfo()",['公','少'],['公主','少女']);
 			chooseLevel+='&ensp;-&ensp;';
 			var chapVal=[0];var chapText=['请选择章节'];
-			for(var i=1;i<=maxc;i++){
-				chapVal.push(i);
-				chapText.push('第'+i+'章');
+			for(var i=0;i<chapList.length;i++){
+				chapVal.push(chapList[i]);
+				chapText.push('第'+chapList[i]+'章');
 			}
-			if(maxc>0) {
+			if(chapList.length>0) {
 				chapVal.push(-1);
 				chapText.push('尚缺材料');
 			}
@@ -355,14 +355,14 @@ function chgStars2(){
 		}
 		if(kp<2){
 			var outStars2tmp=[];
-			for (l1=1;l1<=maxc;l1++){
+			for (l1=0;l1<chapList.length;l1++){
 				for (l=1;l<30;l++){//sort by level
 					var l2=l;
 					if(l>20){l2="支"+l%10;}
 					for (var i in outStars2){
 						var src_sp=outStars2[i][0].source.split("/");
 						for (var ss in src_sp){
-							if(src_sp[ss]==l1+'-'+l2+src[kp]){
+							if(src_sp[ss]==chapList[l1]+'-'+l2+src[kp]){
 								outStars2tmp.push([outStars2[i][0],src_sp[ss],outStars2[i][2]]);
 								break;
 							}
@@ -457,11 +457,11 @@ function showLevelDropInfo(){
 	var levelDropNote='';
 	if (j==-1){//material to get
 		levelDropInfo+=table()+tr(tab('名称')+tab('关卡')+tab('材料需求统计'),'style="font-weight:bold;"');
-		for(var c=1;c<=maxc;c++){ //by chapter
+		for(var c=0;c<chapList.length;c++){ //by chapter
 			for (l=1;l<30;l++){ //by levels
 				var l2=l;
 				if(l>20){l2="支"+l%10;}
-				var curLevel=c+'-'+l2+degree;
+				var curLevel=chapList[c]+'-'+l2+degree;
 				for (var i in clothes){
 					if (matchClothesLevels(i,curLevel)){//if source matches chapter&level
 						var currDeps=clothes[i].getDeps('   ', 1);
@@ -766,7 +766,7 @@ function genBasicMaterial(setInd,id,showConstructInd,showConsumeInd){
 	for (var s in src){//sort by source
 		header[s]='<u>'+src_desc[s]+'</u>'+((src[s]=='重构')?'　'+ahref(constxt,construct_href_1+oppoConstructInd+','+showConsumeInd+')'):'');
 		if(s<2){
-			for (l1=1;l1<=maxc;l1++){
+			for (l1=0;l1<chapList.length;l1++){
 				for (l=1;l<30;l++){//sort by level
 					var l2=l;
 					if(l>20){l2="支"+l%10;}
@@ -774,8 +774,8 @@ function genBasicMaterial(setInd,id,showConstructInd,showConsumeInd){
 						var srci=clothes[i].source;
 						var src_sp=clothes[i].source.split("/");
 						for (var ss in src_sp){
-							if( (s==0&&src_sp[ss].indexOf(l1+'-'+l2+src[s])==0&&srci.indexOf(src[1])<0) || 
-								(s==1&&src_sp[ss].indexOf(l1+'-'+l2+src[s])==0) ){
+							if( (s==0&&src_sp[ss].indexOf(chapList[l1]+'-'+l2+src[s])==0&&srci.indexOf(src[1])<0) || 
+								(s==1&&src_sp[ss].indexOf(chapList[l1]+'-'+l2+src[s])==0) ){
 								if(!content[s]){content[s]='';}
 								content[s]+=retFactor(i,srci);
 								break;
@@ -952,15 +952,23 @@ function get_convertlist(){
 function get_maxc(){
 	for (var i in clothes){
 		if(clothes[i].source.indexOf('公')>0||clothes[i].source.indexOf('少')>0){
-			var srcs=clothes[i].source.split('/');
+			var srcs = clothes[i].source.split('/');
 			for (var s in srcs){
 				if ((srcs[s].indexOf('公')>0||srcs[s].indexOf('少')>0)&&srcs[s].indexOf('-')>0){
-					var chapter=srcs[s].substr(0,srcs[s].indexOf('-'));
-					if (parseInt(chapter)>maxc){maxc=parseInt(chapter);}
+					var chapter = srcs[s].substr(0,srcs[s].lastIndexOf('-'));
+					if ($.inArray(chapter,chapList)<0) chapList.push(chapter);
 				}
 			}
 		}
 	}
+	chapList.sort(function(a,b){
+		var ae = a.replace(/[0-9-]*/g,''); //episode
+		var be = b.replace(/[0-9-]*/g,'');
+		var ac = a.replace(/[^0-9]*/g,''); //chapter
+		var bc = b.replace(/[^0-9]*/g,'');
+		if (ae == be) return ac - bc; //same episode, compare only chapter
+		else return ae > be ? 1 : (ae < be ? -1 : 0) ; //differnt episode
+	});
 }
 
 function tab(text,attr){
