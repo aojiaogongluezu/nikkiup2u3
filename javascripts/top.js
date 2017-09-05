@@ -76,7 +76,7 @@ function searchSet(setName){
 	var out='<table border="1">';
 	out+=tr(td('名称')+td('分类')+td('套装')+td('来源')+td(''));
 	for (var i in clothes){
-		if(clothes[i].set==setName||clothes[i].source.indexOf('套装·'+setName)>-1){
+		if(clothes[i].set==setName || $.inArray('套装·'+setName, clothes[i].source.split('/'))>=0){
 			currentList.push(i);
 		}
 	}
@@ -88,59 +88,46 @@ function searchSet(setName){
 }
 
 function searchSub(isSet,qString){
-	var idList=currentList;
-	currentList=[];
 	var out1=(isSet?'套装：':'查找：')+qString+'　所有染色及进化';
 	var out='<table border="1">';
 	out+=tr(td('名称')+td('分类')+td('套装')+td('来源')+td(''));
-	for (var i in idList){
-		var orig=idList[i];
-		do{
-			currentList.push(orig);
-			orig=searchOrig(orig);
-		}while(orig!=-1);
+	//search orig
+	for (var i in currentList){
+		var orig = currentList[i];
+		while(orig != -1) {
+			if($.inArray(orig, currentList)<0) currentList.push(orig);
+			orig = function() {
+				var src = clothes[orig].source;
+				if (src.indexOf('定')>=0 || src.indexOf('进')>=0){
+					var orig_num = src.replace(/[^(定|进)]*(定|进)([0-9]+)[^0-9]*/, "$2");
+					for (var c in clothes){
+						if(clothes[c].type.mainType==clothes[orig].type.mainType && clothes[c].id==orig_num) return c;
+					}
+				}
+				return -1;
+			}();
+		}
 	}
+	//search deriv
 	do{
-		currentList=searchDeriv(currentList);
-	}while(currentList.length!=searchDeriv(currentList).length);
+		var origLen = currentList.length;
+		var retCont = clone(currentList);
+		for (var i in retCont){
+			var orig_num = clothes[retCont[i]].id;
+			for (var c in clothes){
+				if (clothes[c].source.indexOf(orig_num)>0 && clothes[c].type.mainType==clothes[retCont[i]].type.mainType){
+					var srcs = clothes[c].source.replace(/[^(定|进)]*(定|进)([0-9]+)[^0-9]*/, "$2");
+					if(orig_num == srcs && $.inArray(c, retCont)<0) retCont.push(c);
+				}
+			}
+		}
+		retLen = retCont.length;
+		currentList = retCont;
+	}while(origLen != retLen);
 	out+=appendCurrent();
 	out+='</table>';
 	$('#topsearch_info').html(out);
 	$("#topsearch_note").html(out1);
-}
-
-function searchOrig(id){
-	var srcs=clothes[id].source.split('/');
-	for (var s in srcs){
-		if (srcs[s].indexOf('定')==0||srcs[s].indexOf('进')==0){
-			var orig_num=srcs[s].substr(1);
-			for (var i in clothes){
-				if(clothes[i].type.mainType==clothes[id].type.mainType&&clothes[i].id==orig_num){return i;}
-			}
-		}
-	}
-	return -1;
-}
-
-function searchDeriv(idList){
-	var retList=[];
-	for (var id in idList){
-		retList.push(idList[id]);
-		var orig_num=clothes[idList[id]].id;
-		for (var i in clothes){
-			if (clothes[i].source.indexOf(orig_num)>0&&clothes[i].type.mainType==clothes[idList[id]].type.mainType){
-				var srcs=clothes[i].source.split('/');
-				for (var s in srcs){
-					if (srcs[s]=='定'+orig_num||srcs[s]=='进'+orig_num){
-						retList.push(i);
-						break;
-					}
-				}
-			}
-		}
-	}
-	retList=getDistinct(retList);
-	return retList;
 }
 
 function appendCurrent(){
@@ -152,8 +139,7 @@ function appendCurrent(){
 			var line=td(ahref(clothes[currentList[i]].name,'choose_topid('+currentList[i]+')'));
 				line+=td(clothes[currentList[i]].type.type);
 				line+=td(clothes[currentList[i]].set);
-				var srcs=conv_source(clothes[currentList[i]].source,'进',clothes[currentList[i]].type.mainType);
-					srcs=conv_source(srcs,'定',clothes[currentList[i]].type.mainType);
+				var srcs=conv_source(clothes[currentList[i]].source, clothes[currentList[i]].type.mainType);
 				if (srcs.indexOf('套装·')==0) srcs='套装';
 				line+=td(srcs);
 				line+=td(ahref('[×]','delCurrent('+currentList[i]+')'));
@@ -664,8 +650,7 @@ function propanal_byall(){
 			if(showSource||showMerc){
 				var cell_3rd='';
 				if(showSource){
-					var srcs=conv_source(clothes[id].source,'进',clothes[id].type.mainType);
-						srcs=conv_source(srcs,'定',clothes[id].type.mainType);
+					var srcs=conv_source(clothes[id].source, clothes[id].type.mainType);
 					if (srcs.indexOf('套装·')==0) srcs='套装';
 					cell_3rd=srcs;
 				}
@@ -787,8 +772,7 @@ function calctop_byall(){
 			if(showSource||showMerc){
 				var cell_3rd='';
 				if(showSource){
-					var srcs=conv_source(clothes[id].source,'进',clothes[id].type.mainType);
-						srcs=conv_source(srcs,'定',clothes[id].type.mainType);
+					var srcs=conv_source(clothes[id].source, clothes[id].type.mainType);
 					if (srcs.indexOf('套装·')==0) srcs='套装';
 					cell_3rd=srcs;
 				}
@@ -998,8 +982,7 @@ function info_byid(id){
 		if(clothes[id].tags[0]) cell+='&ensp;'+clothes[id].tags.join(',');
 	output+=cell+'<br>';
 	if(clothes[id].set) output+='套装:'+clothes[id].set+'&ensp;';
-	var srcs=conv_source(clothes[id].source,'进',clothes[id].type.mainType);
-		srcs=conv_source(srcs,'定',clothes[id].type.mainType);
+	var srcs=conv_source(clothes[id].source, clothes[id].type.mainType);
 	var price=getMerc(id);
 	output+='来源:'+srcs+(price?'('+price+')':'')+'<br><br>';
 	
@@ -1411,22 +1394,14 @@ function getMerc(id){
 
 //below is modified from material.js
 
-function conv_source(src,subs,mainType){
-	if(src.indexOf(subs)>-1){
-		var pos1=src.indexOf(subs)+1;
-		var pos2=src.indexOf('/',pos1); 
-		if(pos2<0) {pos2=src.length;}
-		var str1=src.substr(0,pos1);
-		var str2=src.substr(pos1,pos2-pos1);
-		var str3=src.substr(pos2);
+function conv_source(src,mainType){
+	if (src.indexOf('定')>=0 || src.indexOf('进')>=0) {
+		var orig_num = src.replace(/[^(定|进)]*(定|进)([0-9]+)[^0-9]*/, "$2");
 		for (var p in clothes){
-			if(clothes[p].type.mainType==mainType&&clothes[p].id==str2) 
-			{str2='-'+clothes[p].name;}
+			if (clothes[p].type.mainType==mainType&&clothes[p].id==orig_num) return src.replace(orig_num, '-' + clothes[p].name);
 		}
-		return str1+str2+str3;
-	}else{
-		return src;
 	}
+	return src;
 }
 
 function td(text,attr){
