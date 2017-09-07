@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="../../css/style.css">
-<title>Miracle Nikki - 夏日二选一</title>
+<title>Miracle Nikki - 翻糖二选一</title>
 <style>
 .remark{font-size:80%;}
 td {text-align:left;}
@@ -16,7 +16,7 @@ var time_start=new Date("9/8/2017 5:00:00 GMT+0800").getTime();
 var time_end=new Date("9/14/2017 23:59:59 GMT+0800").getTime();
 //部件类别
 var type=[
-'发型','连衣裙','袜子','鞋子','饰品','饰品','饰品','饰品','饰品',
+'发型','连衣裙','袜套','鞋子','特殊·前景','头饰·发饰,','耳饰','手饰·右','手饰·左'
 ];
 //部件名称
 var cname=[
@@ -26,7 +26,7 @@ var cname=[
 var set=['缤纷之夏'];
 //单价
 var need=[
-0,1,0,1,0,1,0,1,1
+86,129,54,72,68,52,56,49,63
 ];
 //每套部件数量
 var setCnt=[9];
@@ -66,7 +66,7 @@ window.onload = function(){
 };
 
 function init(){
-	if(need[0]==0) document.getElementById("notice").innerHTML = '<br>尚未更新，请勿使用！';
+	if(need[0]==0) document.getElementById("notice").innerHTML = '<br><!--尚未更新，请勿使用！-->';
 	var table='<table border="1">';
 	table+=tr(td('套装')+td('部位')+td('名称')+td('所需'));
 	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="4"'));
