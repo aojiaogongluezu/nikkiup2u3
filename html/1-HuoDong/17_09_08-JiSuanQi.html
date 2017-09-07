@@ -11,28 +11,25 @@ td {text-align:left;}
 </style>
 <script type="text/javascript" charset="UTF-8">
 //开始时间
-var time_start=new Date("7/12/2017 5:00:00 GMT+0800").getTime();
+var time_start=new Date("9/8/2017 5:00:00 GMT+0800").getTime();
 //结束时间
-var time_end=new Date("7/21/2017 23:59:59 GMT+0800").getTime();
+var time_end=new Date("9/14/2017 23:59:59 GMT+0800").getTime();
 //部件类别
 var type=[
-'发型','上装','下装','袜子','袜套','鞋子','头饰·发饰','特殊·面饰','颈饰·围巾','腰饰','手饰·双','手持·右','手持·左',
-'发型','连衣裙','外套','鞋子','头饰·发饰','特殊·面饰','颈饰·围巾','颈饰·项链','手饰·右','特殊·胸饰','特殊·后景','妆容',
+'发型','连衣裙','袜子','鞋子','饰品','饰品','饰品','饰品','饰品',
 ];
 //部件名称
 var cname=[
-'缤纷圣代','冰露星星糖','香草冰淇淋','甜心蜜意','白巧克力','冰甜霜雪','薄荷茶','闪耀夏日','双重丝带','爱心礼盒','千层雪','彩虹奶霜','夏日宣言',
-'星城之夏','星城绮梦','轻粉披肩','绑带舞鞋','冰霜花蕊','心形糖纸','薄荷糖','波普印象','夜光环绕','绮梦星光','绚丽王国','星城靓影',
+'人偶少女','樱花糖果','轻甜回忆','迷失林间','永恒花雨','寂静花园','奇幻魔术','人偶腕花','人偶丝带',
 ];
 //套装名称
-var set=['缤纷之夏','星城绮梦'];
+var set=['缤纷之夏'];
 //单价
 var need=[
-25,33,39,19,23,27,18,16,19,24,26,17,20,
-30,48,29,25,23,19,28,18,29,25,57,34,
+0,1,0,1,0,1,0,1,1
 ];
 //每套部件数量
-var setCnt=[13,12];
+var setCnt=[9];
 //是否有消费or充值送
 var haveConsume=0;
 //消费or充值档位
@@ -40,7 +37,7 @@ var consume=[0,60,180,300,600,1200,2000];
 //消费or充值赠送(每档)
 var consume_gain=[0,0,0,0,40,60,90];
 //道具名称
-var item_name='冰淇淋';
+var item_name='樱花方糖';
 //关卡数量
 var level_cnt=1;
 //买一次花费钻石
@@ -197,8 +194,8 @@ function calc(ind){
 	*/
 }
 function loadSettings(){
-	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_summer_choice")) {
-		var loadString=localStorage.getItem("nikki_summer_choice");
+	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_sugar_choice")) {
+		var loadString=localStorage.getItem("nikki_sugar_choice");
 		
 		var own_str=getStoredStr(loadString, 'own').split(',');
 		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
@@ -214,7 +211,7 @@ function saveSettings(){
 	var saveString='own:['+own.join(',')+'];';
 	//own:[1,1,0,0,0];
 	if (typeof(Storage) !== "undefined") {
-		localStorage.setItem("nikki_summer_choice", saveString);
+		localStorage.setItem("nikki_sugar_choice", saveString);
 	}
 	document.getElementById('storage').innerHTML=saveString;
 }
@@ -263,7 +260,7 @@ function selectBox(id,onchange,valArr,textArr){
 <p align="center" class="title1">活动·夏日二选一计算器</p>
 <hr class="mhr">
 <p class="normal">
-	<span class="title3">更新时间：</span>2017-7-12<br>
+	<span class="title3">更新时间：</span>2017-9-8<br>
 	<span class="title3">更新人员：</span>Rean翎
 </p>
 <hr class="mhr">
