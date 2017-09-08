@@ -66,7 +66,7 @@ window.onload = function(){
 };
 
 function init(){
-	if(need[0]==0) document.getElementById("notice").innerHTML = '<br><!--尚未更新，请勿使用！-->';
+	if(need[0]==0) document.getElementById("notice").innerHTML = '<br>尚未更新，请勿使用！';
 	var table='<table border="1">';
 	table+=tr(td('套装')+td('部位')+td('名称')+td('所需'));
 	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="4"'));
