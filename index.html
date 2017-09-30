@@ -70,9 +70,8 @@ window.onload = function(){
     frametarget();
 	
 	$('#framemain').load(function() {
-		$('.glyphicon glyphicon-arrow-up').click();
+		gotop();
 		
-		var iframe = document.getElementById("framemain");
 		var cssLink = document.createElement("link");
 			cssLink.href = "/nikkiup2u3/css/overflow.css";
 			cssLink.rel = "stylesheet";
@@ -81,7 +80,7 @@ window.onload = function(){
 			cssLink_2.href = "/css/overflow.css";
 			cssLink_2.rel = "stylesheet";
 			cssLink_2.type = "text/css";
-			frames['framemain'].document.body.appendChild(cssLink);
+		frames['framemain'].document.body.appendChild(cssLink);
 		frames['framemain'].document.body.appendChild(cssLink_2);
 	});
 };
@@ -91,15 +90,15 @@ window.onload = function(){
 <body>
 <div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'><img src="images/bk1.png"></div>
 <div class="FloatMenu"> 
-	<span><a href="#top"  class="glyphicon glyphicon-arrow-up"></a></span><br>
-  <span><a href="welcome.html" target="framemain"  onclick="gotop()"  class="glyphicon glyphicon-home"></a></span> 
+	<span><a href="#top" class="glyphicon glyphicon-arrow-up"></a></span><br>
+  <span><a href="welcome.html" target="framemain" onclick="gotop()"  class="glyphicon glyphicon-home"></a></span> 
 </div>
 <div id="Container" >
   <div id = "Content-Main">
     <iframe id="nav" src="nav.html" frameborder="0" ></iframe>
     <iframe name="framemain" src="welcome.html" frameborder="0" width="100%" id="framemain" onload="this.height=500" style="overflow-y:hidden;overflow-x:hidden;"></iframe>
-    <script type="text/javascript">
-        /*function reinitIframe(){
+    <!--script type="text/javascript">
+        function reinitIframe(){
             var iframe = document.getElementById("framemain");
             var cssLink = document.createElement("link");
             	cssLink.href = "/nikkiup2u3/css/overflow.css";
@@ -126,8 +125,8 @@ window.onload = function(){
                 }
             }catch (ex){}
         }
-        window.setInterval("reinitIframe()", 200);  */
-    </script> 
+        window.setInterval("reinitIframe()", 200);
+    </script--> 
   </div>
   <div id="guestbook">
     <div id="lv-container" data-id="city" data-uid="MTAyMC8yODU5NS81MTY2"></div>
