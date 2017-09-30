@@ -97,17 +97,9 @@ window.onload = function(){
   <div id = "Content-Main">
     <iframe id="nav" src="nav.html" frameborder="0" ></iframe>
     <iframe name="framemain" src="welcome.html" frameborder="0" width="100%" id="framemain" onload="this.height=500" style="overflow-y:hidden;overflow-x:hidden;"></iframe>
-    <!--script type="text/javascript">
+    <script type="text/javascript">
         function reinitIframe(){
             var iframe = document.getElementById("framemain");
-            var cssLink = document.createElement("link");
-            	cssLink.href = "/nikkiup2u3/css/overflow.css";
-            	cssLink.rel = "stylesheet";
-            	cssLink.type = "text/css";
-            var cssLink_2 = document.createElement("link");
-            	cssLink_2.href = "/css/overflow.css";
-            	cssLink_2.rel = "stylesheet";
-            	cssLink_2.type = "text/css";
             try{
                 var bHeight = iframe.contentWindow.document.body.scrollHeight;
                 var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
@@ -115,18 +107,14 @@ window.onload = function(){
                 if(dHeight&&fHeight){
                     if(dHeight>fHeight||dHeight<fHeight-500) {
                     	iframe.height = Math.max(500, dHeight); 
-                    	frames['framemain'].document.body.appendChild(cssLink);
-                    	frames['framemain'].document.body.appendChild(cssLink_2);
                     }
                 }else{
                     iframe.height = Math.max(bHeight, dHeight+150);
-                    frames['framemain'].document.body.appendChild(cssLink);
-                    frames['framemain'].document.body.appendChild(cssLink_2);
                 }
             }catch (ex){}
         }
         window.setInterval("reinitIframe()", 200);
-    </script--> 
+    </script> 
   </div>
   <div id="guestbook">
     <div id="lv-container" data-id="city" data-uid="MTAyMC8yODU5NS81MTY2"></div>
