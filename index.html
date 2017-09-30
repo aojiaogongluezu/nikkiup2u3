@@ -66,9 +66,24 @@ function frametarget(){
 		}
 	}
 }
-
 window.onload = function(){ 
     frametarget();
+	
+	$('#framemain').load(function() {
+		$('.glyphicon glyphicon-arrow-up').click();
+		
+		var iframe = document.getElementById("framemain");
+		var cssLink = document.createElement("link");
+			cssLink.href = "/nikkiup2u3/css/overflow.css";
+			cssLink.rel = "stylesheet";
+			cssLink.type = "text/css";
+		var cssLink_2 = document.createElement("link");
+			cssLink_2.href = "/css/overflow.css";
+			cssLink_2.rel = "stylesheet";
+			cssLink_2.type = "text/css";
+			frames['framemain'].document.body.appendChild(cssLink);
+		frames['framemain'].document.body.appendChild(cssLink_2);
+	});
 };
 </script>
 </head>
@@ -84,7 +99,7 @@ window.onload = function(){
     <iframe id="nav" src="nav.html" frameborder="0" ></iframe>
     <iframe name="framemain" src="welcome.html" frameborder="0" width="100%" id="framemain" onload="this.height=500" style="overflow-y:hidden;overflow-x:hidden;"></iframe>
     <script type="text/javascript">
-        function reinitIframe(){
+        /*function reinitIframe(){
             var iframe = document.getElementById("framemain");
             var cssLink = document.createElement("link");
             	cssLink.href = "/nikkiup2u3/css/overflow.css";
@@ -111,7 +126,7 @@ window.onload = function(){
                 }
             }catch (ex){}
         }
-        window.setInterval("reinitIframe()", 200);  
+        window.setInterval("reinitIframe()", 200);  */
     </script> 
   </div>
   <div id="guestbook">
