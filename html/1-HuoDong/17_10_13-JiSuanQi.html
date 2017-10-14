@@ -8,6 +8,7 @@
 <style>
 .remark{font-size:80%;}
 td {text-align:left;}
+table .consume:nth-child(-n+2){display:none;}
 </style>
 <script type="text/javascript" charset="UTF-8">
 //结束时间
@@ -27,12 +28,12 @@ var need=[63,70,67,64,53,62,37,48,54,43,81,83,
 72,76,77,75,61,67,60,56,94];
 //每套部件数量
 var setCnt=[12,9];
-//是否有消费送
-var haveConsume=0;
-//消费档位
-var consume=[0,99,399,899,1599,2499];
-//消费赠送(每档)
-var consume_gain=[0,0,0,0,0,0,0,0];
+//是否有充值送
+var haveConsume=1;
+//充值档位
+var consume=[0,18,30,50,68,128,258];
+//充值赠送(每档)
+var consume_gain=[0,40,79,135,195,379,799];
 //道具名称
 var item_name='记忆齿轮';
 //关卡数量
@@ -85,8 +86,8 @@ function init(){
 	}
 	var input='<table border="0">'+tr(td(''),'style="display:none"');
 	if(haveConsume){
-		input+=tr(td('已领消费档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');
-		input+=tr(td('预计消费档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
+		input+=tr(td('已领充值档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');//通过css隐藏
+		input+=tr(td('充值档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
 	}
 	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
 	input+=tr(td('每关'+item_name+'：')+td(cell1));
@@ -147,7 +148,7 @@ function calc(){
 		
 		for (i=0;i<consume.length;i++){
 			if(consume[i]>already_consume&&consume[i]<=plan_consume){
-				current+=consume_gain[i];
+				current=consume_gain[i];
 			}
 		}
 	}
@@ -263,7 +264,7 @@ function selectBox(id,onchange,valArr,textArr){
 <hr class="mhr">
 <p class="normal">
 	<span class="title3">更新时间：</span><span id="lastupd">2017-10-13</span><br>
-	<span class="title3">更新人员：</span>Rean翎 陆道甍
+	<span class="title3">更新人员：</span>Rean翎 点点 陆道甍
 </p>
 <hr class="mhr">
 <p align="center">
