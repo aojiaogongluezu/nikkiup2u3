@@ -8,7 +8,6 @@
 <style>
 .remark{font-size:80%;}
 td {text-align:left;}
-table .consume:nth-child(-n+2){display:none;}
 </style>
 <script type="text/javascript" charset="UTF-8">
 //结束时间
@@ -28,12 +27,12 @@ var need=[63,70,67,64,53,62,37,48,54,43,81,83,
 72,76,77,75,61,67,60,56,94];
 //每套部件数量
 var setCnt=[12,9];
-//是否有充值送
-var haveConsume=1;
+//是否有充值送(*此模板为分档送，非累充送)
+var haveTopup=1;
 //充值档位
-var consume=[0,18,30,50,68,128,258];
+var topup=[18,30,50,68,128,258];
 //充值赠送(每档)
-var consume_gain=[0,40,79,135,195,379,799];
+var topup_gain=[40,79,135,195,379,799];
 //道具名称
 var item_name='记忆齿轮';
 //关卡数量
@@ -85,9 +84,12 @@ function init(){
 		cell2+=inputBox('remain_today'+i,'calc()',2);
 	}
 	var input='<table border="0">'+tr(td(''),'style="display:none"');
-	if(haveConsume){
-		input+=tr(td('已领充值档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');//通过css隐藏
-		input+=tr(td('充值档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
+	if(haveTopup){
+		var topup_check='';
+		for (var t in topup){
+			topup_check+='<label><input type="checkbox" id="topup'+t+'" onclick="calc()" >'+topup[t]+'</label>'
+		}
+		input+=tr(td('将要充值档次：')+td(topup_check));
 	}
 	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
 	input+=tr(td('每关'+item_name+'：')+td(cell1));
@@ -100,7 +102,7 @@ function init(){
 	var date_now=new Date();
 	var time_now=date_now.getTime();
 	var time_d = Math.max(0,Math.floor((time_end-time_now)/1000/60/60/24));
-	if(date_now.getHours()<5&&time_end-time_now>0){time_d+=1;}
+	if(date_now.getHours()<5&&time_end-time_now>0) time_d+=1;
 	setVal("remain_days", time_d);
 	for (i=0;i<level_cnt;i++){
 		if(date_now.getDate()==new Date(time_start).getDate()) setVal("remain_today"+i, free_1day);
@@ -139,22 +141,14 @@ function calc(){
 	}
 	var current=Math.max(0,getVal('current'));
 	
-
-
-
-	if(haveConsume){
-		var already_consume=Math.max(0,getVal('already_consume'));
-		var plan_consume=Math.max(0,getVal('plan_consume'));
-		
-		for (i=0;i<consume.length;i++){
-			if(consume[i]>already_consume&&consume[i]<=plan_consume){
-				current=consume_gain[i];
-			}
+	if(haveTopup){
+		for (var t in topup){
+			if (document.getElementById('topup'+t).checked) current+=topup_gain[t];
 		}
 	}
 	
 	for (i=0;i<need.length;i++){
-		if (document.getElementById('own'+i).checked){own[i]=1;}
+		if (document.getElementById('own'+i).checked) own[i]=1;
 		else{own[i]=0;}
 	}
 	
@@ -179,25 +173,19 @@ function calc(){
 	calcres+=tr(td('需额外刷'+times+'次，购买'+to_buy+'次，花钻'+to_pay+'个'));
 	calcres+='</table>';
 	document.getElementById("calcres").innerHTML = calcres;
-	
-	/*
-	if(to_pay>plan_consume){
-		for(i=0;i<consume.length;i++){
-			if(to_pay<consume[i]) {setVal("plan_consume",consume[i-1]); break;}
-		}
-		if(to_pay>consume[consume.length-1]){setVal("plan_consume",consume[consume.length-1]);}
-		calc();
-	}*/
 }
 function loadSettings(){
 	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_time")) {
 		var loadString=localStorage.getItem("nikki_time");
 		
 		var own_str=getStoredStr(loadString, 'own').split(',');
-		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
+		for (i=0;i<need.length;i++) {if(own_str[i]>0) document.getElementById("own"+i).checked=true;}
 		
 		var each_gain=getStoredStr(loadString, 'each_gain').split(',');
-		for (i=0;i<level_cnt;i++){setVal("each_gain"+i,each_gain[i]);}
+		for (i=0;i<level_cnt;i++) setVal("each_gain"+i,each_gain[i]);
+		
+		var topup_str=getStoredStr(loadString, 'topup_str').split(',');
+		for (var i in topup_str) document.getElementById("topup"+topup_str[i]).checked=true;
 		
 		calc();
 	}
@@ -208,8 +196,10 @@ function getStoredStr(string, id){
 }
 function saveSettings(){
 	var each_gain=[];
-	for (i=0;i<level_cnt;i++){each_gain.push(getVal("each_gain"+i));}
-	var saveString='own:['+own.join(',')+'];each_gain:['+each_gain.join(',')+'];';
+	for (i=0;i<level_cnt;i++) each_gain.push(getVal("each_gain"+i));
+	var topup_str=[];
+	for (i=0;i<topup.length;i++) if(document.getElementById('topup'+i).checked) topup_str.push(i);
+	var saveString='own:['+own.join(',')+'];each_gain:['+each_gain.join(',')+'];topup_str:['+topup_str.join(',')+'];';
 	//own:[1,1,0,0,0];each_gain:[3,3,5,5,5];
 	if (typeof(Storage) !== "undefined") {
 		localStorage.setItem("nikki_time", saveString);

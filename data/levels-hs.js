@@ -19,7 +19,7 @@ var tasksAdd={
 '联盟委托: 3-4':['cute','pure'],
 '联盟委托: 3-5':['simple','active'],
 '联盟委托: 3-6':['simple','active'],
-'联盟委托: 3-7':['simple','active'],
+'联盟委托: 3-7':['active','simple'],
 '联盟委托: 4-1':['pure','cute'],
 '联盟委托: 4-2':['pure','cute'],
 '联盟委托: 4-3':['cute','active'],
