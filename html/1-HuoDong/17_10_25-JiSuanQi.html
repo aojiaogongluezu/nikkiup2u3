@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>
@@ -8,7 +9,6 @@
 <style>
 .remark{font-size:80%;}
 td {text-align:left;}
-table .consume:nth-child(-n+2){display:none;}
 </style>
 <script type="text/javascript" charset="UTF-8">
 //开始时间
@@ -109,7 +109,7 @@ line+=td(cell1,'style="border-right-width:0"')+td(cell2,'style="border-left-widt
 	var input='<table border="0">'+tr(td(''),'style="display:none"');
 	if(haveConsume){
 	input+=tr(td('已领充值档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');
-	input+=tr(td('是否充值：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
+	input+=tr(td('预算充值档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
 	}
 	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
 	input+=tr(td('剩余天数：')+td(inputBox('remain_days','calc()')));
@@ -163,7 +163,7 @@ function calc(ind){
 	
 	for (i=0;i<consume.length;i++){
 		if(consume[i]>already_consume&&consume[i]<=plan_consume){
-			current=consume_gain[i];
+			current+=consume_gain[i];
 		}
 	}
 	}
