@@ -6,13 +6,10 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <style>
 p {
-    text-align:center;
-    font-size:120%;
-    font-weight:700; 
-    line-height:1.5em;
-    color:#333333;
-    font-family:"Microsoft YaHei", Sans-Serif;
-    margin-top: 0.5em;
+	font-size: 90%;
+	font-family: "Microsoft YaHei", Sans-Serif;
+	color: #111111;
+	line-height: 1.8em;
 }
 table {
     table-layout:fixed;
@@ -21,7 +18,12 @@ table {
 <script type='text/javascript' charset="UTF-8">
 window.onload = function(){ 
     expandJump();
+	//cookies
+	if (typeof(Storage) !== "undefined"&&localStorage.getItem("nikki_event_hideIntro")){
+		if(localStorage.getItem("nikki_event_hideIntro")>0) showIntro();
+	}
 };
+
 function expandJump(){
 	var trs = document.getElementsByTagName("table")[0].getElementsByTagName("tr");
 	trs[0].onclick = function() {
@@ -37,6 +39,7 @@ function expandJump(){
 	trs[0].getElementsByTagName('td')[0].innerHTML += '▼';
 	for (j = 1; j< trs.length; j++) trs[j].style.display = "none";
 }
+
 /*function latestEvent(){
 	var location_href=window.location.href;
 	if (location_href.indexOf('event.html?New')>0) {
@@ -48,14 +51,36 @@ function expandJump(){
 		b[0].innerHTML="最新活动";
 	}
 }*/
+
+//show/hide intro
+function showIntro(){
+	if (document.getElementById('intro').style.display=="none"){
+		document.getElementById('intro').style.display="inline";
+		document.getElementById('aIntro').innerHTML="<收起>";
+		var hideIntro=0;
+	}else{
+		document.getElementById('intro').style.display="none";
+		document.getElementById('aIntro').innerHTML="<展开>";
+		var hideIntro=1;
+	}
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem("nikki_event_hideIntro", hideIntro);
+	}
+}
 </script>
 </head>
 <body>
 <div class="myframe" >
-  <p class="title1">活动攻略</p>
+  <p class="title1">往期活动</p>
   <hr class="mhr"/>
-	<br>
-
+	<p>
+		使用说明：<a href="" onclick="showIntro();return false;" id="aIntro">&lt;收起&gt;</a>
+		<span id="intro"><br>
+		1、查看当前活动，请到首页“最新活动”；<br>
+		2、预测活动消耗，可经由活动简表中的活动形式、查询相应活动的说明及计算器。<b>盈亏自负</b>；<br>
+		3、版本信息请点击<a href="html/7-ZaShi/BanBen-New.html" target="framemain">版本记录</a>。
+		</span>
+	</p>
 <table width="100%">
 	<tr>
 		<td colspan="4">展开活动简表</td>

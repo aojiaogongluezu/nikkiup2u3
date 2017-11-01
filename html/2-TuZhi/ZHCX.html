@@ -50,7 +50,7 @@
 				
 				//cookies
 				if (typeof(Storage) !== "undefined"&&localStorage.getItem("nikki_ZHCX_hideIntro")){
-					if(localStorage.getItem("nikki_ZHCX_hideIntro")>0) {showIntro();};
+					if(localStorage.getItem("nikki_ZHCX_hideIntro")>0) showIntro();
 				}
 			});
 			function tab(text,attr){
@@ -80,7 +80,7 @@
 			<span class="title3">更新人员：</span>Rean翎
 		</p>
 		<p class="normal">
-			<span class="title3">使用说明：</span><a href="" onclick="showIntro();return false;" id="aIntro"><收起></a>
+			<span class="title3">使用说明：</span><a href="" onclick="showIntro();return false;" id="aIntro">&lt;收起&gt;</a>
 			<span id="intro"><br>
 			可查询一个部件的<b>制作材料</b>、该部件是<b>哪些衣服的材料及所需数量</b>。<br>
 			支持按关卡、按套装、按星级、按部件-自定义查询以及特殊属性(tag)搜索。<br>
