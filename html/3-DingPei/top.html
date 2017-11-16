@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="zh">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -97,14 +97,14 @@
 	<fieldset>
 		<legend><a href="" onclick="hide_opt();return false;">选项（重新计算生效）</a></legend>
 		计算<input type="text" id="showCnt" size="2" style="line-height:100%;"/>件高配信息<br>
-		<span class="levels">计算 <input type="checkbox" id="showJJC" checked /><label for="showJJC">竞技场</label> <input type="checkbox" id="showAlly" checked /><label for="showAlly">联盟</label> <input type="checkbox" id="showNormal"/><label for="showNormal">主线</label><br></span>
+		<span class="levels">计算 <label><input type="checkbox" id="showJJC" checked />竞技场</label> <label><input type="checkbox" id="showAlly" checked />联盟</label> <label><input type="checkbox" id="showAlly6" />联盟六</label> <label><input type="checkbox" id="showNormal"/>主线</label><br></span>
 		<!--<input type="checkbox" id="limitMode" />极限权重模式 <span id="limitNote" class="normTip">说明</span><br>-->
-		<input type="radio" name="limit" id="limitN" value="0" checked onclick="chgLimitType(this.value)"><label for="limitN">标准权重</label> <input type="radio" name="limit" value="1" id="limitL" onclick="chgLimitType(this.value)"><label for="limitL">极限权重</label><span id="limitNote" class="normTip">[注]</span> <input type="radio" name="limit" value="2" id="limitA" onclick="chgLimitType(this.value)"><label for="limitA">属性分析</label><br>
-		<input type="checkbox" id="cartMode" onclick="chgcartMode()"/><label for="cartMode">选取多件</label>
+		<label><input type="radio" name="limit" id="limitN" value="0" checked onclick="chgLimitType(this.value)">标准权重</label> <label><input type="radio" name="limit" value="1" id="limitL" onclick="chgLimitType(this.value)">极限权重</label><span id="limitNote" class="normTip">[注]</span> <label><input type="radio" name="limit" value="2" id="limitA" onclick="chgLimitType(this.value)">属性分析</label><br>
+		<label><input type="checkbox" id="cartMode" onclick="chgcartMode()"/>选取多件</label>
 		<span class="cartContent">
 			<br>　结果大于<input type="text" id="maxHide" size="2" style="line-height:100%;"/>时折叠
-			<br>　<input type="checkbox" id="hideNores" /><label for="hideNores">只显示顶配/高配部件</label>
-			<br>　显示 <input type="checkbox" id="showSource" /><label for="showSource">来源</label> <input type="checkbox" id="showMerc" /><label for="showMerc">兑换数量</label>
+			<br>　<label><input type="checkbox" id="hideNores" />只显示顶配/高配部件</label>
+			<br>　显示 <label><input type="checkbox" id="showSource" />来源</label> <label><input type="checkbox" id="showMerc" />兑换数量</label>
 		</span>
 	</fieldset></span>
 	<span class="cartContent">
