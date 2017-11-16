@@ -645,7 +645,7 @@ function propanal_byall(){
 			var isSec=result[6];
 			
 			var cell=td(addTooltip(clothes[id].name,cell_tag(id,1)),'class="inName normTip '+(isTop?'inTop':(isSec?'inSec':'inNone'))+'"');
-			cell+=td(clothes[id].type.type,'class="inName"');
+			cell+=td(shortForm(clothes[id].type.type),'class="inName"');
 			if(showSource||showMerc){
 				var cell_3rd='';
 				if(showSource){
@@ -763,7 +763,7 @@ function calctop_byall(){
 			if(inTop.length>0 && inSec.length>0) rowspan++;
 			
 			var cell=td(addTooltip(clothes[id].name,cell_tag(id,1)),'rowspan="'+rowspan+'" class="inName normTip'+(inTop.length>0?' haveTop':'')+'"');
-			cell+=td(clothes[id].type.type,'rowspan="'+rowspan+'" class="inName'+(inTop.length>0?' haveTop':'')+'"');
+			cell+=td(shortForm(clothes[id].type.type),'rowspan="'+rowspan+'" class="inName'+(inTop.length>0?' haveTop':'')+'"');
 			if(showSource||showMerc){
 				var cell_3rd='';
 				if(showSource){
