@@ -13,19 +13,20 @@ function init_top(){
 	sortTags();
 }
 
-var top_id='';
+var top_id = '';
 var theme_name;
-var inTop=[];
-var inSec=[];
-var cartList=[];
-var currentList=[];
-var currentSetList=[];
-var setList=[];
-var storeTop=[];
-var limitMode=0;
-var manflist='';
-var manfresult={};
-var replaceSrc=['店·钻石'];
+var inTop = [];
+var inSec = [];
+var cartList = [];
+var currentList = [];
+var currentSetList = [];
+var setList = [];
+var storeTop = [];
+var limitMode = 0;
+var manflist = '';
+var manfresult = {};
+var replaceSrc = ['店·钻石'];
+var strAlly6 = '联盟委托: 6-';
 
 function searchById(){
 	var searchById=clear_top_id();
@@ -175,7 +176,7 @@ function calctop(){
 				clearOutput();
 				propanal_byall();
 			}else{
-				if (!($('#showJJC').is(":checked")||$('#showAlly').is(":checked")||$('#showNormal').is(":checked"))){
+				if (!($('#showJJC').is(":checked")||$('#showAlly').is(":checked")||$('#showAlly6').is(":checked")||$('#showNormal').is(":checked"))){
 					$('#alert_msg').html('至少选一种关卡_(:з」∠)_');
 				}else{
 					clearOutput();
@@ -192,7 +193,7 @@ function calctop(){
 				clearOutput();
 				out_propanal_byid(top_id);
 			}else{
-				if (!($('#showJJC').is(":checked")||$('#showAlly').is(":checked")||$('#showNormal').is(":checked"))){
+				if (!($('#showJJC').is(":checked")||$('#showAlly').is(":checked")||$('#showAlly6').is(":checked")||$('#showNormal').is(":checked"))){
 					$('#alert_msg').html('至少选一种关卡_(:з」∠)_');
 				}else{
 					clearOutput();
@@ -624,10 +625,8 @@ function out_propanal_byid(id){
 }
 
 function propanal_byall(){
-	if($('#showSource').is(":checked")) var showSource=1;
-	else var showSource=0;
-	if($('#showMerc').is(":checked")) var showMerc=1;
-	else var showMerc=0;
+	var showSource = $('#showSource').is(":checked");
+	var showMerc = $('#showMerc').is(":checked");
 	
 	var out='<table border="1" class="propByAll'+((showMerc||showSource)?' propSrc':'')+'">';
 	out+=tr(td('名称')+td('部位')+((showMerc||showSource)?td(showSource?'来源':(showMerc?'价格':'')):'')+td('同属性排名')+td('同部位同tag数')+td('属性被覆盖'));
@@ -747,18 +746,14 @@ function supp_byid(id,comp){ //true: comp suppresses/replaces id
 }
 
 function calctop_byall(){
-	if ($('#showJJC').is(":checked")) var showJJC=1;
-	else var showJJC=0;
-	if ($('#showAlly').is(":checked")) var showAlly=1;
-	else var showAlly=0;
-	if ($('#showNormal').is(":checked")) var showNormal=1;
-	else var showNormal=0;
-	if($('#showSource').is(":checked")) var showSource=1;
-	else var showSource=0;
-	if($('#showMerc').is(":checked")) var showMerc=1;
-	else var showMerc=0;
+	var showJJC = $('#showJJC').is(":checked");
+	var showAlly = $('#showAlly').is(":checked");
+	var showAlly6 = $('#showAlly6').is(":checked");
+	var showNormal = $('#showNormal').is(":checked");
+	var showSource = $('#showSource').is(":checked");
+	var showMerc = $('#showMerc').is(":checked");
 	var out='<table border="1" class="calcByAll'+((showMerc||showSource)?' calcSrc':'')+'">';
-	out+=tr(td('名称')+td('部位')+((showMerc||showSource)?td(showSource?'来源':(showMerc?'价格':'')):'')+td('顶配')+(showJJC?td('竞技场'):'')+(showAlly?td('联盟'+(limitMode?'(极限)':'')):'')+(showNormal?td('关卡'+(limitMode?'(极限)':'')):''));
+	out+=tr(td('名称')+td('部位')+((showMerc||showSource)?td(showSource?'来源':(showMerc?'价格':'')):'')+td('顶配')+(showJJC?td('竞技场'):'')+(showAlly?td('联盟'+(limitMode?'(极限)':'')):'')+(showAlly6?td('联盟六'+(limitMode?'(极限)':'')):'')+(showNormal?td('关卡'+(limitMode?'(极限)':'')):''));
 	for (var c in category){//sort by category
 		for (var i in cartList){
 			id=cartList[i];
@@ -792,6 +787,7 @@ function calctop_byall(){
 				cell+=td('顶配','class="inTop"');
 				cell+=(showJJC?td(retTopTd(inTop,'竞技场',id),'class="inTop"'):'');
 				cell+=(showAlly?td(retTopTd(inTop,'联盟',id),'class="inTop"'):'');
+				cell+=(showAlly6?td(retTopTd(inTop,strAlly6,id),'class="inTop"'):'');
 				cell+=(showNormal?td(retTopTd(inTop,'关卡',id),'class="inTop"'):'');
 				out+=tr(cell);
 			}
@@ -800,11 +796,12 @@ function calctop_byall(){
 				cell+=td('高配','class="inSec"');
 				cell+=(showJJC?td(retTopTd(inSec,'竞技场',id),'class="inSec"'):'');
 				cell+=(showAlly?td(retTopTd(inSec,'联盟',id),'class="inSec"'):'');
+				cell+=(showAlly6?td(retTopTd(inSec,strAlly6,id),'class="inSec"'):'');
 				cell+=(showNormal?td(retTopTd(inSec,'关卡',id),'class="inSec"'):'');
 				out+=tr(cell);
 			}
 			if(inTop.length==0 && inSec.length==0 && !($('#hideNores').is(":checked"))){
-				out+=tr(cell+td('-','class="inNone"')+(showJJC?td('','class="inNone"'):'')+(showAlly?td('','class="inNone"'):'')+(showNormal?td('','class="inNone"'):''));
+				out+=tr(cell+td('-','class="inNone"')+(showJJC?td('','class="inNone"'):'')+(showAlly?td('','class="inNone"'):'')+(showAlly6?td('','class="inNone"'):'')+(showNormal?td('','class="inNone"'):''));
 				//out+=tr(cell+td('-','class="inNone" colspan="'+(showJJC+showAlly+showNormal+1)+'"'));
 			}
 		}
@@ -830,7 +827,8 @@ function retTopTd(arr,crit,id,cartNumIfMult){
 			switch(crit){
 				case '竞技场': var pos=1; break;
 				case '联盟': var pos=2; break;
-				case '关卡': var pos=3; break;
+				case strAlly6: var pos=3; break;
+				case '关卡': var pos=4; break;
 			}
 			a='<span id="cell'+id+'t'+(limitMode?"l":"n")+pos+cartNumIfMult+'">'+ahref('共'+cnt+'关',"showTop('"+id+"t"+(limitMode?"l":"n")+pos+cartNumIfMult+"')")+'</span>';
 			a+='<span id="cell'+id+'t'+(limitMode?"l":"n")+pos+cartNumIfMult+'f" style="display:none">'+ret+'<br>'+nobr(ahref('收起',"hideTop('"+id+"t"+(limitMode?"l":"n")+pos+cartNumIfMult+"')"))+'</span>';
@@ -849,7 +847,8 @@ function retTopTd(arr,crit,id,cartNumIfMult){
 			switch(crit){
 				case '竞技场': var pos=1; break;
 				case '联盟': var pos=2; break;
-				case '关卡': var pos=3; break;
+				case strAlly6: var pos=3; break;
+				case '关卡': var pos=4; break;
 				default: var pos=0;
 			}
 			a='<span id="cell'+id+'s'+(limitMode?"l":"n")+pos+cartNumIfMult+'">'+ahref('共'+cnt+'关',"showTop('"+id+"s"+(limitMode?"l":"n")+pos+cartNumIfMult+"')")+'</span>';
@@ -914,8 +913,19 @@ function storeTopByCate(cartCates){
 		}
 		if ($('#showAlly').is(":checked")){
 			for (var c in tasksRaw){
-				theme_name=c;
+				theme_name = c;
 				if (allThemes[theme_name]) {
+					setFilters(allThemes[theme_name]);
+					onChangeCriteria();
+					if (cate==0){storeTop[theme_name]=[];}//initialize as array
+					storeTop[theme_name].push([cartCates[cate],getTopCloByCate(criteria, $("#showCnt").val(), cartCates[cate])]);
+				}
+			}
+		}
+		else if ($('#showAlly6').is(":checked")){
+			for (var c in tasksRaw){
+				theme_name = c;
+				if (allThemes[theme_name] && theme_name.indexOf(strAlly6)==0) {
 					setFilters(allThemes[theme_name]);
 					onChangeCriteria();
 					if (cate==0){storeTop[theme_name]=[];}//initialize as array
@@ -950,8 +960,16 @@ function calctop_byid(id){
 	}
 	if ($('#showAlly').is(":checked")){
 		for (var c in tasksRaw){
-			theme_name=c;
+			theme_name = c;
 			if (allThemes[theme_name]) {
+				calctop_bytheme(id,theme_name);
+			}
+		}
+	}
+	else if ($('#showAlly6').is(":checked")){
+		for (var c in tasksRaw){
+			theme_name = c;
+			if (allThemes[theme_name] && theme_name.indexOf(strAlly6)==0) {
 				calctop_bytheme(id,theme_name);
 			}
 		}
