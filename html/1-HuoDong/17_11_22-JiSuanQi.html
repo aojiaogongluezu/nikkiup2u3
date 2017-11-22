@@ -192,6 +192,7 @@ function calc(){
 	var to_pay = to_buy * price;
 	
 	var calcres='<table>'+tr(td('计算结果：'));
+	calcres+=tr(td('<font color="red">计算器暂不能正确处理“当前云天令、剩余天数、今天剩余次数”这三项的所需令牌数计算！请谨慎使用！会尽快调整。（目前是按默认值计算，分别是0个、6天、3次）</font>'));
 	calcres+=tr(td('共需'+aim_exchange+'个'+item_name+'，扣除已有还需刷'+aim_exchange+'个'));
 	calcres+=tr(td('共需完成'+aim_quest+'次任务，扣除已有还需完成'+rem_quest+'次'));
 	calcres+=tr(td('两边取最大值，还需完成'+times+'次任务' + (stamina>0?'，消耗'+stamina+'体力':'')));
