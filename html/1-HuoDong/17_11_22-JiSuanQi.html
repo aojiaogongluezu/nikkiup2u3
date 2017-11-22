@@ -93,7 +93,7 @@ function init(){
 }
 function showTables(){
 	for (c in sides){
-		var radio = '<label><input type="radio" name="sides" id="side'+c+'" value="'+c+'" onclick="chgMode(this.value)">'+sides[c]+'</label>';
+		var radio = '<label><input type="radio" name="sides" id="side'+c+'" value="'+c+'" onclick="chgMode(this.value);calc();">'+sides[c]+'</label>';
 		document.getElementById("radio").innerHTML += radio;
 	
 		var table = '<table border="1" id="table'+ c +'">';
@@ -121,7 +121,6 @@ function chgMode(a){
 		if (c == a) document.getElementById("table"+c).style.display = "table";
 		else document.getElementById("table"+c).style.display = "none";
 	}
-	calc();
 }
 function checkall(n,c){
 	var pos = 0;
@@ -211,8 +210,10 @@ function loadSettings(){
 	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_kazoku")) {
 		var loadString=localStorage.getItem("nikki_kazoku");
 		
-		var own_str=getStoredStr(loadString, 'own').split(',');
-		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
+		var sides = getStoredStr(loadString, 'sides');
+		chgMode(sides);
+		var own_str = getStoredStr(loadString, 'own').split(',');
+		for (i=0;i<need_exchange.length;i++) {if(own_str[i]>0) document.getElementById("own"+i+'-'+sides).checked=true;}
 		
 		calc();
 	}
@@ -222,7 +223,7 @@ function getStoredStr(string, id){
 	return string.substr(start,string.substr(start).indexOf('];'));
 }
 function saveSettings(){
-	var saveString = 'own:['+own.join(',')+'];';
+	var saveString = 'own:['+own.join(',')+'];sides:['+getRadio('sides')+'];';
 	//own:[1,1,0,0,0];
 	if (typeof(Storage) !== "undefined") {
 		localStorage.setItem("nikki_kazoku", saveString);
