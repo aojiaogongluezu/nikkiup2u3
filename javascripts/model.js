@@ -19,8 +19,8 @@ var global = {
 };
 
 // parses a csv row into object
-// Clothes: name, type, id, stars, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm, extra, source, set
-//          0     1     2   3      4         5       6        7       8       9     10    11    12    13    14     15      16
+// Clothes: name, type, id, stars, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm, extra, source, set, srcShort
+//          0     1     2   3      4         5       6        7       8       9     10    11    12    13    14     15      16   17
 Clothes = function(csv) {
   var theType = typeInfo[csv[1]];
   if(!theType)
@@ -39,8 +39,10 @@ Clothes = function(csv) {
     cool: realRating(csv[12], csv[13], theType),
     tags: csv[14].split('/'),
     source: csv[15].replace(/设·图/g,"设计图").replace(/设·/g,""),
-    set: csv[16],
+    set: /^.*·[染套基]$/.test(csv[16]) ? '' : csv[16],
+    setRef: csv[16],
     version: csv[17],
+    srcShort: csv[18] ? csv[18] : csv[15],
     deps: [],
     exDep: '',
     toCsv: function() {
