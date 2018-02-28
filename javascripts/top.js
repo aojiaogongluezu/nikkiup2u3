@@ -697,7 +697,7 @@ function propanal_byall(){
 					cellRank+=(out_replTag[tagj][1] ? addTooltip(replTagTxt,out_replTag[tagj][1]) : replTagTxt) +'<br>';
 				}
 			}
-			cellContent+=td(cellRank,(cellRank.indexOf('：0个')>-1||cellRank=='0个'?'class="inTop"':' '));
+			cellContent+=td(cellRank,(cellRank.indexOf('：0个')>-1||cellRank.indexOf('0个')==0?'class="inTop"':' '));
 			
 			if ($.inArray(clothes[id].type.type, skipCategory)>=0) {cellContent=td('-')+td('-')+td('-'); isTop=0; isSec=0;} //skip
 			if (!$('#hideNores').is(":checked")||isSec||isTop){
