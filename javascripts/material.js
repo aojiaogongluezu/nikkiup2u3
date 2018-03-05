@@ -9,8 +9,8 @@ $(document).ready(function () {
 var highlight = ['星之海','韶颜倾城','格莱斯','冰风战歌','白樱恋歌'];
 var highlight_style = ['xzh','syqc','gls','bfzg','bylg'];
 
-var src = ['公','少','店·金币,店·钻石,店','设计图','重构','抽·,礼盒·','兑·,联盟·','']; //note:'重构'&'联盟·小铺' are hardcoded in function
-var src_desc = ['公主级掉落','少女级掉落','商店购买','设计图','重构','谜之屋','兑换','其它']; //note:'谜之屋','兑换' is hardcoded in function
+var src = ['公','少','重构','抽·,礼盒·','兑·,联盟·','店·金币,店·钻石,店','']; //note:'重构'&'联盟·小铺' are hardcoded in function
+var src_desc = ['公主级掉落','少女级掉落','重构','谜之屋','兑换','商店购买','其它']; //note:'谜之屋','兑换' is hardcoded in function
 var chapList = [];
 var reqCnt = [];
 var parentInd = [];

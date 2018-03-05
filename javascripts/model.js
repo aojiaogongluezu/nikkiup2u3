@@ -77,14 +77,10 @@ Clothes = function(csv) {
       var ret = '';
         for (var i in this.deps) {
           var depinfo = this.deps[i];
-		  var c = depinfo.c;
-		  var depNumAll = 1;
-		  if(depinfo.sourceType != "染"){
-			depNumAll = parentDepNum * depinfo.depNum - parentDepNum;
-		  }
-		  else{
-			 depNumAll = parentDepNum;
-		  }
+          var c = depinfo.c;
+          var depNumAll = 1;
+          if(depinfo.sourceType != "染") depNumAll = parentDepNum * depinfo.depNum - parentDepNum;
+          else depNumAll = parentDepNum;
           ret += indent + '[' + depinfo.sourceType + '][' + c.type.mainType + ']'
               + c.name + ((c.own || depNumAll == 0)? '' : '[消耗' + (depNumAll)  + ']')+ '\n';
           ret += c.getDeps(indent + "   ", depNumAll);
@@ -98,8 +94,10 @@ Clothes = function(csv) {
 		if (this.exDep) {
 			ret = indent + "[织梦]" + this.exDep + "\n" + ret;
 		}
-		if(indent == '   ' && ret != '')
+		if(indent == '   ' && ret != ''){
 			ret = "[材料]" + this.name + (' - 总计需 '+ depNumAlls + ' 件') + "\n" + ret;
+			ret = $.unique(ret.split('\n')).join('\n'); //mod 180305: avoid reoccurring refer to same clothes
+		}
       return ret;
     },
     calc: function(filters) {
