@@ -217,7 +217,7 @@ function chgScopeSub(){
 					}
 				}
 			}
-		}else if(j==3){//design&evo > others
+		/*}else if(j==3){//design&evo > others
 			var tmpArr1 = [];
 			for(var c in clothes){
 				if(clothes[c].set&&(clothes[c].source.indexOf('设')>-1||clothes[c].source.indexOf('进')>-1)){
@@ -234,7 +234,7 @@ function chgScopeSub(){
 			}
 			tmpArr1 = getDistinct(tmpArr1);
 			tmpArr1.sort();
-			selectArr = selectArr.concat(tmpArr1);
+			selectArr = selectArr.concat(tmpArr1);*/
 		}else if(j==4){
 			for(var c in clothes){
 				if(clothes[c].type.type=='萤光之灵') continue;
@@ -772,10 +772,10 @@ function searchSet(setName,showConstructInd,showConsumeInd){//showConsumeInd is 
 	}
 	
 	var output = table();
-	var cell = '<b>套装：</b>'+ahref(setName,"chgScopeSub2(3,'"+setName+"')")+'　全'+setCnt+'个部件材料总览';
+	var cell = '<b>套装：</b>'+ahref(setName,"chgScopeSub2(3,'"+setName+"')")+'('+searchCountry(setName)+')　全'+setCnt+'个部件材料总览';
 	output += tr(tab(cell,'colspan="3"'));
 	if(thisPatternPrice>0||thisPatternPrice_2>0){
-		output += tr(tab((thisPatternPrice>0? '设计图总价：'+thisPatternPrice+'&emsp;':'')+(thisPatternPrice_2>thisPatternPrice? '设计图总价(含材料)：'+thisPatternPrice_2:''),'colspan="3"'));
+		output += tr(tab((thisPatternPrice>0? '设计图总价：'+thisPatternPrice+'星币&emsp;':'')+(thisPatternPrice_2>thisPatternPrice? '设计图总价(含材料)：'+thisPatternPrice_2+'星币':''),'colspan="3"'));
 	}
 	output += tr(tab('','colspan="3"'));
 	output += genBasicMaterial(1,setName,showConstructInd,showConsumeInd);
@@ -954,6 +954,13 @@ function getPatternPrice(id){
 		if (clothes[id].type.mainType==patternPrice[pc][0]&&clothes[id].id==patternPrice[pc][1]){
 			return patternPrice[pc][2];
 		}
+	}
+	return;
+}
+
+function searchCountry(name){
+	for (var i in setcategory){
+		if (setcategory[i][1]==name) return setcategory[i][0];
 	}
 	return;
 }
