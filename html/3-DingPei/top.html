@@ -6,14 +6,11 @@
 	<link rel="icon" href="../../images/icon.jpg" type="image/x-icon" />
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Miracle Nikki - 奇迹暖暖顶配查询器</title>
+	<title>Miracle Nikki - 奇迹暖暖顶配查询</title>
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<style>
 		.unwrap {word-break:keep-all; color:#ff7890;}
 		.nobr {white-space:nowrap;}
-		.inTop,.haveTop {color:red;}
-		.inSec {color:black;}
-		.inName {word-break:break-all;}
 		a.aTooltip {color:inherit;}
 		a.aTooltip:hover {text-decoration:none;}
 		body {margin:1em; font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;}
@@ -25,6 +22,7 @@
 		table.calcByAll, table.propByAll {width:100%; table-layout:fixed; min-width:285px;}
 		table.calcByAll tr td:nth-child(-n+3), table.propByAll tr td:nth-child(-n+2), table.propSrc tr td:nth-child(3) {width:10%;}
 		table.calcSrc tr td:nth-child(3),table.calcSrc tr td:nth-child(4) {width:7.5%;}
+		table.calcByAll tr.top td, table.propByAll tr.top td:nth-child(-n+2), td.top{color:red;}
 		@media only screen and (max-width: 360px){
 			table.calcByAll tr td, table.propByAll tr td {padding:1px;}
 			table.calcByAll tr td:nth-child(-n+3), table.propByAll tr td:nth-child(-n+2), table.propSrc tr td:nth-child(3) {width:16px;}
@@ -39,6 +37,7 @@
 			width: 150px; word-break:break-all; white-space:pre-wrap;
 		}
 		table.propByAll tr td:nth-last-child(1) [tooltip]:hover:before {margin-left:-120px;}
+		table.calcByAll tr td:nth-child(1) [tooltip]:hover:before, table.propByAll tr td:nth-child(1) [tooltip]:hover:before {margin-left:0px;}
 		.normTip [tooltip]:hover:before {
 			margin-left:0px; width: 170px; word-break:break-all; white-space:pre-wrap;
 		}
@@ -55,50 +54,30 @@
 	<script type='text/javascript' charset="UTF-8" src='../../data/levels.js'></script>
 	<script type='text/javascript' charset="UTF-8" src='../../data/levels-hs.js'></script>
 	<script type='text/javascript' charset="UTF-8" src='../../javascripts/top.js'></script>
-	<script type='text/javascript' charset="UTF-8">
-	$(document).ready(function () {
-		if (typeof(Storage) !== "undefined"&&localStorage.getItem("rean_top_buzz")){
-			if(localStorage.getItem("rean_top_buzz")>0) {showBuzz();};
-		}
-	});
-	function showBuzz(){
-		if ($('#buzz').is(":visible")){
-			$('#buzz').hide();
-			$('#abuzz').html("&lt;碎碎念&gt;");
-			var hideBuzz=1;
-		}else{
-			$('#buzz').show();
-			$('#abuzz').html("&lt;收起&gt;");
-			var hideBuzz=0;
-		}
-		if (typeof(Storage) !== "undefined") {
-			localStorage.setItem("rean_top_buzz", hideBuzz);
-		}
-	}
-	</script>
 </head>
 <body>
 	<p>
-		<b>奇迹暖暖顶配查询器</b> by Rean@<a href="http://aojiaogongluezu.github.io">傲娇攻略组</a><br/>
-		&emsp;部分算法基于 <a href="http://seal100x.github.io/nikkiup2u3/">配装器 by 黑的升华</a><br/>
-		&emsp;微调  by 傲娇攻略组<span id="buzz"><br/>
+		<b>奇迹暖暖顶配查询</b> by Rean@<a href="http://aojiaogongluezu.github.io">傲娇攻略组</a><br/>
+		&emsp;分数等同 <a href="http://seal100x.github.io/nikkiup2u3/">配装器 by 黑的升华</a><span id="buzz"><br/>
 		&emsp;碎碎念：为了方便大家使用，工具是开源的，但请考虑到我们编写算法和维护数据的付出，引用或抱走时请保留作者信息。</span>
 		<a href="" onclick="showBuzz();return false;" id="abuzz" class="nobr">&lt;收起&gt;</a><br/>
 	</p>
 	<hr>
+	<p id="top_radio">模式： <label><input type="radio" name="ar" checked onclick="chgDpMode(1)">顶配分析</label> <label><input type="radio" name="ar" onclick="chgDpMode(2)">刷分更新</label></p>
+	
+	<span class="DpMode1">
 	<p>
 		<input type="text" id="textBox" placeholder="名称/套装/来源" />
 		<button id="searchById" onclick="searchById()">查找</button>
 		<button id="calc" onclick="calctop()">计算</button>
 		<span id='alert_msg' class="unwrap"></span>
 	</p>
-	<span id="show_opt">　<a href="" onclick="show_opt();return false;">↓展开选项↓</a></span>
-	<span id="options">
+	<span id="show_opt1" style="display:none">　<a href="" onclick="show_opt(1);return false;">↓展开选项↓</a></span>
+	<span id="options1">
 	<fieldset>
-		<legend><a href="" onclick="hide_opt();return false;">选项（重新计算生效）</a></legend>
+		<legend><a href="" onclick="hide_opt(1);return false;">选项（重新计算生效）</a></legend>
 		计算<input type="text" id="showCnt" size="2" style="line-height:100%;"/>件高配信息<br>
 		<span class="levels">计算 <label><input type="checkbox" id="showJJC" checked />竞技场</label> <label><input type="checkbox" id="showAlly" checked />联盟</label> <label><input type="checkbox" id="showAlly6" />联盟六</label> <label><input type="checkbox" id="showNormal"/>主线</label><br></span>
-		<!--<input type="checkbox" id="limitMode" />极限权重模式 <span id="limitNote" class="normTip">说明</span><br>-->
 		<label><input type="radio" name="limit" id="limitN" value="0" checked onclick="chgLimitType(this.value)">标准权重</label> <label><input type="radio" name="limit" value="1" id="limitL" onclick="chgLimitType(this.value)">极限权重</label><span id="limitNote" class="normTip">[注]</span> <label><input type="radio" name="limit" value="2" id="limitA" onclick="chgLimitType(this.value)">属性分析</label><br>
 		<label><input type="checkbox" id="cartMode" onclick="chgcartMode()"/>选取多件</label>
 		<span class="cartContent">
@@ -112,6 +91,23 @@
 	<p>
 	<span id="cart"></span><button class="btn btn-xs btn-default" onclick="addCart_All()">添加整个列表</button> <button class="btn btn-xs btn-default" onclick="clearCart()">清空</button>
 	</p>
+	</span>
+	</span>
+	
+	<span class="DpMode2" style="display:none">
+	<p>
+		当前版本：<span id="newVer"></span>
+		<button id="calc" onclick="calctopupd()">计算</button>
+		<span id='alert_msg_update' class="unwrap"></span>
+	</p>
+	<span id="show_opt2" style="display:none">　<a href="" onclick="show_opt(2);return false;">↓展开选项↓</a></span>
+	<span id="options2">
+	<fieldset>
+		<legend><a href="" onclick="hide_opt(2);return false;">选项（重新计算生效）</a></legend>
+		显示<input type="text" id="showCnt2" size="2" style="line-height:100%;"/>件高配信息<br>
+		分差超过<input type="text" id="showScore" size="5" style="line-height:100%;"/>的关卡<br>
+		<label><input type="checkbox" id="showNormal2" checked />主线</label> <label><input type="checkbox" id="showAlly2" checked />联盟</label> <label><input type="checkbox" id="showAlly62" />联盟六</label> <label><input type="checkbox" id="showJJC2" />竞技场</label>&ensp;<span id="limitNote_update" class="normTip">[注]</span><br>
+	</fieldset></span>
 	</span>
 	<hr>
 	<p id='topsearch_note'></p>

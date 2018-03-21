@@ -202,12 +202,28 @@ Clothes = function(csv) {
 }
 
 var lastVersion = function() {
-	var last = ''; var largest = 0;
+	var last = ''; var largest = ['0'];
 	for (var i in wardrobe) {
-		if (wardrobe[i][17].replace(/[^0-9]/g,'') > largest) last = wardrobe[i][17];
+		var tmpArr = wardrobe[i][17].replace(/V/g,'').split('.');
+		if (greaterVer(tmpArr,largest)) {
+			last = wardrobe[i][17];
+			largest = tmpArr;
+		}
 	}
 	return last;
 }();
+
+function greaterVer(a,b){
+	for (var j=0; j<Math.min(a.length,b.length); j++){
+		if (a[j]&&b[j]) {
+			if (Number(a[j]) > Number(b[j])) return true;
+			else if (Number(a[j]) < Number(b[j])) return false;
+			else continue;
+		}else if (a[j]) return true;
+		else return false;
+	}
+	return false;
+}
 
 function clotonum(type,id){
 	var mainType='';
