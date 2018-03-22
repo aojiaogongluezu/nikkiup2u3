@@ -96,7 +96,18 @@ Clothes = function(csv) {
 		}
 		if(indent == '   ' && ret != ''){
 			ret = "[材料]" + this.name + (' - 总计需 '+ depNumAlls + ' 件') + "\n" + ret;
-			ret = $.unique(ret.split('\n')).join('\n'); //mod 180305: avoid reoccurring refer to same clothes
+			var ret2 = ret.split('\n'); //mod 180322: avoid reoccurring refer to same clothes
+			for (var i=0;i<ret2.length;i++){
+				for (var j=0;j<ret2.length;j++){
+					if (j>=i) break;
+					if (ret2[i].trim()==ret2[j].trim()) {
+						ret2.splice(i, 1);
+						i--;
+						break;
+					}
+				}
+			}
+			ret = ret2.join('\n');
 		}
       return ret;
     },
