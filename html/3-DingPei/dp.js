@@ -1,10 +1,10 @@
 function showTop(id){
-	if(document.getElementById('cell'+id+'f')) {document.getElementById('cell'+id+'f').style.display="block"};
-	if(document.getElementById('cell'+id)) {document.getElementById('cell'+id).style.display="none";}
+	if(document.getElementById('a'+id+'f')) document.getElementById('a'+id+'f').style.display="block";
+	if(document.getElementById('a'+id)) document.getElementById('a'+id).style.display="none";
 }
 function hideTop(id){
-	if(document.getElementById('cell'+id+'f')) {document.getElementById('cell'+id+'f').style.display="none";}
-	if(document.getElementById('cell'+id)) {document.getElementById('cell'+id).style.display="block";}
+	if(document.getElementById('a'+id+'f')) document.getElementById('a'+id+'f').style.display="none";
+	if(document.getElementById('a'+id)) document.getElementById('a'+id).style.display="block";
 }
 function chgMode(mode){
 	var x=[];
