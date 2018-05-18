@@ -45,7 +45,7 @@ function event_alert(){
 				ret2.push([time_h,eventList[i][0]+'&emsp;'+time_h+'时'+time_m+'分后开启']);
 				
 				//gen 公主双倍材料
-				if(eventList[i][0].indexOf('公主')>=0&&eventList[i][0].indexOf('双倍')>=0&&el('autogenGZ')){
+				if(eventList[i][0].indexOf('公主')>=0&&eventList[i][0].indexOf('倍')>=0&&el('autogenGZ')){
 					var GZList_r=eventList[i][0].split('/');
 					for (var g in GZList_r){
 						GZList_r[g]=GZList_r[g].replace(/[^0-9a-zA-Z-]*/g,'');
@@ -62,7 +62,7 @@ function event_alert(){
 			else {ret1.push([time_h+time_d*24,eventList[i][0]+'&emsp;'+time_d+'天'+time_h+'时'+time_m+'分后结束']);}
 			
 			//gen 公主双倍材料
-			if(eventList[i][0].indexOf('公主')>=0&&eventList[i][0].indexOf('双倍')>=0&&el('autogenGZ')){
+			if(eventList[i][0].indexOf('公主')>=0&&eventList[i][0].indexOf('倍')>=0&&el('autogenGZ')){
 				var GZList_r=eventList[i][0].split('/');
 				for (var g in GZList_r){
 					GZList_r[g]=GZList_r[g].replace(/[^0-9a-zA-Z-]*/g,'');
