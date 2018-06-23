@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+</head>
+
+<body>
+<div class="myframe" >
+
+<p class="title1">DAY4 姻缘之宿</p><hr class="mhr"/>
+<p class="normal"><span class="title3">更新时间：2018-6-22</span><br><span class="title3">更新人员：</span>又又</p><hr class="mhr"/>
+<p class="normal">
+<span class="title3">关卡权重：</span><span class="comment">简约:优雅:可爱:清纯:清凉 = 1.33:1.33:0.67:1.33:1</span><br>
+<span class="title3">关卡tag ：</span><span class="comment">中式古典A 中式现代A</span><br>
+<span class="title3">npc技能：</span><span class="comment"></span><br>
+<span class="title3">推荐技能：</span><span class="comment">飞吻 微笑 挑剔 沉睡</span><br>
+
+
+
+</p><hr class="mhr"/><p class="title2">服装</p><hr class="mhr"/>
+<p class="normal">
+<span class="title3">发&emsp;&emsp;型：</span><span class="top">初恋〔金/抽〕</span><span class="genera1">> 绫家小女〔织梦〕> 花信风〔公〕> 蝴蝶〔公/抽〕</span><br>
+<span class="title3">连&ensp;衣&ensp;裙：</span><span class="top">祥云舞·赤〔缥缈〕（42697）</span><span class="genera1">> 山茶春色〔图〕（42527）> 水芝〔公〕（42402）> 绿烟〔公/抽〕（42002）</span><br>
+#REF!
+#REF!
+<span class="title3">外&emsp;&emsp;套：</span><span class="top">邀泛花〔缥缈〕</span><span class="genera1">> 蓬山芳信〔公〕</span><br>
+<span class="title3">袜&emsp;&emsp;套：</span><span class="top">月涟漪〔缥缈〕</span><span class="genera1">> 余韵轻绕〔图〕> 蝶舞轻绕〔公〕</span><br>
+<span class="title3">袜&emsp;&emsp;子：</span><span class="top">故剑情深〔故宫〕</span><span class="genera1">> 喜气洋洋〔云禅〕> 紫兰情·珍稀〔定·进·公/抽〕</span><br>
+<span class="title3">鞋&emsp;&emsp;子：</span><span class="top">拂绿·华丽〔进·公/抽〕</span><span class="genera1">> 白锦履〔图〕> 拂绿〔公/抽〕> 水芸〔公〕</span><br>
+<span class="title3">妆&emsp;&emsp;容：</span><span class="top">月空冥〔缥缈〕</span><span class="genera1">> 相思迢迢〔图〕> 花香雪〔缥缈〕> 北地英姿〔金〕</span><br>
+<span class="title3">萤光之灵：</span><span class="top">时光花雨〔海樱〕</span><span class="genera1">> 黎明竖琴〔克洛里斯〕> 雪夜白樱〔海樱〕> 猫说·时光〔奥兰多〕</span><br>
+
+</p><hr class="mhr"/><p class="title2">饰品</p><hr class="mhr"/>
+<p class="normal">
+<span class="title3">头&emsp;&ensp;饰：</span><span class="top">莺语〔公/抽〕</span><span class="genera1">> 月水莲〔缥缈〕> 兰佩〔公/抽〕> 嘉鸟之辰〔公〕</span><br>
+<span class="title3">头&emsp;&ensp;纱：</span><span class="top">白头之约〔钻〕</span><span class="genera1">> 昊天云冠〔云禅〕> 凤翅紫金冠〔福袋〕> 晨露少女〔定·进·公〕</span><br>
+<span class="title3">发&emsp;&ensp;卡：</span><span class="top">端午百福·洛〔定·图〕</span><span class="genera1">> 锦瑟银铮〔风月〕> 端午百福〔图〕> 银杏簪〔繁星〕</span><br>
+<span class="title3">耳&emsp;&ensp;朵：</span><span class="top">摩羯牧角〔氪〕</span><span class="genera1">> 狮子萌耳〔氪〕> 机械天使〔钻〕= 深棕狼耳〔公〕</span><br>
+<span class="title3">耳&emsp;&ensp;饰：</span><span class="top">白果耳坠〔织梦〕</span><span class="genera1">> 成玦〔缥缈〕> 雀扇摇〔幻夜〕> 莺蕊〔图〕</span><br>
+<span class="title3">围&emsp;&ensp;巾：</span><span class="top">碧云锦〔织梦〕</span><span class="genera1">> 椿锦〔图〕> 雀带〔抽〕> 吉祥如意〔云禅〕</span><br>
+<span class="title3">项&emsp;&ensp;链：</span><span class="top">月光石〔缥缈〕</span><span class="genera1">> 翡翠环〔图〕> 青鸟衔珏〔公〕</span><br>
+<span class="title3">手饰·右：</span><span class="top">月石链〔缥缈〕</span><span class="genera1">> 青鸾环〔钻〕> 玲珑手环〔图〕> 恋爱法则·手链〔梦坊〕</span><br>
+<span class="title3">手饰·左：</span><span class="top">翠玉镯〔图〕</span><span class="genera1">> 青溪穗〔织梦〕> 呓语与缘〔钻〕> 细碎花串〔金〕</span><br>
+<span class="title3">手饰·双：</span><span class="top">天香盈袖〔繁星〕</span><span class="genera1">> 寻桂子〔图〕> 乡书情〔集影〕> 恭送年年〔云禅〕</span><br>
+<span class="title3">手持·右：</span><span class="top">蓝瓷·包〔缥缈〕</span><span class="genera1">> 桃花伞〔图〕> 烟雨折扇〔定·图〕> 银杏书册〔织梦〕</span><br>
+<span class="title3">手持·左：</span><span class="top">玲珑粽·咸〔定·图〕</span><span class="genera1">> 玲珑粽〔图〕> 夏浦扇〔金〕> 提灯染华裳〔钻〕</span><br>
+<span class="title3">腰&emsp;&emsp;饰：</span><span class="top">玲珑戏蝶〔图〕</span><span class="genera1">> 封镜裳〔繁星〕> 魂令〔魑魅〕> 金玉满堂〔云禅〕</span><br>
+
+</p><hr class="mhr"/><p class="title2">饰品·特殊</p><hr class="mhr"/>
+<p class="normal">
+<span class="title3">面&emsp;&emsp;饰：</span><span class="top">雀屏〔抽〕= 面窗纱〔图〕</span><span class="genera1">> 近视眼镜〔金/抽〕</span><br>
+<span class="title3">胸&emsp;&emsp;饰：</span><span class="top">水缎云间〔四战〕</span><span class="genera1">> 水纱少灵〔公〕> 五谷丰登彩帨〔故宫〕> 欢辞旧岁〔金〕</span><br>
+<span class="title3">纹&emsp;&emsp;身：</span><span class="top">花神庇佑〔图〕</span><span class="genera1">> 血色星轨〔套·血月〕> 青之信念〔定·图〕> 芊眠·晨〔风月〕> 红颊〔图〕</span><br>
+<span class="title3">翅&emsp;&emsp;膀：</span><span class="top">黎明之翼〔幻夜〕</span><span class="genera1">> 寒冰之轮〔风月〕> 鹅毛云朵朵〔六一〕</span><br>
+<span class="title3">尾&emsp;&emsp;巴：</span><span class="top">金福猴尾〔金〕</span><span class="genera1">> 迎福辟邪〔金〕> 南风栉羽〔金〕> 爱神之翼〔钻〕</span><br>
+<span class="title3">前&emsp;&emsp;景：</span><span class="top">镜花水月〔魑魅〕</span><span class="genera1">> 月香渺〔缥缈〕> 红烛微漾〔婚纱〕</span><br>
+<span class="title3">后&emsp;&emsp;景：</span><span class="top">月千重〔缥缈〕</span><span class="genera1">> 冰裂纹梅花窗〔故宫〕> 烟烛台〔抽〕> 映绮如霞〔婚纱〕</span><br>
+<span class="title3">顶&emsp;&emsp;饰：</span><span class="top">寂寞告白〔套·集影〕</span><span class="genera1">> 残破枷锁〔图〕> 五月玫瑰〔凝砂〕</span><br>
+<span class="title3">地&emsp;&emsp;面：</span><span class="top">花颜月貌〔福袋〕</span><span class="genera1">> 澄渊水莲〔繁星〕> 喜盈绣闺〔婚纱〕> 烟云旧梦〔钻〕</span><br>
+<span class="title3">皮&emsp;&emsp;肤：</span><span class="top">残破木偶〔图〕</span><span class="genera1">> 热情阳光〔登录〕</span><br>
+
+
+</p>
+</div>
+</body>
+</html>
