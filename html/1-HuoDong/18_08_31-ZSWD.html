@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<script type="text/javascript" charset="UTF-8">
+window.onload = function(){
+	for (var i=0;i<document.getElementsByClassName("question").length;i++){
+		document.getElementsByClassName("question")[i].innerHTML = (i+1) + '.';
+		if (document.getElementsByClassName("answer")[i]) document.getElementsByClassName("answer")[i].innerHTML = (i+1) + '.';
+	}
+};
+</script>
+<style>.answer{opacity:0;}</style>
+</head>
+<!--
+<body>
+<div class="myframe"> 
+<p class="title1">命运回响 问答题库</p><hr class="mhr">
+<p class="normal"><span class="title3">更新时间：</span>2018-8-31<br>
+				  <span class="title3">更新人员：</span>凉夜</p>
+<hr class="mhr">
+<p class="normal">
+<span class="title3">活动说明：</span>答错不扣次数，不可买次数。<br>
+<span class="title3">文字题目：</span>按首字母排序。<br>
+</p><hr class="mhr">
+
+<span class="jump">页内跳转：
+<a href="#D">D</a>&emsp;
+<a href="#E">E</a>&emsp;
+<a href="#G">G</a>&emsp;
+<a href="#H">H</a>&emsp;
+<a href="#J">J</a>&emsp;
+<a href="#Q">Q</a>&emsp;
+<a href="#S">S</a>&emsp;
+<a href="#X">X</a>&emsp;
+<a href="#Y">Y</a>&emsp;
+<a href="#Z">Z</a>&emsp;</span>
+
+<a id="D"></a>
+<p class="title2">D</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>地球上最大的沙漠名为？<br>
+<span class="answer"></span><span class="title3">答：</span>撒哈拉沙漠<br>
+</p>
+<hr class="mhr">
+
+<a id="E"></a>
+<p class="title2">E</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>二十八星宿中毕宿所在的位置即是十二星座中的？<br>
+<span class="answer"></span><span class="title3">答：</span>金牛座<br>
+</p>
+<hr class="mhr">
+
+<a id="G"></a>
+<p class="title2">G</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>古代为观测天文景象，将天空划分为“三垣”和？<br>
+<span class="answer"></span><span class="title3">答：</span>二十八星宿<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>古代星象术士将代表灾厄的彗星称之为？<br>
+<span class="answer"></span><span class="title3">答：</span>孛星<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>古人除了以肉眼观测星象，还用什么办法进行占星？<br>
+<span class="answer"></span><span class="title3">答：</span>推算规律<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>古人所说的“岁星”指现在的哪一颗行星？<br>
+<span class="answer"></span><span class="title3">答：</span>木星<br>
+</p>
+<hr class="mhr">
+
+<a id="H"></a>
+<p class="title2">H</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>荒漠旅行最不需要带的东西是？<br>
+<span class="answer"></span><span class="title3">答：</span>大喵<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>荒漠中拥有水源，能够形成小规模生物群落的地区被称为？<br>
+<span class="answer"></span><span class="title3">答：</span>绿洲<br>
+</p>
+<hr class="mhr">
+
+<a id="J"></a>
+<p class="title2">J</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>假如你在荒原旅行，傍晚时分最不可能遇到的情况是？<br>
+<span class="answer"></span><span class="title3">答：</span>大雪纷纷<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>“角木蛟”属于四象星宿中的？<br>
+<span class="answer"></span><span class="title3">答：</span>青龙星宿<br>
+</p>
+<hr class="mhr">
+
+<a id="Q"></a>
+<p class="title2">Q</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>晴朗的沙漠天气，远处忽然出现了城市的光影，那可能是？<br>
+<span class="answer"></span><span class="title3">答：</span>海市蜃楼<br>
+</p>
+<hr class="mhr">
+
+<a id="S"></a>
+<p class="title2">S</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>沙漠地区盛产的宝藏不包括？<br>
+<span class="answer"></span><span class="title3">答：</span>大喵<br>
+</p>
+<hr class="mhr">
+
+<a id="X"></a>
+<p class="title2">X</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>下列荒原气候特点中描述错误的是？<br>
+<span class="answer"></span><span class="title3">答：</span>雨水充足<br>
+</p>
+<hr class="mhr">
+
+
+<a id="Y"></a>
+<p class="title2">Y</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以太阳为中心，地球环绕太阳所经过的轨迹被称为？<br>
+<span class="answer"></span><span class="title3">答：</span>黄道<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪点是占星术无法做到的？<br>
+<span class="answer"></span><span class="title3">答：</span>改变现实<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪种行为可以提高在沙漠中的生存率？<br>
+<span class="answer"></span><span class="title3">答：</span>带上充足的水<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪种植物不属于沙漠常见的植被？<br>
+<span class="answer"></span><span class="title3">答：</span>灵芝<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>月食现象出现的原理是因为？<br>
+<span class="answer"></span><span class="title3">答：</span>太阳光被地球遮蔽<br>
+</p>
+<hr class="mhr">
+
+<a id="Z"></a>
+<p class="title2">Z</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>在古代，正统占星术除了用来预测人的命运，还常被用来？<br>
+<span class="answer"></span><span class="title3">答：</span>推算国运<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>占星师将人诞生时不同位置的星辰能量对人的影响列入图表，这张表叫做？<br>
+<span class="answer"></span><span class="title3">答：</span>星盘<br>
+</p>
+<hr class="mhr">
+</div>
+</body>
+-->
+</html>
