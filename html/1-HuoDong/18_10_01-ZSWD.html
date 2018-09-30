@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<script type="text/javascript" charset="UTF-8">
+window.onload = function(){
+	for (var i=0;i<document.getElementsByClassName("question").length;i++){
+		document.getElementsByClassName("question")[i].innerHTML = (i+1) + '.';
+		if (document.getElementsByClassName("answer")[i]) document.getElementsByClassName("answer")[i].innerHTML = (i+1) + '.';
+	}
+};
+</script>
+<style>.answer{opacity:0;}</style>
+</head>
+
+<body>
+<div class="myframe"> 
+<!--
+<p class="title1">蝶变之谜 问答题库</p><hr class="mhr">
+<p class="normal"><span class="title3">更新时间：</span>2018-10-1<br>
+		  <span class="title3">更新人员：</span>米桃</p>
+<hr class="mhr">
+<p class="normal">
+<span class="title3">活动说明：</span>答错不扣次数，不可买次数。<br>
+<span class="title3">文字题目：</span>按首字母排序。<br>
+</p><hr class="mhr">
+
+<span class="jump">页内跳转：
+<a href="#G">G</a>&emsp;
+<a href="#H">H</a>&emsp;
+<a href="#L">L</a>&emsp;
+<a href="#S">S</a>&emsp;
+<a href="#W">W</a>&emsp;
+<a href="#Y">Y</a>&emsp;
+</span>
+
+<a id="G"></a>
+<p class="title2">G</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>歌剧中常见的艺术手段不包括以下哪一种？<br>
+<span class="answer"></span><span class="title3">答：</span>魔术<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>歌剧演出时，在台下欣赏的观众需要做什么？<br>
+<span class="answer"></span><span class="title3">答：</span>保持安静<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>歌剧中用以抒情的独唱形式称为？<br>
+<span class="answer"></span><span class="title3">答：</span>咏叹调<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>歌剧的演员通常以什么形式进行表演？<br>
+<span class="answer"></span><span class="title3">答：</span>唱歌<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>“葛朗台”在今天用来形容什么样的人？<br>
+<span class="answer"></span><span class="title3">答：</span>守财如命的人<br>
+</p>
+<hr class="mhr">
+
+<a id="H"></a>
+<p class="title2">H</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>怀旧风格的舞厅中通常会用什么音乐当作伴奏？<br>
+<span class="answer"></span><span class="title3">答：</span>爵士乐<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>黄包车是一种什么车？<br>
+<span class="answer"></span><span class="title3">答：</span>人力拉车<br>
+</p>
+<hr class="mhr">
+
+<a id="L"></a>
+<p class="title2">L</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>留声机最初是依靠什么载体来播放不同音乐？<br>
+<span class="answer"></span><span class="title3">答：</span>黑胶唱片<br>
+</p>
+<hr class="mhr">
+
+<a id="S"></a>
+<p class="title2">S</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>十二月剧团没有演出过哪个作品？<br>
+<span class="answer"></span><span class="title3">答：</span>《罗密欧与辛德瑞拉》<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>索菲亚在演出时差点被偷走的舞裙名字是？<br>
+<span class="answer"></span><span class="title3">答：</span>星之海<br>
+</p>
+<hr class="mhr">
+
+<a id="W"></a>
+<p class="title2">W</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>“五音不全”指的是哪五音？<br>
+<span class="answer"></span><span class="title3">答：</span>宫商角徵羽<br>
+</p>
+<hr class="mhr">
+
+
+<a id="Y"></a>
+<p class="title2">Y</p>
+<hr class="mhr">
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪种不是管弦乐团的常见乐器？<br>
+<span class="answer"></span><span class="title3">答：</span>口琴<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪一项不属于莎士比亚的四大喜剧？<br>
+<span class="answer"></span><span class="title3">答：</span>罗密欧与朱丽叶<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪一项不属于莎士比亚的四大悲剧？<br>
+<span class="answer"></span><span class="title3">答：</span>第十二夜<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪一项不是常见的歌剧分幕形式？<br>
+<span class="answer"></span><span class="title3">答：</span>九十九幕歌剧<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪一项不是剧院墙面通常凹凸不平的原因？<br>
+<span class="answer"></span><span class="title3">答：</span>为了好看<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>音乐剧《歌剧魅影》的女主角叫什么名字？<br>
+<span class="answer"></span><span class="title3">答：</span>克里斯汀<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪一项不属于弄堂游戏？<br>
+<span class="answer"></span><span class="title3">答：</span>打篮球<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>以下哪一项不属于传统戏剧的主要行当？<br>
+<span class="answer"></span><span class="title3">答：</span>神<br>
+</p>
+<p class="normal">
+<span class="question"></span><span class="title3">问：</span>与咏叹调相对的，类似“朗诵”式的歌唱形式为？<br>
+<span class="answer"></span><span class="title3">答：</span>宣叙调<br>
+</p>
+<hr class="mhr">
+-->
+</div>
+</body>
+</html>
