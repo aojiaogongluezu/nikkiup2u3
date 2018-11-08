@@ -54,7 +54,10 @@ window.onload = function(){
 function init(){
 	if(sumArr(need[0])==0) document.getElementById("notice").innerHTML = '<br>尚未更新，请勿使用！';
 	var table='<table border="1">';
-	table+=tr(td('套装')+td('部位')+td('名称')+td_items(item_name,item_name_sp));
+	var names = '';
+	for (var j=0; j<level_cnt; j++) names += item_name[j].substr(0,1) + '/';
+	names+=item_name_sp.substr(0,1);
+	table+=tr(td('套装')+td('部位')+td('名称')+td(names,'colspan="'+(level_cnt+1)+'"'));
 	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="'+ (4+level_cnt+1) +'"'));
 	var pos=0;
 	for (var s in set){
