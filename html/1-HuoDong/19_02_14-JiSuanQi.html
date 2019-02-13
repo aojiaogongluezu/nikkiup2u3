@@ -1,0 +1,313 @@
+
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../../css/style.css">
+<title>Miracle Nikki - 倾心回忆·经典再现 2019.02.14</title>
+<style>
+.remark{font-size:80%;}
+td {text-align:left;}
+</style>
+<script type="text/javascript" charset="UTF-8">
+//结束时间
+var time_end=new Date("02/20/2019 23:59:59 GMT+0800").getTime();
+//开始时间
+var time_start=new Date("02/14/2019 5:00:00 GMT+0800").getTime();
+//部件类别
+var type=[
+'发型','连衣裙','鞋子','头饰·发饰','手饰·双','颈饰·项链','特殊·地面','妆容',
+'发型','连衣裙','鞋子','特殊前景','头饰·发饰','手饰·双','颈饰·项链','头饰·发卡',
+'发型','连衣裙','鞋子','头饰','耳饰','颈饰·项链','妆容',
+'发型','连衣裙','鞋子','特殊·颈部','手饰·双','颈饰·项链','特殊·前景',
+'发型','连衣裙','袜子','鞋子','手持·左','头饰','手饰·双',
+'发型','连衣裙','鞋子','特殊·前景','耳饰','手持·左','头饰','颈饰·项链',
+'发型','连衣裙','鞋子','头饰','颈饰·项链','手饰·左',
+'发型','连衣裙','鞋子','特殊·颈部','颈饰·项链','手饰·双','特殊·背景','妆容',
+'发型','上装','下装','鞋子','特殊·前景','手持·左','头饰','特殊·背景','特殊·脚部','妆容',
+'头发','连衣裙','鞋子','头饰·头纱','手持·右','颈饰·项链','手饰·双','妆容',
+'头发','连衣裙','袜子','鞋子','头饰·发饰','手饰·双','颈饰·项链','手持·左','头饰·头纱'
+];
+//部件名称
+var cname=[
+'草竖琴','纯白永恒','无梦之愿','海颂枝','晨雾漫舞','梦境低语','风露阶梯','雾中迷梦',
+'懵懂年华','憧憬心语','情愫微羽','誓言蝶舞','心意钻冕','勇气珠链','闪耀轻纱','豆蔻情结',
+'白首之约','与子成说','良缘永结','红鸾凤冠','红叶之盟','同心佩','死生契阔',
+'一见钟情','缘定今生','时间锁爱','轻纱蔓舞','相濡以沫','思恋花誓','白花紫藤',
+'童心偶遇','童心爱恋','童心相伴','童心随行','守护小熊','童心萌动','童心环绕',
+'弄青梅','喜绣缘','两无猜','落英纷','心无骛','绣缘情','静如初','红笺信',
+'藤萝','紫藤花誓言','藤萝绊','紫萝','紫藤花季','藤萝链',
+'十年之约','如约而至','踏花漫行','致凯恩','蔷薇梦语','邂逅之爱','不期而遇','温暖恋梦',
+'青丝棠雪','龙凤对襟衣','富贵牡丹裙','如意绣花鞋','红烛微漾','芙蓉邀月镜','彩蝶双栖冠','映绮如霞','喜盈绣闺','桃夭灼华',
+'思念旋律','夜月幕曲','神秘来客','璀璨幻梦','年华无踪','寻梦祈愿','弦月琴音','夜之凝眸',
+'芬芳追忆','真爱无暇','悠扬心语','思绪停驻','承诺勇气','静谧心墙','绚烂季节','纯白誓言','记忆彼方'
+];
+//套装名称
+var set=['梦中的婚礼','花雨誓约'，'与子成说','缘定今生','童心爱恋','喜绣缘','紫藤花誓言','明日如诗','辞绣闺','月光奏鸣曲','纯白小恋歌'];
+//单价
+var need=[
+118,198,110,105,86,94,150,134,
+103,152,103,111,88,74,88,96,
+116,230,130,98,98,98,135,
+110,220,126,88,88,88,185,
+86,169,85,88,74,74,74,
+96,222,101,150,95,95,95,95,
+72,108,70,48,48,48,
+115,180,100,90,90,90,120,120,
+100,80,80,75,86,86,86,106,86,120,
+121,176,112,138,103,95,95,155,
+92,135,72,78,85,72,78,98,105
+];
+//每套部件数量
+var setCnt=[8,8,7,7,7,8,6,8,10,8,9];
+//是否有消费or充值送
+var haveConsume=1;
+//消费or充值档位
+var consume=[0,108];
+//消费or充值赠送
+var consume_gain=[0,365];
+//道具名称
+var item_name='誓言戒指';
+//关卡数量
+var level_cnt=5;
+//买一次花费钻石
+var price=30;
+//买一次获得次数
+var once=3;
+//每天免费次数(每关)
+var free_1day=0;
+//赢
+var win_gain=5;
+//输
+var lose_gain=3;
+//每关体力
+var perstamina=4;
+//默认每关道具
+//var default_gain=[5,5,5,5,5];
+//可刷起始关(音乐会专用?)
+//var reset_level=3;
+//==========参数设置完毕==========//
+
+var own=[];
+var calcind=1;
+
+window.onload = function(){
+	init();
+};
+
+function init(){
+	if(need[0]==0) document.getElementById("notice").innerHTML = '<br>尚未更新，请勿使用！';
+	var table='<table border="1">';
+	table+=tr(td('套装')+td('部位')+td('名称')+td('所需'));
+	table+=tr(td(remark('*勾选代表已有/不需要部件'),'colspan="4"'));
+	var pos=0;
+	for (var s in set){
+		var line=td('<label><input type="checkbox" id="all'+s+'" onclick=checkall('+s+') >'+set[s]+'</label>');
+		var cell1=''; var cell2=''; var cell3='';
+		for (i=pos;i<pos+setCnt[s];i++){
+			cell2+='<label><input type="checkbox" id="own'+i+'" onclick=calc() >'+cname[i]+'</label><br>';
+			cell1+=type[i]+'<br>';
+cell3+='&emsp;'+need[i]+'<br>';
+		}
+		pos+=setCnt[s];
+line+=td(cell1,'style="border-right-width:0"')+td(cell2,'style="border-left-width:0;border-right-width:0"')+td(cell3,'style="border-left-width:0"');
+		//line+=td(cell1,'style="border-right-width:0"')+td(cell2,'style="border-left-width:0"');
+		table+=tr(line);
+	}
+	table+='</table>';
+	document.getElementById("table").innerHTML = table;
+	
+	var input='<table border="0">'+tr(td(''),'style="display:none"');
+	if(haveConsume){
+	input+=tr(td('已领充值档次：')+td(selectBox('already_consume','calc()',consume)),'class="consume"');
+	input+=tr(td('预算充值档次：')+td(selectBox('plan_consume','calc()',consume)),'class="consume"');
+	}
+	input+=tr(td('当前'+item_name+'：')+td(inputBox('current','calc()')));
+	input+=tr(td('剩余天数：')+td(inputBox('remain_days','calc()')));
+	input+=tr(td('今天剩余次数：')+td(inputBox('remain_today','calc()')));
+	input+=tr(td('预计胜率(%)：')+td(inputBox('pct_exp','calc(1)')));
+	input+=tr(td('预计失败场数：')+td(inputBox('wrong_exp','calc(2)')));
+	input+=tr(td(remark('&emsp;*预计项只需填写一项，会自动计算另一项'),'colspan="2"'));
+	input+='</table>';
+	input+='<hr>';
+	document.getElementById("input").innerHTML = input;
+		
+	var date_now=new Date();
+	var time_now=date_now.getTime();
+	var time_d = Math.max(0,Math.floor((time_end-time_now)/1000/60/60/24));
+	if(date_now.getHours()<5&&time_end-time_now>0){time_d+=1;}
+	setVal("remain_days", time_d);
+	if(date_now.getDate()==new Date(time_start).getDate()) setVal("remain_today", free_1day*level_cnt);
+	else setVal("remain_today", 0);
+	setVal('current', 0);
+	setVal('pct_exp', 100);
+	setVal('wrong_exp', 0);
+	setInterval(settime, 1000);
+	calc();
+}
+function checkall(n){
+	var pos=0;
+	for (i=0;i<n;i++){
+		pos+=setCnt[i];
+	}
+	if (document.getElementById('all'+n).checked){
+		for (i=pos;i<pos+setCnt[n];i++){
+			document.getElementById('own'+i).checked=true;
+		}
+	}else{
+		for (i=pos;i<pos+setCnt[n];i++){
+			document.getElementById('own'+i).checked=false;
+		}
+	};
+	calc();
+}
+function calc(ind){
+	if (!ind) {ind==calcind;}
+	calcind=ind;
+	
+	var remain_days=Math.max(0,getVal('remain_days'));
+	var remain_today=Math.max(0,getVal('remain_today'));
+	var current=Math.max(0,getVal('current'));
+	if(haveConsume){
+	var already_consume=Math.max(0,getVal('already_consume'));
+	var plan_consume=Math.max(0,getVal('plan_consume'));
+	
+	for (i=0;i<consume.length;i++){
+		if(consume[i]>already_consume&&consume[i]<=plan_consume){
+			current+=consume_gain[i];
+		}
+	}
+	}
+	
+	for (i=0;i<need.length;i++){
+		if (document.getElementById('own'+i).checked){own[i]=1;}
+		else{own[i]=0;}
+	}
+	
+	var aim=0; for(i=0;i<need.length;i++){aim+=need[i]*(1-own[i]);}
+	var rem=aim-current;
+	var to_get_times=remain_days*level_cnt*free_1day+remain_today;
+	
+	if(ind==2){
+		var wrong_exp=Math.max(0,getVal('wrong_exp'));
+		var times=Math.ceil((rem-wrong_exp*lose_gain)/win_gain+wrong_exp);
+		setVal('pct_exp',Math.round((1-wrong_exp/times)*100));
+	}else{
+		var pct_exp=Math.max(0,Math.min(100,getVal('pct_exp')));
+		var exp=win_gain*pct_exp/100+lose_gain*(1-pct_exp/100);
+		var times=Math.ceil(rem/exp);
+		setVal('wrong_exp',Math.round(times*(1-pct_exp/100)));
+	}
+	
+	//体力计算
+	var stamina=times*perstamina;
+	
+	var diff_times=times-to_get_times;
+	var to_buy=Math.max(0,Math.ceil(diff_times/once));
+	var to_pay=to_buy*price;
+	
+	var calcres='<table>'+tr(td('计算结果：'));
+	calcres+=tr(td('共需'+aim+'个'+item_name+'，扣除已有还需刷'+rem+'个'));
+	//calcres+=tr(td('约需选择'+times+'次（其中免费'+to_get_times+'次）'));
+	calcres+=tr(td('约需挑战'+times+'次（其中免费'+to_get_times+'次），消耗'+stamina+'体力'));
+	calcres+=tr(td('需购买'+to_buy+'次，花钻'+to_pay+'个'));
+	calcres+='</table>';
+	document.getElementById("calcres").innerHTML = calcres;
+	
+	/*
+	if(to_pay>plan_consume){
+		for(i=0;i<consume.length;i++){
+			if(to_pay<consume[i]) {setVal("plan_consume",consume[i-1]); break;}
+		}
+		if(to_pay>consume[consume.length-1]){setVal("plan_consume",consume[consume.length-1]);}
+		calc();
+	}
+	*/
+}
+function loadSettings(){
+	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_memories2")) {
+		var loadString=localStorage.getItem("nikki_memories2");
+		
+		var own_str=getStoredStr(loadString, 'own').split(',');
+		for (i=0;i<need.length;i++) {if(own_str[i]>0) {document.getElementById("own"+i).checked=true;}}
+		
+		calc();
+	}
+}
+function getStoredStr(string, id){
+	var start=string.indexOf(id+':[')+(id+':[').length;
+	return string.substr(start,string.substr(start).indexOf('];'));
+}
+function saveSettings(){
+	var saveString='own:['+own.join(',')+'];';
+	//own:[1,1,0,0,0];
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem("nikki_memories2", saveString);
+	}
+	document.getElementById('storage').innerHTML=saveString;
+}
+function settime(){
+	var time_now=new Date().getTime();
+	var time_d = Math.max(0,Math.floor((time_end-time_now)/1000/60/60/24));
+	var time_h = Math.max(0,Math.floor((time_end-time_now)/1000/60/60)%24);
+	var time_m = Math.max(0,Math.floor((time_end-time_now)/1000/60)%60);
+	var time_s = Math.max(0,Math.floor((time_end-time_now)/1000)%60);
+	document.getElementById("showTime").innerHTML = time_d + "天" + time_h + "时" + time_m + "分" + time_s + "秒";
+};
+function getVal(id){
+	return noNaN(parseInt(document.getElementById(id).value));
+}
+function setVal(id,val){
+	document.getElementById(id).value=val;
+}
+function noNaN( n ) {
+	return isNaN( n ) ? 0 : n;
+}
+function td(text,attr){
+	return '<td'+(attr?' '+attr:'')+'>'+text+'</td>';
+}
+function tr(text,attr){
+	return '<tr'+(attr?' '+attr:'')+'>'+text+'</tr>';
+}
+function remark(text){
+	return '<span class="remark">'+text+'</span>';
+}
+function inputBox(id,onchange,size){
+	return '<input type="text" id="'+id+'" onkeyup='+onchange+(size?' size="'+size+'"':'')+'>';
+}
+function selectBox(id,onchange,valArr,textArr){
+	var ret='<select id="'+id+'" onchange='+onchange+'>';
+	if(!textArr){textArr=valArr;}
+	for (var i in valArr){
+		ret+='<option value="'+valArr[i]+'">'+textArr[i]+'</option>';
+	}
+	ret+='</select>';;
+	return ret;
+}
+</script>
+</head>
+<body>
+<div class="myframe" >
+<p align="center" class="title1">倾心回忆·经典再现 计算器</p>
+<hr class="mhr">
+<p class="normal">
+	<span class="title3">更新时间：</span>2019-2-14<br>
+	<span class="title3">更新人员：</span>贝拉<br>
+	<!--span class="title3">注意：</span>以下计算未考虑联邦商贸！体力不够、且胜率很低的新玩家可以考虑从联邦商贸直接买戒指。<br>
+	联邦商贸内其它礼包也按其附赠的VIP经验数量计入累计充值活动。<br-->
+</p>
+<p align="center">
+距离活动结束还有<span id="showTime"></span><br>
+<button onclick="saveSettings()">保存设置</button><button onclick="loadSettings()">读取设置</button>
+<span id="notice"></span>
+</p>
+<p align="center">
+<span id="table"></span>
+<span id="input"></span>
+<span id="calcres"></span>
+<span id="storage" style="display:none"></span>
+</p>
+</div>
+</body>
+</html>
