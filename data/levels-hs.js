@@ -395,7 +395,7 @@ var tasksAdd={
 '关卡: II-5-支2':['cute','pure'],
 '关卡: II-5-支3':['active','simple'],
 '关卡: II-6-1':['cute','pure'],
-'关卡: II-6-2':['pure','cute'],
+'关卡: II-6-3':['pure','cute'],
 '关卡: II-6-支1':['active','simple'],
 '关卡: II-6-支2':['simple','cute'],
 '关卡: II-6-支3':['cute','active'],
