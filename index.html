@@ -14,7 +14,7 @@
 
 <!--主要样式-->
 <script type="text/javascript" src="javascripts/jquery-1.7.2.min.js"></script>
-
+<script type="text/javascript" src="data/iconList.js"></script>
 <script type="text/javascript">
 $(function(){		
 		try{
@@ -88,6 +88,16 @@ window.onload = function(){
 		frames['framemain'].document.body.appendChild(cssLink);
 		frames['framemain'].document.body.appendChild(cssLink_2);
 	});
+	
+	$('#framemain').load(function(){
+		if($('#framemain').contents().find('.title1').html().indexOf("顶配分析") == -1){ return; }
+		$('#framemain').contents().find('body').find("tr td:first-child a").each(function(){
+			var clothName = $(this).html();
+			if(clothesList.indexOf(clothName) == -1) return true;
+			$(this).append("<img src='http://www.spongem.com/ajglz/icon/"+ $(this).html()+".png' onerror=\"this.style.display='none'\">")
+		})
+		$('#framemain').contents().find('html').append("<style>a.aTooltip > img {width: 100%;margin-bottom: -10px;}</style>")
+	})
 };
 </script>
 </head>
