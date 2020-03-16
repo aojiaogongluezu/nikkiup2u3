@@ -76,17 +76,7 @@ window.onload = function(){
 	
 	$('#framemain').load(function() {
 		gotop();
-		
-		var cssLink = document.createElement("link");
-			cssLink.href = "/nikkiup2u3/css/overflow.css";
-			cssLink.rel = "stylesheet";
-			cssLink.type = "text/css";
-		var cssLink_2 = document.createElement("link");
-			cssLink_2.href = "/css/overflow.css";
-			cssLink_2.rel = "stylesheet";
-			cssLink_2.type = "text/css";
-		frames['framemain'].document.body.appendChild(cssLink);
-		frames['framemain'].document.body.appendChild(cssLink_2);
+		frames['framemain'].document.body.style.overflowY = "hidden";
 	});
 	
 	$('#framemain').load(function(){
