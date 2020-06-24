@@ -82,7 +82,7 @@ function searchSet(setName){
 	var out='<table border="1">';
 	out+=tr(td('名称')+td('分类')+td('套装')+td('来源')+td(''));
 	for (var i in clothes){
-		if(clothes[i].set==setName || $.inArray('套装·'+setName, clothes[i].source.split('/'))>=0){
+		if(clothes[i].set==setName || $.inArray('套装·'+setName, clothes[i].source.split('/'))>=0 || clothes[i].setRef.indexOf(setName+'·')==0){
 			currentList.push(i);
 		}
 	}
@@ -875,14 +875,14 @@ function addCates(list, id){
 function storeTopByCate_single(id, caltype){
 	var cartCates=[];
 	cartCates = addCates(cartCates, id);
-	cartCates = $.unique(cartCates);
+	cartCates = getDistinct(cartCates);
 	return storeTopByCate(cartCates, caltype, $("#showCnt").val(), []);
 }
 
 function storeTopByCartCates(caltype, nCount){
 	var cartCates=[];
 	for (var i in cartList[0]) cartCates = addCates(cartCates, cartList[0][i]);
-	cartCates = $.unique(cartCates);
+	cartCates = getDistinct(cartCates);
 	return storeTopByCate(cartCates, caltype, nCount, []);
 }
 function storeTopByCate(cartCates, caltype, nCount, skipList){
@@ -1348,13 +1348,13 @@ function delCart(id){
 }
 
 function gen_setList(){
-	setList=[];
+	setList = [];
 	for (var i in clothes){
 		if(clothes[i].set&&$.inArray(clothes[i].set,setList)<0){
 			setList.push(clothes[i].set);
 		}
 	}
-	setList=$.unique(setList);
+	setList = getDistinct(setList);
 }
 
 function nobr(text){
@@ -1378,7 +1378,10 @@ function getDistinct(arr){//$.unique(arr) has problem distinguishing string/numb
 	for (var i in arr){
 		var ind=0;
 		for (var j in newArr){
-			if (arr[i]==newArr[j]) ind=1;
+			if (arr[i]==newArr[j]) {
+				ind=1;
+				break;
+			}
 		}
 		if(ind==0) newArr.push(arr[i]);
 	}

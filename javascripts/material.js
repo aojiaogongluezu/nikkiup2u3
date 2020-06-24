@@ -962,7 +962,7 @@ function searchCountry(name){
 	for (var i in setcategory){
 		if (setcategory[i][1]==name) return setcategory[i][0];
 	}
-	return;
+	return '';
 }
 
 function getDistinct(arr){

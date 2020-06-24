@@ -19,8 +19,8 @@ var global = {
 };
 
 // parses a csv row into object
-// Clothes: name, type, id, stars, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm, extra, source, set, srcShort
-//          0     1     2   3      4         5       6        7       8       9     10    11    12    13    14     15      16   17
+// Clothes: name, type, id, stars, gorgeous, simple, elegant, active, mature, cute, sexy, pure, cool, warm, extra, source, set, version, srcShort, pose
+//          0     1     2   3      4         5       6        7       8       9     10    11    12    13    14     15      16   17       18        19
 Clothes = function(csv) {
   var theType = typeInfo[csv[1]];
   if(!theType)
@@ -43,6 +43,7 @@ Clothes = function(csv) {
     setRef: csv[16],
     version: csv[17],
     srcShort: csv[18] ? csv[18] : csv[15],
+    pose: csv[19] ? true : false,
     deps: [],
     exDep: '',
     toCsv: function() {
@@ -161,7 +162,17 @@ Clothes = function(csv) {
         }
       }
 
+      var spRange = 0 ;
+      if(Flist && Flist[filters.levelName] && Flist[filters.levelName]["range"]){
+        for (var i in Flist[filters.levelName]["range"])
+          if(this.longid == Flist[filters.levelName]["range"][i]) {
+            spRange = 1;
+            break;
+          }
+      }
+
       this.isF = (isf==1? 0:1);
+      this.spRange = spRange;
       this.tmpScore = Math.round(s);
       this.bonusScore = 0;
 	  this.sumScore = 0;
@@ -319,7 +330,27 @@ function MyClothes() {
     serialize: function() {
       var txt = "";
       for (var type in this.mine) {
-        txt += type + ":" + this.mine[type].join(',') + "|";
+		var content = this.mine[type];
+		for (var j in content) content[j] = Number(content[j]);
+		content.sort(function(a, b){return a - b;});
+		var ret = []; var start = 0; var end = 0;
+		for (j = 0; j < content.length; j++){
+			if (content[j+1] && content[j+1] - content[j] == 1){
+				if (start ==0){
+					start = content[j];
+					end = content[j+1];
+				}else 
+					end = content[j+1];
+			}else {
+				if (end == content[j]) {
+					ret.push(start + '-' + end);
+					start = 0;
+					end = 0;
+				}else 
+					ret.push(content[j]);
+			}
+		}
+        txt += type + ":" + ret.join(',') + "|";
       }
       return txt;
     },
@@ -328,12 +359,18 @@ function MyClothes() {
       this.mine = {};
       this.size = 0;
       for (var i in sections) {
-        if (sections[i].length < 1) {
-          continue;
-        }
+        if (sections[i].length < 1) continue;
         var section = sections[i].split(':');
         var type = section[0];
-        this.mine[type] = section[1].split(',');
+		var content = section[1].split(',');
+		this.mine[type] = [];
+		for (var j in content) {
+			if (!isNaN(Number(content[j]))) this.mine[type].push(numberToInventoryId(Number(content[j])));
+			else if (content[j].indexOf('-') > 0){
+				var serials = content[j].split('-');
+				for (var k = Number(serials[0]); k <= Number(serials[1]); k++) this.mine[type].push(numberToInventoryId(k));
+			}
+		}
         this.size += this.mine[type].length;
       }
     },
@@ -381,9 +418,13 @@ var clothesSet = function() {
 
 var shoppingCart = {
   cart: {},
+  sub: {},
   totalScore: fakeClothes(this.cart),
   clear: function() {
     this.cart = {};
+  },
+  clearSub: function() {
+    this.sub = {};
   },
   contains: function(c) {
     //return this.cart[c.type.type] == c;
@@ -404,6 +445,14 @@ var shoppingCart = {
   },
   put: function(c) {
     this.cart[c.type.type] = c;
+  },
+  putSub: function(c) {
+    this.sub[c.type.type] = c;
+  },
+  putSubAll: function(clothes) {
+    for (var i in clothes) {
+      this.put(clothes[i]);
+    }
   },
   toList: function(sortBy) {
     var ret = [];
