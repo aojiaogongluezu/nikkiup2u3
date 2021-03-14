@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../../css/style.css">
+<title>奇迹暖暖傲娇攻略组·活动计算器</title>
+<style>
+.remark{font-size:80%;}
+td {text-align:left;}
+</style>
+<script type="text/javascript" charset="UTF-8">
+var item_name = '道具';
+
+window.onload = function(){
+	init();
+    calc();
+};
+
+function init(){
+	var input='<table border="0">'+tr(td('参数设置','colspan="2"'));
+	input+=tr(td('目标'+item_name+'数：')+td(inputBox('aim','calc()')));
+	input+=tr(td('当前'+item_name+'数：')+td(inputBox('current','calc()')));
+	input+=tr(td('剩余天数：')+td(inputBox('remain_days','calc()')));
+	input+=tr(td('关卡数量：')+td(inputBox('level_cnt','calc()')));
+	input+=tr(td('每关每次获得道具：')+td(inputBox('gain_each','calc()')));
+	input+=tr(td('每天每关免费次数：')+td(inputBox('free_1day','calc()')));
+	input+=tr(td('今天剩余次数：')+td(inputBox('remain_today','calc()')));
+	input+=tr(td('未领取免费'+item_name+'数：')+td(inputBox('extra','calc()')));
+	input+=tr(td('买一次花费钻石：')+td(inputBox('price','calc()')));
+	input+=tr(td('买一次获得次数：')+td(inputBox('once','calc()')));
+	input+=tr(td('每关体力：')+td(inputBox('perstamina','calc()')));
+    input+='</table>';
+	input+='<hr>';
+	document.getElementById("input").innerHTML = input;
+	
+	setVal("aim", 2000);
+	setVal("current", 0);
+	setVal("remain_days", 7);
+	setVal("level_cnt", 1);
+	setVal("free_1day", 10);
+	setVal("remain_today", 0);
+	setVal('extra', 0);
+	setVal('price', 6);
+	setVal('once', 1);
+	setVal('gain_each', 5);
+	setVal('perstamina', 0);
+}
+function calc(){
+	aim = Math.max(0,getVal('aim'));
+	current = Math.max(0,getVal('current'));
+	remain_days = Math.max(0,getVal('remain_days'));
+	level_cnt = Math.max(0,getVal('level_cnt'));
+	free_1day = Math.max(0,getVal('free_1day'));
+	remain_today = Math.max(0,getVal('remain_today'));
+	extra = Math.max(0,getVal('extra'));
+	price = Math.max(0,getVal('price'));
+	once = Math.max(0,getVal('once'));
+	gain_each = Math.max(0,getVal('gain_each'));
+	perstamina = Math.max(0,getVal('perstamina'));
+    
+	var rem = aim - current + extra;
+	var to_get_times = remain_days * free_1day * level_cnt + remain_today;
+	var times = Math.ceil(rem / gain_each);
+	var diff_times = Math.max(0, times - to_get_times);
+	var to_buy = Math.max(0, Math.ceil(diff_times / once));
+	var to_pay = to_buy * price;
+	var stamina = times * perstamina;
+	
+	var calcres='<table>'+tr(td('计算结果'));
+	calcres+=tr(td('共需'+aim+'个'+item_name+'，扣除已有还需刷'+rem+'个'));
+	calcres+=tr(td('还需'+times+'次（其中免费'+to_get_times+'次）'));
+	calcres+=tr(td('需购买'+to_buy+'次，花钻'+to_pay+'个'));
+	if(stamina > 0)
+        calcres+=tr(td('需消耗'+stamina+'体力'));
+	calcres+='</table>';
+	document.getElementById("calcres").innerHTML = calcres;
+}
+function loadSettings(){
+	if (typeof(Storage) !== "undefined" && localStorage.getItem("nikki_custom")) {
+		var loadString = localStorage.getItem("nikki_custom");
+		var _aim = getStoredStr(loadString, 'aim');
+		var _current = getStoredStr(loadString, 'current');
+		var _level_cnt = getStoredStr(loadString, 'level_cnt');
+		var _remain_days = getStoredStr(loadString, 'remain_days');
+		var _free_1day = getStoredStr(loadString, 'free_1day');
+		var _remain_today = getStoredStr(loadString, 'remain_today');
+		var _extra = getStoredStr(loadString, 'extra');
+		var _price = getStoredStr(loadString, 'price');
+		var _once = getStoredStr(loadString, 'once');
+		var _gain_each = getStoredStr(loadString, 'gain_each');
+		var _perstamina = getStoredStr(loadString, 'perstamina');
+        setVal("aim", _aim);
+        setVal("current", _current);
+        setVal("remain_days", _remain_days);
+        setVal("level_cnt", _level_cnt);
+        setVal("free_1day", _free_1day);
+        setVal("remain_today", _remain_today);
+        setVal("extra", _extra);
+        setVal("price", _price);
+        setVal("once", _once);
+        setVal("gain_each", _gain_each);
+        setVal("perstamina", _perstamina);
+		calc();
+	}
+}
+function getStoredStr(string, id){
+	var start = string.indexOf(id+':[')+(id+':[').length;
+	return string.substr(start,string.substr(start).indexOf('];'));
+}
+function saveSettings(){
+	var saveString = 'aim:['+aim+'];current:['+current+'];remain_days:['+remain_days+'];level_cnt:['+level_cnt+'];free_1day:['+free_1day+'];remain_today:['+remain_today+'];extra:['+extra+'];price:['+price+'];once:['+once+'];gain_each:['+gain_each+'];perstamina:['+perstamina+'];';
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem("nikki_custom", saveString);
+	}
+	document.getElementById('storage').innerHTML=saveString;
+}
+function getVal(id){
+	return noNaN(parseInt(document.getElementById(id).value));
+}
+function setVal(id,val){
+	document.getElementById(id).value=val;
+}
+function noNaN( n ) {
+	return isNaN( n ) ? 0 : n;
+}
+function td(text,attr){
+	return '<td'+(attr?' '+attr:'')+'>'+text+'</td>';
+}
+function tr(text,attr){
+	return '<tr'+(attr?' '+attr:'')+'>'+text+'</tr>';
+}
+function remark(text){
+	return '<span class="remark">'+text+'</span>';
+}
+function inputBox(id,onchange,size){
+	return '<input type="text" id="'+id+'" onkeyup='+onchange+(size?' size="'+size+'"':'')+'>';
+}
+function selectBox(id,onchange,valArr,textArr){
+	var ret = '<select id="'+id+'" onchange='+onchange+'>';
+	if(!textArr) textArr=valArr;
+	for (var i in valArr){
+		ret += '<option value="'+valArr[i]+'">'+textArr[i]+'</option>';
+	}
+	ret += '</select>';;
+	return ret;
+}
+</script>
+</head>
+<body>
+<div class="myframe" >
+<p align="center" class="title1">自定义活动计算器</p>
+<hr class="mhr">
+<p class="normal">
+	<span class="title3">更新时间：</span>2021-3-13<br>
+	<span class="title3">更新人员：</span>Rean翎<br>
+	<span class="title3">说明：</span>由于维护更新的小伙伴日渐偷懒，欢迎大家自己手动丰衣足食。<br>
+</p>
+<p align="center">
+<button onclick="saveSettings()">保存设置</button><button onclick="loadSettings()">读取设置</button>
+</p>
+<p align="center">
+<span id="input"></span>
+<span id="calcres"></span>
+<span id="storage" style="display:none"></span>
+</p>
+</div>
+</body>
+</html>
