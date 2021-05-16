@@ -24,7 +24,7 @@ table tr td:nth-child(3) {
 function go_img(src){
 	var out='<p class="normal" style="text-align:left;font-weight:normal;"><a href="course.html" target="framemain">←返回</a></p><p>';
 	var sp=src.split('|');
-	for (var p in sp) {out+='<img style="max-width: 100%;" src="'+sp[p]+'">';}
+	for (var p in sp) {out+='<img style="max-width: 100%;" referrerpolicy="no-referrer" src="'+sp[p]+'">';}
 	out+='</p><p class="normal" style="text-align:left;font-weight:normal;"><a href="course.html" target="framemain">←返回</a></p>';
 	document.getElementById('course_body').innerHTML=out;
 }
