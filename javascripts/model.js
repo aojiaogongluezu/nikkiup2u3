@@ -257,11 +257,15 @@ function clotonum(type,id){
 		case '下装': mainType='5'; break;
 		case '袜子': mainType='6'; break;
 		case '鞋子': mainType='7'; break;
-		case '饰品': mainType='8'; break;
+		case '饰品': 
+            if (parseInt(id) >= 10000) mainType = '18';
+            else mainType='8'; 
+            break;
 		case '妆容': mainType='9'; break;
 		case '萤光之灵': mainType='A'; break;
 	}
-	if (parseInt(id) >= 1000) return mainType + id;
+    if (parseInt(id) >= 10000) return mainType + id.substr(id.length-4, 4);
+	else if (parseInt(id) >= 1000) return mainType + id;
 	else return mainType + '0' + id;
 }
 
@@ -343,7 +347,7 @@ function MyClothes() {
 					end = content[j+1];
 			}else {
 				if (end == content[j]) {
-					ret.push(start + '-' + end);
+					ret.push(start + '+' + Number(end - start));
 					start = 0;
 					end = 0;
 				}else 
@@ -370,6 +374,10 @@ function MyClothes() {
 				var serials = content[j].split('-');
 				for (var k = Number(serials[0]); k <= Number(serials[1]); k++) this.mine[type].push(numberToInventoryId(k));
 			}
+            else if (content[j].indexOf('+') > 0){
+                var serials = content[j].split('+');
+                for (var k = Number(serials[0]); k <= Number(serials[0]) + Number(serials[1]); k++) this.mine[type].push(numberToInventoryId(k));
+            }
 		}
         this.size += this.mine[type].length;
       }
@@ -418,13 +426,16 @@ var clothesSet = function() {
 
 var shoppingCart = {
   cart: {},
-  sub: {},
   totalScore: fakeClothes(this.cart),
+  accNum: function() {
+    var cnt=0;
+    for (var i in this.cart) {
+        if (this.cart[i].type.mainType == '饰品') cnt++;
+    }
+    return cnt;
+  },
   clear: function() {
     this.cart = {};
-  },
-  clearSub: function() {
-    this.sub = {};
   },
   contains: function(c) {
     //return this.cart[c.type.type] == c;
@@ -445,14 +456,6 @@ var shoppingCart = {
   },
   put: function(c) {
     this.cart[c.type.type] = c;
-  },
-  putSub: function(c) {
-    this.sub[c.type.type] = c;
-  },
-  putSubAll: function(clothes) {
-    for (var i in clothes) {
-      this.put(clothes[i]);
-    }
   },
   toList: function(sortBy) {
     var ret = [];
@@ -476,7 +479,7 @@ var shoppingCart = {
 			currCate=repelCates[i][j];
 			if (this.cart[currCate]) {
 				this.cart[currCate].calc(criteria);
-				var currSumScore = currCate.split('-')[0] == '饰品' ? accSumScore(this.cart[currCate], accNum?accNum:accCateNum) : this.cart[currCate].sumScore;
+				var currSumScore = realSumScore(this.cart[currCate], accNum);
 				if (j>0) sumOthers+=currSumScore;
 				else sumFirst+=currSumScore;
 			}
@@ -489,6 +492,12 @@ var shoppingCart = {
 			}
 		}
 	}
+    for (var c in this.cart) { //remove 皮肤 if there is pose
+        if (this.cart[c].pose) {
+            shoppingCart.remove('饰品-皮肤');
+            break;
+        }
+    }
 	if (accNum) {//keep accessories base on accNum
 		var sortCates=[];
 		for (var i in category){
@@ -513,8 +522,12 @@ function accScore(total, items) {
   return total * 0.4;
 }
 
-function accSumScore(a,items){
-	return accScore(a.tmpScore, items)+a.bonusScore;
+function accSumScore(a, items){
+	return Math.round(accScore(a.tmpScore, items) + a.bonusScore);
+}
+
+function realSumScore(c, items){
+	return c.type.mainType=='饰品' ? accSumScore(c, items) : c.sumScore;
 }
 
 var accCateNum = function() {
@@ -566,6 +579,7 @@ function fakeClothes(cart) {
   return {
     name: '总分',
     sumScore: Math.round(totalScore),
+    type: '',
     toCsv: function() {
       return ['', '', '',
           scoreWithBonusTd(scores.simple[0], bonus.simple[0]), 
