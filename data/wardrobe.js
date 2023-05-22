@@ -8474,7 +8474,7 @@ var codewardrobe = [
 '樱香萦绕|IZv|53So|C|9c|v|4|B',
 '潮流前沿|0LY|33RL||9d|v|9|K',
 '潇洒节拍|28y|3-6g||9d|v|9|K',
-'时尚新宠|39G|2xtP||9d|v|9|K',
+'时尚新宠|39G|2xtP||9d|v|1|L',
 '独家剪裁|48b|2_DK||9d|v|9|K',
 '高调网格|68i|2yjI||9d|v|9|K',
 '尖端设计|7JK|30xP||9d|v|9|K',
@@ -25194,6 +25194,7 @@ var codewardrobe = [
 '银白双生|1jt|*4ze4|H|*Qz|20|*Qz|*4Y',
 '黎明唱响|1ju|*4-3F|H|*Qz|20|*Qz|*4Y',
 '未来之翼|P37J|52i4|H|*Qz|20|*Qz|*4Y',
+'透明和弦|6Qb|4zOU|H|*Qz|21|*Qz|*4Y',
 '夜莺轻歌|0q_|4wtk||Q-|20|d|c',
 '星落澜渊|1jT|4wte|N|Q-|20|d|c',
 '黯然夜色|2N_|5ZoR|N|Q-|20|d|c',
@@ -25587,4 +25588,4 @@ function iscode(s) {
     }
     return true;
 }
-var wardrobe_lastupd = '2023/5/20';
+var wardrobe_lastupd = '2023/5/22';
