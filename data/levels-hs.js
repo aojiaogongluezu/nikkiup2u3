@@ -176,7 +176,7 @@ var tasksAdd={
 '联盟委托: 25-7':['pure','active'],
 '关卡: 1-1':['cute','active'],
 '关卡: 1-2':['simple','pure'],
-'关卡: 1-3':['pure','active'],
+'关卡: 1-3':['simple','active'],
 '关卡: 1-4':['active','cute'],
 '关卡: 1-5':['pure','cute'],
 '关卡: 1-6':['simple','pure'],
